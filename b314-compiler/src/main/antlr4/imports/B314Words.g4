@@ -18,3 +18,10 @@ COMMENT: '/*' .*? '*/' -> skip;
 
 NEWLINE: '\r'? '\n'  -> skip ;
 WS: [ \t]+ -> skip ;
+START: 'declare and retain';
+DLOCAL: 'declare local';
+TSTART: 'when your turn';
+WHEN:'when' ;
+DO: 'do';
+DONE: 'done';
+BYDEF: 'by default'; 
