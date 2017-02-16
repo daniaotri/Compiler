@@ -6,3 +6,9 @@ root: ID;
 programme: START (vardecl ; | fctdecl)* TSTART (ClauseWhen)* ClauseDefault ;
 ClauseWhen: WHEN ExprD (DLOCAL (vardecl ;)+)? DO (instruction)+ DONE ;
 ClauseDefault: BYDEF (DLOCAL (vardecl ;)+)? DO (instruction)+ DONE ; 
+
+
+//Charles
+Type: Scalar | Array;
+Scalar: BOOLEAN | INTEGER | SQUARE;
+Array: Scalar "[" (DIGIT("," DIGIT )+)? "]";
