@@ -7,10 +7,10 @@ root : ID;
 
 type : scalar | array  ;
 scalar: BOOLEAN | INTEGER | SQUARE  ;
-array: Scalar CROCHET_OUVERT DIGIT (DIGIT)* (VIRGULE DIGIT (DIGIT)*)? CROCHET_FERME ;
+array: scalar CROCHET_OUVERT DIGIT (DIGIT)* (VIRGULE DIGIT (DIGIT)*)? CROCHET_FERME ;
 
 exprD : entier      
-        | LATITUDE | LONGITUDE | GRID_SIZE  
+        | LATITUDE | LONGITUDE | GRID_SIZE   
         |(MAP | RADIO | AMMO | FRUITS | SODA ) COUNT    
         | LIFE      
         | TRUE |FALSE   
@@ -27,7 +27,7 @@ exprD : entier
         | exprD op=(MUL|DIV|DIV_ENT) exprD  
         ;
         
-exprG : ID | ID CROCHET_OUVERT exprD (VIRGULE exprD)? CROCHET_FERME ; 
+exprG : ID | ID CROCHET_OUVERT exprD (VIRGULE exprD)? CROCHET_FERME    ; 
 
 entier : (MOINS)? DIGIT(DIGIT)*  ;
 
