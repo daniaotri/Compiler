@@ -9,23 +9,30 @@ type : scalar | array  ;
 scalar: BOOLEAN | INTEGER | SQUARE  ;
 array: scalar CROCHET_OUVERT DIGIT (DIGIT)* (VIRGULE DIGIT (DIGIT)*)? CROCHET_FERME ;
 
-exprD : entier      
-        | LATITUDE | LONGITUDE | GRID_SIZE   
-        |(MAP | RADIO | AMMO | FRUITS | SODA ) COUNT    
-        | LIFE      
-        | TRUE |FALSE   
-        | ENNEMI IS (NORTH | SOUTH | EAST | WEST)  
-        | GRAAL IS (NORTH | SOUTH | EAST | WEST)    
-        | DIRT| ROCK | VINES | ZOMBIE | PLAYER | ENNEMI | MAP | RADIO | AMMO | FRUITS | SODA | NEARBY CROCHET_OUVERT exprD VIRGULE exprD CROCHET_FERME
-        | exprG   
-        | ID PAR_OUVERT (exprD (VIRGULE exprD)*)? PAR_FERME   
-        | PAR_OUVERT exprD PAR_FERME    
+exprD : exprEnt
+        | exprBool
+        | exprCase
+        | exprG
+        | ID PAR_OUVERT (exprD (VIRGULE exprD)*)? PAR_FERME  
+        | PAR_OUVERT exprD PAR_FERME 
         | NOT exprD 
-        | exprD op=(AND|OR) exprD  
-        | exprD op=(INF | SUP | EGALE) exprD    
-        | exprD op=(PLUS |MOINS) exprD      
-        | exprD op=(MUL|DIV|DIV_ENT) exprD  
+        | exprBool op=(AND|OR) exprBool  
+        | exprEnt op=(INF | SUP) exprEnt 
+        | exprD EGALE exprD
+        | exprEnt op=(PLUS |MOINS) exprEnt      
+        | exprEnt op=(MUL|DIV|DIV_ENT) exprEnt  
         ;
+
+exprEnt : entier
+          | LATITUDE | LONGITUDE | GRID_SIZE 
+          | (MAP | RADIO | AMMO | FRUITS | SODA ) COUNT 
+          | LIFE
+          ;
+exprBool: TRUE |FALSE
+          | ENNEMI IS (NORTH | SOUTH | EAST | WEST) 
+          | GRAAL IS (NORTH | SOUTH | EAST | WEST) 
+          ;
+exprCase : DIRT| ROCK | VINES | ZOMBIE | PLAYER | ENNEMI | MAP | RADIO | AMMO | FRUITS | SODA | NEARBY CROCHET_OUVERT exprEnt VIRGULE exprEnt CROCHET_FERME;
         
 exprG : ID | ID CROCHET_OUVERT exprD (VIRGULE exprD)? CROCHET_FERME    ; 
 
