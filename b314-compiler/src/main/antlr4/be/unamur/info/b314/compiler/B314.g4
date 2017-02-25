@@ -46,7 +46,9 @@ exprBool: TRUE |FALSE
 
 exprCase : DIRT| ROCK | VINES | ZOMBIE | PLAYER | ENNEMI | MAP | RADIO | AMMO | FRUITS | SODA | NEARBY CROCHET_OUVERT exprEnt VIRGULE exprEnt CROCHET_FERME;
         
-exprG : ID | ID CROCHET_OUVERT exprD (VIRGULE exprD)? CROCHET_FERME    ; 
+exprG : ID | ID CROCHET_OUVERT exprEnt (VIRGULE exprEnt)? CROCHET_FERME    ; 
+
+// Dans le document, on a bien exprG =:: ID | Id[ExprD (, ExprD)? ]. Mais il est indiqué que les indices sont des entiers. (Charles Piraprez)
 
 entier : (MOINS)? DIGIT(DIGIT)*  ;
 
@@ -74,7 +76,10 @@ varDecl : ID AS type   ;
 
 programme: START (varDecl POINtVIRGULE | fctDecl)* TSTART (clauseWhen)* clauseDefault  ;
 
-clauseWhen: WHEN exprD (DLOCAL (varDecl POINtVIRGULE)+)? DO (instruction)+ DONE;
+clauseWhen: WHEN exprBool (DLOCAL (varDecl POINtVIRGULE)+)? DO (instruction)+ DONE;
+
+// Dans le document, ClauseWhen est indiqué comme équivalent à "WHEN exprD". 
+//Sauf qu'il est précisé qu'exprD est en fait une expression booléenne. (Charles Piraprez)
 
 clauseDefault: BYDEF (DLOCAL (varDecl POINtVIRGULE)+)? DO (instruction)+ DONE  ; 
 
