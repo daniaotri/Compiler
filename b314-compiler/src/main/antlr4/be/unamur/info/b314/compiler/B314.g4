@@ -14,24 +14,36 @@ exprD : exprEnt
         | exprCase
         | exprG
         | ID PAR_OUVERT (exprD (VIRGULE exprD)*)? PAR_FERME  
-        | PAR_OUVERT exprD PAR_FERME 
-        | NOT exprD 
-        | exprBool op=(AND|OR) exprBool  
-        | exprEnt op=(INF | SUP) exprEnt 
-        | exprD EGALE exprD
-        | exprEnt op=(PLUS |MOINS) exprEnt      
-        | exprEnt op=(MUL|DIV|DIV_ENT) exprEnt  
+        | PAR_OUVERT exprD PAR_FERME     
         ;
 
+// On ne fusionne pas exprD avec exprBool, ExprCase et ExprEnt car ces 3 expressions peuvent être réutilisées exclusivement. (Charles Piraprez)
+
 exprEnt : entier
+          | exprEnt op=(PLUS |MOINS) exprEnt
+          | exprEnt op=(MUL|DIV|DIV_ENT) exprEnt
           | LATITUDE | LONGITUDE | GRID_SIZE 
           | (MAP | RADIO | AMMO | FRUITS | SODA ) COUNT 
           | LIFE
           ;
+
+// On sait que les opérations "*", "/" et "%" doivent être évalués avant "+" et "-". 
+//Cela veut dire que PLUS et MOINS doivent être mis en premier pour former les branches suivantes de l'arbre syntaxique.
+// Pour mieux comprendre, essayez de voir ce que ça donne avec  2*3+4*5. (Charles Piraprez)
+
 exprBool: TRUE |FALSE
+          | NOT exprD 
+          | exprBool op=(AND|OR) exprBool 
+          | exprEnt op=(INF | SUP) exprEnt 
+          | exprEnt EGALE exprEnt 
           | ENNEMI IS (NORTH | SOUTH | EAST | WEST) 
           | GRAAL IS (NORTH | SOUTH | EAST | WEST) 
           ;
+
+// Pour exprBool, les expressions contenant exprEnt sont mises après les expressions contenant exprBool parce que
+// les expressions entières doivent être évaluées en premier et doivent donc être plus bas dans l'arbre syntaxique. (Charles Piraprez)
+
+
 exprCase : DIRT| ROCK | VINES | ZOMBIE | PLAYER | ENNEMI | MAP | RADIO | AMMO | FRUITS | SODA | NEARBY CROCHET_OUVERT exprEnt VIRGULE exprEnt CROCHET_FERME;
         
 exprG : ID | ID CROCHET_OUVERT exprD (VIRGULE exprD)? CROCHET_FERME    ; 
