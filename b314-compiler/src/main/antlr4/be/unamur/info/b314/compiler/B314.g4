@@ -10,7 +10,7 @@ scalar: BOOLEAN | INTEGER | SQUARE  ;
 array: scalar CROCHET_OUVERT DIGIT (DIGIT)* (VIRGULE DIGIT (DIGIT)*)? CROCHET_FERME ;
 
 exprD : exprEnt
-        | exprBool
+        | exprBool 
         | exprCase
         | exprG
         | ID PAR_OUVERT (exprD (VIRGULE exprD)*)? PAR_FERME  
@@ -71,7 +71,7 @@ varDecl : ID AS type   ;
 
 programme: START (varDecl POINtVIRGULE | fctDecl)* TSTART (clauseWhen)* clauseDefault  ;
 
-clauseWhen: WHEN exprD (DLOCAL (varDecl POINtVIRGULE)+)? DO (instruction)+ DONE   ;
+clauseWhen: WHEN exprD (DLOCAL (varDecl POINtVIRGULE)+)? DO (instruction)+ DONE;
 
 clauseDefault: BYDEF (DLOCAL (varDecl POINtVIRGULE)+)? DO (instruction)+ DONE  ; 
 
