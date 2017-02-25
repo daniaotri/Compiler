@@ -7,7 +7,7 @@ root : ID;
 
 type : scalar | array  ;
 scalar: BOOLEAN | INTEGER | SQUARE  ;
-array: scalar CROCHET_OUVERT DIGIT (DIGIT)* (VIRGULE DIGIT (DIGIT)*)? CROCHET_FERME ;
+array: scalar CROCHET_OUVERT NUMBER (VIRGULE NUMBER)? CROCHET_FERME ;
 
 exprD : exprEnt
         | exprBool 
@@ -51,9 +51,9 @@ exprG : ID | ID CROCHET_OUVERT exprD (VIRGULE exprD)? CROCHET_FERME    ;
 entier : (MOINS)? DIGIT(DIGIT)*  ;
 
 instruction : SKIPPPP           
-              | IF exprD THEN (instruction)+ DONE     
-              | IF exprD THEN (instruction)+ ELSE (instruction)+ DONE  
-              | WHILE exprD DO (instruction)+ DONE  
+              | IF exprBool THEN (instruction)+ DONE     
+              | IF exprBool THEN (instruction)+ ELSE (instruction)+ DONE  
+              | WHILE exprBool DO (instruction)+ DONE  
               | SET exprG TO exprD  
               | COMPUTE exprD   
               | NEXT action     
