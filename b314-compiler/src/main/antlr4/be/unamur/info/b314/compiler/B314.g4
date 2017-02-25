@@ -58,6 +58,9 @@ instruction : SKIPPPP
               | COMPUTE exprD   
               | NEXT action     
               ;
+
+// Dans le document, les encadrés indiquent "IF exprD ... " ainsi que "WHILE exprD"
+// Ensuite, le document précise qu'il s'agit bien d'une expression booléenne. (Charles Piraprez)
                
 action : MOVE (NORTH | SOUTH | EAST | WEST)     
         | SHOOT (NORTH | SOUTH | EAST | WEST)   
