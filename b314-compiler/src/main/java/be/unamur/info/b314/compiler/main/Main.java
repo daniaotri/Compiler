@@ -1,5 +1,7 @@
 package be.unamur.info.b314.compiler.main;
 
+import be.unamur.info.b314.compiler.B314Lexer;
+import be.unamur.info.b314.compiler.B314Parser;
 import static com.google.common.base.Preconditions.checkArgument;
 import java.io.File;
 import java.io.FileInputStream;
@@ -21,14 +23,34 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
         
 import be.unamur.info.b314.compiler.scope.ScopeBase;
+import be.unamur.info.b314.compiler.Visitor.MyVisitor;
+import org.antlr.v4.runtime.tree.ParseTree;
 
 /**
  *
  * @author Xavier Devroey - xavier.devroey@unamur.be
  */
 public class Main {
+    
+    public static void main(String[] args) {
+        String test = "declare and retain "
+                + "moi as integer; "
+                + "when your turn "
+                + "by default do skip done" ;
+        
+        ANTLRInputStream myStreamTest = new ANTLRInputStream(test);
+        
+        B314Lexer lexer = new B314Lexer(myStreamTest);
+        CommonTokenStream token = new CommonTokenStream(lexer);
+        B314Parser parser = new B314Parser(token);
+        
+        ParseTree tree = parser.varDecl();
+        
+        new MyVisitor().visit(tree);
+    }
+    
 
-    private static final Logger LOG = LoggerFactory.getLogger(Main.class);
+  /*  private static final Logger LOG = LoggerFactory.getLogger(Main.class);
 
     private static final String NAME = "b314-compiler";
     private static final String HELP = "h";
@@ -39,7 +61,7 @@ public class Main {
      * Main method launched when starting compiler jar file.
      *
      * @param args Command line arguments.
-     */
+     *//*
     public static void main(String[] args) {
         Main main = new Main();
         CommandLineParser parser = new DefaultParser();
@@ -70,17 +92,17 @@ public class Main {
 
     /**
      * The command line options.
-     */
+     *//*
     private final Options options;
 
     /**
      * The input B314 file.
-     */
+     *//*
     private File inputFile;
 
     /**
      * The output PCode file.
-     */
+     *//*
     private File outputFile;
     
     private Main() {
@@ -103,7 +125,7 @@ public class Main {
 
     /**
      * Prints help message with this options.
-     */
+     *//*
     private void printHelpMessage() {
         HelpFormatter formatter = new HelpFormatter();
         formatter.setWidth(128);
@@ -115,7 +137,7 @@ public class Main {
      * Initialise the input compiler using the given input line.
      *
      * @throws Exception If one of the three required arguments is not provided.
-     */
+     *//*
     private void initialise(CommandLine line) throws Exception {
         LOG.debug("Initialisation");
         // Check that the arguments are there
@@ -142,7 +164,7 @@ public class Main {
     
     /**
      * Compiler Methods, this is where the MAGIC happens !!! \o/
-     */
+     *//*
     private void compile() {
     
     
@@ -151,8 +173,11 @@ public class Main {
         
         
         
+       //visitVarDecl();
+        
+        
         
        
-    }
+    } */
 
 }

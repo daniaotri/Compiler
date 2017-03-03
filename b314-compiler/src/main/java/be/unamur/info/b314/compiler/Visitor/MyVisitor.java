@@ -21,6 +21,14 @@ import java.util.HashMap;
 
 
 public class MyVisitor extends B314BaseVisitor {
+    //Charles
+    
+    	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation returns the result of calling
+	 * {@link #visitChildren} on {@code ctx}.</p>
+	 */
     
     enum FunctionType{
         INTEGER,
@@ -50,15 +58,53 @@ public class MyVisitor extends B314BaseVisitor {
       
       String idUtilise = new String(); // Permet de voir avec quelle variable on travaille lors
       //de la vérification de la définition des variables
+      String typeUtilise = new String(); // Permet de voir le type de la variable qu'on utilise
+      // à l'instant dans le visiteur.
 
     @Override
     public Object visitVarDecl(B314Parser.VarDeclContext ctx) {
         idUtilise = ctx.getChild(0).getText();
         visitType(ctx.typeOfVar);
+        System.out.println("id: " + idUtilise + TypeVariablesGlobales.get(idUtilise));
+        
+        return null;
+    }
+
+    @Override
+    public Object visitType(B314Parser.TypeContext ctx) {
+        
+        visitChildren(ctx);
+        
+        
+                
+        return null;
+    }
+
+    @Override
+    public Object visitScalar(B314Parser.ScalarContext ctx) {
+        
+        
+        switch (ctx.getChild(0).getText()) {
+            case "boolean":
+                TypeVariablesGlobales.put(idUtilise, Scalar.BOOLEAN);
+                break;
+            case "integer":
+                TypeVariablesGlobales.put(idUtilise, Scalar.INTEGER);
+                break;
+            case "square":
+                TypeVariablesGlobales.put(idUtilise, Scalar.SQUARE);
+                break;
+        }
+        
         
         
         return null;
     }
+    
+}
+    
+    
+    
     
     
 
@@ -68,17 +114,9 @@ public class MyVisitor extends B314BaseVisitor {
       
       
       
-    //Charles
     
-    	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
       
       
     
     
     
-}
