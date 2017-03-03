@@ -8,7 +8,7 @@ type : scalar
 
 
 scalar: BOOLEAN | INTEGER | SQUARE  ;
-array: scalar CROCHET_OUVERT DIGIT (DIGIT)* (VIRGULE DIGIT (DIGIT)*)? CROCHET_FERME ;
+array: scalar CROCHET_OUVERT NUMBER (VIRGULE NUMBER)? CROCHET_FERME ;
 
 exprD : entier                                                      #exprEntier
         | environnementInt                                          #exprEnvInt
@@ -74,7 +74,8 @@ action : MOVE (NORTH | SOUTH | EAST | WEST)
 
 programme: START (varDecl POINtVIRGULE | fctDecl)* TSTART (clauseWhen)* clauseDefault  ;
  
-fctDecl : ID AS FUNCTION PAR_OUVERT (varDecl (VIRGULE varDecl)*)?PAR_FERME DEUXPOINTS (scalar | VOID)(DLOCAL(varDecl POINtVIRGULE)+)? DO (instruction)+ DONE    ;
+fctDecl : ID AS FUNCTION PAR_OUVERT (varDecl (VIRGULE varDecl)*)? PAR_FERME DEUXPOINTS (scalar | VOID)(DLOCAL(varDecl POINtVIRGULE)+)? DO (instruction)+ DONE    ;
+
 
 varDecl : ID AS typeOfVar=type;
 

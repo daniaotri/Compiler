@@ -60,12 +60,44 @@ public class MyVisitor extends B314BaseVisitor {
       //de la vérification de la définition des variables
       String typeUtilise = new String(); // Permet de voir le type de la variable qu'on utilise
       // à l'instant dans le visiteur.
+      int nombreParametresUtilises=0;
+      boolean currentIsArray=false;
 
     @Override
     public Object visitVarDecl(B314Parser.VarDeclContext ctx) {
         idUtilise = ctx.getChild(0).getText();
         visitType(ctx.typeOfVar);
-        System.out.println("id: " + idUtilise + TypeVariablesGlobales.get(idUtilise));
+        
+        if(currentIsArray==true){
+            
+            switch (typeUtilise) {
+            case "BOOLEAN":
+                TypeTableauxGlobaux.put(idUtilise, Scalar.BOOLEAN);
+                break;
+            case "INTEGER":
+                TypeTableauxGlobaux.put(idUtilise, Scalar.INTEGER);
+                break;
+            case "SQUARE":
+                TypeTableauxGlobaux.put(idUtilise, Scalar.SQUARE);
+                break;
+            }
+            
+            NombreParametresTableauxGlobaux.put(idUtilise, nombreParametresUtilises);
+            
+            currentIsArray=false;
+        }else{
+            switch (typeUtilise) {
+            case "BOOLEAN":
+                TypeVariablesGlobales.put(idUtilise, Scalar.BOOLEAN);
+                break;
+            case "INTEGER":
+                TypeVariablesGlobales.put(idUtilise, Scalar.INTEGER);
+                break;
+            case "SQUARE":
+                TypeVariablesGlobales.put(idUtilise, Scalar.SQUARE);
+                break;
+            }
+        }
         
         return null;
     }
@@ -86,13 +118,16 @@ public class MyVisitor extends B314BaseVisitor {
         
         switch (ctx.getChild(0).getText()) {
             case "boolean":
-                TypeVariablesGlobales.put(idUtilise, Scalar.BOOLEAN);
+                //TypeVariablesGlobales.put(idUtilise, Scalar.BOOLEAN);
+                typeUtilise = "BOOLEAN";
                 break;
             case "integer":
-                TypeVariablesGlobales.put(idUtilise, Scalar.INTEGER);
+                //TypeVariablesGlobales.put(idUtilise, Scalar.INTEGER);
+                typeUtilise = "INTEGER";
                 break;
             case "square":
-                TypeVariablesGlobales.put(idUtilise, Scalar.SQUARE);
+                //TypeVariablesGlobales.put(idUtilise, Scalar.SQUARE);
+                typeUtilise = "SQUARE";
                 break;
         }
         
@@ -100,6 +135,40 @@ public class MyVisitor extends B314BaseVisitor {
         
         return null;
     }
+
+    @Override
+    public Object visitArray(B314Parser.ArrayContext ctx) {
+        
+        switch (ctx.getChild(0).getText()) {
+            case "boolean":
+                //TypeVariablesGlobales.put(idUtilise, Scalar.BOOLEAN);
+                typeUtilise = "BOOLEAN";
+                break;
+            case "integer":
+                //TypeVariablesGlobales.put(idUtilise, Scalar.INTEGER);
+                typeUtilise = "INTEGER";
+                break;
+            case "square":
+                //TypeVariablesGlobales.put(idUtilise, Scalar.SQUARE);
+                typeUtilise = "SQUARE";
+                break;
+        }
+        
+        if(ctx.getChildCount()==4){
+            //NombreParametresTableauxGlobaux.put(idUtilise, 1);
+            nombreParametresUtilises = 1;
+        }else if(ctx.getChildCount()==5){
+            //NombreParametresTableauxGlobaux.put(idUtilise, 2);
+            nombreParametresUtilises = 2;
+        }
+        
+        currentIsArray=true;
+           
+        
+        return null;
+    }
+    
+    
     
 }
     
