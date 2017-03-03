@@ -19,10 +19,10 @@ exprD : entier                                                      #exprEntier
         | ID PAR_OUVERT (exprD (VIRGULE exprD)*)? PAR_FERME         #FunctionCall
         | PAR_OUVERT exprD PAR_FERME                                #exprPar
         | NOT exprD                                                 #exprNot
-        | exprD op=(AND|OR) exprD                                   #exprAndOr
-        | exprD op=(INF | SUP | EGALE) exprD                        #exprInfSupEg
-        | exprD op=(PLUS |MOINS) exprD                              #exprPlusMoins
-        | exprD op=(MUL|DIV|DIV_ENT) exprD                          #exprMulDiv
+        | expr1=exprD op=(AND|OR) expr2=exprD                       #exprAndOr
+        | expr1=exprD op=(INF | SUP | EGALE) expr2=exprD            #exprInfSupEg
+        | expr1=exprD op=(PLUS |MOINS) expr2=exprD                  #exprPlusMoins
+        | expr1=exprD op=(MUL|DIV|DIV_ENT) expr2=exprD              #exprMulDiv
         ;
 
 environnementInt: LATITUDE
@@ -76,7 +76,7 @@ programme: START (varDecl POINtVIRGULE | fctDecl)* TSTART (clauseWhen)* clauseDe
  
 fctDecl : ID AS FUNCTION PAR_OUVERT (varDecl (VIRGULE varDecl)*)?PAR_FERME DEUXPOINTS (scalar | VOID)(DLOCAL(varDecl POINtVIRGULE)+)? DO (instruction)+ DONE    ;
 
-varDecl : ID AS type   ;
+varDecl : ID AS typeOfVar=type;
 
 clauseWhen: WHEN exprD (DLOCAL (varDecl POINtVIRGULE)+)? DO (instruction)+ DONE   ;
 
