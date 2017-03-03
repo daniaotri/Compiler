@@ -19,6 +19,8 @@ import org.apache.commons.cli.Options;
 import org.apache.commons.cli.ParseException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+        
+import be.unamur.info.b314.compiler.scope.ScopeBase;
 
 /**
  *
@@ -146,6 +148,10 @@ public class Main {
     
        // Put your code here !
        
+        
+        
+        
+        
        
     }
 

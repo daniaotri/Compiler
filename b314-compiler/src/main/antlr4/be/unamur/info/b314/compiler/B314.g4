@@ -2,38 +2,66 @@
 
 import B314Words;
 
-type : scalar | array  ;
+type : scalar       
+        | array     
+        ;
+
+
 scalar: BOOLEAN | INTEGER | SQUARE  ;
 array: scalar CROCHET_OUVERT DIGIT (DIGIT)* (VIRGULE DIGIT (DIGIT)*)? CROCHET_FERME ;
 
-exprD : entier      
-        | LATITUDE | LONGITUDE | GRID_SIZE  
+exprD : entier                                                      #exprEntier
+        | environnementInt                                          #exprEnvInt
+        | environnementBool                                         #exprEnvBool
+        | environnementCase                                         #exprEnvCase
+        | NEARBY CROCHET_OUVERT exprD VIRGULE exprD CROCHET_FERME   #enprNearby
+        | exprG                                                     #exprDexprG
+        | ID PAR_OUVERT (exprD (VIRGULE exprD)*)? PAR_FERME         #FunctionCall
+        | PAR_OUVERT exprD PAR_FERME                                #exprPar
+        | NOT exprD                                                 #exprNot
+        | exprD op=(AND|OR) exprD                                   #exprAndOr
+        | exprD op=(INF | SUP | EGALE) exprD                        #exprInfSupEg
+        | exprD op=(PLUS |MOINS) exprD                              #exprPlusMoins
+        | exprD op=(MUL|DIV|DIV_ENT) exprD                          #exprMulDiv
+        ;
+
+environnementInt: LATITUDE
+        | LONGITUDE
+        | GRID_SIZE  
         |(MAP | RADIO | AMMO | FRUITS | SODA ) COUNT    
-        | LIFE      
-        | TRUE |FALSE   
+        | LIFE
+        ;
+environnementBool: TRUE
+        |FALSE   
         | ENNEMI IS (NORTH | SOUTH | EAST | WEST)  
-        | GRAAL IS (NORTH | SOUTH | EAST | WEST)    
-        | DIRT| ROCK | VINES | ZOMBIE | PLAYER | ENNEMI | MAP | RADIO | AMMO | FRUITS | SODA | NEARBY CROCHET_OUVERT exprD VIRGULE exprD CROCHET_FERME
-        | exprG   
-        | ID PAR_OUVERT (exprD (VIRGULE exprD)*)? PAR_FERME   
-        | PAR_OUVERT exprD PAR_FERME    
-        | NOT exprD 
-        | exprD op=(AND|OR) exprD  
-        | exprD op=(INF | SUP | EGALE) exprD    
-        | exprD op=(PLUS |MOINS) exprD      
-        | exprD op=(MUL|DIV|DIV_ENT) exprD  
+        | GRAAL IS (NORTH | SOUTH | EAST | WEST) 
+        ;
+
+environnementCase: DIRT
+        | ROCK
+        | VINES 
+        | ZOMBIE 
+        | PLAYER 
+        | ENNEMI 
+        | MAP 
+        | RADIO 
+        | AMMO 
+        | FRUITS 
+        | SODA
         ;
         
-exprG : ID | ID CROCHET_OUVERT exprD (VIRGULE exprD)? CROCHET_FERME ; 
+exprG : ID                                                              #variableExprG
+         | ID CROCHET_OUVERT exprD (VIRGULE exprD)? CROCHET_FERME      #tableauExprG
+        ;
 entier : (MOINS)? DIGIT(DIGIT)*  ;
 
-instruction : SKIPPPP           
-              | IF exprD THEN (instruction)+ DONE     
-              | IF exprD THEN (instruction)+ ELSE (instruction)+ DONE  
-              | WHILE exprD DO (instruction)+ DONE  
-              | SET exprG TO exprD  
-              | COMPUTE exprD   
-              | NEXT action     
+instruction : SKIPPPP                                                   #skipppp
+              | IF exprD THEN (instruction)+ DONE                       #if
+              | IF exprD THEN (instruction)+ ELSE (instruction)+ DONE   #ifthenelse
+              | WHILE exprD DO (instruction)+ DONE                      #while
+              | SET exprG TO exprD                                      #affectation
+              | COMPUTE exprD                                           #compute
+              | NEXT action                                             #nextAction
               ;
 
 
@@ -51,5 +79,7 @@ fctDecl : ID AS FUNCTION PAR_OUVERT (varDecl (VIRGULE varDecl)*)?PAR_FERME DEUXP
 varDecl : ID AS type   ;
 
 clauseWhen: WHEN exprD (DLOCAL (varDecl POINtVIRGULE)+)? DO (instruction)+ DONE   ;
+
 clauseDefault: BYDEF (DLOCAL (varDecl POINtVIRGULE)+)? DO (instruction)+ DONE  ; 
- commentaire: COMMENTOPEN (POINT Espace*)COMMENTCLOSE   ; 
+
+ 

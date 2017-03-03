@@ -34,7 +34,7 @@ public class ScopeBase implements Scope{
         
     @Override
     public void addChildScope(Scope child) {
-        if(!Children.contains(child))Children.add(child);
+        if(!Children.contains(child)) Children.add(child);
     }
 
     @Override
