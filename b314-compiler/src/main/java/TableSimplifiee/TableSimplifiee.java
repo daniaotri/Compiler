@@ -31,9 +31,14 @@ public class TableSimplifiee<K,V> {
         laTable.put(globalKey, null);
     }
     
+    public void ajoutLigne(String globalKey, Map<K,V> newMap){
+        laTable.put(globalKey, newMap);
+    }
+    
     public void ajoutValeur(String place,K key,V value) throws AlreadyExistsException{
         laTable.get(place).put(key, value);
     }
+    
     
     public void supprimerValeur(String place,K key){
         laTable.get(place).remove(key);

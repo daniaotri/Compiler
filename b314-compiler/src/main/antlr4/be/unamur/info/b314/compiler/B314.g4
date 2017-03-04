@@ -74,9 +74,15 @@ action : MOVE (NORTH | SOUTH | EAST | WEST)
 
 programme: START (varDecl POINtVIRGULE | fctDecl)* TSTART (clauseWhen)* clauseDefault  ;
  
-fctDecl : ID AS FUNCTION PAR_OUVERT (varDecl (VIRGULE varDecl)*)? PAR_FERME DEUXPOINTS (scalar | VOID)(DLOCAL(varDecl POINtVIRGULE)+)? DO (instruction)+ DONE    ;
+fctDecl : ID AS FUNCTION PAR_OUVERT paramDecl? PAR_FERME DEUXPOINTS fctType (DLOCAL(varDecl POINtVIRGULE)+)? DO (instruction)+ DONE    ;
 
+fctType: BOOLEAN 
+        | INTEGER 
+        | SQUARE 
+        | VOID 
+        ;
 
+paramDecl: (varDecl (VIRGULE varDecl)*);
 varDecl : ID AS typeOfVar=type;
 
 clauseWhen: WHEN exprD (DLOCAL (varDecl POINtVIRGULE)+)? DO (instruction)+ DONE   ;
