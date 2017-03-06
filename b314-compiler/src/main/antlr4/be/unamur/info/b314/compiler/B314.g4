@@ -14,15 +14,24 @@ exprD : entier                                                      #exprEntier
         | environnementInt                                          #exprEnvInt
         | environnementBool                                         #exprEnvBool
         | environnementCase                                         #exprEnvCase
-        | NEARBY CROCHET_OUVERT exprD VIRGULE exprD CROCHET_FERME   #enprNearby
         | exprG                                                     #exprDexprG
         | ID PAR_OUVERT (exprD (VIRGULE exprD)*)? PAR_FERME         #FunctionCall
         | PAR_OUVERT exprD PAR_FERME                                #exprPar
-        | NOT exprD                                                 #exprNot
-        | expr1=exprD op=(AND|OR) expr2=exprD                       #exprAndOr
-        | expr1=exprD op=(INF | SUP | EGALE) expr2=exprD            #exprInfSupEg
-        | expr1=exprD op=(PLUS |MOINS) expr2=exprD                  #exprPlusMoins
-        | expr1=exprD op=(MUL|DIV|DIV_ENT) expr2=exprD              #exprMulDiv
+        ;
+
+exprEnt:expr1=exprEnt op=(PLUS |MOINS) expr2=exprEnt                    #exprPlusMoins
+        | expr1=exprEnt op=(MUL|DIV|DIV_ENT) expr2=exprEnt              #exprMulDiv
+        | exprD                                                         #exprEntRec
+        ;
+
+exprBool:NOT exprBool                                                   #exprNot
+        | expr1=exprBool op=(AND|OR) expr2=exprBool                     #exprAndOr
+        | expr3=exprEnt op=(INF | SUP | EGALE) expr4=exprEnt            #exprInfSupEg
+        | exprD                                                         #exprBoolRec
+        ;
+
+exprCase: NEARBY CROCHET_OUVERT exprD VIRGULE exprD CROCHET_FERME   #enprNearby
+        | exprD                                                     #exprCaseRec
         ;
 
 environnementInt: LATITUDE
