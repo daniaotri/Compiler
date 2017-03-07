@@ -5,6 +5,7 @@
  */
 package be.unamur.info.b314.compiler.Visitor;
 
+import TableSimplifiee.ErrorType;
 import be.unamur.info.b314.compiler.B314BaseVisitor;
 import be.unamur.info.b314.compiler.B314Parser;
 
@@ -20,17 +21,11 @@ public class MyVisitorExpression extends B314BaseVisitor<Object>{
     BOOLEAN,
     CASE
     }
-    
-    String TypeGlobal;
     String[] Stack = new String[2];
     int stackPointer = 0;
-    
-    	@Override public Object visitExprNot(B314Parser.ExprNotContext ctx) {             
-            return visitChildren(ctx); 
-        }
 
-
-	@Override public Object visitExprDexprG(B314Parser.ExprDexprGContext ctx) { return visitChildren(ctx); }
+	@Override 
+        public Object visitExprDexprG(B314Parser.ExprDexprGContext ctx) { return visitChildren(ctx); }
 
 	@Override 
         public Object visitExprEnvInt(B314Parser.ExprEnvIntContext ctx) { 
@@ -38,93 +33,71 @@ public class MyVisitorExpression extends B314BaseVisitor<Object>{
             stackPointer++;            
             return null;
         }
-	@Override 
-        public Object visitExprAndOr(B314Parser.ExprAndOrContext ctx) {             
-            return visitChildren(ctx); 
-        }
 
-	@Override public Object visitExprPar(B314Parser.ExprParContext ctx) { return visitChildren(ctx); }
+	@Override 
+        public Object visitExprPar(B314Parser.ExprParContext ctx) { return visitChildren(ctx); }
 
 	@Override 
         public Object visitExprEnvCase(B314Parser.ExprEnvCaseContext ctx) { 
             Stack[stackPointer]= TypeExpression.CASE.name();
-            stackPointer++;
-            
-            return visitEnvironnementCase(ctx.environnementCase()); 
+            stackPointer++;            
+            return null; 
         }
 
 	@Override 
         public Object visitExprEntier(B314Parser.ExprEntierContext ctx) { 
-            TypeGlobal = TypeExpression.INTEGER.name();
             Stack[stackPointer]= TypeExpression.INTEGER.name();
-            stackPointer++;
-            
+            stackPointer++;      
             return null; 
         }
-	@Override public Object visitFunctionCall(B314Parser.FunctionCallContext ctx) { 
+	@Override 
+        public Object visitFunctionCall(B314Parser.FunctionCallContext ctx) { 
             
             return visitChildren(ctx); 
         }
 
-	@Override public Object visitExprInfSupEg(B314Parser.ExprInfSupEgContext ctx) { return visitChildren(ctx); }
-
-	@Override public Object visitExprEnvBool(B314Parser.ExprEnvBoolContext ctx) { 
-            Stack[stackPointer]= TypeExpression.BOOLEAN.name();
-            stackPointer++;
-            
-            return visitEnvironnementBool(ctx.environnementBool()); 
-        }
-
 	@Override 
-        public Object visitExprMulDiv(B314Parser.ExprMulDivContext ctx) {
-            visitChildren(ctx);
-            
-            return null; }
-
-	@Override public Object visitExprPlusMoins(B314Parser.ExprPlusMoinsContext ctx) {
+        public Object visitExprEnvBool(B314Parser.ExprEnvBoolContext ctx) { 
+            Stack[stackPointer]= TypeExpression.BOOLEAN.name();
+            stackPointer++;            
+            return null; 
+        }
+        @Override 
+        public Object visitExprOp(B314Parser.ExprOpContext ctx) {
             int localStackPointer=stackPointer;
             String[] LocalStack = new String[2];
             
             for(int i=0;i==stackPointer;i++){
                 LocalStack[i]= new String(Stack[i]);
-            }
-            
+            }            
             stackPointer=0;
             visitChildren(ctx);
-            if(Stack[0].equals(TypeExpression.INTEGER.name()) && Stack[1].equals(TypeExpression.INTEGER.name())){
-                //OK, CONTINUER
-                
+            String nomOperation = ctx.op.toString();
+            if(visitType(Stack,nomOperation)){
+                //OK, CONTINUER                
                 stackPointer= localStackPointer;
                 for(int i=0;i==stackPointer;i++){
                     Stack[i]= new String(LocalStack[i]);
-                }
-                
-                //Ajout du résultat dans la pile
-                
+                }                
+                //Ajout du résultat dans la pile                
                 Stack[stackPointer]= new String(TypeExpression.INTEGER.name());
                 stackPointer++;
-                   
-            }else{
-                //KO
             }
-                        
-            return null;
+            return null; 
         }
 
-	@Override
-        public Object visitEnvironnementInt(B314Parser.EnvironnementIntContext ctx) { 
-            TypeGlobal = TypeExpression.INTEGER.name();
-            return null; 
-        }
-	@Override 
-        public Object visitEnvironnementBool(B314Parser.EnvironnementBoolContext ctx) { 
-            TypeGlobal = TypeExpression.BOOLEAN.name();
-            return null; 
-        }
-	@Override 
-        public Object visitEnvironnementCase(B314Parser.EnvironnementCaseContext ctx) {
-            TypeGlobal = TypeExpression.CASE.name();
-            return null;
+        private Boolean visitType (String[] pile, String operation){            
+            Boolean result = false;
+            if(operation.equals("not")) result = pile[0].equals(TypeExpression.BOOLEAN.name());
+            if(operation.equals("plus")) result = pile[0].equals(TypeExpression.INTEGER.name()) && pile[1].equals(TypeExpression.INTEGER.name());
+            if(operation.equals("moins")) result = pile[0].equals(TypeExpression.INTEGER.name()) && pile[1].equals(TypeExpression.INTEGER.name());
+            if(operation.equals("mul")) result = pile[0].equals(TypeExpression.INTEGER.name()) && pile[1].equals(TypeExpression.INTEGER.name());
+            if(operation.equals("div")) result = pile[0].equals(TypeExpression.INTEGER.name()) && pile[1].equals(TypeExpression.INTEGER.name());
+            if(operation.equals("divEnt")) result = pile[0].equals(TypeExpression.INTEGER.name()) && pile[1].equals(TypeExpression.INTEGER.name());
+            if(operation.equals("sup")) result = pile[0].equals(TypeExpression.BOOLEAN.name()) && pile[1].equals(TypeExpression.BOOLEAN.name());
+            if(operation.equals("inf")) result = pile[0].equals(TypeExpression.BOOLEAN.name()) && pile[1].equals(TypeExpression.BOOLEAN.name());
+            if(operation.equals("egale")) result = pile[0].equals(TypeExpression.BOOLEAN.name()) && pile[1].equals(TypeExpression.BOOLEAN.name());
+            return result;
         }
 
 }

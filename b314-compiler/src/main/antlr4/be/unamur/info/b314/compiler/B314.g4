@@ -17,11 +17,11 @@ exprD : entier                                                      #exprEntier
         | exprG                                                     #exprDexprG
         | ID PAR_OUVERT (exprD (VIRGULE exprD)*)? PAR_FERME         #FunctionCall
         | PAR_OUVERT exprD PAR_FERME                                #exprPar
-        | NOT exprD                                                 #exprNot
-        | expr1=exprD op=(PLUS|MOINS) expr2=exprD                   #exprPlusMoins
-        | expr1=exprD op=(MUL|DIV|DIV_ENT) expr2=exprD              #exprMulDiv
-        | expr1=exprD op=(AND|OR) expr2=exprD                       #exprAndOr
-        | expr1=exprD op=(INF|SUP|EGALE) expr2=exprD                #exprInfSupEg
+        | NOT exprD                                                 #exprOp
+        | expr1=exprD op=(PLUS|MOINS) expr2=exprD                   #exprOp
+        | expr1=exprD op=(MUL|DIV|DIV_ENT) expr2=exprD              #exprOp
+        | expr1=exprD op=(AND|OR) expr2=exprD                       #exprOp
+        | expr1=exprD op=(INF|SUP|EGALE) expr2=exprD                #exprOp
         | NEARBY CROCHET_OUVERT exprD VIRGULE exprD CROCHET_FERME   #exprNearby
         ;
 
