@@ -72,7 +72,9 @@ action : MOVE (NORTH | SOUTH | EAST | WEST)
         | DO NOTHING   
         ;
 
-programme: START (varDecl POINtVIRGULE | fctDecl)* TSTART (clauseWhen)* clauseDefault  ;
+programme: START progDecl TSTART (clauseWhen)* clauseDefault  ;
+
+progDecl: (varDecl POINtVIRGULE | fctDecl)*;
  
 fctDecl : ID AS FUNCTION PAR_OUVERT paramDecl? PAR_FERME DEUXPOINTS fctType (DLOCAL(varDecl POINtVIRGULE)+)? DO (instruction)+ DONE    ;
 

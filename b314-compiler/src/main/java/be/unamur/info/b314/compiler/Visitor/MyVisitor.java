@@ -81,13 +81,27 @@ public class MyVisitor extends B314BaseVisitor {
       
       String idFonctionUtilise = new String();
       
+      int etapeDeDeclaration=1; // 1= on tient en compte les valeurs globales (struct de données et fonctions)
+                                // 2= on tient en compte les valeurs locales
+
+    @Override
+    public Object visitProgramme(B314Parser.ProgrammeContext ctx) {
+        
+        visitProgDecl(ctx.progDecl());
+        etapeDeDeclaration++;
+        visitProgDecl(ctx.progDecl());
+        
+        return super.visitProgramme(ctx); //To change body of generated methods, choose Tools | Templates.
+    }
+      
       
 
     @Override
     public Object visitVarDecl(B314Parser.VarDeclContext ctx) {
+        
         idUtilise = ctx.getChild(0).getText();
         visitType(ctx.typeOfVar);
-        if(currentIsLocal==false){
+        if(currentIsLocal==false && etapeDeDeclaration==1){
             if(currentIsArray==true){
 
                 switch (typeUtilise) {
@@ -119,7 +133,7 @@ public class MyVisitor extends B314BaseVisitor {
                     break;
                 }
             }
-        }else{ //Cas local
+        }else if (etapeDeDeclaration==2){ //Cas local
             if(currentIsParameter){ //cas des paramètres
                 if (currentIsArray){
                     // KO
@@ -255,12 +269,11 @@ public class MyVisitor extends B314BaseVisitor {
     public Object visitFctDecl(B314Parser.FctDeclContext ctx) {
         
         currentIsLocal=true;
-        idFonctionUtilise = new String(ctx.getChild(0).getText());
         visitChildren(ctx);
-        
-        NombreParametresFonctions.put(ctx.ID().getText(), nombreParametresUtilises);
-        
-        switch (typeFonctionCourante) {
+        if(etapeDeDeclaration==1){
+            NombreParametresFonctions.put(ctx.ID().getText(), nombreParametresUtilises);
+            
+            switch (typeFonctionCourante) {
             case "boolean":
                 TypeFonctions.put(ctx.ID().getText(), FunctionType.BOOLEAN);
                 break;
@@ -273,29 +286,32 @@ public class MyVisitor extends B314BaseVisitor {
             case "void":
                 TypeFonctions.put(ctx.ID().getText(), FunctionType.VOID);
                 break;
-        }
-        
-        
-        
-        TypeParametresFunctions.ajoutLigne(ctx.ID().getText());
-        
-        Set<String> parametersSets = TypeParametresLocaux.keySet();
-        Iterator it= parametersSets.iterator();
-        
-        int i=0;
-        while(it.hasNext()){
-            
-            String str = (String)it.next();
-            Scalar scal = TypeParametresLocaux.get(str);
-
-            try {
-                TypeParametresFunctions.ajoutValeur(ctx.ID().getText(),new Integer(i), scal);
-            } catch (AlreadyExistsException ex) {
-                Logger.getLogger(MyVisitor.class.getName()).log(Level.SEVERE, null, ex);
             }
+        
+            TypeParametresFunctions.ajoutLigne(ctx.ID().getText());
             
-            i++;
+            
+            Set<String> parametersSets = TypeParametresLocaux.keySet();
+            Iterator it= parametersSets.iterator();
+
+            int i=0;
+            while(it.hasNext()){
+
+                String str = (String)it.next();
+                Scalar scal = TypeParametresLocaux.get(str);
+
+                try {
+                    TypeParametresFunctions.ajoutValeur(ctx.ID().getText(),new Integer(i), scal);
+                } catch (AlreadyExistsException ex) {
+                    Logger.getLogger(MyVisitor.class.getName()).log(Level.SEVERE, null, ex);
+                }
+
+                i++;
+            }
         }
+        
+        
+        
         
         nombreParametresUtilises=0;
         currentIsLocal= false;
