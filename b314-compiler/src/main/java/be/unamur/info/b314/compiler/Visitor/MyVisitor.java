@@ -56,6 +56,7 @@ public class MyVisitor extends B314BaseVisitor {
       Map<String, Integer> NombreParametresFonctions = new HashMap<>();
       TableSimplifiee<Integer, Scalar> TypeParametresFunctions = new TableSimplifiee();
       
+      //Les variables locales contiennent les valeurs des variables et tableaux de manière locale. (fonction, when, default)
       Map<String, Scalar> TypeParametresLocaux = new HashMap<>();
       Map<String, Scalar> TypeVariablesLocales = new HashMap<>();
       Map<String, Scalar> TypeTableauxLocaux = new HashMap<>();
@@ -75,8 +76,10 @@ public class MyVisitor extends B314BaseVisitor {
       
       String typeFonctionCourante = new String();
       int nombreParametresFonctionCourante = 0;
-      boolean currentIsFunction=false;
+      boolean currentIsLocal=false;
       boolean currentIsParameter=false;
+      
+      String idFonctionUtilise = new String();
       
       
 
@@ -84,7 +87,7 @@ public class MyVisitor extends B314BaseVisitor {
     public Object visitVarDecl(B314Parser.VarDeclContext ctx) {
         idUtilise = ctx.getChild(0).getText();
         visitType(ctx.typeOfVar);
-        if(currentIsFunction==false){
+        if(currentIsLocal==false){
             if(currentIsArray==true){
 
                 switch (typeUtilise) {
@@ -116,66 +119,62 @@ public class MyVisitor extends B314BaseVisitor {
                     break;
                 }
             }
-        }else{
-            if(currentIsParameter){
-                nombreParametresFonctionCourante++;
+        }else{ //Cas local
+            if(currentIsParameter){ //cas des paramètres
+                if (currentIsArray){
+                    // KO
+                }else{
+                    nombreParametresFonctionCourante++;
 
-                //typeUtilise idUtilise
+                    //typeUtilise idUtilise
 
-                switch (typeUtilise) {
-                case "BOOLEAN":
-                    TypeParametresLocaux.put(idUtilise, Scalar.BOOLEAN);
-                    break;
-                case "INTEGER":
-                    TypeParametresLocaux.put(idUtilise, Scalar.INTEGER);
-                    break;
-                case "SQUARE":
-                    TypeParametresLocaux.put(idUtilise, Scalar.SQUARE);
-                    break;
+                    switch (typeUtilise) {
+                    case "BOOLEAN":
+                        TypeParametresLocaux.put(idUtilise, Scalar.BOOLEAN);
+                        break;
+                    case "INTEGER":
+                        TypeParametresLocaux.put(idUtilise, Scalar.INTEGER);
+                        break;
+                    case "SQUARE":
+                        TypeParametresLocaux.put(idUtilise, Scalar.SQUARE);
+                        break;
+                    }
                 }
-            
                 
 
             }else{
                 if(currentIsArray==true){
 
-                switch (typeUtilise) {
-                case "BOOLEAN":
-                    TypeTableauxLocaux.put(idUtilise, Scalar.BOOLEAN);
-                    
-                    break;
-                case "INTEGER":
-                    TypeTableauxLocaux.put(idUtilise, Scalar.INTEGER);
-                    break;
-                case "SQUARE":
-                    TypeTableauxLocaux.put(idUtilise, Scalar.SQUARE);
-                    break;
-                }
+                    switch (typeUtilise) {
+                    case "BOOLEAN":
+                        TypeTableauxLocaux.put(idUtilise, Scalar.BOOLEAN);
 
-                NombreParametresTableauxLocaux.put(idUtilise, nombreParametresUtilises);
-                nombreParametresUtilises=0;
+                        break;
+                    case "INTEGER":
+                        TypeTableauxLocaux.put(idUtilise, Scalar.INTEGER);
+                        break;
+                    case "SQUARE":
+                        TypeTableauxLocaux.put(idUtilise, Scalar.SQUARE);
+                        break;
+                    }
 
-                currentIsArray=false;
+                    NombreParametresTableauxLocaux.put(idUtilise, nombreParametresUtilises);
+                    nombreParametresUtilises=0;
+
+                    currentIsArray=false;
                 }else{
-                switch (typeUtilise) {
-                case "BOOLEAN":
-                    TypeVariablesLocales.put(idUtilise, Scalar.BOOLEAN);
-                    break;
-                case "INTEGER":
-                    TypeVariablesLocales.put(idUtilise, Scalar.INTEGER);
-                    break;
-                case "SQUARE":
-                    TypeVariablesLocales.put(idUtilise, Scalar.SQUARE);
-                    break;
-                }
-            }
-                
-                
-                
-                
-                
-                
-                
+                    switch (typeUtilise) {
+                    case "BOOLEAN":
+                        TypeVariablesLocales.put(idUtilise, Scalar.BOOLEAN);
+                        break;
+                    case "INTEGER":
+                        TypeVariablesLocales.put(idUtilise, Scalar.INTEGER);
+                        break;
+                    case "SQUARE":
+                        TypeVariablesLocales.put(idUtilise, Scalar.SQUARE);
+                        break;
+                    }
+                }  
             }
         }
         return null;
@@ -186,17 +185,13 @@ public class MyVisitor extends B314BaseVisitor {
         
         visitChildren(ctx);
         
-        if(currentIsFunction){
+        if(currentIsLocal){
             if(currentIsArray){
                 //Renvoyer une erreur
                 currentIsArray=false;
             }
-            
-            
         }
         
-        
-                
         return null;
     }
 
@@ -259,8 +254,8 @@ public class MyVisitor extends B314BaseVisitor {
     @Override
     public Object visitFctDecl(B314Parser.FctDeclContext ctx) {
         
-        currentIsFunction=true;
-        
+        currentIsLocal=true;
+        idFonctionUtilise = new String(ctx.getChild(0).getText());
         visitChildren(ctx);
         
         NombreParametresFonctions.put(ctx.ID().getText(), nombreParametresUtilises);
@@ -302,7 +297,8 @@ public class MyVisitor extends B314BaseVisitor {
             i++;
         }
         
-        currentIsFunction= false;
+        nombreParametresUtilises=0;
+        currentIsLocal= false;
 
         return null;
     }
@@ -321,10 +317,31 @@ public class MyVisitor extends B314BaseVisitor {
         currentIsParameter=true;
         visitChildren(ctx);
         
+        
+        
         currentIsParameter=false;
         
         return null; //To change body of generated methods, choose Tools | Templates.
     }
+
+    @Override
+    public Object visitClauseWhen(B314Parser.ClauseWhenContext ctx) {
+        
+        
+        return super.visitClauseWhen(ctx); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public Object visitClauseDefault(B314Parser.ClauseDefaultContext ctx) {
+        
+        currentIsLocal=true;
+        visitChildren(ctx);
+        currentIsLocal=false;
+        
+        return super.visitClauseDefault(ctx); //To change body of generated methods, choose Tools | Templates.
+    }
+    
+    
     
     
     
