@@ -5,7 +5,6 @@
  */
 package be.unamur.info.b314.compiler.Visitor;
 
-import TableSimplifiee.ErrorType;
 import be.unamur.info.b314.compiler.B314BaseVisitor;
 import be.unamur.info.b314.compiler.B314Parser;
 
@@ -24,8 +23,9 @@ public class MyVisitorExpression extends B314BaseVisitor<Object>{
     String[] Stack = new String[2];
     int stackPointer = 0;
 
-	@Override 
-        public Object visitExprDexprG(B314Parser.ExprDexprGContext ctx) { return visitChildren(ctx); }
+	@Override public Object visitExprDexprG(B314Parser.ExprDexprGContext ctx) { return visitChildren(ctx); }
+        @Override public Object visitFunctionCall(B314Parser.FunctionCallContext ctx) { return visitChildren(ctx); }
+        
 
 	@Override 
         public Object visitExprEnvInt(B314Parser.ExprEnvIntContext ctx) { 
@@ -33,9 +33,10 @@ public class MyVisitorExpression extends B314BaseVisitor<Object>{
             stackPointer++;            
             return null;
         }
-
+        // le type de ExprD depend du type de l'expression entre ()
 	@Override 
-        public Object visitExprPar(B314Parser.ExprParContext ctx) { return visitChildren(ctx); }
+        public Object visitExprPar(B314Parser.ExprParContext ctx) {             
+            return visitChildren(ctx); }
 
 	@Override 
         public Object visitExprEnvCase(B314Parser.ExprEnvCaseContext ctx) { 
@@ -50,11 +51,7 @@ public class MyVisitorExpression extends B314BaseVisitor<Object>{
             stackPointer++;      
             return null; 
         }
-	@Override 
-        public Object visitFunctionCall(B314Parser.FunctionCallContext ctx) { 
-            
-            return visitChildren(ctx); 
-        }
+	
 
 	@Override 
         public Object visitExprEnvBool(B314Parser.ExprEnvBoolContext ctx) { 
