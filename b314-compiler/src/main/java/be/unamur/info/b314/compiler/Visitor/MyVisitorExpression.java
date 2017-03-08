@@ -96,5 +96,38 @@ public class MyVisitorExpression extends B314BaseVisitor<Object>{
             if(operation.equals("egale")) result = pile[0].equals(TypeExpression.BOOLEAN.name()) && pile[1].equals(TypeExpression.BOOLEAN.name());
             return result;
         }
+        @Override 
+        public Object visitSkipppp(B314Parser.SkippppContext ctx) {    
+            return null; 
+        }
+        @Override 
+        public Object visitIf(B314Parser.IfContext ctx) {             
+            return visitChildren(ctx); 
+        }
 
+	@Override 
+        public Object visitIfthenelse(B314Parser.IfthenelseContext ctx) { 
+            return visitChildren(ctx); 
+        }
+
+	@Override 
+        public Object visitWhile(B314Parser.WhileContext ctx) { 
+            return visitChildren(ctx); 
+        }
+
+	@Override 
+        public Object visitAffectation(B314Parser.AffectationContext ctx) { 
+            return visitChildren(ctx); 
+        }
+
+        
+	@Override 
+        public Object visitCompute(B314Parser.ComputeContext ctx) { 
+            return visitChildren(ctx); 
+        }
+
+	@Override 
+        public Object visitNextAction(B314Parser.NextActionContext ctx) { 
+            return visitAction(ctx.action());
+        }
 }
