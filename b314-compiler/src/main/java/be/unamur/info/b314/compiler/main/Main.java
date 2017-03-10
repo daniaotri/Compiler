@@ -2,6 +2,7 @@ package be.unamur.info.b314.compiler.main;
 
 import be.unamur.info.b314.compiler.B314Lexer;
 import be.unamur.info.b314.compiler.B314Parser;
+import be.unamur.info.b314.compiler.scope.Scope;
 import static com.google.common.base.Preconditions.checkArgument;
 import java.io.File;
 import java.io.FileInputStream;
@@ -10,7 +11,6 @@ import org.antlr.v4.runtime.ANTLRInputStream;
 import org.antlr.v4.runtime.CommonTokenStream;
 import org.antlr.v4.runtime.RecognitionException;
 import org.antlr.v4.runtime.misc.ParseCancellationException;
-import org.antlr.v4.runtime.tree.ParseTreeProperty;
 import org.antlr.v4.runtime.tree.ParseTreeWalker;
 import org.apache.commons.cli.CommandLine;
 import org.apache.commons.cli.CommandLineParser;
@@ -22,9 +22,10 @@ import org.apache.commons.cli.ParseException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
         
-import be.unamur.info.b314.compiler.scope.ScopeBase;
-import be.unamur.info.b314.compiler.Visitor.MyVisitor;
-import org.antlr.v4.runtime.tree.ParseTree;
+import be.unamur.info.b314.compiler.scope.SymboleTableFiller;
+import be.unamur.info.demo.compiler.exception.ParsingException;
+import java.io.FileNotFoundException;
+
 
 /**
  *
@@ -40,6 +41,8 @@ public class Main {
     private static final String HELP = "h";
     private static final String INPUT = "i";
     private static final String OUTPUT = "o";
+    
+    private B314Parser parser;
 
     /**
      * Main method launched when starting compiler jar file.
@@ -149,19 +152,32 @@ public class Main {
     /**
      * Compiler Methods, this is where the MAGIC happens !!! \o/
      */
-    private void compile() {
+    private void compile() throws FileNotFoundException, IOException, ParseCancellationException, ParsingException {
+        LOG.debug("Parsing input");
+        B314Parser.ProgrammeContext tree =parse(new ANTLRInputStream(new FileInputStream(inputFile)));
+        Scope x = fillSymTable(tree);  
+    }
     
+    private Scope fillSymTable(B314Parser.ProgrammeContext ctx){
+        SymboleTableFiller filler = new SymboleTableFiller();
+        ParseTreeWalker walker = new ParseTreeWalker(); 
+        walker.walk(filler, ctx);
+        return filler.getScope();
+    }
     
-       // Put your code here !
-       
-        
-        
-        
-       //visitVarDecl();
-        
-        
-        
-       
-    } 
+    private B314Parser.ProgrammeContext parse(ANTLRInputStream input) throws ParseCancellationException, ParsingException{
+        CommonTokenStream tokens = new CommonTokenStream(new B314Lexer(input));
+        parser = new B314Parser(tokens);
+        parser.removeErrorListeners();;
+        MyConsoleErrorListener errorListener = new MyConsoleErrorListener();
+        parser.addErrorListener(errorListener);
+        B314Parser.ProgrammeContext ctx;
+        try{
+            ctx = parser.programme();
+        }catch(RecognitionException e) {throw new ParsingException("Error");}
+        if(errorListener.errorHasBeenReported()) throw new ParsingException("Error while parsing input!");
+        return ctx;
+    }
+    
 
 }

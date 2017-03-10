@@ -18,6 +18,8 @@ public class ScopeBase implements Scope{
     
     /*Le scope parent*/
     Scope Parent;
+    /*le nom du scope*/
+    String name;
     
     /*Liste des tous les scopes inckus dans le scope*/
     ArrayList<Scope> Children;   
@@ -25,12 +27,19 @@ public class ScopeBase implements Scope{
     /*Liste des symboles du scope*/
     Map<String, ArrayList<Symbole>> symboles;
 
-    public ScopeBase(Scope Parent) {
-        this.Parent = Parent;
+    public ScopeBase(String st) {
+        this.name = st;
         this.Children = new ArrayList();
         this.symboles = new LinkedHashMap<>();
+        this.Parent = Parent;
     }
     
+    public ScopeBase(String st,Scope parent) {
+        this.name = st;
+        this.Children = new ArrayList();
+        this.symboles = new LinkedHashMap<>();
+        this.Parent = parent;
+    }
         
     @Override
     public void addChildScope(Scope child) {
@@ -39,7 +48,7 @@ public class ScopeBase implements Scope{
 
     @Override
     public void define(Symbole symbole) {
-        symboles.get(symbole.type).add(symbole);
+        symboles.get(symbole.name).add(symbole);
     }
 
     /**
@@ -49,30 +58,19 @@ public class ScopeBase implements Scope{
      * @return le symbole si existe, sinon null
      */
     @Override
-    public Symbole resolve(String name, String type) {
+    public Symbole resolve(String name) {
         
         /*Recupérer la liste des symboles portant le type donné en paramètre*/
-        ArrayList<Symbole> TSymboles = symboles.get(type);
+        ArrayList<Symbole> TSymboles = symboles.get(name);
         Symbole symbole = null;
         /*Verifier si le symbole a déjà était trouvé*/
         for(int position = 0;position<TSymboles.size();position++){
             if(name.equals(TSymboles.get(position).getName())) symbole = TSymboles.get(position); /*Le symbole est trouvé*/
         }
         if(symbole!=null)return symbole; 
-        if(Parent != null)return Parent.resolve(name, type);
+        if(Parent != null)return Parent.resolve(name);
         return null; /*Ausun symbole trouvé*/
        
-    }
-
-    @Override
-    public String toString() {
-       
-        String result ="";
-        for(final String key:symboles.keySet())
-            for(Symbole symbole: symboles.get(key))
-                result +=" "+key+" : "+symbole.getName()+ ";\n";
-        for(Scope scope: Children) result += scope.toString() +"\n";
-        return result;
     }
 
     /**
@@ -102,10 +100,4 @@ public class ScopeBase implements Scope{
         return symboles;
     }
 
-    @Override
-    public void define(String[] type) {
-        if(type != null) for(String s:type) symboles.put(s, new ArrayList<Symbole>());
-    }
-    
-    
 }

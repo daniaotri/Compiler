@@ -12,36 +12,37 @@ package be.unamur.info.b314.compiler.scope;
  * @author jessi
  */
 public class Symbole {
-    
-   
-    String name;
-    
+       
+    final String name;
     String type;
+    int [] length = {};
+    Boolean isArray;
     
+        
     /**
      * Make a new symbol.
      * 
      * @param name symbol name
-     * @param type symbol type
      */
-    public Symbole(String name, String type) {
+    public Symbole(String name) {
         this.name = name;
-        this.type = type;
+        this.type = null;
     }
-
+    
+    public void setType(Symbole sym, String type){
+        sym.type = type;
+    }
+   
+    public String getType(){
+        return type;
+    }
     public String getName() {
         return name;
     }
-
-    public String getType() {
-        return type;
-    }
-
-    @Override
-    public String toString() {
-        return "Symbole{" + "name=" + name + ", type=" + type + '}';
-    }
- 
-
     
+    public void setArray(int [] length){
+        this.isArray = true;
+        this.type = "tableau";
+        this.length = length;
+    }
 }

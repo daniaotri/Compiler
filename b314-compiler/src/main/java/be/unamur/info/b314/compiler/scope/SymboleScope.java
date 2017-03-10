@@ -22,16 +22,18 @@ public class SymboleScope extends Symbole implements Scope {
     
     /*Liste des symboles du scope*/
     Map<String, ArrayList<Symbole>> symboles;
+    
+    String type;
             
-    public SymboleScope(String name, String type) {
-        super(name, type);
+    public SymboleScope(String name) {
+        super(name);
     }
 
-    public SymboleScope(Scope Parent, String name, String type) {
-        super(name, type);
+    public SymboleScope(Scope Parent, String name) {
+        super(name);
         this.Parent = Parent;
     }
-    
+
     @Override
     public Scope getParent() {
         return Parent;
@@ -49,21 +51,21 @@ public class SymboleScope extends Symbole implements Scope {
 
     @Override
     public void define(Symbole symbole) {
-        symboles.get(symbole.type).add(symbole);
+        symboles.get(symbole.name).add(symbole);
     }
 
     @Override
-    public Symbole resolve(String name, String type) {
+    public Symbole resolve(String name) {
         
         /*Recupérer la liste des symboles portant le type donné en paramètre*/
-        ArrayList<Symbole> TSymboles = symboles.get(type);
+        ArrayList<Symbole> TSymboles = symboles.get(name);
         Symbole symbole = null;
         /*Verifier si le symbole a déjà était trouvé*/
         for(int position = 0;position<TSymboles.size();position++){
             if(name.equals(TSymboles.get(position).getName())) symbole = TSymboles.get(position); /*Le symbole est trouvé*/
         }
         if(symbole!=null)return symbole; 
-        if(Parent != null)return Parent.resolve(name, type);
+        if(Parent != null)return Parent.resolve(name);
         return null; /*Ausun symbole trouvé*/
     }
 
@@ -75,10 +77,8 @@ public class SymboleScope extends Symbole implements Scope {
     public void addChildScope(Scope child) {
         if(!Children.contains(child))Children.add(child);
     }
-
-    @Override
-    public void define(String[] type) {
-       if(type != null) for(String s:type) symboles.put(s, new ArrayList<Symbole>());
+    public void setType(String type){
+        type = type;
     }
     
 }

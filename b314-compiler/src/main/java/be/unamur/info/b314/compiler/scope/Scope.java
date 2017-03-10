@@ -44,15 +44,8 @@ public interface Scope {
     /**
      *
      * @param name le nom du symbole
-     * @param type le type du symbole
      * @return le symbole si existe, sinon null
      */
-    public Symbole resolve(String name, String type);
-    
-    /**
-     *
-     * @param type type des symboles à definir
-     */
-    public void define(String[] type);
-    
+    public Symbole resolve(String name);
+
 }
