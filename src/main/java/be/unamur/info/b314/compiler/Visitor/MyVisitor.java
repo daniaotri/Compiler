@@ -101,9 +101,9 @@ public class MyVisitor extends B314BaseVisitor {
         
         visitProgDecl(ctx.progDecl());
         etapeDeDeclaration++;
-        visitProgDecl(ctx.progDecl());
+        visitChildren(ctx);
         
-        return super.visitProgramme(ctx); //To change body of generated methods, choose Tools | Templates.
+        return null; //To change body of generated methods, choose Tools | Templates.
     }
       
       
