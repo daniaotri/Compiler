@@ -1,6 +1,5 @@
 //package be.unamur.info.b314.compiler.main;
-////Explain
-//        
+//
 //import java.io.File;
 //import org.apache.commons.io.FileUtils;
 //import org.junit.Test;
