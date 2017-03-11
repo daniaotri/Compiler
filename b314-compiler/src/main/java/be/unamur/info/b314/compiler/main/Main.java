@@ -23,9 +23,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
         
 import be.unamur.info.b314.compiler.scope.SymboleTableFiller;
-import be.unamur.info.demo.compiler.exception.ParsingException;
+//import be.unamur.info.demo.compiler.exception.ParsingException;
 import java.io.FileNotFoundException;
-
+import be.unamur.info.b314.compiler.exception.ParsingException;
 
 /**
  *

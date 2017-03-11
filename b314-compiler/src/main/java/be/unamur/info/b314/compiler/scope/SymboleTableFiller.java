@@ -1,18 +1,20 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
+ /* To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+ *and open the template in the editor.
+*/
+
 package be.unamur.info.b314.compiler.scope;
 
 import be.unamur.info.b314.compiler.B314BaseListener;
 import be.unamur.info.b314.compiler.B314Parser;
 import org.antlr.v4.runtime.ParserRuleContext;
 
-/**
- *
- * @author jessi
- */
+
+
+//@author jessi
+
+
+
 public class SymboleTableFiller extends B314BaseListener {
 
     enum Type{
@@ -21,17 +23,17 @@ public class SymboleTableFiller extends B314BaseListener {
     SQUARE,
     VOID
     }
-    
+
     private Scope ScopeParent;
     private Scope scopeEnfant;
-    private int WhichWhen;    
+    private int WhichWhen;
     private boolean isFonction;
-    
+
     private Symbole SymboleActual;
     private SymboleScope SymboleScopeActual;
-    
-    
-    public SymboleTableFiller(){        
+
+
+    public SymboleTableFiller(){
         ScopeParent = new ScopeBase("Programme");
         scopeEnfant = ScopeParent;
         WhichWhen = 1;
@@ -40,7 +42,8 @@ public class SymboleTableFiller extends B314BaseListener {
     public Scope getScope(){
         return ScopeParent;
     }
-    @Override 
+/*
+    @Override
     public void enterFctDecl(B314Parser.FctDeclContext ctx) {
         SymboleScopeActual = new SymboleScope(ScopeParent,ctx.ID().getText());
         ScopeParent = SymboleScopeActual;
@@ -48,100 +51,100 @@ public class SymboleTableFiller extends B314BaseListener {
         isFonction = true;
     }
 
-    @Override 
+    @Override
     public void exitFctDecl(B314Parser.FctDeclContext ctx) {
         scopeEnfant = SymboleScopeActual.getParent();
         isFonction = false;
-    }  
-    @Override 
+    }
+    @Override
     public void enterClauseWhen(B314Parser.ClauseWhenContext ctx) {
         String name = "when"+"__"+WhichWhen;
         Scope scope = new ScopeBase(name,scopeEnfant);
         WhichWhen ++;
-        scopeEnfant = scope;        
+        scopeEnfant = scope;
     }
 
-    @Override 
-    public void exitClauseWhen(B314Parser.ClauseWhenContext ctx) { 
+    @Override
+    public void exitClauseWhen(B314Parser.ClauseWhenContext ctx) {
         scopeEnfant = scopeEnfant.getParent();
     }
 
-    @Override 
+    @Override
     public void enterClauseDefault(B314Parser.ClauseDefaultContext ctx) {
         Scope scope = new ScopeBase("default",scopeEnfant);
         scopeEnfant = scope;
     }
 
-    @Override 
+    @Override
     public void exitClauseDefault(B314Parser.ClauseDefaultContext ctx) {
         scopeEnfant = scopeEnfant.getParent();
     }
-    @Override public void enterParamDecl(B314Parser.ParamDeclContext ctx) { 
+    @Override public void enterParamDecl(B314Parser.ParamDeclContext ctx) {
         isFonction = true;
     }
 
-    @Override 
-    public void exitParamDecl(B314Parser.ParamDeclContext ctx) { 
+    @Override
+    public void exitParamDecl(B314Parser.ParamDeclContext ctx) {
         isFonction = false;
     }
 
-    @Override 
+    @Override
     public void enterVarDecl(B314Parser.VarDeclContext ctx) {
         SymboleActual = new Symbole(ctx.ID().getText());
     }
 
-    @Override 
+    @Override
     public void exitVarDecl(B314Parser.VarDeclContext ctx) {
-        if(SymboleActual.type == null) throw new RuntimeException("Variable non typée");        
+        if(SymboleActual.type == null) throw new RuntimeException("Variable non typée");
         scopeEnfant.define(SymboleActual);
     }
-    @Override 
+    @Override
     public void enterTypeScalar(B314Parser.TypeScalarContext ctx) {
-        
+
     }
 
-    @Override 
+    @Override
     public void exitTypeScalar(B314Parser.TypeScalarContext ctx) {
         if(isFonction) isFonction = false;
     }
 
-    @Override 
+    @Override
     public void enterTypeArray(B314Parser.TypeArrayContext ctx) {
-        
-        
+
+
     }
 
-    
-    @Override 
+
+    @Override
     public void exitTypeArray(B314Parser.TypeArrayContext ctx) {
         if(isFonction) isFonction = false;
     }
 
-    @Override 
-    public void enterScalarBoolean(B314Parser.ScalarBooleanContext ctx) { 
-        if(isFonction)SymboleScopeActual.setType(Type.BOOLEAN.name()); 
+    @Override
+    public void enterScalarBoolean(B314Parser.ScalarBooleanContext ctx) {
+        if(isFonction)SymboleScopeActual.setType(Type.BOOLEAN.name());
         SymboleActual.setType(SymboleActual, Type.BOOLEAN.name());
     }
 
-    @Override 
-    public void enterScalarInteger(B314Parser.ScalarIntegerContext ctx) { 
+    @Override
+    public void enterScalarInteger(B314Parser.ScalarIntegerContext ctx) {
         if(isFonction)SymboleScopeActual.setType(Type.INTEGER.name());
-        SymboleActual.setType(SymboleActual, Type.INTEGER.name());        
+        SymboleActual.setType(SymboleActual, Type.INTEGER.name());
     }
 
-    @Override 
-    public void enterScalarSquare(B314Parser.ScalarSquareContext ctx) { 
+    @Override
+    public void enterScalarSquare(B314Parser.ScalarSquareContext ctx) {
         if(isFonction)SymboleScopeActual.setType(Type.SQUARE.name());
-        SymboleActual.setType(SymboleActual, Type.SQUARE.name());    
+        SymboleActual.setType(SymboleActual, Type.SQUARE.name());
     }
 
-    @Override 
-    public void exitFctTypeVoid(B314Parser.FctTypeVoidContext ctx) { 
+    @Override
+    public void exitFctTypeVoid(B314Parser.FctTypeVoidContext ctx) {
         if(isFonction){
             SymboleScopeActual.setType(Type.VOID.name());
             isFonction = false;
         }
-        else 
+        else
             throw new RuntimeException("erreur de typage");
     }
 
@@ -151,56 +154,56 @@ public class SymboleTableFiller extends B314BaseListener {
         else if(ctx instanceof B314Parser.ExprIntContext) return Type.INTEGER.name();
         else return Type.VOID.name();
     }
-    @Override 
+    @Override
     public void enterFunctionCall(B314Parser.FunctionCallContext ctx) {
         Symbole symbole = scopeEnfant.resolve(ctx.ID().getText());
-        if(symbole.getType() != Type.SQUARE.name()) throw new RuntimeException("ex");      
+        if(symbole.getType() != Type.SQUARE.name()) throw new RuntimeException("ex");
     }
-    
-	@Override 
+
+	@Override
         public void enterExprBoolInfSupEgale(B314Parser.ExprBoolInfSupEgaleContext ctx) {
             String type1 = getTypeContext(ctx.expr1);
             String type2 = getTypeContext(ctx.expr2);
-            if(type1 != Type.BOOLEAN.name() || type2 != Type.BOOLEAN.name()) throw new RuntimeException("ex");          
+            if(type1 != Type.BOOLEAN.name() || type2 != Type.BOOLEAN.name()) throw new RuntimeException("ex");
         }
 
-	@Override public void enterExprBoolNot(B314Parser.ExprBoolNotContext ctx) { 
+	@Override public void enterExprBoolNot(B314Parser.ExprBoolNotContext ctx) {
             String type = getTypeContext(ctx.exprBool());
-            if(type != Type.BOOLEAN.name() ) throw new RuntimeException("ex"); 
+            if(type != Type.BOOLEAN.name() ) throw new RuntimeException("ex");
         }
-	@Override 
+	@Override
         public void exitExprBoolAndOr(B314Parser.ExprBoolAndOrContext ctx) {
             String type1 = getTypeContext(ctx.expr1);
             String type2 = getTypeContext(ctx.expr2);
-            if(type1 != Type.BOOLEAN.name() || type2 != Type.BOOLEAN.name()) throw new RuntimeException("ex");             
+            if(type1 != Type.BOOLEAN.name() || type2 != Type.BOOLEAN.name()) throw new RuntimeException("ex");
         }
 
-	@Override 
+	@Override
         public void enterExprIntPlusMoins(B314Parser.ExprIntPlusMoinsContext ctx) {
             String type1 = getTypeContext(ctx.expr1);
             String type2 = getTypeContext(ctx.expr2);
-            if(type1 != Type.INTEGER.name() || type2 != Type.INTEGER.name()) throw new RuntimeException("ex");          
+            if(type1 != Type.INTEGER.name() || type2 != Type.INTEGER.name()) throw new RuntimeException("ex");
         }
 
         @Override
-        public void enterExprIntMulDiv(B314Parser.ExprIntMulDivContext ctx) { 
+        public void enterExprIntMulDiv(B314Parser.ExprIntMulDivContext ctx) {
             String type1 = getTypeContext(ctx.expr1);
             String type2 = getTypeContext(ctx.expr2);
-            if(type1 != Type.INTEGER.name() || type2 != Type.INTEGER.name()) throw new RuntimeException("ex");            
+            if(type1 != Type.INTEGER.name() || type2 != Type.INTEGER.name()) throw new RuntimeException("ex");
         }
 
-	@Override 
+	@Override
         public void enterExprCaseNearby(B314Parser.ExprCaseNearbyContext ctx) {
-            
+
         }
 
-	@Override 
+	@Override
         public void enterVariableExprG(B314Parser.VariableExprGContext ctx) {
-           
+
         }
 
-	@Override 
-        public void enterTableauExprG(B314Parser.TableauExprGContext ctx) { 
+	@Override
+        public void enterTableauExprG(B314Parser.TableauExprGContext ctx) {
            Symbole symbole = scopeEnfant.resolve(ctx.ID().getText());
            if(symbole.isArray){
                if(symbole.length.length == 1){
@@ -208,16 +211,16 @@ public class SymboleTableFiller extends B314BaseListener {
                    if(getTypeContext(ctx.exprD(0))!= Type.INTEGER.name())throw new RuntimeException("ex");
                    if (ctx.exprD(1)!= null) throw new RuntimeException("ex");
                }
-            
+
            else {
                if((ctx.exprD(0) == null)|| (ctx.exprD(1) == null))throw new RuntimeException("ex");
                if((getTypeContext(ctx.exprD(0))!= Type.INTEGER.name())||(getTypeContext(ctx.exprD(1))!= Type.INTEGER.name()))throw new RuntimeException("ex");
-               }  
+               }
            }
            else if (ctx.exprD(0)!= null) throw new RuntimeException("ex");
         }
-        @Override 
-        public void enterArray(B314Parser.ArrayContext ctx) { 
+        @Override
+        public void enterArray(B314Parser.ArrayContext ctx) {
             int i = Integer.parseInt(ctx.NUMBER(0).getText());
             int j = 0;
             boolean AllGiven = false;
@@ -228,12 +231,12 @@ public class SymboleTableFiller extends B314BaseListener {
             int [] length = {};
             if(AllGiven) length = new int []{i,j};
             else length = new int[]{i};
-            
+
             if(isFonction) SymboleScopeActual.setArray(length);
             SymboleActual.setArray(length);
-                        
+
         }
-        @Override 
+        @Override
         public void enterAffectation(B314Parser.AffectationContext ctx) {
             String name = ctx.exprG().getChild(0).getText();
             if(scopeEnfant.resolve(name) != null){
@@ -243,5 +246,6 @@ public class SymboleTableFiller extends B314BaseListener {
                 if(type != new_type) throw new RuntimeException("Error");
             }
         }
-            
+
+*/
 }
