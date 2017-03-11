@@ -2,6 +2,7 @@ package be.unamur.info.b314.compiler.main;
 
 import be.unamur.info.b314.compiler.B314Lexer;
 import be.unamur.info.b314.compiler.B314Parser;
+import be.unamur.info.b314.compiler.Visitor.MyVisitor;
 import be.unamur.info.b314.compiler.exception.ParsingException;
 import be.unamur.info.b314.compiler.scope.Scope;
 import be.unamur.info.b314.compiler.scope.SymboleTableFiller;
@@ -153,12 +154,28 @@ public class Main {
     /**
      * Compiler Methods, this is where the MAGIC happens !!! \o/
      */
+    
     private void compile() throws FileNotFoundException, IOException, ParseCancellationException, ParsingException {
+        /*
         LOG.debug("Parsing input");
         B314Parser.ProgrammeContext tree =parse(new ANTLRInputStream(new FileInputStream(inputFile)));
         Scope x = fillSymTable(tree);  
+        */
+        LOG.debug("Parsing input");
+        //B314Parser.ProgrammeContext tree =parse(new ANTLRInputStream(new FileInputStream(inputFile)));
+        //System.out.println(tree);
+        //Scope x = fillSymTable(tree); 
+        ANTLRInputStream input =(new ANTLRInputStream(new FileInputStream(inputFile)));
+        CommonTokenStream tokens = new CommonTokenStream(new B314Lexer(input));
+        parser = new B314Parser(tokens);
+        try{
+        B314Parser.ProgrammeContext ctx = parser.programme();
+        MyVisitor visit =  new MyVisitor();
+        Object tree = visit.visitProgramme(ctx);
+        System.out.println(tree.toString());
+        }catch(RecognitionException e) {throw new ParsingException("Error");}
     }
-   
+   /*
     private Scope fillSymTable(B314Parser.ProgrammeContext ctx){
         SymboleTableFiller filler = new SymboleTableFiller();
         ParseTreeWalker walker = new ParseTreeWalker(); 
@@ -179,6 +196,6 @@ public class Main {
         if(errorListener.errorHasBeenReported()) throw new ParsingException("Error while parsing input!");
         return ctx;
     }
-    
+    */
 
 }
