@@ -68,7 +68,9 @@ public class Main {
             } else {
                 // Else start compilation
                 try {
+                    System.out.println(line);
                     main.initialise(line);
+                    System.out.println("jessica1");
                     main.compile(); // Call compile method (to be completed)
                     System.err.println("OK"); // Print OK on stderr
                 } catch (Exception e) {
@@ -165,9 +167,13 @@ public class Main {
         //B314Parser.ProgrammeContext tree =parse(new ANTLRInputStream(new FileInputStream(inputFile)));
         //System.out.println(tree);
         //Scope x = fillSymTable(tree); 
+        System.out.println("jessica2");
         ANTLRInputStream input =(new ANTLRInputStream(new FileInputStream(inputFile)));
+        System.out.println("jessica3");
         CommonTokenStream tokens = new CommonTokenStream(new B314Lexer(input));
+        System.out.println("jessica4");
         parser = new B314Parser(tokens);
+        System.out.println("jessica5");
         try{
         B314Parser.ProgrammeContext ctx = parser.programme();
         MyVisitor visit =  new MyVisitor();
