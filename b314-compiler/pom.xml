@@ -131,12 +131,6 @@
             <artifactId>log4j-core</artifactId>
             <version>${log4j.version}</version>
         </dependency>
-        <dependency>
-            <groupId>be.unamur.info</groupId>
-            <artifactId>demo-compiler</artifactId>
-            <version>1.0.0</version>
-            <type>jar</type>
-        </dependency>
     </dependencies>
     <build>
         <plugins>

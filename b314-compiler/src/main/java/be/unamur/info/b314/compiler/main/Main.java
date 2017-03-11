@@ -2,7 +2,9 @@ package be.unamur.info.b314.compiler.main;
 
 import be.unamur.info.b314.compiler.B314Lexer;
 import be.unamur.info.b314.compiler.B314Parser;
+import be.unamur.info.b314.compiler.exception.ParsingException;
 import be.unamur.info.b314.compiler.scope.Scope;
+import be.unamur.info.b314.compiler.scope.SymboleTableFiller;
 import static com.google.common.base.Preconditions.checkArgument;
 import java.io.File;
 import java.io.FileInputStream;
@@ -22,9 +24,9 @@ import org.apache.commons.cli.ParseException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
         
-import be.unamur.info.b314.compiler.scope.SymboleTableFiller;
+
 import java.io.FileNotFoundException;
-import be.unamur.info.b314.compiler.exception.ParsingException;
+
 
 /**
  *
@@ -156,7 +158,7 @@ public class Main {
         B314Parser.ProgrammeContext tree =parse(new ANTLRInputStream(new FileInputStream(inputFile)));
         Scope x = fillSymTable(tree);  
     }
-    
+   
     private Scope fillSymTable(B314Parser.ProgrammeContext ctx){
         SymboleTableFiller filler = new SymboleTableFiller();
         ParseTreeWalker walker = new ParseTreeWalker(); 
