@@ -1,0 +1,9 @@
+declare and retain
+    x as boolean[42];
+when your turn
+by default
+    do
+        set x[0] to ennemi is west
+        set x[0] to true
+        set x[0] to graal is west
+    done

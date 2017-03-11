@@ -38,12 +38,12 @@ public class NextTest {
 
     @Test
     public void testnext_ok() throws Exception{
-        CompilerTestHelper.launchCompilation("/syntax/next/ok/next_ok.b314", testFolder.newFile(), true, "next: next_ok");
+        CompilerTestHelper.launchCompilation("/syntax/comments/ok/next_ok.b314", testFolder.newFile(), true, "next: next_ok");
     }
 
     @Test
     public void testnext_ko() throws Exception {
-        CompilerTestHelper.launchCompilation("/syntax/next/ko/next_ko.b314", testFolder.newFile(), false, "next: next_ko");
+        CompilerTestHelper.launchCompilation("/syntax/comments/ko/next_ko.b314", testFolder.newFile(), false, "next: next_ko");
     }
     
 }

@@ -1,0 +1,10 @@
+declare and retain
+    x as integer;
+when your turn
+by default
+    do
+        set i to 0
+        set i to i + 1
+        set i to map count - soda count
+        set i to radio count * fruits count + ammo count
+    done

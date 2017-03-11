@@ -1,0 +1,7 @@
+declare and retain
+    x as integer[42];
+when your turn
+by default
+    do
+        set x[0] to longitude
+    done

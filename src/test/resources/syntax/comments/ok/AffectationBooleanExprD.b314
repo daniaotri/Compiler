@@ -1,0 +1,11 @@
+declare and retain
+    x as boolean;
+when your turn
+by default
+    do
+        set x to true
+        set x to x or false and true or false
+        set x to not x and false
+        set x to 5=3 and 3<5 or 2+6=9
+        set x to ennemi is west
+    done

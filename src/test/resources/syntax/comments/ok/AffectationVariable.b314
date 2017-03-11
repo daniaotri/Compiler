@@ -1,0 +1,11 @@
+declare and retain
+x as square;
+y as boolean;
+z as integer;
+when your turn
+by default
+do
+set x to map
+set y to false
+set z to 0
+done

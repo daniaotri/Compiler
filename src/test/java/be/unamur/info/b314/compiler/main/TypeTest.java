@@ -37,22 +37,22 @@ public class TypeTest {
     
     @Test
     public void testAssgnBoolean() throws Exception{       
-        CompilerTestHelper.launchCompilation("/syntax/type/ok/AssignBoolean.b314", testFolder.newFile(), true, "type: AssignBoolean");
+        CompilerTestHelper.launchCompilation("/syntax/comments/ok/AssignBoolean.b314", testFolder.newFile(), true, "type: AssignBoolean");
     }
 
     @Test
     public void testAssignInteger() throws Exception{
-        CompilerTestHelper.launchCompilation("/syntax/type/ok/AssignInteger.b314", testFolder.newFile(), true, "type: AssignInteger");
+        CompilerTestHelper.launchCompilation("/syntax/comments/ok/AssignInteger.b314", testFolder.newFile(), true, "type: AssignInteger");
     }
 
     @Test
     public void testVariableType() throws Exception{
-        CompilerTestHelper.launchCompilation("/syntax/type/ok/VariableType.b314", testFolder.newFile(), true, "type: VariableType");
+        CompilerTestHelper.launchCompilation("/syntax/comments/ok/VariableType.b314", testFolder.newFile(), true, "type: VariableType");
     }
 
     @Test
     public void testArrayType() throws Exception{
-        CompilerTestHelper.launchCompilation("/syntax/type/ok/ArrayType.b314", testFolder.newFile(), true, "type: ArrayType");
+        CompilerTestHelper.launchCompilation("/syntax/comments/ok/ArrayType.b314", testFolder.newFile(), true, "type: ArrayType");
     }
 
          
