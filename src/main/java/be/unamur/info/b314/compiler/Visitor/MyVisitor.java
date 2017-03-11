@@ -13,6 +13,7 @@ import be.unamur.info.b314.compiler.B314Parser;
 import java.util.Map;
 import java.util.HashMap;
 import java.util.Iterator;
+import java.util.List;
 import java.util.Set;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -96,10 +97,36 @@ public class MyVisitor extends B314BaseVisitor {
       int etapeDeDeclaration=1; // 1= on tient en compte les valeurs globales (struct de données et fonctions)
                                 // 2= on tient en compte les valeurs locales
 
+      // les variables d'environnement
+      
+      
     @Override
     public Object visitProgramme(B314Parser.ProgrammeContext ctx) {
         
         visitProgDecl(ctx.progDecl());
+        
+        Map<String, Scalar> VariablesBases = new HashMap();
+        VariablesBases.put("latitude", Scalar.INTEGER);
+        VariablesBases.put("longitude", Scalar.INTEGER);
+        VariablesBases.put("grid size", Scalar.INTEGER);
+        //VariablesBases.put("count", Scalar.INTEGER);
+        VariablesBases.put("life", Scalar.INTEGER);
+        
+        VariablesBases.put("dirt", Scalar.SQUARE);
+        VariablesBases.put("rock", Scalar.SQUARE);
+        VariablesBases.put("vines", Scalar.SQUARE);
+        VariablesBases.put("zombie", Scalar.SQUARE);
+        VariablesBases.put("player", Scalar.SQUARE);
+        VariablesBases.put("ennemi", Scalar.SQUARE);
+        VariablesBases.put("map", Scalar.SQUARE);
+        VariablesBases.put("radio", Scalar.SQUARE);
+        VariablesBases.put("ammo", Scalar.SQUARE);
+        VariablesBases.put("fruits", Scalar.SQUARE);
+        VariablesBases.put("soda", Scalar.SQUARE);
+        
+        
+        TypeVariablesGlobales.putAll(TypeTableauxLocaux);
+        
         etapeDeDeclaration++;
         visitChildren(ctx);
         
@@ -626,7 +653,7 @@ public class MyVisitor extends B314BaseVisitor {
             }
             return visitChildren(ctx); 
         }
-
+        
         
 	@Override 
         public Object visitCompute(B314Parser.ComputeContext ctx) { 
@@ -664,6 +691,7 @@ public class MyVisitor extends B314BaseVisitor {
         
         }else{
             //KO
+            throw new RuntimeException();
         }   
         return super.visitVariableExprG(ctx); //To change body of generated methods, choose Tools | Templates.
     }
@@ -684,6 +712,8 @@ public class MyVisitor extends B314BaseVisitor {
                 stackPointer++;
             }else{
                 //KO
+                
+                throw new RuntimeException();
             }
             
         }

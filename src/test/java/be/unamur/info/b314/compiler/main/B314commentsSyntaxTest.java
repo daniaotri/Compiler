@@ -44,6 +44,11 @@
 //        CompilerTestHelper.launchCompilation("/syntax/comments/ok/empty_multiple_lines_and_tab.b314", testFolder.newFile(), true, "comments: empty_multiple_lines_and_tab");
 //    }
 //
+//    @Test
+//    public void testcomments_fruits_ok_ok() throws Exception{
+//        CompilerTestHelper.launchCompilation("/syntax/comments/ok/fruits_ok.b314", testFolder.newFile(), true, "comments: fruits_ok");
+//    }
+//
 //    //
 //    // Serie comments KO
 //    //
