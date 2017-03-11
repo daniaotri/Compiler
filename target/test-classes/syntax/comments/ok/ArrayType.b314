@@ -1,0 +1,9 @@
+declare and retain
+x as integer[3];
+when your turn
+by default
+do
+set x[0] to 7
+set x[1] to 8
+set x[2] to 9
+done

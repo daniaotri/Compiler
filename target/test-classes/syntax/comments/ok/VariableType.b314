@@ -1,0 +1,15 @@
+declare and retain
+x as integer;
+
+y as boolean;
+
+z as square;
+
+
+when your turn
+by default
+do
+set x to 15
+set y to true
+set z to vines
+done

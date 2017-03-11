@@ -1,0 +1,10 @@
+declare and retain
+    maVar as boolean;
+    monBool as boolean;
+
+when your turn
+by default
+do
+    set monBool to true
+    set maVar to (true or false) and (false or monBool)
+done

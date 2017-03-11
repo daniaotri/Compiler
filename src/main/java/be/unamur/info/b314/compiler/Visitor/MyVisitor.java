@@ -112,7 +112,7 @@ public class MyVisitor extends B314BaseVisitor {
     public Object visitVarDecl(B314Parser.VarDeclContext ctx) {
         
         idUtilise = ctx.getChild(0).getText();
-        visitType(ctx.typeOfVar);
+        visitType(ctx.typeOfVar); 
         if(currentIsLocal==false && etapeDeDeclaration==1){
             if(currentIsArray==true){
                 
