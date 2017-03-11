@@ -44,6 +44,9 @@ public class TableSimplifiee<K,V> {
         laTable.get(place).remove(key);
     }
     
+    public Map<K,V> getMap(String globalKey){
+        return laTable.get(globalKey);
+    }
     
     
     

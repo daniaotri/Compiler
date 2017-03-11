@@ -42,7 +42,7 @@ public class SymboleTableFiller extends B314BaseListener {
     public Scope getScope(){
         return ScopeParent;
     }
-
+/*
     @Override
     public void enterFctDecl(B314Parser.FctDeclContext ctx) {
         SymboleScopeActual = new SymboleScope(ScopeParent,ctx.ID().getText());
@@ -247,5 +247,5 @@ public class SymboleTableFiller extends B314BaseListener {
             }
         }
 
-
+*/
 }
