@@ -45,5 +45,5 @@
 //    public void testnext_ko() throws Exception {
 //        CompilerTestHelper.launchCompilation("/syntax/comments/ko/next_ko.b314", testFolder.newFile(), false, "next: next_ko");
 //    }
-//    
+//   
 //}

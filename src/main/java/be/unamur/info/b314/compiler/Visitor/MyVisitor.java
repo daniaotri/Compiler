@@ -102,7 +102,7 @@ public class MyVisitor extends B314BaseVisitor {
       
     @Override
     public Object visitProgramme(B314Parser.ProgrammeContext ctx) {
-        Map<String, Scalar> VariablesBases = new HashMap();
+        /*Map<String, Scalar> VariablesBases = new HashMap();
         VariablesBases.put("latitude", Scalar.INTEGER);
         VariablesBases.put("longitude", Scalar.INTEGER);
         VariablesBases.put("grid size", Scalar.INTEGER);
@@ -134,8 +134,8 @@ public class MyVisitor extends B314BaseVisitor {
         
         
         etapeDeDeclaration++;
-        visitChildren(ctx);
-        
+        //visitChildren(ctx);
+        */
         return null; //To change body of generated methods, choose Tools | Templates.
     }
       
