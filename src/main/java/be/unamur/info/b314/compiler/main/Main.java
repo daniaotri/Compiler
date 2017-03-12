@@ -6,6 +6,7 @@ import be.unamur.info.b314.compiler.Visitor.MyVisitor;
 import be.unamur.info.b314.compiler.exception.ParsingException;
 import be.unamur.info.b314.compiler.scope.Scope;
 import static com.google.common.base.Preconditions.checkArgument;
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -26,6 +27,7 @@ import org.slf4j.LoggerFactory;
         
 
 import java.io.FileNotFoundException;
+import java.io.FileReader;
 
 
 /**
@@ -177,6 +179,18 @@ public class Main {
         System.out.println(tree.toString());
         }catch(RecognitionException e) {throw new ParsingException("Error");}
         
+        
+        
+        BufferedReader br = new BufferedReader(new FileReader(inputFile));
+        String line = br.readLine();
+        String temp = "";
+        String printprog = "";
+        
+        while(line!=null){
+            temp += line + " ";
+            printprog += line + "\n";
+            line = br.readLine();
+        }
     }
    /*
     private Scope fillSymTable(B314Parser.ProgrammeContext ctx){
