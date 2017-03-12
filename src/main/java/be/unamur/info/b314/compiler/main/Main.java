@@ -164,14 +164,22 @@ public class Main {
         B314Parser.ProgrammeContext tree =parse(new ANTLRInputStream(new FileInputStream(inputFile)));
         Scope x = fillSymTable(tree);  
         */
-        LOG.debug("Parsing input");
-        System.out.println("jessica2");
+        BufferedReader br = new BufferedReader(new FileReader(inputFile));
+        String line = br.readLine();
+        String temp = "";
+        String printprog = "";
+
+        while(line!=null){
+            temp += line + " ";
+            printprog += line + "\n";
+            line = br.readLine();
+        LOG.debug("Parsing input");}
+
         ANTLRInputStream input =(new ANTLRInputStream(new FileInputStream(inputFile)));
-        System.out.println("jessica3");
+
         CommonTokenStream tokens = new CommonTokenStream(new B314Lexer(input));
-        System.out.println("jessica4");
+
         parser = new B314Parser(tokens);
-        System.out.println("jessica5");
         try{
         B314Parser.ProgrammeContext ctx = parser.programme();
         MyVisitor visit =  new MyVisitor();
@@ -181,16 +189,8 @@ public class Main {
         
         
         
-        BufferedReader br = new BufferedReader(new FileReader(inputFile));
-        String line = br.readLine();
-        String temp = "";
-        String printprog = "";
-        
-        while(line!=null){
-            temp += line + " ";
-            printprog += line + "\n";
-            line = br.readLine();
-        }
+
+
     }
    /*
     private Scope fillSymTable(B314Parser.ProgrammeContext ctx){
