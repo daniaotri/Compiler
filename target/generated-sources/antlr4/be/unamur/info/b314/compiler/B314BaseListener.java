@@ -16,25 +16,61 @@ public class B314BaseListener implements B314Listener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterType(B314Parser.TypeContext ctx) { }
+	@Override public void enterTypeScalar(B314Parser.TypeScalarContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitType(B314Parser.TypeContext ctx) { }
+	@Override public void exitTypeScalar(B314Parser.TypeScalarContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterScalar(B314Parser.ScalarContext ctx) { }
+	@Override public void enterTypeArray(B314Parser.TypeArrayContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitScalar(B314Parser.ScalarContext ctx) { }
+	@Override public void exitTypeArray(B314Parser.TypeArrayContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterScalarBoolean(B314Parser.ScalarBooleanContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitScalarBoolean(B314Parser.ScalarBooleanContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterScalarInteger(B314Parser.ScalarIntegerContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitScalarInteger(B314Parser.ScalarIntegerContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterScalarSquare(B314Parser.ScalarSquareContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitScalarSquare(B314Parser.ScalarSquareContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -52,49 +88,157 @@ public class B314BaseListener implements B314Listener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterExprPar(B314Parser.ExprParContext ctx) { }
+	@Override public void enterExprBoolInfSupEgale(B314Parser.ExprBoolInfSupEgaleContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitExprPar(B314Parser.ExprParContext ctx) { }
+	@Override public void exitExprBoolInfSupEgale(B314Parser.ExprBoolInfSupEgaleContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterExprEnvCase(B314Parser.ExprEnvCaseContext ctx) { }
+	@Override public void enterExprBoolNot(B314Parser.ExprBoolNotContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitExprEnvCase(B314Parser.ExprEnvCaseContext ctx) { }
+	@Override public void exitExprBoolNot(B314Parser.ExprBoolNotContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterExprEntier(B314Parser.ExprEntierContext ctx) { }
+	@Override public void enterExprBoolEnvi(B314Parser.ExprBoolEnviContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitExprEntier(B314Parser.ExprEntierContext ctx) { }
+	@Override public void exitExprBoolEnvi(B314Parser.ExprBoolEnviContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterExprNearby(B314Parser.ExprNearbyContext ctx) { }
+	@Override public void enterExprBoolAndOr(B314Parser.ExprBoolAndOrContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitExprNearby(B314Parser.ExprNearbyContext ctx) { }
+	@Override public void exitExprBoolAndOr(B314Parser.ExprBoolAndOrContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterExprIntEntier(B314Parser.ExprIntEntierContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitExprIntEntier(B314Parser.ExprIntEntierContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterExprIntPlusMoins(B314Parser.ExprIntPlusMoinsContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitExprIntPlusMoins(B314Parser.ExprIntPlusMoinsContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterExprIntEnv(B314Parser.ExprIntEnvContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitExprIntEnv(B314Parser.ExprIntEnvContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterExprIntMulDiv(B314Parser.ExprIntMulDivContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitExprIntMulDiv(B314Parser.ExprIntMulDivContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterExprCaseEnv(B314Parser.ExprCaseEnvContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitExprCaseEnv(B314Parser.ExprCaseEnvContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterExprCaseNearby(B314Parser.ExprCaseNearbyContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitExprCaseNearby(B314Parser.ExprCaseNearbyContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterExprDBool(B314Parser.ExprDBoolContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitExprDBool(B314Parser.ExprDBoolContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterExprDInt(B314Parser.ExprDIntContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitExprDInt(B314Parser.ExprDIntContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterExprDCas(B314Parser.ExprDCasContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitExprDCas(B314Parser.ExprDCasContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -124,37 +268,13 @@ public class B314BaseListener implements B314Listener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterExprEnvInt(B314Parser.ExprEnvIntContext ctx) { }
+	@Override public void enterExprPar(B314Parser.ExprParContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitExprEnvInt(B314Parser.ExprEnvIntContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void enterExprEnvBool(B314Parser.ExprEnvBoolContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitExprEnvBool(B314Parser.ExprEnvBoolContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void enterExprOp(B314Parser.ExprOpContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitExprOp(B314Parser.ExprOpContext ctx) { }
+	@Override public void exitExprPar(B314Parser.ExprParContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -364,13 +484,25 @@ public class B314BaseListener implements B314Listener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterFctType(B314Parser.FctTypeContext ctx) { }
+	@Override public void enterFctTypeScalar(B314Parser.FctTypeScalarContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitFctType(B314Parser.FctTypeContext ctx) { }
+	@Override public void exitFctTypeScalar(B314Parser.FctTypeScalarContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterFctTypeVoid(B314Parser.FctTypeVoidContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitFctTypeVoid(B314Parser.FctTypeVoidContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *

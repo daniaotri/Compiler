@@ -11,17 +11,40 @@ import org.antlr.v4.runtime.tree.ParseTreeVisitor;
  */
 public interface B314Visitor<T> extends ParseTreeVisitor<T> {
 	/**
-	 * Visit a parse tree produced by {@link B314Parser#type}.
+	 * Visit a parse tree produced by the {@code typeScalar}
+	 * labeled alternative in {@link B314Parser#type}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitType(B314Parser.TypeContext ctx);
+	T visitTypeScalar(B314Parser.TypeScalarContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link B314Parser#scalar}.
+	 * Visit a parse tree produced by the {@code typeArray}
+	 * labeled alternative in {@link B314Parser#type}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitScalar(B314Parser.ScalarContext ctx);
+	T visitTypeArray(B314Parser.TypeArrayContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code scalarBoolean}
+	 * labeled alternative in {@link B314Parser#scalar}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitScalarBoolean(B314Parser.ScalarBooleanContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code scalarInteger}
+	 * labeled alternative in {@link B314Parser#scalar}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitScalarInteger(B314Parser.ScalarIntegerContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code scalarSquare}
+	 * labeled alternative in {@link B314Parser#scalar}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitScalarSquare(B314Parser.ScalarSquareContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link B314Parser#array}.
 	 * @param ctx the parse tree
@@ -29,33 +52,96 @@ public interface B314Visitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitArray(B314Parser.ArrayContext ctx);
 	/**
-	 * Visit a parse tree produced by the {@code exprPar}
-	 * labeled alternative in {@link B314Parser#exprD}.
+	 * Visit a parse tree produced by the {@code exprBoolInfSupEgale}
+	 * labeled alternative in {@link B314Parser#exprBool}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitExprPar(B314Parser.ExprParContext ctx);
+	T visitExprBoolInfSupEgale(B314Parser.ExprBoolInfSupEgaleContext ctx);
 	/**
-	 * Visit a parse tree produced by the {@code exprEnvCase}
-	 * labeled alternative in {@link B314Parser#exprD}.
+	 * Visit a parse tree produced by the {@code exprBoolNot}
+	 * labeled alternative in {@link B314Parser#exprBool}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitExprEnvCase(B314Parser.ExprEnvCaseContext ctx);
+	T visitExprBoolNot(B314Parser.ExprBoolNotContext ctx);
 	/**
-	 * Visit a parse tree produced by the {@code exprEntier}
-	 * labeled alternative in {@link B314Parser#exprD}.
+	 * Visit a parse tree produced by the {@code exprBoolEnvi}
+	 * labeled alternative in {@link B314Parser#exprBool}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitExprEntier(B314Parser.ExprEntierContext ctx);
+	T visitExprBoolEnvi(B314Parser.ExprBoolEnviContext ctx);
 	/**
-	 * Visit a parse tree produced by the {@code exprNearby}
+	 * Visit a parse tree produced by the {@code exprBoolAndOr}
+	 * labeled alternative in {@link B314Parser#exprBool}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitExprBoolAndOr(B314Parser.ExprBoolAndOrContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code exprIntEntier}
+	 * labeled alternative in {@link B314Parser#exprInt}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitExprIntEntier(B314Parser.ExprIntEntierContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code exprIntPlusMoins}
+	 * labeled alternative in {@link B314Parser#exprInt}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitExprIntPlusMoins(B314Parser.ExprIntPlusMoinsContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code exprIntEnv}
+	 * labeled alternative in {@link B314Parser#exprInt}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitExprIntEnv(B314Parser.ExprIntEnvContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code exprIntMulDiv}
+	 * labeled alternative in {@link B314Parser#exprInt}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitExprIntMulDiv(B314Parser.ExprIntMulDivContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code exprCaseEnv}
+	 * labeled alternative in {@link B314Parser#exprCase}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitExprCaseEnv(B314Parser.ExprCaseEnvContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code exprCaseNearby}
+	 * labeled alternative in {@link B314Parser#exprCase}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitExprCaseNearby(B314Parser.ExprCaseNearbyContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code exprDBool}
 	 * labeled alternative in {@link B314Parser#exprD}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitExprNearby(B314Parser.ExprNearbyContext ctx);
+	T visitExprDBool(B314Parser.ExprDBoolContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code exprDInt}
+	 * labeled alternative in {@link B314Parser#exprD}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitExprDInt(B314Parser.ExprDIntContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code exprDCas}
+	 * labeled alternative in {@link B314Parser#exprD}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitExprDCas(B314Parser.ExprDCasContext ctx);
 	/**
 	 * Visit a parse tree produced by the {@code exprDexprG}
 	 * labeled alternative in {@link B314Parser#exprD}.
@@ -71,26 +157,12 @@ public interface B314Visitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitFunctionCall(B314Parser.FunctionCallContext ctx);
 	/**
-	 * Visit a parse tree produced by the {@code exprEnvInt}
+	 * Visit a parse tree produced by the {@code exprPar}
 	 * labeled alternative in {@link B314Parser#exprD}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitExprEnvInt(B314Parser.ExprEnvIntContext ctx);
-	/**
-	 * Visit a parse tree produced by the {@code exprEnvBool}
-	 * labeled alternative in {@link B314Parser#exprD}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitExprEnvBool(B314Parser.ExprEnvBoolContext ctx);
-	/**
-	 * Visit a parse tree produced by the {@code exprOp}
-	 * labeled alternative in {@link B314Parser#exprD}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitExprOp(B314Parser.ExprOpContext ctx);
+	T visitExprPar(B314Parser.ExprParContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link B314Parser#environnementInt}.
 	 * @param ctx the parse tree
@@ -203,11 +275,19 @@ public interface B314Visitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitFctDecl(B314Parser.FctDeclContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link B314Parser#fctType}.
+	 * Visit a parse tree produced by the {@code fctTypeScalar}
+	 * labeled alternative in {@link B314Parser#fctType}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitFctType(B314Parser.FctTypeContext ctx);
+	T visitFctTypeScalar(B314Parser.FctTypeScalarContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code fctTypeVoid}
+	 * labeled alternative in {@link B314Parser#fctType}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitFctTypeVoid(B314Parser.FctTypeVoidContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link B314Parser#paramDecl}.
 	 * @param ctx the parse tree
