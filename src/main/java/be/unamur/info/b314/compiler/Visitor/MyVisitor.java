@@ -1,5 +1,5 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
+//*
+ /* To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
@@ -40,7 +40,7 @@ public class MyVisitor extends B314BaseVisitor {
     CASE
     }
     
-    String[] Stack = new String[2];
+    String[] Stack = new String[10000];
     int stackPointer = 0;
     
     
@@ -480,7 +480,7 @@ public class MyVisitor extends B314BaseVisitor {
             TypeVariablesLocales.clear();
         
         
-        return super.visitClauseWhen(ctx); //To change body of generated methods, choose Tools | Templates.
+        return null; //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
@@ -495,7 +495,7 @@ public class MyVisitor extends B314BaseVisitor {
             TypeTableauxLocaux.clear();
             TypeVariablesLocales.clear();
         
-        return super.visitClauseDefault(ctx); //To change body of generated methods, choose Tools | Templates.
+        return null; //To change body of generated methods, choose Tools | Templates.
     }
     
 	@Override public Object visitExprDexprG(B314Parser.ExprDexprGContext ctx) {
@@ -514,27 +514,15 @@ public class MyVisitor extends B314BaseVisitor {
                     for(int i=0; i<nombreParametresLocaux;i++){
                         Scalar parametreReel = parametresAppeles.get(i);
                         
-                        int localStackPointer=stackPointer;
-                        String[] LocalStack = new String[2];
-
-                        for(int j=0;i==stackPointer;j++){
-                            LocalStack[i]= new String(Stack[i]);
-                        } 
-                        stackPointer=0;
-                        
                         visit(ctx.exprD(i));
                         
-                        if(Stack[0].equals(parametreReel.name())){
+                        if(Stack[stackPointer-1].equals(parametreReel.name())){
                             //OK
+                            stackPointer--;
                         }else{
                             //KO
-                            throw new RuntimeException("existe déjà dans la table");
+                            throw new RuntimeException("Problème de paramètres de fonctions");
                         }
-                        
-                        for(int j=0;i==localStackPointer;j++){
-                            Stack[i]= new String(LocalStack[i]);
-                        } 
-                        
                     }
                     
                     //Vérifier le nombre de paramètres.
@@ -542,11 +530,15 @@ public class MyVisitor extends B314BaseVisitor {
                     if(nombreParametresLocaux!=nombreParametresInstance){
                         throw new RuntimeException("mauvais nombre de parametre de fonction utilisé");
                     }
+                }else{
+                    throw new RuntimeException("Fonction non existante utilisée");
                 }
                 
             Stack[stackPointer]=TypeFonctions.get(ctx.ID().getText()).name();
+            stackPointer++;
             
-            return visitChildren(ctx); }
+            return null; 
+        }
         
 
 	@Override 
@@ -558,7 +550,7 @@ public class MyVisitor extends B314BaseVisitor {
         // le type de ExprD depend du type de l'expression entre ()
 	@Override 
         public Object visitExprPar(B314Parser.ExprParContext ctx) {             
-            return visitChildren(ctx); }
+            return null; }
 
 	@Override 
         public Object visitExprEnvCase(B314Parser.ExprEnvCaseContext ctx) { 
@@ -581,27 +573,18 @@ public class MyVisitor extends B314BaseVisitor {
             stackPointer++;            
             return null; 
         }
+        
         @Override 
         public Object visitExprOp(B314Parser.ExprOpContext ctx) {
-            int localStackPointer=stackPointer;
-            String[] LocalStack = new String[2];
             
-            for(int i=0;i==stackPointer;i++){
-                LocalStack[i]= new String(Stack[i]);
-            }            
-            
-            stackPointer=0;
             visitChildren(ctx);
+            
             String nomOperation = ctx.op.toString();
             
-            if(visitType(Stack,nomOperation)){
+            if(visitType(nomOperation)){
                 //OK, CONTINUER     
-                
-                //Remise des valeurs initiales de la pile.
-                stackPointer= localStackPointer;
-                for(int i=0;i==localStackPointer;i++){
-                    Stack[i]= new String(LocalStack[i]);
-                }                
+                stackPointer=stackPointer-2;
+                               
                 //Ajout du résultat dans la pile 
                 
                 if(nomOperation.equals("or") || nomOperation.equals("and") || nomOperation.equals("not")){
@@ -622,49 +605,35 @@ public class MyVisitor extends B314BaseVisitor {
     @Override
     public Object visitExprNearby(B314Parser.ExprNearbyContext ctx) {
             
-
-            int localStackPointer=stackPointer;
-            String[] LocalStack = new String[2];
-            
-            for(int i=0;i==stackPointer;i++){
-                LocalStack[i]= new String(Stack[i]);
-            } 
-            
-            //Partie principale de la méthode.
-            stackPointer=0;
             visitChildren(ctx);
             
-            if((!Stack[0].equals(TypeExpression.INTEGER.name())) || (!Stack[1].equals(TypeExpression.INTEGER.name()))){
+            if((!Stack[stackPointer-2].equals(TypeExpression.INTEGER.name())) || (!Stack[stackPointer-1].equals(TypeExpression.INTEGER.name()))){
                 throw new RuntimeException("Les parametres de tableaux doivent être entiers");
             }
+            stackPointer=stackPointer-2;
+                   
+                //Ajout du résultat dans la pile  
             
-            //Remise des valeurs initiales de la pile
-            
-            stackPointer= localStackPointer;
-                for(int i=0;i==localStackPointer;i++){
-                    Stack[i]= new String(LocalStack[i]);
-                }                
-                //Ajout du résultat dans la pile                
                 Stack[stackPointer]= new String(TypeExpression.CASE.name());
                 stackPointer++;
         return null; //To change body of generated methods, choose Tools | Templates.
     }
-        
+       
         
 
-        private Boolean visitType (String[] pile, String operation){            
+        private Boolean visitType (String operation){            
             Boolean result = false;
-            if(operation.equals("not")) result = pile[0].equals(TypeExpression.BOOLEAN.name());
-            if(operation.equals("plus")) result = pile[0].equals(TypeExpression.INTEGER.name()) && pile[1].equals(TypeExpression.INTEGER.name());
-            if(operation.equals("moins")) result = pile[0].equals(TypeExpression.INTEGER.name()) && pile[1].equals(TypeExpression.INTEGER.name());
-            if(operation.equals("mul")) result = pile[0].equals(TypeExpression.INTEGER.name()) && pile[1].equals(TypeExpression.INTEGER.name());
-            if(operation.equals("div")) result = pile[0].equals(TypeExpression.INTEGER.name()) && pile[1].equals(TypeExpression.INTEGER.name());
-            if(operation.equals("divEnt")) result = pile[0].equals(TypeExpression.INTEGER.name()) && pile[1].equals(TypeExpression.INTEGER.name());
-            if(operation.equals("sup")) result = pile[0].equals(TypeExpression.INTEGER.name()) && pile[1].equals(TypeExpression.INTEGER.name());
-            if(operation.equals("inf")) result = pile[0].equals(TypeExpression.INTEGER.name()) && pile[1].equals(TypeExpression.INTEGER.name());
-            if(operation.equals("egale")) result = pile[0].equals(TypeExpression.INTEGER.name()) && pile[1].equals(TypeExpression.INTEGER.name());
-            if(operation.equals("and")) result = pile[0].equals(TypeExpression.BOOLEAN.name()) && pile[1].equals(TypeExpression.BOOLEAN.name());
-            if(operation.equals("or")) result = pile[0].equals(TypeExpression.BOOLEAN.name()) && pile[1].equals(TypeExpression.BOOLEAN.name());
+            if(operation.equals("not")) result = Stack[stackPointer-1].equals(TypeExpression.BOOLEAN.name());
+            if(operation.equals("plus")) result = Stack[stackPointer-2].equals(TypeExpression.INTEGER.name()) && Stack[stackPointer-1].equals(TypeExpression.INTEGER.name());
+            if(operation.equals("moins")) result = Stack[stackPointer-2].equals(TypeExpression.INTEGER.name()) && Stack[stackPointer-1].equals(TypeExpression.INTEGER.name());
+            if(operation.equals("mul")) result = Stack[stackPointer-2].equals(TypeExpression.INTEGER.name()) && Stack[stackPointer-1].equals(TypeExpression.INTEGER.name());
+            if(operation.equals("div")) result = Stack[stackPointer-2].equals(TypeExpression.INTEGER.name()) && Stack[stackPointer-1].equals(TypeExpression.INTEGER.name());
+            if(operation.equals("divEnt")) result = Stack[stackPointer-2].equals(TypeExpression.INTEGER.name()) && Stack[stackPointer-1].equals(TypeExpression.INTEGER.name());
+            if(operation.equals("sup")) result = Stack[stackPointer-2].equals(TypeExpression.INTEGER.name()) && Stack[stackPointer-1].equals(TypeExpression.INTEGER.name());
+            if(operation.equals("inf")) result = Stack[stackPointer-2].equals(TypeExpression.INTEGER.name()) && Stack[stackPointer-1].equals(TypeExpression.INTEGER.name());
+            if(operation.equals("egale")) result = Stack[stackPointer-2].equals(TypeExpression.INTEGER.name()) && Stack[stackPointer-1].equals(TypeExpression.INTEGER.name());
+            if(operation.equals("and")) result = Stack[stackPointer-2].equals(TypeExpression.BOOLEAN.name()) && Stack[stackPointer-1].equals(TypeExpression.BOOLEAN.name());
+            if(operation.equals("or")) result = Stack[stackPointer-2].equals(TypeExpression.BOOLEAN.name()) && Stack[stackPointer-1].equals(TypeExpression.BOOLEAN.name());
             return result;
         }
         @Override 
@@ -675,12 +644,19 @@ public class MyVisitor extends B314BaseVisitor {
         public Object visitIf(B314Parser.IfContext ctx) { 
             if(etapeDeDeclaration==2){
                 visit(ctx.exprD());
-                if(!Stack[0].equals("BOOLEAN")){
+                if(!Stack[stackPointer-1].equals("BOOLEAN")){
                    //Envoyer une exception 
                     throw new RuntimeException("existe déjà dans la table");
                 }
-                stackPointer=0;
-                return visitChildren(ctx); 
+                stackPointer--;
+                
+                // On visite les instructions
+                
+                int nombreInstructions = ctx.getChildCount()-3;
+                for(int i=0;i==nombreInstructions-1;i++){
+                    visit(ctx.instruction(i));
+                }
+                
             }
             
             return null;
@@ -691,12 +667,19 @@ public class MyVisitor extends B314BaseVisitor {
         public Object visitIfthenelse(B314Parser.IfthenelseContext ctx) { 
             if(etapeDeDeclaration==2){
                 visit(ctx.exprD());
-                if(!Stack[0].equals("BOOLEAN")){
+                if(!Stack[stackPointer-1].equals("BOOLEAN")){
                    //Envoyer une exception 
                     throw new RuntimeException("existe déjà dans la table");
                 }
+                stackPointer--;
+                
+                //On visite les instructions
+                int nombreInstructions = ctx.getChildCount()-5;
+                for(int i=0;i==nombreInstructions-1;i++){
+                    visit(ctx.instruction(i));
+                }
             }
-            stackPointer=0;
+            
             return null; 
         }
 
@@ -704,12 +687,20 @@ public class MyVisitor extends B314BaseVisitor {
         public Object visitWhile(B314Parser.WhileContext ctx) {
             if(etapeDeDeclaration==2){
                 visit(ctx.exprD());
-                if(!Stack[0].equals("BOOLEAN")){
+                if(!Stack[stackPointer-1].equals("BOOLEAN")){
                    //Envoyer une exception 
                     throw new RuntimeException("existe déjà dans la table");
                 }
+                stackPointer--;
+                
+                //On visite les instructions
+                
+                int nombreInstructions = ctx.getChildCount()-3;
+                for(int i=0;i==nombreInstructions-1;i++){
+                    visit(ctx.instruction(i));
+                }
             }
-            stackPointer=0;
+            
             return null; 
             
         }
@@ -718,16 +709,18 @@ public class MyVisitor extends B314BaseVisitor {
         public Object visitAffectation(B314Parser.AffectationContext ctx) { 
             if(etapeDeDeclaration==2){
                 visit(ctx.exprG());
-                String typeExprG= new String(Stack[0]);
+                String typeExprG= new String(Stack[stackPointer-1]);
+                stackPointer--;
 
                 visit(ctx.exprD());
-                String typeExprD = new String(Stack[0]);
+                String typeExprD = new String(Stack[stackPointer-1]);
+                stackPointer--;
+                
                 if(!typeExprG.equals(typeExprD)){
                    //Envoyer une exception 
                     throw new RuntimeException("existe déjà dans la table");
                 }
             }
-            stackPointer=0;
             return null; 
         }
         
@@ -737,7 +730,7 @@ public class MyVisitor extends B314BaseVisitor {
             if(etapeDeDeclaration==2){
                 visitChildren(ctx);
             }
-            stackPointer=0;  
+            stackPointer--;  
             return null; 
         }
 
@@ -755,25 +748,23 @@ public class MyVisitor extends B314BaseVisitor {
                 Stack[stackPointer]=scalartype.name();
                 stackPointer++;
             }
-            
-        }else if(currentIsFunction){
-                if(TypeParametresLocaux.containsKey(ctx.getText())){
+            else if(currentIsFunction && TypeParametresLocaux.containsKey(ctx.getText())){
                 Scalar scalartype = TypeParametresLocaux.get(ctx.getText());
                 Stack[stackPointer]=scalartype.name();
                 stackPointer++;
             }
-        }else if(TypeVariablesGlobales.containsKey(ctx.getText())){
+            else if(TypeVariablesGlobales.containsKey(ctx.getText())){
                 Scalar scalartype = TypeVariablesGlobales.get(ctx.getText());
                 Stack[stackPointer]=scalartype.name();
                 stackPointer++;
-        
-        }else{
+            }else{
             //KO
             throw new RuntimeException();
-        }   
-        return super.visitVariableExprG(ctx); //To change body of generated methods, choose Tools | Templates.
+            }   
+        return null; //To change body of generated methods, choose Tools | Templates.
+        }
+        return null;
     }
-    
     
 
     @Override
@@ -786,12 +777,9 @@ public class MyVisitor extends B314BaseVisitor {
         if(etapeDeDeclaration==2){
             if(TypeTableauxLocaux.containsKey(ctx.ID().getText())){
                 scalartype = TypeTableauxLocaux.get(ctx.getText());
-                
                 nombreParametresReel = NombreParametresTableauxLocaux.get(ctx.ID().getText());
             }else if(TypeTableauxGlobaux.containsKey(ctx.ID().getText())){
                 scalartype = TypeTableauxGlobaux.get(ctx.getText());
-                Stack[stackPointer]=scalartype.name();
-                stackPointer++;
                 nombreParametresReel = NombreParametresTableauxGlobaux.get(ctx.ID().getText());
             }else{
                 //KO
@@ -800,15 +788,6 @@ public class MyVisitor extends B314BaseVisitor {
             }
                 //Vérification de type des paramètres
         
-            int localStackPointer=stackPointer;
-            String[] LocalStack = new String[2];
-            
-            for(int i=0;i==stackPointer;i++){
-                LocalStack[i]= new String(Stack[i]);
-            } 
-            
-            //Partie principale de la méthode.
-            stackPointer=0;
             visitChildren(ctx);
             
             if(nombreParametresReel==1){
@@ -816,27 +795,20 @@ public class MyVisitor extends B314BaseVisitor {
                 if(ctx.getChildCount()!=4){
                     throw new RuntimeException("Mauvais nombre de paramètres utilisés d'un tableau");
                 }
-                if(!Stack[0].equals(TypeExpression.INTEGER.name())){
+                if(!Stack[stackPointer-1].equals(TypeExpression.INTEGER.name())){
                     throw new RuntimeException("Les parametres de tableaux doivent être entiers");
                 }
+                stackPointer--;
             }else{
                 if(ctx.getChildCount()!=6){
                     throw new RuntimeException("Mauvais nombre de paramètres utilisés d'un tableau");
                 }
-                if((!Stack[0].equals(TypeExpression.INTEGER.name())) || (!Stack[1].equals(TypeExpression.INTEGER.name()))){
+                if((!Stack[stackPointer-1].equals(TypeExpression.INTEGER.name())) || (!Stack[stackPointer-2].equals(TypeExpression.INTEGER.name()))){
                     throw new RuntimeException("Les parametres de tableaux doivent être entiers");
-                }
-                
+                    
+                }stackPointer--;
             }
             
-            
-            
-            //Remise des valeurs initiales de la pile
-            
-            stackPointer= localStackPointer;
-                for(int i=0;i==localStackPointer;i++){
-                    Stack[i]= new String(LocalStack[i]);
-                }   
                 
             Stack[stackPointer]=scalartype.name();
             stackPointer++;
@@ -850,6 +822,4 @@ public class MyVisitor extends B314BaseVisitor {
            
 }
       
-    
-    
     
