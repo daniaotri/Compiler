@@ -172,8 +172,9 @@ public class Main {
         while(line!=null){
             temp += line + " ";
             printprog += line + "\n";
-            line = br.readLine();
-        LOG.debug("Parsing input");}
+            line = br.readLine();}
+        System.out.println(printprog);
+        LOG.debug("Parsing input");
 
         ANTLRInputStream input =(new ANTLRInputStream(new FileInputStream(inputFile)));
 
