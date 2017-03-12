@@ -55,7 +55,7 @@ environnementCase: DIRT
 exprG : ID                                                              #variableExprG
          | ID CROCHET_OUVERT exprD (VIRGULE exprD)? CROCHET_FERME      #tableauExprG
         ;
-entier : (MOINS)? DIGIT(DIGIT)*  ;
+entier : (MOINS)?NUMBER  ;
 
 instruction : SKIPPPP                                                   #skipppp
               | IF exprD THEN (instruction)+ DONE                       #if
