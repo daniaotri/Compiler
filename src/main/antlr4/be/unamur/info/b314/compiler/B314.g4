@@ -4,7 +4,8 @@ grammar B314;
 import B314Words;
 
 type : scalar       
-        | array     
+        | array
+        | VOID
         ;
 
 

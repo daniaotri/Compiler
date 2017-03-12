@@ -11,7 +11,7 @@ TSTART: 'when your turn';
 //2. VarDecl
 
 AS: 'as';
-ID: LETTER (LETTER | DIGIT)* ;
+
 
 ///Par rapport aux grosses structures///
 
@@ -129,7 +129,7 @@ PAR_FERME: ')';
 
 
 
-
+ID: LETTER (LETTER | DIGIT)* ;
 NUMBER: (DIGIT)+;
 
 fragment LETTER: 'A'..'Z' | 'a'..'z' ;
