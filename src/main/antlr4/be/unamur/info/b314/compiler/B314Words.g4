@@ -39,6 +39,7 @@ SET: 'set';
 COMPUTE: 'compute';
 ELSE: 'else';
 TO: 'to';
+SKIPPPP:'skip';
 
 ///Par rapport aux définitions de types///==TYPE VARIABLES VALEURS puis OPERATIONS
 
