@@ -102,30 +102,36 @@ public class MyVisitor extends B314BaseVisitor {
       
     @Override
     public Object visitProgramme(B314Parser.ProgrammeContext ctx) {
-        
-        visitProgDecl(ctx.progDecl());
-        
         Map<String, Scalar> VariablesBases = new HashMap();
         VariablesBases.put("latitude", Scalar.INTEGER);
         VariablesBases.put("longitude", Scalar.INTEGER);
         VariablesBases.put("grid size", Scalar.INTEGER);
-        //VariablesBases.put("count", Scalar.INTEGER);
+        VariablesBases.put("map count", Scalar.INTEGER);
+        VariablesBases.put("radio count", Scalar.INTEGER);
+        VariablesBases.put("ammo count", Scalar.INTEGER);
+        VariablesBases.put("fruits count", Scalar.INTEGER);
+        VariablesBases.put("soda count", Scalar.INTEGER);
+        
         VariablesBases.put("life", Scalar.INTEGER);
         
-        VariablesBases.put("dirt", Scalar.SQUARE);
-        VariablesBases.put("rock", Scalar.SQUARE);
-        VariablesBases.put("vines", Scalar.SQUARE);
-        VariablesBases.put("zombie", Scalar.SQUARE);
-        VariablesBases.put("player", Scalar.SQUARE);
-        VariablesBases.put("ennemi", Scalar.SQUARE);
-        VariablesBases.put("map", Scalar.SQUARE);
-        VariablesBases.put("radio", Scalar.SQUARE);
-        VariablesBases.put("ammo", Scalar.SQUARE);
-        VariablesBases.put("fruits", Scalar.SQUARE);
-        VariablesBases.put("soda", Scalar.SQUARE);
+        VariablesBases.put("ennemi is north", Scalar.BOOLEAN);
+        VariablesBases.put("ennemi is east", Scalar.BOOLEAN);
+        VariablesBases.put("ennemi is south", Scalar.BOOLEAN);
+        VariablesBases.put("ennemi is west", Scalar.BOOLEAN);
+        
+        VariablesBases.put("graal is north", Scalar.BOOLEAN);
+        VariablesBases.put("graal is east", Scalar.BOOLEAN);
+        VariablesBases.put("graal is south", Scalar.BOOLEAN);
+        VariablesBases.put("graal is west", Scalar.BOOLEAN);
         
         
         TypeVariablesGlobales.putAll(TypeTableauxLocaux);
+        TypeTableauxGlobaux.put("nearby", Scalar.SQUARE);
+        NombreParametresTableauxGlobaux.put("nearby", 2);
+        
+        visitProgDecl(ctx.progDecl());
+        
+        
         
         etapeDeDeclaration++;
         visitChildren(ctx);
@@ -139,7 +145,7 @@ public class MyVisitor extends B314BaseVisitor {
     public Object visitVarDecl(B314Parser.VarDeclContext ctx) {
         
         idUtilise = ctx.getChild(0).getText();
-        visitType(ctx.typeOfVar); 
+        visitType(ctx.typeOfVar);
         if(currentIsLocal==false && etapeDeDeclaration==1){
             if(currentIsArray==true){
                 
@@ -289,8 +295,6 @@ public class MyVisitor extends B314BaseVisitor {
                 break;
         }
         
-        //Ajout recent
-        if(currentIsFunction )currentIsFunction= false;
         
         
         return null;
@@ -325,9 +329,6 @@ public class MyVisitor extends B314BaseVisitor {
         }
         
         currentIsArray=true;
-        
-        //Ajout recent
-        if(currentIsFunction )currentIsFunction= false;
            
         
         return null;
@@ -498,11 +499,11 @@ public class MyVisitor extends B314BaseVisitor {
     }
     
 	@Override public Object visitExprDexprG(B314Parser.ExprDexprGContext ctx) {
+            visitChildren(ctx);
             
-            
-            return visitChildren(ctx); }
+            return null; }
         @Override public Object visitFunctionCall(B314Parser.FunctionCallContext ctx) {
-            if(etapeDeDeclaration==2){
+            
                 //Vérifier si la fonction existe
                 if(TypeFonctions.containsKey(ctx.ID().getText())){
                     //OK
@@ -512,17 +513,38 @@ public class MyVisitor extends B314BaseVisitor {
                     
                     for(int i=0; i<nombreParametresLocaux;i++){
                         Scalar parametreReel = parametresAppeles.get(i);
+                        
+                        int localStackPointer=stackPointer;
+                        String[] LocalStack = new String[2];
+
+                        for(int j=0;i==stackPointer;j++){
+                            LocalStack[i]= new String(Stack[i]);
+                        } 
+                        stackPointer=0;
+                        
                         visit(ctx.exprD(i));
+                        
                         if(Stack[0].equals(parametreReel.name())){
                             //OK
                         }else{
                             //KO
                             throw new RuntimeException("existe déjà dans la table");
                         }
+                        
+                        for(int j=0;i==localStackPointer;j++){
+                            Stack[i]= new String(LocalStack[i]);
+                        } 
+                        
+                    }
+                    
+                    //Vérifier le nombre de paramètres.
+                    int nombreParametresInstance = ((ctx.getChildCount()-3)/2)+1;
+                    if(nombreParametresLocaux!=nombreParametresInstance){
+                        throw new RuntimeException("mauvais nombre de parametre de fonction utilisé");
                     }
                 }
                 
-            }
+            Stack[stackPointer]=TypeFonctions.get(ctx.ID().getText()).name();
             
             return visitChildren(ctx); }
         
@@ -567,26 +589,68 @@ public class MyVisitor extends B314BaseVisitor {
             for(int i=0;i==stackPointer;i++){
                 LocalStack[i]= new String(Stack[i]);
             }            
+            
             stackPointer=0;
             visitChildren(ctx);
             String nomOperation = ctx.op.toString();
+            
             if(visitType(Stack,nomOperation)){
-                //OK, CONTINUER                
+                //OK, CONTINUER     
+                
+                //Remise des valeurs initiales de la pile.
                 stackPointer= localStackPointer;
-                for(int i=0;i==stackPointer;i++){
+                for(int i=0;i==localStackPointer;i++){
                     Stack[i]= new String(LocalStack[i]);
                 }                
-                //Ajout du résultat dans la pile                
-                Stack[stackPointer]= new String(TypeExpression.INTEGER.name());
+                //Ajout du résultat dans la pile 
+                
+                if(nomOperation.equals("or") || nomOperation.equals("and") || nomOperation.equals("not")){
+                    Stack[stackPointer]= new String(TypeExpression.BOOLEAN.name());
+                }else{
+                    Stack[stackPointer]= new String(TypeExpression.INTEGER.name());
+                }
+                
                 stackPointer++;
+                
             }else{
                 throw new RuntimeException("existe déjà dans la table");
             }
            
             return null; 
-            //Ajout recent
-            
         }
+
+    @Override
+    public Object visitExprNearby(B314Parser.ExprNearbyContext ctx) {
+            
+
+            int localStackPointer=stackPointer;
+            String[] LocalStack = new String[2];
+            
+            for(int i=0;i==stackPointer;i++){
+                LocalStack[i]= new String(Stack[i]);
+            } 
+            
+            //Partie principale de la méthode.
+            stackPointer=0;
+            visitChildren(ctx);
+            
+            if((!Stack[0].equals(TypeExpression.INTEGER.name())) || (!Stack[1].equals(TypeExpression.INTEGER.name()))){
+                throw new RuntimeException("Les parametres de tableaux doivent être entiers");
+            }
+            
+            //Remise des valeurs initiales de la pile
+            
+            stackPointer= localStackPointer;
+                for(int i=0;i==localStackPointer;i++){
+                    Stack[i]= new String(LocalStack[i]);
+                }                
+                //Ajout du résultat dans la pile                
+                Stack[stackPointer]= new String(TypeExpression.CASE.name());
+                stackPointer++;
+        return null; //To change body of generated methods, choose Tools | Templates.
+    }
+        
+        
 
         private Boolean visitType (String[] pile, String operation){            
             Boolean result = false;
@@ -596,9 +660,11 @@ public class MyVisitor extends B314BaseVisitor {
             if(operation.equals("mul")) result = pile[0].equals(TypeExpression.INTEGER.name()) && pile[1].equals(TypeExpression.INTEGER.name());
             if(operation.equals("div")) result = pile[0].equals(TypeExpression.INTEGER.name()) && pile[1].equals(TypeExpression.INTEGER.name());
             if(operation.equals("divEnt")) result = pile[0].equals(TypeExpression.INTEGER.name()) && pile[1].equals(TypeExpression.INTEGER.name());
-            if(operation.equals("sup")) result = pile[0].equals(TypeExpression.BOOLEAN.name()) && pile[1].equals(TypeExpression.BOOLEAN.name());
-            if(operation.equals("inf")) result = pile[0].equals(TypeExpression.BOOLEAN.name()) && pile[1].equals(TypeExpression.BOOLEAN.name());
-            if(operation.equals("egale")) result = pile[0].equals(TypeExpression.BOOLEAN.name()) && pile[1].equals(TypeExpression.BOOLEAN.name());
+            if(operation.equals("sup")) result = pile[0].equals(TypeExpression.INTEGER.name()) && pile[1].equals(TypeExpression.INTEGER.name());
+            if(operation.equals("inf")) result = pile[0].equals(TypeExpression.INTEGER.name()) && pile[1].equals(TypeExpression.INTEGER.name());
+            if(operation.equals("egale")) result = pile[0].equals(TypeExpression.INTEGER.name()) && pile[1].equals(TypeExpression.INTEGER.name());
+            if(operation.equals("and")) result = pile[0].equals(TypeExpression.BOOLEAN.name()) && pile[1].equals(TypeExpression.BOOLEAN.name());
+            if(operation.equals("or")) result = pile[0].equals(TypeExpression.BOOLEAN.name()) && pile[1].equals(TypeExpression.BOOLEAN.name());
             return result;
         }
         @Override 
@@ -613,6 +679,7 @@ public class MyVisitor extends B314BaseVisitor {
                    //Envoyer une exception 
                     throw new RuntimeException("existe déjà dans la table");
                 }
+                stackPointer=0;
                 return visitChildren(ctx); 
             }
             
@@ -629,7 +696,8 @@ public class MyVisitor extends B314BaseVisitor {
                     throw new RuntimeException("existe déjà dans la table");
                 }
             }
-            return visitChildren(ctx); 
+            stackPointer=0;
+            return null; 
         }
 
 	@Override 
@@ -641,7 +709,8 @@ public class MyVisitor extends B314BaseVisitor {
                     throw new RuntimeException("existe déjà dans la table");
                 }
             }
-            return visitChildren(ctx); 
+            stackPointer=0;
+            return null; 
             
         }
 
@@ -658,7 +727,8 @@ public class MyVisitor extends B314BaseVisitor {
                     throw new RuntimeException("existe déjà dans la table");
                 }
             }
-            return visitChildren(ctx); 
+            stackPointer=0;
+            return null; 
         }
         
         
@@ -667,17 +737,18 @@ public class MyVisitor extends B314BaseVisitor {
             if(etapeDeDeclaration==2){
                 visitChildren(ctx);
             }
-               
-            return visitChildren(ctx); 
+            stackPointer=0;  
+            return null; 
         }
 
 	@Override 
         public Object visitNextAction(B314Parser.NextActionContext ctx) { 
-            return visitAction(ctx.action());
+            return null;
         }
 
     @Override
     public Object visitVariableExprG(B314Parser.VariableExprGContext ctx) {
+        
         if(etapeDeDeclaration==2){
             if(TypeVariablesLocales.containsKey(ctx.getText())){
                 Scalar scalartype = TypeVariablesLocales.get(ctx.getText());
@@ -707,47 +778,77 @@ public class MyVisitor extends B314BaseVisitor {
 
     @Override
     public Object visitTableauExprG(B314Parser.TableauExprGContext ctx) {
-        
+                     
+                
+        // Si le tableau existe, mise dans la stack du type. Sinon, on renvoie une exception.
+        int nombreParametresReel;
+        Scalar scalartype;
         if(etapeDeDeclaration==2){
-            if(TypeTableauxLocaux.containsKey(ctx.getText())){
-                Scalar scalartype = TypeTableauxLocaux.get(ctx.getText());
+            if(TypeTableauxLocaux.containsKey(ctx.ID().getText())){
+                scalartype = TypeTableauxLocaux.get(ctx.getText());
+                
+                nombreParametresReel = NombreParametresTableauxLocaux.get(ctx.ID().getText());
+            }else if(TypeTableauxGlobaux.containsKey(ctx.ID().getText())){
+                scalartype = TypeTableauxGlobaux.get(ctx.getText());
                 Stack[stackPointer]=scalartype.name();
                 stackPointer++;
-            }else if(TypeTableauxGlobaux.containsKey(ctx.getText())){
-                Scalar scalartype = TypeTableauxGlobaux.get(ctx.getText());
-                Stack[stackPointer]=scalartype.name();
-                stackPointer++;
+                nombreParametresReel = NombreParametresTableauxGlobaux.get(ctx.ID().getText());
             }else{
                 //KO
                 
                 throw new RuntimeException();
             }
+                //Vérification de type des paramètres
+        
+            int localStackPointer=stackPointer;
+            String[] LocalStack = new String[2];
+            
+            for(int i=0;i==stackPointer;i++){
+                LocalStack[i]= new String(Stack[i]);
+            } 
+            
+            //Partie principale de la méthode.
+            stackPointer=0;
+            visitChildren(ctx);
+            
+            if(nombreParametresReel==1){
+                //Vérifier que le nombre de paramètres de l'instance est le même.
+                if(ctx.getChildCount()!=4){
+                    throw new RuntimeException("Mauvais nombre de paramètres utilisés d'un tableau");
+                }
+                if(!Stack[0].equals(TypeExpression.INTEGER.name())){
+                    throw new RuntimeException("Les parametres de tableaux doivent être entiers");
+                }
+            }else{
+                if(ctx.getChildCount()!=6){
+                    throw new RuntimeException("Mauvais nombre de paramètres utilisés d'un tableau");
+                }
+                if((!Stack[0].equals(TypeExpression.INTEGER.name())) || (!Stack[1].equals(TypeExpression.INTEGER.name()))){
+                    throw new RuntimeException("Les parametres de tableaux doivent être entiers");
+                }
+                
+            }
+            
+            
+            
+            //Remise des valeurs initiales de la pile
+            
+            stackPointer= localStackPointer;
+                for(int i=0;i==localStackPointer;i++){
+                    Stack[i]= new String(LocalStack[i]);
+                }   
+                
+            Stack[stackPointer]=scalartype.name();
+            stackPointer++;
+            
             
         }
         
-        return super.visitTableauExprG(ctx); //To change body of generated methods, choose Tools | Templates.
+        return null; //To change body of generated methods, choose Tools | Templates.
     }
-    //Ajout recent
-            private Scalar GetTypeContext (String[] pile, String operation){            
-            if((operation.equals("not"))||(operation.equals("and"))||(operation.equals("or"))||(operation.equals("sup"))||(operation.equals("inf"))||(operation.equals("egale"))) return Scalar.BOOLEAN;
-            else if((operation.equals("plus"))||(operation.equals("moins"))||(operation.equals("mul"))||(operation.equals("div"))||(operation.equals("divEnt"))) return Scalar.INTEGER;
-            else throw new RuntimeException();
-            } 
+        
+           
 }
-    
-    
-    
-    
-    
-
-    
-      
-      
-      
-      
-      
-    
-      
       
     
     
