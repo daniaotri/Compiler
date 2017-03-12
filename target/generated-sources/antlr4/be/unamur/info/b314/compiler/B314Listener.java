@@ -8,65 +8,25 @@ import org.antlr.v4.runtime.tree.ParseTreeListener;
  */
 public interface B314Listener extends ParseTreeListener {
 	/**
-	 * Enter a parse tree produced by the {@code typeScalar}
-	 * labeled alternative in {@link B314Parser#type}.
+	 * Enter a parse tree produced by {@link B314Parser#type}.
 	 * @param ctx the parse tree
 	 */
-	void enterTypeScalar(B314Parser.TypeScalarContext ctx);
+	void enterType(B314Parser.TypeContext ctx);
 	/**
-	 * Exit a parse tree produced by the {@code typeScalar}
-	 * labeled alternative in {@link B314Parser#type}.
+	 * Exit a parse tree produced by {@link B314Parser#type}.
 	 * @param ctx the parse tree
 	 */
-	void exitTypeScalar(B314Parser.TypeScalarContext ctx);
+	void exitType(B314Parser.TypeContext ctx);
 	/**
-	 * Enter a parse tree produced by the {@code typeArray}
-	 * labeled alternative in {@link B314Parser#type}.
+	 * Enter a parse tree produced by {@link B314Parser#scalar}.
 	 * @param ctx the parse tree
 	 */
-	void enterTypeArray(B314Parser.TypeArrayContext ctx);
+	void enterScalar(B314Parser.ScalarContext ctx);
 	/**
-	 * Exit a parse tree produced by the {@code typeArray}
-	 * labeled alternative in {@link B314Parser#type}.
+	 * Exit a parse tree produced by {@link B314Parser#scalar}.
 	 * @param ctx the parse tree
 	 */
-	void exitTypeArray(B314Parser.TypeArrayContext ctx);
-	/**
-	 * Enter a parse tree produced by the {@code scalarBoolean}
-	 * labeled alternative in {@link B314Parser#scalar}.
-	 * @param ctx the parse tree
-	 */
-	void enterScalarBoolean(B314Parser.ScalarBooleanContext ctx);
-	/**
-	 * Exit a parse tree produced by the {@code scalarBoolean}
-	 * labeled alternative in {@link B314Parser#scalar}.
-	 * @param ctx the parse tree
-	 */
-	void exitScalarBoolean(B314Parser.ScalarBooleanContext ctx);
-	/**
-	 * Enter a parse tree produced by the {@code scalarInteger}
-	 * labeled alternative in {@link B314Parser#scalar}.
-	 * @param ctx the parse tree
-	 */
-	void enterScalarInteger(B314Parser.ScalarIntegerContext ctx);
-	/**
-	 * Exit a parse tree produced by the {@code scalarInteger}
-	 * labeled alternative in {@link B314Parser#scalar}.
-	 * @param ctx the parse tree
-	 */
-	void exitScalarInteger(B314Parser.ScalarIntegerContext ctx);
-	/**
-	 * Enter a parse tree produced by the {@code scalarSquare}
-	 * labeled alternative in {@link B314Parser#scalar}.
-	 * @param ctx the parse tree
-	 */
-	void enterScalarSquare(B314Parser.ScalarSquareContext ctx);
-	/**
-	 * Exit a parse tree produced by the {@code scalarSquare}
-	 * labeled alternative in {@link B314Parser#scalar}.
-	 * @param ctx the parse tree
-	 */
-	void exitScalarSquare(B314Parser.ScalarSquareContext ctx);
+	void exitScalar(B314Parser.ScalarContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link B314Parser#array}.
 	 * @param ctx the parse tree
@@ -78,161 +38,53 @@ public interface B314Listener extends ParseTreeListener {
 	 */
 	void exitArray(B314Parser.ArrayContext ctx);
 	/**
-	 * Enter a parse tree produced by the {@code exprBoolInfSupEgale}
-	 * labeled alternative in {@link B314Parser#exprBool}.
-	 * @param ctx the parse tree
-	 */
-	void enterExprBoolInfSupEgale(B314Parser.ExprBoolInfSupEgaleContext ctx);
-	/**
-	 * Exit a parse tree produced by the {@code exprBoolInfSupEgale}
-	 * labeled alternative in {@link B314Parser#exprBool}.
-	 * @param ctx the parse tree
-	 */
-	void exitExprBoolInfSupEgale(B314Parser.ExprBoolInfSupEgaleContext ctx);
-	/**
-	 * Enter a parse tree produced by the {@code exprBoolNot}
-	 * labeled alternative in {@link B314Parser#exprBool}.
-	 * @param ctx the parse tree
-	 */
-	void enterExprBoolNot(B314Parser.ExprBoolNotContext ctx);
-	/**
-	 * Exit a parse tree produced by the {@code exprBoolNot}
-	 * labeled alternative in {@link B314Parser#exprBool}.
-	 * @param ctx the parse tree
-	 */
-	void exitExprBoolNot(B314Parser.ExprBoolNotContext ctx);
-	/**
-	 * Enter a parse tree produced by the {@code exprBoolEnvi}
-	 * labeled alternative in {@link B314Parser#exprBool}.
-	 * @param ctx the parse tree
-	 */
-	void enterExprBoolEnvi(B314Parser.ExprBoolEnviContext ctx);
-	/**
-	 * Exit a parse tree produced by the {@code exprBoolEnvi}
-	 * labeled alternative in {@link B314Parser#exprBool}.
-	 * @param ctx the parse tree
-	 */
-	void exitExprBoolEnvi(B314Parser.ExprBoolEnviContext ctx);
-	/**
-	 * Enter a parse tree produced by the {@code exprBoolAndOr}
-	 * labeled alternative in {@link B314Parser#exprBool}.
-	 * @param ctx the parse tree
-	 */
-	void enterExprBoolAndOr(B314Parser.ExprBoolAndOrContext ctx);
-	/**
-	 * Exit a parse tree produced by the {@code exprBoolAndOr}
-	 * labeled alternative in {@link B314Parser#exprBool}.
-	 * @param ctx the parse tree
-	 */
-	void exitExprBoolAndOr(B314Parser.ExprBoolAndOrContext ctx);
-	/**
-	 * Enter a parse tree produced by the {@code exprIntEntier}
-	 * labeled alternative in {@link B314Parser#exprInt}.
-	 * @param ctx the parse tree
-	 */
-	void enterExprIntEntier(B314Parser.ExprIntEntierContext ctx);
-	/**
-	 * Exit a parse tree produced by the {@code exprIntEntier}
-	 * labeled alternative in {@link B314Parser#exprInt}.
-	 * @param ctx the parse tree
-	 */
-	void exitExprIntEntier(B314Parser.ExprIntEntierContext ctx);
-	/**
-	 * Enter a parse tree produced by the {@code exprIntPlusMoins}
-	 * labeled alternative in {@link B314Parser#exprInt}.
-	 * @param ctx the parse tree
-	 */
-	void enterExprIntPlusMoins(B314Parser.ExprIntPlusMoinsContext ctx);
-	/**
-	 * Exit a parse tree produced by the {@code exprIntPlusMoins}
-	 * labeled alternative in {@link B314Parser#exprInt}.
-	 * @param ctx the parse tree
-	 */
-	void exitExprIntPlusMoins(B314Parser.ExprIntPlusMoinsContext ctx);
-	/**
-	 * Enter a parse tree produced by the {@code exprIntEnv}
-	 * labeled alternative in {@link B314Parser#exprInt}.
-	 * @param ctx the parse tree
-	 */
-	void enterExprIntEnv(B314Parser.ExprIntEnvContext ctx);
-	/**
-	 * Exit a parse tree produced by the {@code exprIntEnv}
-	 * labeled alternative in {@link B314Parser#exprInt}.
-	 * @param ctx the parse tree
-	 */
-	void exitExprIntEnv(B314Parser.ExprIntEnvContext ctx);
-	/**
-	 * Enter a parse tree produced by the {@code exprIntMulDiv}
-	 * labeled alternative in {@link B314Parser#exprInt}.
-	 * @param ctx the parse tree
-	 */
-	void enterExprIntMulDiv(B314Parser.ExprIntMulDivContext ctx);
-	/**
-	 * Exit a parse tree produced by the {@code exprIntMulDiv}
-	 * labeled alternative in {@link B314Parser#exprInt}.
-	 * @param ctx the parse tree
-	 */
-	void exitExprIntMulDiv(B314Parser.ExprIntMulDivContext ctx);
-	/**
-	 * Enter a parse tree produced by the {@code exprCaseEnv}
-	 * labeled alternative in {@link B314Parser#exprCase}.
-	 * @param ctx the parse tree
-	 */
-	void enterExprCaseEnv(B314Parser.ExprCaseEnvContext ctx);
-	/**
-	 * Exit a parse tree produced by the {@code exprCaseEnv}
-	 * labeled alternative in {@link B314Parser#exprCase}.
-	 * @param ctx the parse tree
-	 */
-	void exitExprCaseEnv(B314Parser.ExprCaseEnvContext ctx);
-	/**
-	 * Enter a parse tree produced by the {@code exprCaseNearby}
-	 * labeled alternative in {@link B314Parser#exprCase}.
-	 * @param ctx the parse tree
-	 */
-	void enterExprCaseNearby(B314Parser.ExprCaseNearbyContext ctx);
-	/**
-	 * Exit a parse tree produced by the {@code exprCaseNearby}
-	 * labeled alternative in {@link B314Parser#exprCase}.
-	 * @param ctx the parse tree
-	 */
-	void exitExprCaseNearby(B314Parser.ExprCaseNearbyContext ctx);
-	/**
-	 * Enter a parse tree produced by the {@code exprDBool}
+	 * Enter a parse tree produced by the {@code exprPar}
 	 * labeled alternative in {@link B314Parser#exprD}.
 	 * @param ctx the parse tree
 	 */
-	void enterExprDBool(B314Parser.ExprDBoolContext ctx);
+	void enterExprPar(B314Parser.ExprParContext ctx);
 	/**
-	 * Exit a parse tree produced by the {@code exprDBool}
+	 * Exit a parse tree produced by the {@code exprPar}
 	 * labeled alternative in {@link B314Parser#exprD}.
 	 * @param ctx the parse tree
 	 */
-	void exitExprDBool(B314Parser.ExprDBoolContext ctx);
+	void exitExprPar(B314Parser.ExprParContext ctx);
 	/**
-	 * Enter a parse tree produced by the {@code exprDInt}
+	 * Enter a parse tree produced by the {@code exprEnvCase}
 	 * labeled alternative in {@link B314Parser#exprD}.
 	 * @param ctx the parse tree
 	 */
-	void enterExprDInt(B314Parser.ExprDIntContext ctx);
+	void enterExprEnvCase(B314Parser.ExprEnvCaseContext ctx);
 	/**
-	 * Exit a parse tree produced by the {@code exprDInt}
+	 * Exit a parse tree produced by the {@code exprEnvCase}
 	 * labeled alternative in {@link B314Parser#exprD}.
 	 * @param ctx the parse tree
 	 */
-	void exitExprDInt(B314Parser.ExprDIntContext ctx);
+	void exitExprEnvCase(B314Parser.ExprEnvCaseContext ctx);
 	/**
-	 * Enter a parse tree produced by the {@code exprDCas}
+	 * Enter a parse tree produced by the {@code exprEntier}
 	 * labeled alternative in {@link B314Parser#exprD}.
 	 * @param ctx the parse tree
 	 */
-	void enterExprDCas(B314Parser.ExprDCasContext ctx);
+	void enterExprEntier(B314Parser.ExprEntierContext ctx);
 	/**
-	 * Exit a parse tree produced by the {@code exprDCas}
+	 * Exit a parse tree produced by the {@code exprEntier}
 	 * labeled alternative in {@link B314Parser#exprD}.
 	 * @param ctx the parse tree
 	 */
-	void exitExprDCas(B314Parser.ExprDCasContext ctx);
+	void exitExprEntier(B314Parser.ExprEntierContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code exprNearby}
+	 * labeled alternative in {@link B314Parser#exprD}.
+	 * @param ctx the parse tree
+	 */
+	void enterExprNearby(B314Parser.ExprNearbyContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code exprNearby}
+	 * labeled alternative in {@link B314Parser#exprD}.
+	 * @param ctx the parse tree
+	 */
+	void exitExprNearby(B314Parser.ExprNearbyContext ctx);
 	/**
 	 * Enter a parse tree produced by the {@code exprDexprG}
 	 * labeled alternative in {@link B314Parser#exprD}.
@@ -258,17 +110,41 @@ public interface B314Listener extends ParseTreeListener {
 	 */
 	void exitFunctionCall(B314Parser.FunctionCallContext ctx);
 	/**
-	 * Enter a parse tree produced by the {@code exprPar}
+	 * Enter a parse tree produced by the {@code exprEnvInt}
 	 * labeled alternative in {@link B314Parser#exprD}.
 	 * @param ctx the parse tree
 	 */
-	void enterExprPar(B314Parser.ExprParContext ctx);
+	void enterExprEnvInt(B314Parser.ExprEnvIntContext ctx);
 	/**
-	 * Exit a parse tree produced by the {@code exprPar}
+	 * Exit a parse tree produced by the {@code exprEnvInt}
 	 * labeled alternative in {@link B314Parser#exprD}.
 	 * @param ctx the parse tree
 	 */
-	void exitExprPar(B314Parser.ExprParContext ctx);
+	void exitExprEnvInt(B314Parser.ExprEnvIntContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code exprEnvBool}
+	 * labeled alternative in {@link B314Parser#exprD}.
+	 * @param ctx the parse tree
+	 */
+	void enterExprEnvBool(B314Parser.ExprEnvBoolContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code exprEnvBool}
+	 * labeled alternative in {@link B314Parser#exprD}.
+	 * @param ctx the parse tree
+	 */
+	void exitExprEnvBool(B314Parser.ExprEnvBoolContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code exprOp}
+	 * labeled alternative in {@link B314Parser#exprD}.
+	 * @param ctx the parse tree
+	 */
+	void enterExprOp(B314Parser.ExprOpContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code exprOp}
+	 * labeled alternative in {@link B314Parser#exprD}.
+	 * @param ctx the parse tree
+	 */
+	void exitExprOp(B314Parser.ExprOpContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link B314Parser#environnementInt}.
 	 * @param ctx the parse tree
@@ -458,29 +334,15 @@ public interface B314Listener extends ParseTreeListener {
 	 */
 	void exitFctDecl(B314Parser.FctDeclContext ctx);
 	/**
-	 * Enter a parse tree produced by the {@code fctTypeScalar}
-	 * labeled alternative in {@link B314Parser#fctType}.
+	 * Enter a parse tree produced by {@link B314Parser#fctType}.
 	 * @param ctx the parse tree
 	 */
-	void enterFctTypeScalar(B314Parser.FctTypeScalarContext ctx);
+	void enterFctType(B314Parser.FctTypeContext ctx);
 	/**
-	 * Exit a parse tree produced by the {@code fctTypeScalar}
-	 * labeled alternative in {@link B314Parser#fctType}.
+	 * Exit a parse tree produced by {@link B314Parser#fctType}.
 	 * @param ctx the parse tree
 	 */
-	void exitFctTypeScalar(B314Parser.FctTypeScalarContext ctx);
-	/**
-	 * Enter a parse tree produced by the {@code fctTypeVoid}
-	 * labeled alternative in {@link B314Parser#fctType}.
-	 * @param ctx the parse tree
-	 */
-	void enterFctTypeVoid(B314Parser.FctTypeVoidContext ctx);
-	/**
-	 * Exit a parse tree produced by the {@code fctTypeVoid}
-	 * labeled alternative in {@link B314Parser#fctType}.
-	 * @param ctx the parse tree
-	 */
-	void exitFctTypeVoid(B314Parser.FctTypeVoidContext ctx);
+	void exitFctType(B314Parser.FctTypeContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link B314Parser#paramDecl}.
 	 * @param ctx the parse tree
