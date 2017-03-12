@@ -3,25 +3,34 @@ lexer grammar B314Words;
 
 //Identifications appartenant au langage
 
-BOOLEAN: 'boolean';
-INTEGER: 'integer';
-SQUARE: 'square';
-NEARBY: 'nearby';
-VOID: 'void';
+//1.Programme
 
 START: 'declare and retain';
-DLOCAL: 'declare local';
 TSTART: 'when your turn';
-WHEN:'when' ;
-DO: 'do';
-DONE: 'done';
-BYDEF: 'by default'; 
+
+//2. VarDecl
+
 AS: 'as';
+ID: LETTER (LETTER | DIGIT)* ;
+
+///Par rapport aux grosses structures///
+
+//3. Déclaration de fonction
+
 FUNCTION: 'function';
+DLOCAL: 'declare local';
+DONE: 'done';
+DO: 'do';
 
+//4.Clause when
 
+WHEN:'when' ;
 
-//symboles relatifs aux expressions
+//5. Clause Default
+
+BYDEF: 'by default'; 
+
+///Par rapport aux sous-structures/expressions
 
 IF: 'if';
 THEN: 'then';
@@ -31,28 +40,48 @@ COMPUTE: 'compute';
 ELSE: 'else';
 TO: 'to';
 
-//Symboles relatifs aux actions
+///Par rapport aux définitions de types///==TYPE VARIABLES VALEURS puis OPERATIONS
 
-MOVE: 'move';
-NORTH: 'north';
-SOUTH: 'south';
-EAST: 'east';
-WEST: 'west';
-SHOOT: 'shoot';
-USE: 'use';
-NOTHING: 'nothing';
+BOOLEAN: 'boolean';
+INTEGER: 'integer';
+SQUARE: 'square';
+VOID: 'void';
 
-//Symboles standarts
+//Les variables d'environnements ENTIERES
 
-CROCHET_OUVERT: '[';
-CROCHET_FERME: ']';
+LATITUDE: 'latitude';
+LONGITUDE: 'longitude';
+GRID_SIZE: 'grid size';
+COUNT: 'count';
+LIFE: 'life';
 
-VIRGULE: ',';
-DEUXPOINTS: ':';
-POINtVIRGULE: ';';
+//Les variables d'environnements CASE
 
-PAR_OUVERT: '(';
-PAR_FERME: ')';
+DIRT: 'dirt';
+ROCK: 'rock';
+VINES: 'vines'; 
+ZOMBIE: 'zombie'; 
+PLAYER: 'player';
+ENNEMI: 'ennemi';
+MAP: 'map';
+RADIO: 'radio';
+AMMO: 'ammo';
+FRUITS: 'fruits';
+SODA: 'soda';
+
+//Tableau prédéfini
+
+NEARBY: 'nearby';
+
+//Valeurs prédéfinies
+
+TRUE: 'true';
+FALSE: 'false';
+
+//Attributs booléen
+
+IS: 'is';
+GRAAL: 'graal';
 
 //Définition des opérateurs
 
@@ -69,40 +98,36 @@ DIV: '/';
 DIV_ENT: '%';
 
 
-//Identifiants entiers appartenant au langage
+///Symboles relatifs aux actions///
 
-LATITUDE: 'latitude';
-LONGITUDE: 'longitude';
-GRID_SIZE: 'grid size';
-COUNT: 'count';
-LIFE: 'life';
+MOVE: 'move';
+NORTH: 'north';
+SOUTH: 'south';
+EAST: 'east';
+WEST: 'west';
+SHOOT: 'shoot';
+USE: 'use';
+NOTHING: 'nothing';
+NEXT: 'next';
 
-// Identifiants booléens appartenant au langage
+///Symboles standarts///
 
-TRUE: 'true';
-FALSE: 'false';
-IS: 'is';
+CROCHET_OUVERT: '[';
+CROCHET_FERME: ']';
 
-GRAAL: 'graal';
+VIRGULE: ',';
+DEUXPOINTS: ':';
+POINtVIRGULE: ';';
 
-//Identifiants Case appartenant au langage
-
-DIRT: 'dirt';
-ROCK: 'rock';
-VINES: 'vines'; 
-ZOMBIE: 'zombie'; 
-PLAYER: 'player';
-ENNEMI: 'ennemi';
-MAP: 'map';
-RADIO: 'radio';
-AMMO: 'ammo';
-FRUITS: 'fruits';
-SODA: 'soda';
+PAR_OUVERT: '(';
+PAR_FERME: ')';
 
 
-// Identifiers
 
-ID: LETTER (LETTER | DIGIT)* ;
+
+
+
+
 
 NUMBER: (DIGIT)+;
 
@@ -117,4 +142,3 @@ COMMENT: '/*' .*? '*/' -> skip;
 
 NEWLINE: '\r'? '\n'  -> skip ;
 WS: [ \t]+ -> skip ;
-
