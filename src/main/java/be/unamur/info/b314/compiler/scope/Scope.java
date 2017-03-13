@@ -39,7 +39,7 @@ public interface Scope {
      *
      @param symbole le symbole à définir
      */
-    public void define(Symbole symbole);
+    public void DefineSymbole(Symbole symbole);
     
     /**
      *

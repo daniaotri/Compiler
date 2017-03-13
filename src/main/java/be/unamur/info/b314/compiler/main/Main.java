@@ -2,7 +2,6 @@ package be.unamur.info.b314.compiler.main;
 
 import be.unamur.info.b314.compiler.B314Lexer;
 import be.unamur.info.b314.compiler.B314Parser;
-import be.unamur.info.b314.compiler.Visitor.MyVisitor;
 import be.unamur.info.b314.compiler.exception.ParsingException;
 import be.unamur.info.b314.compiler.scope.Scope;
 import static com.google.common.base.Preconditions.checkArgument;
@@ -183,9 +182,9 @@ public class Main {
         parser = new B314Parser(tokens);
         try{
         B314Parser.ProgrammeContext ctx = parser.programme();
-        MyVisitor visit =  new MyVisitor();
-        Object tree = visit.visitProgramme(ctx);
-        System.out.println(tree.toString());
+        //MyVisitor visit =  new MyVisitor();
+        //Object tree = visit.visitProgramme(ctx);
+        //System.out.println(tree.toString());
         }catch(RecognitionException e) {throw new ParsingException("Error");}
         
         

@@ -13,10 +13,10 @@ package be.unamur.info.b314.compiler.scope;
  */
 public class Symbole {
        
-    final String name;
-    String type;
-    int [] length = {};
-    Boolean isArray;
+    private final String name;
+    private String type;
+    private int [] length = {};
+    private Boolean isArray;
     
         
     /**
@@ -27,10 +27,11 @@ public class Symbole {
     public Symbole(String name) {
         this.name = name;
         this.type = null;
+        this.isArray = false;
     }
     
-    public void setType(Symbole sym, String type){
-        sym.type = type;
+    public void setType(String type){
+        this.type = type;
     }
    
     public String getType(){
@@ -45,4 +46,23 @@ public class Symbole {
         this.type = "tableau";
         this.length = length;
     }
+
+    public int[] getLength() {
+        return length;
+    }
+
+    public void setLength(int[] length) {
+        this.length = length;
+        setIsArray(true);
+        setType("tableau");        
+    }
+
+    public Boolean getIsArray() {
+        return isArray;
+    }
+
+    public void setIsArray(Boolean isArray) {
+        this.isArray = isArray;
+    }
+    
 }

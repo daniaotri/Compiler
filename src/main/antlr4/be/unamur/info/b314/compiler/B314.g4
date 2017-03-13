@@ -3,28 +3,50 @@ grammar B314;
 
 import B314Words;
 
-type : scalar       
-        | array
-        | VOID
+type : scalar       #typeScalar
+        | array     #typeArray
+        ;
+       
+scalar: BOOLEAN     #scalarBoolean
+        | INTEGER   #scalarInteger
+        | SQUARE    #scalarSquare
         ;
 
-
-scalar: BOOLEAN | INTEGER | SQUARE  ;
 array: scalar CROCHET_OUVERT NUMBER (VIRGULE NUMBER)? CROCHET_FERME ;
 
-exprD : entier                                                      #exprEntier
-        | environnementInt                                          #exprEnvInt
-        | environnementBool                                         #exprEnvBool
-        | environnementCase                                         #exprEnvCase
-        | exprG                                                     #exprDexprG
-        | ID PAR_OUVERT (exprD (VIRGULE exprD)*)? PAR_FERME         #FunctionCall
-        | PAR_OUVERT exprD PAR_FERME                                #exprPar
-        | NOT exprD                                                 #exprOp
-        | expr1=exprD op=(PLUS|MOINS) expr2=exprD                   #exprOp
-        | expr1=exprD op=(MUL|DIV|DIV_ENT) expr2=exprD              #exprOp
-        | expr1=exprD op=(AND|OR) expr2=exprD                       #exprOp
-        | expr1=exprD op=(INF|SUP|EGALE) expr2=exprD                #exprOp
-        | NEARBY CROCHET_OUVERT exprD VIRGULE exprD CROCHET_FERME   #exprNearby
+varDecl : ID AS type;
+
+exprD : exprEnt                 #exprDInteger
+        |exprBool               #exprDBoolean
+        |exprCase               #exprDCase
+        |exprG                  #exprDG
+        ;
+exprEnt: entier                                                   #exprEntEntier
+        |environnementInt                                         #exprEntEnvironnement
+        |ID PAR_OUVERT (exprD (VIRGULE exprD)*)? PAR_FERME        #exprEntFonction
+        |expr1=exprEnt op=(MUL|DIV|DIV_ENT) expr2=exprEnt             #exprEntMulDiv
+        |expr1=exprEnt op=(PLUS|MOINS) expr2=exprEnt                 #exprEntPlusMoins
+        |PAR_OUVERT exprEnt PAR_FERME                               #exprEntParennthese
+        ;
+
+exprBool:TRUE                                                      #exprBoolTrue
+         |FALSE                                                    #exprBoolFalse
+         |ID PAR_OUVERT (exprD (VIRGULE exprD)*)? PAR_FERME        #exprBoolFonction
+         |environnementBool                                        #exprBoolEnvironnement
+         |exprEnt EGALE exprEnt                             #exprBoolEgaleInteger
+         |exprBool EGALE exprBool                             #exprBoolEgaleBoolean
+         |exprCase EGALE exprCase                             #exprBoolEgaleCase
+         |exprG EGALE exprG                             #exprBoolEgaleGauche
+         |exprEnt op=(INF|SUP) exprEnt                #exprBoolInfSupEgale
+         |exprBool op=(AND|OR) exprBool                       #exprBoolAndOr
+         |NOT exprBool                                                 #exprBoolNot
+         |PAR_OUVERT exprEnt PAR_FERME                               #exprBoolParennthese
+         ;
+
+exprCase :ID PAR_OUVERT (exprD (VIRGULE exprD)*)? PAR_FERME         #exprCaseFonction
+        | environnementCase                                         #exprCaseEnvironnement
+        | NEARBY CROCHET_OUVERT exprEnt VIRGULE exprEnt CROCHET_FERME   #exprCaseNearby
+        |PAR_OUVERT exprEnt PAR_FERME                               #exprCaseParennthese
         ;
 
 environnementInt: LATITUDE
@@ -33,9 +55,7 @@ environnementInt: LATITUDE
         |(MAP | RADIO | AMMO | FRUITS | SODA ) COUNT    
         | LIFE
         ;
-environnementBool: TRUE
-        |FALSE   
-        | ENNEMI IS (NORTH | SOUTH | EAST | WEST)  
+environnementBool:  ENNEMI IS (NORTH | SOUTH | EAST | WEST)  
         | GRAAL IS (NORTH | SOUTH | EAST | WEST) 
         ;
 
@@ -52,15 +72,16 @@ environnementCase: DIRT
         | SODA
         ;
         
-exprG : ID                                                              #variableExprG
-         | ID CROCHET_OUVERT exprD (VIRGULE exprD)? CROCHET_FERME      #tableauExprG
+exprG : ID                                                              #exprGVariable
+         | ID CROCHET_OUVERT exprD (VIRGULE exprD)? CROCHET_FERME      #exprGTableau
         ;
+
 entier : (MOINS)?NUMBER  ;
 
 instruction : SKIPPPP                                                   #skipppp
-              | IF exprD THEN (instruction)+ DONE                       #if
-              | IF exprD THEN (instruction)+ ELSE (instruction)+ DONE   #ifthenelse
-              | WHILE exprD DO (instruction)+ DONE                      #while
+              | IF exprBool THEN (instruction)+ DONE                       #if
+              | IF exprBool THEN (instruction)+ ELSE (instruction)+ DONE   #ifthenelse
+              | WHILE exprBool DO (instruction)+ DONE                      #while
               | SET exprG TO exprD                                      #affectation
               | COMPUTE exprD                                           #compute
               | NEXT action                                             #nextAction
@@ -80,14 +101,12 @@ progDecl: (varDecl POINtVIRGULE | fctDecl)*;
  
 fctDecl : ID AS FUNCTION PAR_OUVERT paramDecl? PAR_FERME DEUXPOINTS fctType (DLOCAL(varDecl POINtVIRGULE)+)? DO (instruction)+ DONE    ;
 
-fctType: BOOLEAN 
-        | INTEGER 
-        | SQUARE 
-        | VOID 
+fctType: scalar                                     #fctTypeScalar
+        | VOID                                      #fctTypeVoid
         ;
 
 paramDecl: (varDecl (VIRGULE varDecl)*);
-varDecl : ID AS typeOfVar=type;
+
 
 clauseWhen: WHEN exprD (DLOCAL (varDecl POINtVIRGULE)+)? DO (instruction)+ DONE   ;
 

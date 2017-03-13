@@ -1,52 +1,44 @@
 lexer grammar B314Words;
 
 
-//Identifications appartenant au langage
+ID: LETTER (LETTER | DIGIT)* ;
+NUMBER: (DIGIT)+;
 
-//1.Programme
+fragment LETTER: 'A'..'Z' | 'a'..'z' ;
+fragment DIGIT: '0'..'9' ;
 
-START: 'declare and retain';
-TSTART: 'when your turn';
+// Comments -> ignored
 
-//2. VarDecl
+COMMENT: '/*' .*? '*/' -> skip;
 
-AS: 'as';
+// Whitespaces -> ignored
 
+NEWLINE: '\r'? '\n'  -> skip ;
+WS: [ \t]+ -> skip ;
 
-///Par rapport aux grosses structures///
+// Add by us
 
-//3. Déclaration de fonction
-
-FUNCTION: 'function';
-DLOCAL: 'declare local';
-DONE: 'done';
-DO: 'do';
-
-//4.Clause when
-
-WHEN:'when' ;
-
-//5. Clause Default
-
-BYDEF: 'by default'; 
-
-///Par rapport aux sous-structures/expressions
-
-IF: 'if';
-THEN: 'then';
-WHILE: 'while';
-SET: 'set';
-COMPUTE: 'compute';
-ELSE: 'else';
-TO: 'to';
-SKIPPPP:'skip';
-
-///Par rapport aux définitions de types///==TYPE VARIABLES VALEURS puis OPERATIONS
-
+// les types des données ( fonctions et variables)
 BOOLEAN: 'boolean';
 INTEGER: 'integer';
 SQUARE: 'square';
 VOID: 'void';
+
+///Symboles standarts///
+
+CROCHET_OUVERT: '[';
+CROCHET_FERME: ']';
+
+VIRGULE: ',';
+DEUXPOINTS: ':';
+POINtVIRGULE: ';';
+
+PAR_OUVERT: '(';
+PAR_FERME: ')';
+
+//Declaration des variables//
+
+AS: 'as';
 
 //Les variables d'environnements ENTIERES
 
@@ -111,29 +103,33 @@ USE: 'use';
 NOTHING: 'nothing';
 NEXT: 'next';
 
-///Symboles standarts///
+//Programme
 
-CROCHET_OUVERT: '[';
-CROCHET_FERME: ']';
+START: 'declare and retain';
+TSTART: 'when your turn';
 
-VIRGULE: ',';
-DEUXPOINTS: ':';
-POINtVIRGULE: ';';
+// Déclaration de fonction
 
-PAR_OUVERT: '(';
-PAR_FERME: ')';
+FUNCTION: 'function';
+DLOCAL: 'declare local';
+DONE: 'done';
+DO: 'do';
 
-ID: LETTER (LETTER | DIGIT)* ;
-NUMBER: (DIGIT)+;
+//Clause when
 
-fragment LETTER: 'A'..'Z' | 'a'..'z' ;
-fragment DIGIT: '0'..'9' ;
+WHEN:'when' ;
 
-// Comments -> ignored
+// Clause Default
 
-COMMENT: '/*' .*? '*/' -> skip;
+BYDEF: 'by default'; 
 
-// Whitespaces -> ignored
+///Par rapport aux sous-structures/expressions
 
-NEWLINE: '\r'? '\n'  -> skip ;
-WS: [ \t]+ -> skip ;
+IF: 'if';
+THEN: 'then';
+WHILE: 'while';
+SET: 'set';
+COMPUTE: 'compute';
+ELSE: 'else';
+TO: 'to';
+SKIPPPP:'skip';

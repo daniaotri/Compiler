@@ -47,8 +47,8 @@ public class ScopeBase implements Scope{
     }
 
     @Override
-    public void define(Symbole symbole) {
-        symboles.get(symbole.name).add(symbole);
+    public void DefineSymbole(Symbole symbole) {
+        symboles.get(symbole.getName()).add(symbole);
     }
 
     /**
@@ -62,6 +62,7 @@ public class ScopeBase implements Scope{
         
         /*Recupérer la liste des symboles portant le type donné en paramètre*/
         ArrayList<Symbole> TSymboles = symboles.get(name);
+        
         Symbole symbole = null;
         /*Verifier si le symbole a déjà était trouvé*/
         for(int position = 0;position<TSymboles.size();position++){
