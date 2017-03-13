@@ -99,7 +99,5 @@ public class ScopeImpl implements Scope{
     public String GetName() {
         return name;
     }
-    
-    
-
+        
 }

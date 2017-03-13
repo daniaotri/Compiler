@@ -33,12 +33,12 @@ exprBool:TRUE                                                      #exprBoolTrue
          |FALSE                                                    #exprBoolFalse
          |ID PAR_OUVERT (exprD (VIRGULE exprD)*)? PAR_FERME        #exprBoolFonction
          |environnementBool                                        #exprBoolEnvironnement
-         |exprEnt EGALE exprEnt                             #exprBoolEgaleInteger
-         |exprBool EGALE exprBool                             #exprBoolEgaleBoolean
-         |exprCase EGALE exprCase                             #exprBoolEgaleCase
-         |exprG EGALE exprG                             #exprBoolEgaleGauche
-         |exprEnt op=(INF|SUP) exprEnt                #exprBoolInfSupEgale
-         |exprBool op=(AND|OR) exprBool                       #exprBoolAndOr
+         |exprEnt EGALE exprEnt                                 #exprBoolEgaleInteger
+         |exprBool EGALE exprBool                               #exprBoolEgaleBoolean
+         |exprCase EGALE exprCase                               #exprBoolEgaleCase
+         |expr1=exprG EGALE expr2=exprG                          #exprBoolEgaleGauche
+         |exprEnt op=(INF|SUP) exprEnt                          #exprBoolInfSupEgale
+         |exprBool op=(AND|OR) exprBool                         #exprBoolAndOr
          |NOT exprBool                                                 #exprBoolNot
          |PAR_OUVERT exprBool PAR_FERME                               #exprBoolParennthese
          ;
@@ -51,7 +51,7 @@ exprCase :ID PAR_OUVERT (exprD (VIRGULE exprD)*)? PAR_FERME         #exprCaseFon
 
 environnementInt: LATITUDE
         | LONGITUDE
-        | GRID_SIZE  
+        | GRID SIZE  
         |(MAP | RADIO | AMMO | FRUITS | SODA ) COUNT    
         | LIFE
         ;
@@ -95,11 +95,11 @@ action : MOVE (NORTH | SOUTH | EAST | WEST)
         | DO NOTHING   
         ;
 
-programme: START progDecl TSTART (clauseWhen)* clauseDefault  ;
+programme: DECLARE AND RETAIN progDecl WHEN YOUR TURN (clauseWhen)* clauseDefault  ;
 
 progDecl: (varDecl POINtVIRGULE | fctDecl)*;
  
-fctDecl : ID AS FUNCTION PAR_OUVERT paramDecl? PAR_FERME DEUXPOINTS fctType (DLOCAL(varDecl POINtVIRGULE)+)? DO (instruction)+ DONE    ;
+fctDecl : ID AS FUNCTION PAR_OUVERT paramDecl? PAR_FERME DEUXPOINTS fctType (DECLARE LOCAL(varDecl POINtVIRGULE)+)? DO (instruction)+ DONE    ;
 
 fctType: scalar                                     #fctTypeScalar
         | VOID                                      #fctTypeVoid
@@ -108,9 +108,9 @@ fctType: scalar                                     #fctTypeScalar
 paramDecl: (varDecl (VIRGULE varDecl)*);
 
 
-clauseWhen: WHEN exprD (DLOCAL (varDecl POINtVIRGULE)+)? DO (instruction)+ DONE   ;
+clauseWhen: WHEN exprD (DECLARE LOCAL (varDecl POINtVIRGULE)+)? DO (instruction)+ DONE   ;
 
-clauseDefault: BYDEF (DLOCAL (varDecl POINtVIRGULE)+)? DO (instruction)+ DONE  ; 
+clauseDefault: BY DEFAULT (DECLARE LOCAL (varDecl POINtVIRGULE)+)? DO (instruction)+ DONE  ; 
 
  
 

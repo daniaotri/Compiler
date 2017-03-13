@@ -7,22 +7,15 @@ package be.unamur.info.b314.compiler.scope;
 
 import be.unamur.info.b314.compiler.B314BaseListener;
 import be.unamur.info.b314.compiler.B314Parser;
-import be.unamur.info.b314.compiler.exception.MissingTypeException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import org.antlr.v4.runtime.ParserRuleContext;
 import org.antlr.v4.runtime.tree.ErrorNode;
 import org.antlr.v4.runtime.tree.TerminalNode;
-
-
 
 /*
  *
  *@author jessi
  *
  */
-
-
 
 public class SymboleTableFiller extends B314BaseListener {
     
@@ -271,7 +264,12 @@ public class SymboleTableFiller extends B314BaseListener {
 
 	@Override public void exitExprBoolNot(B314Parser.ExprBoolNotContext ctx) { }
 
-	@Override public void enterExprBoolEgaleGauche(B314Parser.ExprBoolEgaleGaucheContext ctx) { }
+	@Override 
+        public void enterExprBoolEgaleGauche(B314Parser.ExprBoolEgaleGaucheContext ctx) {
+            String type1 = CurrentScope.FoundSymbole(ctx.expr1.getText()).getType();
+            String type2 = CurrentScope.FoundSymbole(ctx.expr1.getText()).getType();
+            if(type1!=type2)throw new RuntimeException();
+        }
 
 	@Override public void exitExprBoolEgaleGauche(B314Parser.ExprBoolEgaleGaucheContext ctx) { }
 

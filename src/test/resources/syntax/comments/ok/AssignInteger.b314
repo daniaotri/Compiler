@@ -1,9 +1,0 @@
-declare and retain
-    x as integer;
-    y as integer;
-when your turn
-by default
-do
-    set x to 15
-    set y to 9 * x - 7 +8
-done

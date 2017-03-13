@@ -1,23 +1,5 @@
 lexer grammar B314Words;
 
-
-ID: LETTER (LETTER | DIGIT)* ;
-NUMBER: (DIGIT)+;
-
-fragment LETTER: 'A'..'Z' | 'a'..'z' ;
-fragment DIGIT: '0'..'9' ;
-
-// Comments -> ignored
-
-COMMENT: '/*' .*? '*/' -> skip;
-
-// Whitespaces -> ignored
-
-NEWLINE: '\r'? '\n'  -> skip ;
-WS: [ \t]+ -> skip ;
-
-// Add by us
-
 // les types des données ( fonctions et variables)
 BOOLEAN: 'boolean';
 INTEGER: 'integer';
@@ -44,7 +26,8 @@ AS: 'as';
 
 LATITUDE: 'latitude';
 LONGITUDE: 'longitude';
-GRID_SIZE: 'grid size';
+GRID: 'grid';
+SIZE: 'size';
 COUNT: 'count';
 LIFE: 'life';
 
@@ -105,23 +88,22 @@ NEXT: 'next';
 
 //Programme
 
-START: 'declare and retain';
-TSTART: 'when your turn';
-
+RETAIN: 'retain';
+WHEN: 'when';
+YOUR: 'your';
+TURN: 'turn';
 // Déclaration de fonction
 
 FUNCTION: 'function';
-DLOCAL: 'declare local';
+DECLARE: 'declare';
+LOCAL: 'local';
 DONE: 'done';
 DO: 'do';
 
-//Clause when
-
-WHEN:'when' ;
-
 // Clause Default
 
-BYDEF: 'by default'; 
+BY: 'by';
+DEFAULT:'default'; 
 
 ///Par rapport aux sous-structures/expressions
 
@@ -133,3 +115,18 @@ COMPUTE: 'compute';
 ELSE: 'else';
 TO: 'to';
 SKIPPPP:'skip';
+
+ID: LETTER (LETTER | DIGIT)* ;
+NUMBER: (DIGIT)+;
+
+fragment LETTER: 'A'..'Z' | 'a'..'z' ;
+fragment DIGIT: '0'..'9' ;
+
+// Comments -> ignored
+
+COMMENT: '/*' .*? '*/' -> skip;
+
+// Whitespaces -> ignored
+
+NEWLINE: '\r'? '\n'  -> skip ;
+WS: [ \t]+ -> skip ;

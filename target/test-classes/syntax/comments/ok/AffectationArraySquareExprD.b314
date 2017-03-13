@@ -1,9 +1,0 @@
-declare and retain
-    x as square[42];
-    y as square[42,42];
-when your turn
-by default
-    do
-        set x[0] to nearby[9%3+6-2, 42]
-        set y[0,i + 5] to nearby[latitude, 42]
-    done

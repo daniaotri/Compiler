@@ -1,9 +1,0 @@
-declare and retain
-    x as boolean[42];
-    y as boolean[42,42];
-when your turn
-by default
-    do
-        set x[0] to 3+1=8 and not 7<6 or true
-        set y[0,4] to not x[0] and true or ennemi is west
-    done
