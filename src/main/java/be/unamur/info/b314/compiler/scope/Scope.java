@@ -49,5 +49,7 @@ public interface Scope {
     public Symbole FoundSymbole(String name);
     
     public String GetName();
+    public void deleteDuplicateSCope();
+    public void deleteDuplicateSymbole();
 
 }

@@ -51,7 +51,9 @@ public class ScopeImpl implements Scope{
 
     @Override
     public void AddSymbole(Symbole symbole) {
-        if(symboles.contains(symbole))throw new RuntimeException();
+        String name = symbole.getName();
+        Symbole sym=FoundSymbole(name);
+        if(sym!=null||symboles.contains(symbole))throw new RuntimeException();
         else symboles.add(symbole);
     }
 
@@ -60,8 +62,7 @@ public class ScopeImpl implements Scope{
      * @return le symbole si existe, sinon null
      */
     @Override
-    public Symbole FoundSymbole(String name) {
-        
+    public Symbole FoundSymbole(String name) {        
         Symbole symbole = null;
         /*Verifier si le symbole a déjà était trouvé*/
         for(int position = 0;position<symboles.size();position++){
@@ -108,6 +109,7 @@ public class ScopeImpl implements Scope{
     }
     
     public void CorrectEveryThing(){
+        deleteDuplicateSCope();
         String type = null;
         for(int i=0;i<symboles.size();i++){
             type =symboles.get(i).getType();
@@ -128,5 +130,32 @@ public class ScopeImpl implements Scope{
             }
             
         }
+    }
+    @Override
+    public void deleteDuplicateSymbole(){
+        String name=null;
+        if(symboles.size()>0){
+            name=symboles.get(0).getName();
+            for(int i=1;i<symboles.size();i++){
+                if(name.equals(symboles.get(i).getName())) throw new RuntimeException();
+                name=symboles.get(i).getName();
+            }
+        }        
+    }
+    @Override
+    public void deleteDuplicateSCope(){
+        String name=null;
+        Scope scope=null;
+        if(Children.size()>0){
+            scope=Children.get(0);
+            name=scope.GetName();
+            for(int i=1;i<Children.size();i++){
+                if(name.equals(Children.get(i).GetName())) throw new RuntimeException();
+                scope=Children.get(i);
+                name = scope.GetName();
+                scope.deleteDuplicateSymbole();                
+            }
+        }
+        
     }
 }
