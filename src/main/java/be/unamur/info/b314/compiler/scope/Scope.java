@@ -39,13 +39,13 @@ public interface Scope {
      *
      @param symbole le symbole à définir
      */
-    public void DefineSymbole(Symbole symbole);
+    public void AddSymbole(Symbole symbole);
     
     /**
      *
      * @param name le nom du symbole
      * @return le symbole si existe, sinon null
      */
-    public Symbole resolve(String name);
+    public Symbole FoundSymbole(String name);
 
 }

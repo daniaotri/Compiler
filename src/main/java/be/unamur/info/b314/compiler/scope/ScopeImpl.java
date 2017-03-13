@@ -14,7 +14,7 @@ import java.util.Map;
  * 
  * @author jessi
  */
-public class ScopeBase implements Scope{
+public class ScopeImpl implements Scope{
     
     /*Le scope parent*/
     Scope Parent;
@@ -27,14 +27,14 @@ public class ScopeBase implements Scope{
     /*Liste des symboles du scope*/
     Map<String, ArrayList<Symbole>> symboles;
 
-    public ScopeBase(String st) {
+    public ScopeImpl(String st) {
         this.name = st;
         this.Children = new ArrayList();
         this.symboles = new LinkedHashMap<>();
         this.Parent = Parent;
     }
     
-    public ScopeBase(String st,Scope parent) {
+    public ScopeImpl(String st,Scope parent) {
         this.name = st;
         this.Children = new ArrayList();
         this.symboles = new LinkedHashMap<>();
@@ -47,18 +47,16 @@ public class ScopeBase implements Scope{
     }
 
     @Override
-    public void DefineSymbole(Symbole symbole) {
+    public void AddSymbole(Symbole symbole) {
         symboles.get(symbole.getName()).add(symbole);
     }
 
     /**
-     *
      * @param name le nom du symbole
-     * @param type le type du symbole
      * @return le symbole si existe, sinon null
      */
     @Override
-    public Symbole resolve(String name) {
+    public Symbole FoundSymbole(String name) {
         
         /*Recupérer la liste des symboles portant le type donné en paramètre*/
         ArrayList<Symbole> TSymboles = symboles.get(name);
@@ -69,7 +67,7 @@ public class ScopeBase implements Scope{
             if(name.equals(TSymboles.get(position).getName())) symbole = TSymboles.get(position); /*Le symbole est trouvé*/
         }
         if(symbole!=null)return symbole; 
-        if(Parent != null)return Parent.resolve(name);
+        if(Parent != null)return Parent.FoundSymbole(name);
         return null; /*Ausun symbole trouvé*/
        
     }

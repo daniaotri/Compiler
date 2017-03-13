@@ -7,25 +7,151 @@ package be.unamur.info.b314.compiler.scope;
 
 import be.unamur.info.b314.compiler.B314BaseListener;
 import be.unamur.info.b314.compiler.B314Parser;
+import be.unamur.info.b314.compiler.exception.MissingTypeException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import org.antlr.v4.runtime.ParserRuleContext;
 import org.antlr.v4.runtime.tree.ErrorNode;
 import org.antlr.v4.runtime.tree.TerminalNode;
 
 
 
-//@author jessi
+/*
+ *
+ *@author jessi
+ *
+ */
 
 
 
 public class SymboleTableFiller extends B314BaseListener {
+    
+    enum Type{
+    INTEGER,
+    BOOLEAN,
+    SQUARE,
+    VOID
+    }
+    
+        ScopeImpl GeneralScope;
+        ScopeImpl CurrentScope;
+        Symbole CurrentSymbole;
+        boolean CurrentIsFonction;
+        int position;
 
+        //le constructeur qui permet d'initialiser le scope general
+        public SymboleTableFiller() {
+            GeneralScope = new ScopeImpl("Programme");
+            CurrentScope = GeneralScope;
+            CurrentIsFonction=false;
+            position=1;
+        }
+        
+        //renvoie le scope general qui contient tous les autres scopes du programmme
+        public ScopeImpl getScope(){
+            return GeneralScope;
+        }
+        
+        
+         //programmes
+	@Override 
+        public void enterProgramme(B314Parser.ProgrammeContext ctx) {
+            GeneralScope= new ScopeImpl("Programme");
+            
+        }
 
-    //definitions des types
+	@Override public void exitProgramme(B314Parser.ProgrammeContext ctx) { }
+        
+        //les variables et fonctions du programmes
+                
+	@Override public void enterProgDecl(B314Parser.ProgDeclContext ctx) { }
+
+	@Override public void exitProgDecl(B314Parser.ProgDeclContext ctx) { }
+
+         //les fonctions
+	@Override 
+        public void enterFctDecl(B314Parser.FctDeclContext ctx) {
+            CurrentIsFonction = true;
+            CurrentScope = new ScopeImpl(ctx.ID().getText(),CurrentScope);
+            CurrentSymbole = new Symbole(ctx.ID().getText());
+            CurrentScope.AddSymbole(CurrentSymbole);                        
+        }
+
+	@Override 
+        public void exitFctDecl(B314Parser.FctDeclContext ctx) {
+            CurrentIsFonction = false;
+            CurrentScope = (ScopeImpl) CurrentScope.getParent();
+        }
+        
+        //les types de fonctions
+
+	@Override public void enterFctTypeScalar(B314Parser.FctTypeScalarContext ctx) { }
+
+	@Override public void exitFctTypeScalar(B314Parser.FctTypeScalarContext ctx) { }
+
+	@Override public void enterFctTypeVoid(B314Parser.FctTypeVoidContext ctx) { }
+
+	@Override public void exitFctTypeVoid(B314Parser.FctTypeVoidContext ctx) { }
+        
+        //les paramètres de fonctions
+
+	@Override 
+        public void enterParamDecl(B314Parser.ParamDeclContext ctx) {
+            CurrentIsFonction = false;
+        }
+
+	@Override 
+        public void exitParamDecl(B314Parser.ParamDeclContext ctx) { 
+            CurrentIsFonction = true;
+        }
+        
+        //clause when
+
+	@Override 
+        public void enterClauseWhen(B314Parser.ClauseWhenContext ctx) { 
+            String nomScope = "clauseWhen"+position;
+            CurrentScope = new ScopeImpl(nomScope,CurrentScope);
+            position = position +1;
+        }
+
+	@Override 
+        public void exitClauseWhen(B314Parser.ClauseWhenContext ctx) { 
+            CurrentScope = (ScopeImpl) CurrentScope.getParent();
+        }
+        
+        //clause default
+
+	@Override 
+        public void enterClauseDefault(B314Parser.ClauseDefaultContext ctx) {
+            CurrentScope = new ScopeImpl("clauseDefault",CurrentScope);
+        }
+
+	@Override 
+        public void exitClauseDefault(B314Parser.ClauseDefaultContext ctx) {
+            CurrentScope = (ScopeImpl) CurrentScope.getParent();
+        }
+        
+        //declaration des variables
+	@Override 
+        public void enterVarDecl(B314Parser.VarDeclContext ctx) {
+            CurrentSymbole = new Symbole(ctx.ID().getText());
+        }
+
+	@Override 
+        public void exitVarDecl(B314Parser.VarDeclContext ctx){
+            if(CurrentSymbole.getType() == null) throw new RuntimeException();
+            CurrentScope.AddSymbole(CurrentSymbole);
+        }
+        
+        //definitions des types
 	@Override public void enterTypeScalar(B314Parser.TypeScalarContext ctx) { }
 
 	@Override public void exitTypeScalar(B314Parser.TypeScalarContext ctx) { }
 
-	@Override public void enterTypeArray(B314Parser.TypeArrayContext ctx) { }
+	@Override 
+        public void enterTypeArray(B314Parser.TypeArrayContext ctx) { 
+            
+        }
 
 	@Override public void exitTypeArray(B314Parser.TypeArrayContext ctx) { }
 
@@ -44,12 +170,6 @@ public class SymboleTableFiller extends B314BaseListener {
 	@Override public void enterArray(B314Parser.ArrayContext ctx) { }
 
 	@Override public void exitArray(B314Parser.ArrayContext ctx) { }
-        
-        //declaration des variables
-
-	@Override public void enterVarDecl(B314Parser.VarDeclContext ctx) { }
-
-	@Override public void exitVarDecl(B314Parser.VarDeclContext ctx) { }
         
         //verifications des expressions
 
@@ -216,51 +336,7 @@ public class SymboleTableFiller extends B314BaseListener {
 	@Override public void enterAction(B314Parser.ActionContext ctx) { }
 
 	@Override public void exitAction(B314Parser.ActionContext ctx) { }
-
-        //programmes
-	@Override public void enterProgramme(B314Parser.ProgrammeContext ctx) { }
-
-	@Override public void exitProgramme(B314Parser.ProgrammeContext ctx) { }
-        
-        //les variables et fonctions du programmes
-                
-	@Override public void enterProgDecl(B314Parser.ProgDeclContext ctx) { }
-
-	@Override public void exitProgDecl(B314Parser.ProgDeclContext ctx) { }
-
-         //les fonctions
-	@Override public void enterFctDecl(B314Parser.FctDeclContext ctx) { }
-
-	@Override public void exitFctDecl(B314Parser.FctDeclContext ctx) { }
-        
-        //les types de fonctions
-
-	@Override public void enterFctTypeScalar(B314Parser.FctTypeScalarContext ctx) { }
-
-	@Override public void exitFctTypeScalar(B314Parser.FctTypeScalarContext ctx) { }
-
-	@Override public void enterFctTypeVoid(B314Parser.FctTypeVoidContext ctx) { }
-
-	@Override public void exitFctTypeVoid(B314Parser.FctTypeVoidContext ctx) { }
-        
-        //les paramètres de fonctions
-
-	@Override public void enterParamDecl(B314Parser.ParamDeclContext ctx) { }
-
-	@Override public void exitParamDecl(B314Parser.ParamDeclContext ctx) { }
-        
-        //clauses when
-
-	@Override public void enterClauseWhen(B314Parser.ClauseWhenContext ctx) { }
-
-	@Override public void exitClauseWhen(B314Parser.ClauseWhenContext ctx) { }
-        
-        //clause default
-
-	@Override public void enterClauseDefault(B314Parser.ClauseDefaultContext ctx) { }
-
-	@Override public void exitClauseDefault(B314Parser.ClauseDefaultContext ctx) { }
-        
+       
         //other
 
 	@Override public void enterEveryRule(ParserRuleContext ctx) { }
