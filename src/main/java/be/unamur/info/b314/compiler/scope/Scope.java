@@ -26,7 +26,7 @@ public interface Scope {
     /*
     *@return les symboles du scope
     **/
-    public Map<String, ArrayList<Symbole>> getSymboles();
+    public ArrayList<Symbole> getSymboles();
     
     /*
     *Permet d'ajouter un Scope enfant
@@ -47,5 +47,7 @@ public interface Scope {
      * @return le symbole si existe, sinon null
      */
     public Symbole FoundSymbole(String name);
+    
+    public String GetName();
 
 }

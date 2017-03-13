@@ -12,7 +12,7 @@ scalar: BOOLEAN     #scalarBoolean
         | SQUARE    #scalarSquare
         ;
 
-array: scalar CROCHET_OUVERT NUMBER (VIRGULE NUMBER)? CROCHET_FERME ;
+array: scalar CROCHET_OUVERT taille1=NUMBER (VIRGULE taille2=NUMBER)? CROCHET_FERME ;
 
 varDecl : ID AS type;
 
@@ -40,13 +40,13 @@ exprBool:TRUE                                                      #exprBoolTrue
          |exprEnt op=(INF|SUP) exprEnt                #exprBoolInfSupEgale
          |exprBool op=(AND|OR) exprBool                       #exprBoolAndOr
          |NOT exprBool                                                 #exprBoolNot
-         |PAR_OUVERT exprEnt PAR_FERME                               #exprBoolParennthese
+         |PAR_OUVERT exprBool PAR_FERME                               #exprBoolParennthese
          ;
 
 exprCase :ID PAR_OUVERT (exprD (VIRGULE exprD)*)? PAR_FERME         #exprCaseFonction
         | environnementCase                                         #exprCaseEnvironnement
-        | NEARBY CROCHET_OUVERT exprEnt VIRGULE exprEnt CROCHET_FERME   #exprCaseNearby
-        |PAR_OUVERT exprEnt PAR_FERME                               #exprCaseParennthese
+        | NEARBY CROCHET_OUVERT taille1=exprD VIRGULE taille2=exprD CROCHET_FERME   #exprCaseNearby
+        |PAR_OUVERT exprCase PAR_FERME                               #exprCaseParennthese
         ;
 
 environnementInt: LATITUDE
@@ -73,7 +73,7 @@ environnementCase: DIRT
         ;
         
 exprG : ID                                                              #exprGVariable
-         | ID CROCHET_OUVERT exprD (VIRGULE exprD)? CROCHET_FERME      #exprGTableau
+         | ID CROCHET_OUVERT taille1=exprD (VIRGULE taille2=exprD)? CROCHET_FERME      #exprGTableau
         ;
 
 entier : (MOINS)?NUMBER  ;

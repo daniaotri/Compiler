@@ -310,15 +310,17 @@ public class B314Parser extends Parser {
 	}
 
 	public static class ArrayContext extends ParserRuleContext {
+		public Token taille1;
+		public Token taille2;
 		public ScalarContext scalar() {
 			return getRuleContext(ScalarContext.class,0);
 		}
 		public TerminalNode CROCHET_OUVERT() { return getToken(B314Parser.CROCHET_OUVERT, 0); }
+		public TerminalNode CROCHET_FERME() { return getToken(B314Parser.CROCHET_FERME, 0); }
 		public List<TerminalNode> NUMBER() { return getTokens(B314Parser.NUMBER); }
 		public TerminalNode NUMBER(int i) {
 			return getToken(B314Parser.NUMBER, i);
 		}
-		public TerminalNode CROCHET_FERME() { return getToken(B314Parser.CROCHET_FERME, 0); }
 		public TerminalNode VIRGULE() { return getToken(B314Parser.VIRGULE, 0); }
 		public ArrayContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -351,7 +353,7 @@ public class B314Parser extends Parser {
 			setState(54);
 			match(CROCHET_OUVERT);
 			setState(55);
-			match(NUMBER);
+			((ArrayContext)_localctx).taille1 = match(NUMBER);
 			setState(58);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
@@ -360,7 +362,7 @@ public class B314Parser extends Parser {
 				setState(56);
 				match(VIRGULE);
 				setState(57);
-				match(NUMBER);
+				((ArrayContext)_localctx).taille2 = match(NUMBER);
 				}
 			}
 
@@ -1449,16 +1451,18 @@ public class B314Parser extends Parser {
 		}
 	}
 	public static class ExprCaseNearbyContext extends ExprCaseContext {
+		public ExprDContext taille1;
+		public ExprDContext taille2;
 		public TerminalNode NEARBY() { return getToken(B314Parser.NEARBY, 0); }
 		public TerminalNode CROCHET_OUVERT() { return getToken(B314Parser.CROCHET_OUVERT, 0); }
-		public List<ExprEntContext> exprEnt() {
-			return getRuleContexts(ExprEntContext.class);
-		}
-		public ExprEntContext exprEnt(int i) {
-			return getRuleContext(ExprEntContext.class,i);
-		}
 		public TerminalNode VIRGULE() { return getToken(B314Parser.VIRGULE, 0); }
 		public TerminalNode CROCHET_FERME() { return getToken(B314Parser.CROCHET_FERME, 0); }
+		public List<ExprDContext> exprD() {
+			return getRuleContexts(ExprDContext.class);
+		}
+		public ExprDContext exprD(int i) {
+			return getRuleContext(ExprDContext.class,i);
+		}
 		public ExprCaseNearbyContext(ExprCaseContext ctx) { copyFrom(ctx); }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
@@ -1596,11 +1600,11 @@ public class B314Parser extends Parser {
 				setState(172);
 				match(CROCHET_OUVERT);
 				setState(173);
-				exprEnt(0);
+				((ExprCaseNearbyContext)_localctx).taille1 = exprD();
 				setState(174);
 				match(VIRGULE);
 				setState(175);
-				exprEnt(0);
+				((ExprCaseNearbyContext)_localctx).taille2 = exprD();
 				setState(176);
 				match(CROCHET_FERME);
 				}
@@ -1895,15 +1899,17 @@ public class B314Parser extends Parser {
 		}
 	}
 	public static class ExprGTableauContext extends ExprGContext {
+		public ExprDContext taille1;
+		public ExprDContext taille2;
 		public TerminalNode ID() { return getToken(B314Parser.ID, 0); }
 		public TerminalNode CROCHET_OUVERT() { return getToken(B314Parser.CROCHET_OUVERT, 0); }
+		public TerminalNode CROCHET_FERME() { return getToken(B314Parser.CROCHET_FERME, 0); }
 		public List<ExprDContext> exprD() {
 			return getRuleContexts(ExprDContext.class);
 		}
 		public ExprDContext exprD(int i) {
 			return getRuleContext(ExprDContext.class,i);
 		}
-		public TerminalNode CROCHET_FERME() { return getToken(B314Parser.CROCHET_FERME, 0); }
 		public TerminalNode VIRGULE() { return getToken(B314Parser.VIRGULE, 0); }
 		public ExprGTableauContext(ExprGContext ctx) { copyFrom(ctx); }
 		@Override
@@ -1963,7 +1969,7 @@ public class B314Parser extends Parser {
 				setState(204);
 				match(CROCHET_OUVERT);
 				setState(205);
-				exprD();
+				((ExprGTableauContext)_localctx).taille1 = exprD();
 				setState(208);
 				_errHandler.sync(this);
 				_la = _input.LA(1);
@@ -1972,7 +1978,7 @@ public class B314Parser extends Parser {
 					setState(206);
 					match(VIRGULE);
 					setState(207);
-					exprD();
+					((ExprGTableauContext)_localctx).taille2 = exprD();
 					}
 				}
 
@@ -3275,8 +3281,8 @@ public class B314Parser extends Parser {
 		"\2\2\2\u00a5\u00a8\3\2\2\2\u00a6\u00a4\3\2\2\2\u00a6\u00a7\3\2\2\2\u00a7"+
 		"\u00aa\3\2\2\2\u00a8\u00a6\3\2\2\2\u00a9\u00a1\3\2\2\2\u00a9\u00aa\3\2"+
 		"\2\2\u00aa\u00ab\3\2\2\2\u00ab\u00b9\7\22\2\2\u00ac\u00b9\5\26\f\2\u00ad"+
-		"\u00ae\7$\2\2\u00ae\u00af\7\f\2\2\u00af\u00b0\5\f\7\2\u00b0\u00b1\7\16"+
-		"\2\2\u00b1\u00b2\5\f\7\2\u00b2\u00b3\7\r\2\2\u00b3\u00b9\3\2\2\2\u00b4"+
+		"\u00ae\7$\2\2\u00ae\u00af\7\f\2\2\u00af\u00b0\5\n\6\2\u00b0\u00b1\7\16"+
+		"\2\2\u00b1\u00b2\5\n\6\2\u00b2\u00b3\7\r\2\2\u00b3\u00b9\3\2\2\2\u00b4"+
 		"\u00b5\7\21\2\2\u00b5\u00b6\5\f\7\2\u00b6\u00b7\7\22\2\2\u00b7\u00b9\3"+
 		"\2\2\2\u00b8\u009f\3\2\2\2\u00b8\u00ac\3\2\2\2\u00b8\u00ad\3\2\2\2\u00b8"+
 		"\u00b4\3\2\2\2\u00b9\21\3\2\2\2\u00ba\u00c1\7\24\2\2\u00bb\u00c1\7\25"+

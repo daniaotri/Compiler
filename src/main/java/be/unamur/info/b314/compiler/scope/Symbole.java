@@ -17,6 +17,7 @@ public class Symbole {
     private String type;
     private int [] length = {};
     private Boolean isArray;
+    private Boolean isFunction;
     
         
     /**
@@ -28,6 +29,15 @@ public class Symbole {
         this.name = name;
         this.type = null;
         this.isArray = false;
+        this.isFunction = false;
+    }
+
+    public Boolean getIsFunction() {
+        return isFunction;
+    }
+
+    public void setIsFunction(Boolean isFunction) {
+        this.isFunction = isFunction;
     }
     
     public void setType(String type){
@@ -41,12 +51,6 @@ public class Symbole {
         return name;
     }
     
-    public void setArray(int [] length){
-        this.isArray = true;
-        this.type = "tableau";
-        this.length = length;
-    }
-
     public int[] getLength() {
         return length;
     }

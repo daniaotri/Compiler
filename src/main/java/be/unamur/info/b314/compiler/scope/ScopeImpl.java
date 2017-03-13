@@ -6,8 +6,6 @@
 package be.unamur.info.b314.compiler.scope;
 
 import java.util.ArrayList;
-import java.util.LinkedHashMap;
-import java.util.Map;
 
 /**
  * Implemente l'interface Scope
@@ -17,27 +15,27 @@ import java.util.Map;
 public class ScopeImpl implements Scope{
     
     /*Le scope parent*/
-    Scope Parent;
+    private Scope Parent;
     /*le nom du scope*/
-    String name;
+    private String name;
     
     /*Liste des tous les scopes inckus dans le scope*/
-    ArrayList<Scope> Children;   
+    private ArrayList<Scope> Children;   
     
     /*Liste des symboles du scope*/
-    Map<String, ArrayList<Symbole>> symboles;
+    private ArrayList<Symbole> symboles;
 
     public ScopeImpl(String st) {
         this.name = st;
         this.Children = new ArrayList();
-        this.symboles = new LinkedHashMap<>();
+        this.symboles = new ArrayList();
         this.Parent = Parent;
     }
     
     public ScopeImpl(String st,Scope parent) {
         this.name = st;
         this.Children = new ArrayList();
-        this.symboles = new LinkedHashMap<>();
+        this.symboles = new ArrayList();
         this.Parent = parent;
     }
         
@@ -48,7 +46,8 @@ public class ScopeImpl implements Scope{
 
     @Override
     public void AddSymbole(Symbole symbole) {
-        symboles.get(symbole.getName()).add(symbole);
+        if(symboles.contains(symbole))throw new RuntimeException();
+        else symboles.add(symbole);
     }
 
     /**
@@ -58,13 +57,10 @@ public class ScopeImpl implements Scope{
     @Override
     public Symbole FoundSymbole(String name) {
         
-        /*Recupérer la liste des symboles portant le type donné en paramètre*/
-        ArrayList<Symbole> TSymboles = symboles.get(name);
-        
         Symbole symbole = null;
         /*Verifier si le symbole a déjà était trouvé*/
-        for(int position = 0;position<TSymboles.size();position++){
-            if(name.equals(TSymboles.get(position).getName())) symbole = TSymboles.get(position); /*Le symbole est trouvé*/
+        for(int position = 0;position<symboles.size();position++){
+            if(name.equals(symboles.get(position).getName()))symbole = symboles.get(position); /*Le symbole est trouvé*/
         }
         if(symbole!=null)return symbole; 
         if(Parent != null)return Parent.FoundSymbole(name);
@@ -95,8 +91,15 @@ public class ScopeImpl implements Scope{
      * @return
      */
     @Override
-    public Map<String, ArrayList<Symbole>> getSymboles() {
+    public ArrayList<Symbole> getSymboles() {
         return symboles;
     }
+
+    @Override
+    public String GetName() {
+        return name;
+    }
+    
+    
 
 }

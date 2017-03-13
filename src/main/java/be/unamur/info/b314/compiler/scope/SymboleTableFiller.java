@@ -72,9 +72,11 @@ public class SymboleTableFiller extends B314BaseListener {
 	@Override 
         public void enterFctDecl(B314Parser.FctDeclContext ctx) {
             CurrentIsFonction = true;
-            CurrentScope = new ScopeImpl(ctx.ID().getText(),CurrentScope);
             CurrentSymbole = new Symbole(ctx.ID().getText());
-            CurrentScope.AddSymbole(CurrentSymbole);                        
+            CurrentSymbole.setIsFunction(true);
+            CurrentScope.AddSymbole(CurrentSymbole); // on ajoute le symbole fonction dans le scope parent
+            CurrentScope = new ScopeImpl(ctx.ID().getText(),CurrentScope); //on change de scope
+            CurrentScope.AddSymbole(CurrentSymbole);   //on l'ajoute dans son propre scope                     
         }
 
 	@Override 
@@ -91,7 +93,14 @@ public class SymboleTableFiller extends B314BaseListener {
 
 	@Override public void enterFctTypeVoid(B314Parser.FctTypeVoidContext ctx) { }
 
-	@Override public void exitFctTypeVoid(B314Parser.FctTypeVoidContext ctx) { }
+	@Override 
+        public void exitFctTypeVoid(B314Parser.FctTypeVoidContext ctx) {
+            if(CurrentIsFonction){
+                CurrentIsFonction = false;
+                CurrentSymbole.setType(ctx.VOID().getText());
+            }
+            else throw new RuntimeException();
+        }
         
         //les paramètres de fonctions
 
@@ -146,30 +155,53 @@ public class SymboleTableFiller extends B314BaseListener {
         //definitions des types
 	@Override public void enterTypeScalar(B314Parser.TypeScalarContext ctx) { }
 
-	@Override public void exitTypeScalar(B314Parser.TypeScalarContext ctx) { }
-
 	@Override 
-        public void enterTypeArray(B314Parser.TypeArrayContext ctx) { 
-            
+        public void exitTypeScalar(B314Parser.TypeScalarContext ctx) {
+            if(CurrentIsFonction)CurrentIsFonction=false;
         }
+
+	@Override public void enterTypeArray(B314Parser.TypeArrayContext ctx) { }
 
 	@Override public void exitTypeArray(B314Parser.TypeArrayContext ctx) { }
 
-	@Override public void enterScalarBoolean(B314Parser.ScalarBooleanContext ctx) { }
+	@Override 
+        public void enterScalarBoolean(B314Parser.ScalarBooleanContext ctx) {
+            CurrentSymbole.setType(ctx.BOOLEAN().getText());
+        }
 
 	@Override public void exitScalarBoolean(B314Parser.ScalarBooleanContext ctx) { }
 
-	@Override public void enterScalarInteger(B314Parser.ScalarIntegerContext ctx) { }
+	@Override 
+        public void enterScalarInteger(B314Parser.ScalarIntegerContext ctx) { 
+            CurrentSymbole.setType(ctx.INTEGER().getText());
+        }
 
 	@Override public void exitScalarInteger(B314Parser.ScalarIntegerContext ctx) { }
 
-	@Override public void enterScalarSquare(B314Parser.ScalarSquareContext ctx) { }
+	@Override 
+        public void enterScalarSquare(B314Parser.ScalarSquareContext ctx) { 
+            CurrentSymbole.setType(ctx.SQUARE().getText());
+        }
 
 	@Override public void exitScalarSquare(B314Parser.ScalarSquareContext ctx) { }
 
-	@Override public void enterArray(B314Parser.ArrayContext ctx) { }
+	@Override 
+        public void enterArray(B314Parser.ArrayContext ctx) {
+            if(ctx.taille1==null && ctx.taille2==null)throw new RuntimeException();
+            else if (ctx.taille1 !=null){
+                int i = Integer.parseInt(ctx.taille1.getText());
+                if(ctx.taille2!=null){
+                    int j = Integer.parseInt(ctx.taille2.getText());
+                    CurrentSymbole.setLength(new int []{i,j});
+                }
+                CurrentSymbole.setLength(new int []{i});
+            }
+        }
 
-	@Override public void exitArray(B314Parser.ArrayContext ctx) { }
+	@Override 
+        public void exitArray(B314Parser.ArrayContext ctx) {
+            if(CurrentIsFonction)CurrentIsFonction=false;
+        }
         
         //verifications des expressions
 
@@ -184,10 +216,11 @@ public class SymboleTableFiller extends B314BaseListener {
 	@Override public void enterExprDCase(B314Parser.ExprDCaseContext ctx) { }
 
 	@Override public void exitExprDCase(B314Parser.ExprDCaseContext ctx) { }
-
+        
 	@Override public void enterExprDG(B314Parser.ExprDGContext ctx) { }
 
 	@Override public void exitExprDG(B314Parser.ExprDGContext ctx) { }
+        
 
 	@Override public void enterExprEntParennthese(B314Parser.ExprEntParenntheseContext ctx) { }
 
@@ -209,9 +242,14 @@ public class SymboleTableFiller extends B314BaseListener {
 
 	@Override public void exitExprEntMulDiv(B314Parser.ExprEntMulDivContext ctx) { }
 
-	@Override public void enterExprEntFonction(B314Parser.ExprEntFonctionContext ctx) { }
+	@Override 
+        public void enterExprEntFonction(B314Parser.ExprEntFonctionContext ctx) { 
+            Symbole symbole = CurrentScope.FoundSymbole(ctx.ID().getText());
+            if(symbole.getType()!=Type.INTEGER.toString())throw new RuntimeException();        
+        }
 
 	@Override public void exitExprEntFonction(B314Parser.ExprEntFonctionContext ctx) { }
+        
 
 	@Override public void enterExprBoolInfSupEgale(B314Parser.ExprBoolInfSupEgaleContext ctx) { }
 
@@ -237,7 +275,11 @@ public class SymboleTableFiller extends B314BaseListener {
 
 	@Override public void exitExprBoolEgaleGauche(B314Parser.ExprBoolEgaleGaucheContext ctx) { }
 
-	@Override public void enterExprBoolFonction(B314Parser.ExprBoolFonctionContext ctx) { }
+	@Override 
+        public void enterExprBoolFonction(B314Parser.ExprBoolFonctionContext ctx) {
+            Symbole symbole = CurrentScope.FoundSymbole(ctx.ID().getText());
+            if(symbole.getType()!=Type.BOOLEAN.toString())throw new RuntimeException();
+        }
 
 	@Override public void exitExprBoolFonction(B314Parser.ExprBoolFonctionContext ctx) { }
 
@@ -260,8 +302,13 @@ public class SymboleTableFiller extends B314BaseListener {
 	@Override public void enterExprBoolParennthese(B314Parser.ExprBoolParenntheseContext ctx) { }
 
 	@Override public void exitExprBoolParennthese(B314Parser.ExprBoolParenntheseContext ctx) { }
+        
 
-	@Override public void enterExprCaseFonction(B314Parser.ExprCaseFonctionContext ctx) { }
+	@Override 
+        public void enterExprCaseFonction(B314Parser.ExprCaseFonctionContext ctx) { 
+            Symbole symbole = CurrentScope.FoundSymbole(ctx.ID().getText());
+            if(symbole.getType()!=Type.SQUARE.toString())throw new RuntimeException();        
+        }
 
 	@Override public void exitExprCaseFonction(B314Parser.ExprCaseFonctionContext ctx) { }
 
@@ -269,13 +316,18 @@ public class SymboleTableFiller extends B314BaseListener {
 
 	@Override public void exitExprCaseEnvironnement(B314Parser.ExprCaseEnvironnementContext ctx) { }
 
-	@Override public void enterExprCaseNearby(B314Parser.ExprCaseNearbyContext ctx) { }
+	@Override 
+        public void enterExprCaseNearby(B314Parser.ExprCaseNearbyContext ctx) {
+            if(ctx.taille1==null || ctx.taille2==null)throw new RuntimeException();
+            else if(GetType(ctx.taille1)!=Type.INTEGER.toString() ||GetType(ctx.taille2)!=Type.INTEGER.toString())throw new RuntimeException();
+        }
 
 	@Override public void exitExprCaseNearby(B314Parser.ExprCaseNearbyContext ctx) { }
 
 	@Override public void enterExprCaseParennthese(B314Parser.ExprCaseParenntheseContext ctx) { }
 
 	@Override public void exitExprCaseParennthese(B314Parser.ExprCaseParenntheseContext ctx) { }
+        
 
 	@Override public void enterEnvironnementInt(B314Parser.EnvironnementIntContext ctx) { }
 
@@ -289,11 +341,32 @@ public class SymboleTableFiller extends B314BaseListener {
 
 	@Override public void exitEnvironnementCase(B314Parser.EnvironnementCaseContext ctx) { }
 
-	@Override public void enterExprGVariable(B314Parser.ExprGVariableContext ctx) { }
+        
+        
+	@Override 
+        public void enterExprGVariable(B314Parser.ExprGVariableContext ctx) {
+            CurrentSymbole = CurrentScope.FoundSymbole(ctx.ID().getText());
+            if(CurrentSymbole == null)throw new RuntimeException();
+        }
 
 	@Override public void exitExprGVariable(B314Parser.ExprGVariableContext ctx) { }
 
-	@Override public void enterExprGTableau(B314Parser.ExprGTableauContext ctx) { }
+	@Override 
+        public void enterExprGTableau(B314Parser.ExprGTableauContext ctx) {
+            CurrentSymbole = CurrentScope.FoundSymbole(ctx.ID().getText());
+            if(CurrentSymbole == null)throw new RuntimeException();
+            if(CurrentSymbole.getIsArray()){
+                if(CurrentSymbole.getLength().length==1){
+                    if(ctx.taille1==null || ctx.taille2!=null)throw new RuntimeException();
+                    else if (GetType(ctx.taille1)!=Type.INTEGER.toString())throw new RuntimeException();
+                }
+                else{
+                    if(ctx.taille1==null || ctx.taille2==null)throw new RuntimeException();
+                    else if(GetType(ctx.taille1)!=Type.INTEGER.toString() ||GetType(ctx.taille2)!=Type.INTEGER.toString() )throw new RuntimeException();
+                }
+            }
+            else throw new RuntimeException();
+        }
 
 	@Override public void exitExprGTableau(B314Parser.ExprGTableauContext ctx) { }
 
@@ -319,7 +392,15 @@ public class SymboleTableFiller extends B314BaseListener {
 
 	@Override public void exitWhile(B314Parser.WhileContext ctx) { }
 
-	@Override public void enterAffectation(B314Parser.AffectationContext ctx) { }
+	@Override 
+        public void enterAffectation(B314Parser.AffectationContext ctx) { 
+            String name = ctx.exprG().getChild(0).getText();
+            Symbole symbole = CurrentScope.FoundSymbole(name);
+            if(symbole!=null){
+                String assign = GetType(ctx.exprD());
+                if(symbole.getType()!=assign)throw new RuntimeException();
+            }
+        }
 
 	@Override public void exitAffectation(B314Parser.AffectationContext ctx) { }
 
@@ -327,7 +408,10 @@ public class SymboleTableFiller extends B314BaseListener {
 
 	@Override public void exitCompute(B314Parser.ComputeContext ctx) { }
 
-	@Override public void enterNextAction(B314Parser.NextActionContext ctx) { }
+	@Override 
+        public void enterNextAction(B314Parser.NextActionContext ctx) {
+              if(ctx.action().children.isEmpty()) throw new RuntimeException();
+        }
 
 	@Override public void exitNextAction(B314Parser.NextActionContext ctx) { }
 
@@ -346,4 +430,13 @@ public class SymboleTableFiller extends B314BaseListener {
 	@Override public void visitTerminal(TerminalNode node) { }
 
 	@Override public void visitErrorNode(ErrorNode node) { }
+        
+        //méthodes privates
+        private String GetType(ParserRuleContext ctx){
+            //if(ctx == null) throw new RuntimeException();
+            if(ctx instanceof B314Parser.ExprEntContext) return Type.INTEGER.toString();
+            else if (ctx instanceof B314Parser.ExprBoolContext) return Type.BOOLEAN.toString();
+            else if (ctx instanceof B314Parser.ExprCaseContext) return Type.SQUARE.toString();
+            else throw new RuntimeException();
+        }
 }
