@@ -57,8 +57,7 @@ public class Symbole {
 
     public void setLength(int[] length) {
         this.length = length;
-        setIsArray(true);
-        setType("tableau");        
+        setIsArray(true);      
     }
 
     public Boolean getIsArray() {

@@ -42,6 +42,9 @@ public class SymboleTableFiller extends B314BaseListener {
         
         //renvoie le scope general qui contient tous les autres scopes du programmme
         public ScopeImpl getScope(){
+            
+            GeneralScope.CorrectEveryThing();
+            
             return GeneralScope;
         }
         

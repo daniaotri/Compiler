@@ -41,7 +41,12 @@ public class ScopeImpl implements Scope{
         
     @Override
     public void addChildScope(Scope child) {
-        if(!Children.contains(child)) Children.add(child);
+        String nameChild = child.GetName();
+        Scope scope = WhoIsThisScope(nameChild);
+        if(scope!=null){
+            Children.add(child);
+        }
+        else throw new RuntimeException();    
     }
 
     @Override
@@ -67,29 +72,31 @@ public class ScopeImpl implements Scope{
         return null; /*Ausun symbole trouvé*/
        
     }
+    private Scope WhoIsThisScope(String name){
+        Scope scope = null;
+        if(Children.size()!=0)
+        {
+            for (int i = 0;i<Children.size();i++){
+                String result = Children.get(i).GetName();
+                if(result.equals(name)){
+                  scope= Children.get(i); 
+                  break;
+                }} 
+        }
+            return scope;
+    }
+    
 
-    /**
-     *
-     * @return le scope parent
-     */
     @Override
     public Scope getParent() {
         return Parent;
     }
 
-    /**
-     *
-     * @return la liste des enfants
-     */
     @Override
     public ArrayList<Scope> getChildren() {
         return Children;
     }
 
-    /**
-     *
-     * @return
-     */
     @Override
     public ArrayList<Symbole> getSymboles() {
         return symboles;
@@ -99,5 +106,27 @@ public class ScopeImpl implements Scope{
     public String GetName() {
         return name;
     }
-        
+    
+    public void CorrectEveryThing(){
+        String type = null;
+        for(int i=0;i<symboles.size();i++){
+            type =symboles.get(i).getType();
+            if(type==null){
+                if((symboles.get(i).getIsFunction())){
+                    Scope scope = WhoIsThisScope(symboles.get(i).getName());
+                    if(scope==null)throw new RuntimeException();
+                    else{
+                        Symbole symbole = scope.FoundSymbole(symboles.get(i).getName());
+                        if(symbole == null)throw new RuntimeException();
+                        else{
+                            String type1= symbole.getType();
+                            symboles.get(i).setType(type1);
+                        }
+                    }
+                }
+                else throw new RuntimeException();
+            }
+            
+        }
+    }
 }

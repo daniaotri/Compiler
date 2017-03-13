@@ -37,7 +37,7 @@ exprBool:TRUE                                                      #exprBoolTrue
          |exprBool EGALE exprBool                               #exprBoolEgaleBoolean
          |exprCase EGALE exprCase                               #exprBoolEgaleCase
          |expr1=exprG EGALE expr2=exprG                          #exprBoolEgaleGauche
-         |exprEnt op=(INF|SUP) exprEnt                          #exprBoolInfSupEgale
+         |exprEnt op=(INF|SUP) exprEnt                           #exprBoolInfSupEgale
          |exprBool op=(AND|OR) exprBool                         #exprBoolAndOr
          |NOT exprBool                                                 #exprBoolNot
          |PAR_OUVERT exprBool PAR_FERME                               #exprBoolParennthese
