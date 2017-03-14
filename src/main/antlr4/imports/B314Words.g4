@@ -103,7 +103,7 @@ DO: 'do';
 // Clause Default
 
 BY: 'by';
-DEFAULT:'default'; 
+DEFAULT: 'default'; 
 
 ///Par rapport aux sous-structures/expressions
 
@@ -114,7 +114,7 @@ SET: 'set';
 COMPUTE: 'compute';
 ELSE: 'else';
 TO: 'to';
-SKIPPPP:'skip';
+SKIPPPP: 'skip';
 
 ID: LETTER (LETTER | DIGIT)* ;
 NUMBER: (DIGIT)+;
