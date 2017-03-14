@@ -38,6 +38,7 @@ public class SymboleTableFiller extends B314BaseListener {
             CurrentScope = GeneralScope;
             CurrentIsFonction=false;
             position=1;
+            CurrentSymbole=null;
         }
         
         //renvoie le scope general qui contient tous les autres scopes du programmme
@@ -144,8 +145,9 @@ public class SymboleTableFiller extends B314BaseListener {
 
 	@Override 
         public void exitVarDecl(B314Parser.VarDeclContext ctx){
-            if(CurrentSymbole.getType() == null) throw new RuntimeException();
-            CurrentScope.AddSymbole(CurrentSymbole);
+            //if(CurrentSymbole.getType() == null) throw new RuntimeException();
+            /*else
+            */CurrentScope.AddSymbole(CurrentSymbole);
         }
         
         //definitions des types
@@ -156,7 +158,10 @@ public class SymboleTableFiller extends B314BaseListener {
             if(CurrentIsFonction)CurrentIsFonction=false;
         }
 
-	@Override public void enterTypeArray(B314Parser.TypeArrayContext ctx) { }
+	@Override 
+        public void enterTypeArray(B314Parser.TypeArrayContext ctx) {
+            //CurrentSymbole.setType(ctx.array().scalar().getText());
+        }
 
 	@Override public void exitTypeArray(B314Parser.TypeArrayContext ctx) { }
 
@@ -183,8 +188,11 @@ public class SymboleTableFiller extends B314BaseListener {
 
 	@Override 
         public void enterArray(B314Parser.ArrayContext ctx) {
-            if(ctx.taille1==null && ctx.taille2==null)throw new RuntimeException();
-            else if (ctx.taille1 !=null){
+            //if(ctx.taille1==null && ctx.taille2==null)throw new RuntimeException();
+            if(ctx.scalar()==null)throw new RuntimeException();
+            else{
+            CurrentSymbole.setType(ctx.scalar().getText());
+            if (ctx.taille1 !=null){
                 int i = Integer.parseInt(ctx.taille1.getText());
                 if(ctx.taille2!=null){
                     int j = Integer.parseInt(ctx.taille2.getText());
@@ -192,11 +200,15 @@ public class SymboleTableFiller extends B314BaseListener {
                 }
                 CurrentSymbole.setLength(new int []{i});
             }
+            else throw new RuntimeException();            
+            }
+
         }
 
 	@Override 
         public void exitArray(B314Parser.ArrayContext ctx) {
             if(CurrentIsFonction)CurrentIsFonction=false;
+            if(CurrentSymbole.getLength().length == 0) throw new RuntimeException();
         }
         
         //verifications des expressions
@@ -241,7 +253,8 @@ public class SymboleTableFiller extends B314BaseListener {
 	@Override 
         public void enterExprEntFonction(B314Parser.ExprEntFonctionContext ctx) { 
             Symbole symbole = CurrentScope.FoundSymbole(ctx.ID().getText());
-            if(symbole.getType()!=Type.INTEGER.toString())throw new RuntimeException();        
+            //if(symbole==null)throw new RuntimeException(); 
+             if(symbole.getType()!=Type.INTEGER.toString())throw new RuntimeException();        
         }
 
 	@Override public void exitExprEntFonction(B314Parser.ExprEntFonctionContext ctx) { }
@@ -395,12 +408,16 @@ public class SymboleTableFiller extends B314BaseListener {
 
 	@Override 
         public void enterAffectation(B314Parser.AffectationContext ctx) { 
+            if(ctx.exprG()!=null && ctx.exprD()!=null ){
             String name = ctx.exprG().getChild(0).getText();
             Symbole symbole = CurrentScope.FoundSymbole(name);
-            if(symbole!=null){
-                String assign = GetType(ctx.exprD());
-                if(symbole.getType()!=assign)throw new RuntimeException();
+            String assign = GetType(ctx.exprD());
+            if(symbole!=null)
+                if(symbole.getType()!=assign)throw new RuntimeException();                      
+            
+            else throw new RuntimeException();
             }
+            else throw new RuntimeException();
         }
 
 	@Override public void exitAffectation(B314Parser.AffectationContext ctx) { }
@@ -438,6 +455,10 @@ public class SymboleTableFiller extends B314BaseListener {
             if(ctx instanceof B314Parser.ExprEntContext) return Type.INTEGER.toString();
             else if (ctx instanceof B314Parser.ExprBoolContext) return Type.BOOLEAN.toString();
             else if (ctx instanceof B314Parser.ExprCaseContext) return Type.SQUARE.toString();
+            else if(ctx instanceof B314Parser.ExprGContext){
+                Symbole sym = CurrentScope.FoundSymbole(ctx.getChild(0).getText());
+                return sym.getType();
+            }
             else throw new RuntimeException();
         }
 }

@@ -51,9 +51,10 @@ public class ScopeImpl implements Scope{
 
     @Override
     public void AddSymbole(Symbole symbole) {
-        String name = symbole.getName();
-        Symbole sym=FoundSymbole(name);
-        if(sym!=null||symboles.contains(symbole))throw new RuntimeException();
+        if(symbole == null)throw new RuntimeException();
+        //String name = symbole.getName();
+        //Symbole sym=FoundSymbole(name);
+        if(symboles.contains(symbole))throw new RuntimeException();
         else symboles.add(symbole);
     }
 
@@ -64,14 +65,16 @@ public class ScopeImpl implements Scope{
     @Override
     public Symbole FoundSymbole(String name) {        
         Symbole symbole = null;
+        
         /*Verifier si le symbole a déjà était trouvé*/
         for(int position = 0;position<symboles.size();position++){
             if(name.equals(symboles.get(position).getName()))symbole = symboles.get(position); /*Le symbole est trouvé*/
         }
         if(symbole!=null)return symbole; 
         if(Parent != null)return Parent.FoundSymbole(name);
-        return null; /*Ausun symbole trouvé*/
-       
+        
+        /*Ausun symbole trouvé*/
+        else throw new RuntimeException();
     }
     private Scope WhoIsThisScope(String name){
         Scope scope = null;

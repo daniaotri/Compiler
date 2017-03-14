@@ -1,0 +1,487 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="23da8053-1e9e-420a-be49-fa4761b32c44" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/test/java/be/unamur/info/b314/compiler/main/AffectationTest.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/b314-compiler-0.0.1-SNAPSHOT-jar-with-dependencies.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/b314-compiler-0.0.1-SNAPSHOT.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/.netbeans_automatic_build" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/test-classes/.netbeans_automatic_build" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314BaseListener.class" afterPath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314BaseListener.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314BaseVisitor.class" afterPath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314BaseVisitor.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Lexer.class" afterPath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Lexer.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Listener.class" afterPath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Listener.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$ActionContext.class" afterPath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$ActionContext.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$AffectationContext.class" afterPath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$AffectationContext.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$ArrayContext.class" afterPath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$ArrayContext.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$ClauseDefaultContext.class" afterPath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$ClauseDefaultContext.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$ClauseWhenContext.class" afterPath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$ClauseWhenContext.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$ComputeContext.class" afterPath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$ComputeContext.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$EntierContext.class" afterPath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$EntierContext.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$EnvironnementBoolContext.class" afterPath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$EnvironnementBoolContext.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$EnvironnementCaseContext.class" afterPath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$EnvironnementCaseContext.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$EnvironnementIntContext.class" afterPath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$EnvironnementIntContext.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$ExprBoolAndOrContext.class" afterPath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$ExprBoolAndOrContext.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$ExprBoolContext.class" afterPath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$ExprBoolContext.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$ExprBoolEgaleBooleanContext.class" afterPath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$ExprBoolEgaleBooleanContext.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$ExprBoolEgaleCaseContext.class" afterPath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$ExprBoolEgaleCaseContext.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$ExprBoolEgaleGaucheContext.class" afterPath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$ExprBoolEgaleGaucheContext.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$ExprBoolEgaleIntegerContext.class" afterPath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$ExprBoolEgaleIntegerContext.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$ExprBoolEnvironnementContext.class" afterPath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$ExprBoolEnvironnementContext.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$ExprBoolFalseContext.class" afterPath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$ExprBoolFalseContext.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$ExprBoolFonctionContext.class" afterPath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$ExprBoolFonctionContext.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$ExprBoolInfSupEgaleContext.class" afterPath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$ExprBoolInfSupEgaleContext.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$ExprBoolNotContext.class" afterPath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$ExprBoolNotContext.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$ExprBoolParenntheseContext.class" afterPath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$ExprBoolParenntheseContext.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$ExprBoolTrueContext.class" afterPath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$ExprBoolTrueContext.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$ExprCaseContext.class" afterPath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$ExprCaseContext.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$ExprCaseEnvironnementContext.class" afterPath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$ExprCaseEnvironnementContext.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$ExprCaseFonctionContext.class" afterPath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$ExprCaseFonctionContext.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$ExprCaseNearbyContext.class" afterPath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$ExprCaseNearbyContext.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$ExprCaseParenntheseContext.class" afterPath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$ExprCaseParenntheseContext.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$ExprDBooleanContext.class" afterPath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$ExprDBooleanContext.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$ExprDCaseContext.class" afterPath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$ExprDCaseContext.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$ExprDContext.class" afterPath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$ExprDContext.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$ExprDGContext.class" afterPath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$ExprDGContext.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$ExprDIntegerContext.class" afterPath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$ExprDIntegerContext.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$ExprEntContext.class" afterPath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$ExprEntContext.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$ExprEntEntierContext.class" afterPath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$ExprEntEntierContext.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$ExprEntEnvironnementContext.class" afterPath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$ExprEntEnvironnementContext.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$ExprEntFonctionContext.class" afterPath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$ExprEntFonctionContext.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$ExprEntMulDivContext.class" afterPath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$ExprEntMulDivContext.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$ExprEntParenntheseContext.class" afterPath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$ExprEntParenntheseContext.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$ExprEntPlusMoinsContext.class" afterPath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$ExprEntPlusMoinsContext.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$ExprGContext.class" afterPath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$ExprGContext.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$ExprGTableauContext.class" afterPath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$ExprGTableauContext.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$ExprGVariableContext.class" afterPath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$ExprGVariableContext.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$FctDeclContext.class" afterPath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$FctDeclContext.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$FctTypeContext.class" afterPath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$FctTypeContext.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$FctTypeScalarContext.class" afterPath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$FctTypeScalarContext.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$FctTypeVoidContext.class" afterPath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$FctTypeVoidContext.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$IfContext.class" afterPath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$IfContext.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$IfthenelseContext.class" afterPath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$IfthenelseContext.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$InstructionContext.class" afterPath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$InstructionContext.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$NextActionContext.class" afterPath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$NextActionContext.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$ParamDeclContext.class" afterPath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$ParamDeclContext.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$ProgDeclContext.class" afterPath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$ProgDeclContext.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$ProgrammeContext.class" afterPath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$ProgrammeContext.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$ScalarBooleanContext.class" afterPath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$ScalarBooleanContext.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$ScalarContext.class" afterPath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$ScalarContext.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$ScalarIntegerContext.class" afterPath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$ScalarIntegerContext.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$ScalarSquareContext.class" afterPath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$ScalarSquareContext.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$SkippppContext.class" afterPath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$SkippppContext.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$TypeArrayContext.class" afterPath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$TypeArrayContext.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$TypeContext.class" afterPath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$TypeContext.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$TypeScalarContext.class" afterPath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$TypeScalarContext.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$VarDeclContext.class" afterPath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$VarDeclContext.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$WhileContext.class" afterPath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$WhileContext.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser.class" afterPath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Visitor.class" afterPath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Visitor.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/main/Main.class" afterPath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/main/Main.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/scope/Scope.class" afterPath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/scope/Scope.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/scope/ScopeImpl.class" afterPath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/scope/ScopeImpl.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/scope/SymboleTableFiller.class" afterPath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/scope/SymboleTableFiller.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/b314-compiler.iml" afterPath="$PROJECT_DIR$/b314-compiler.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/be/unamur/info/b314/compiler/scope/ScopeImpl.java" afterPath="$PROJECT_DIR$/src/main/java/be/unamur/info/b314/compiler/scope/ScopeImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/be/unamur/info/b314/compiler/scope/SymboleTableFiller.java" afterPath="$PROJECT_DIR$/src/main/java/be/unamur/info/b314/compiler/scope/SymboleTableFiller.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-be.unamur.info.b314.compiler.main.B314commentsSyntaxTest.xml" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-be.unamur.info.b314.compiler.main.B314commentsSyntaxTest.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/be.unamur.info.b314.compiler.main.B314commentsSyntaxTest.txt" afterPath="$PROJECT_DIR$/target/surefire-reports/be.unamur.info.b314.compiler.main.B314commentsSyntaxTest.txt" />
+    </list>
+    <ignored path="$PROJECT_DIR$/target/maven-status/" />
+    <ignored path="$PROJECT_DIR$/target/surefire/" />
+    <ignored path="$PROJECT_DIR$/target/surefire-reports/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GradleLocalSettings">
+    <option name="externalProjectsViewState">
+      <projects_view />
+    </option>
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="-9" />
+    <option name="y" value="-9" />
+    <option name="width" value="1938" />
+    <option name="height" value="1048" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="PackagesPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scratches" />
+      <pane id="ProjectPane" />
+      <pane id="PackagesPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="b314-compiler" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="b314-compiler" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/aide_nath_compilateur/aide_nath_compilateur/syntax/affect/ok/affect_bool_array_constant_values.b314" />
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
+      <module name="" />
+      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
+      <option name="PROGRAM_PARAMETERS" />
+      <predefined_log_file id="idea.log" enabled="true" />
+      <method />
+    </configuration>
+    <configuration default="true" type="AndroidRunConfigurationType" factoryName="Android App">
+      <module name="" />
+      <option name="DEPLOY" value="true" />
+      <option name="ARTIFACT_NAME" value="" />
+      <option name="PM_INSTALL_OPTIONS" value="" />
+      <option name="ACTIVITY_EXTRA_FLAGS" value="" />
+      <option name="MODE" value="default_activity" />
+      <option name="TARGET_SELECTION_MODE" value="SHOW_DIALOG" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
+      <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
+      <option name="FORCE_STOP_RUNNING_APP" value="true" />
+      <option name="DEBUGGER_TYPE" value="Java" />
+      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
+      <option name="PREFERRED_AVD" value="" />
+      <Java />
+      <Profilers>
+        <option name="ENABLE_ADVANCED_PROFILING" value="true" />
+        <option name="GAPID_ENABLED" value="false" />
+        <option name="GAPID_DISABLE_PCS" value="false" />
+        <option name="SUPPORT_LIB_ENABLED" value="true" />
+        <option name="INSTRUMENTATION_ENABLED" value="true" />
+      </Profilers>
+      <option name="DEEP_LINK" value="" />
+      <option name="ACTIVITY_CLASS" value="" />
+      <method />
+    </configuration>
+    <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Tests">
+      <module name="" />
+      <option name="TESTING_TYPE" value="0" />
+      <option name="INSTRUMENTATION_RUNNER_CLASS" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="EXTRA_OPTIONS" value="" />
+      <option name="TARGET_SELECTION_MODE" value="SHOW_DIALOG" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
+      <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
+      <option name="FORCE_STOP_RUNNING_APP" value="true" />
+      <option name="DEBUGGER_TYPE" value="Java" />
+      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
+      <option name="PREFERRED_AVD" value="" />
+      <Java />
+      <Profilers>
+        <option name="ENABLE_ADVANCED_PROFILING" value="true" />
+        <option name="GAPID_ENABLED" value="false" />
+        <option name="GAPID_DISABLE_PCS" value="false" />
+        <option name="SUPPORT_LIB_ENABLED" value="true" />
+        <option name="INSTRUMENTATION_ENABLED" value="true" />
+      </Profilers>
+      <method />
+    </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <module />
+      <method />
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="GradleRunConfiguration" factoryName="Gradle">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list />
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <method />
+    </configuration>
+    <configuration default="true" type="JUnit" factoryName="JUnit">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="true" type="JarApplication" factoryName="JAR Application">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="Java Scratch" factoryName="Java Scratch">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="SCRATCH_FILE_ID" value="0" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="JetRunConfigurationType" factoryName="Kotlin">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="b314-compiler" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType" factoryName="Kotlin script">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="filePath" />
+      <option name="vmParameters" />
+      <option name="alternativeJrePath" />
+      <option name="programParameters" />
+      <option name="passParentEnvs" value="true" />
+      <option name="workingDirectory" />
+      <option name="isAlternativeJrePathEnabled" value="false" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="Remote" factoryName="Remote">
+      <option name="USE_SOCKET_TRANSPORT" value="true" />
+      <option name="SERVER_MODE" value="false" />
+      <option name="SHMEM_ADDRESS" value="javadebug" />
+      <option name="HOST" value="localhost" />
+      <option name="PORT" value="5005" />
+      <method />
+    </configuration>
+    <configuration default="true" type="ScalaTestRunConfiguration" factoryName="ScalaTest">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <setting name="path" value="" />
+      <setting name="package" value="" />
+      <setting name="vmparams" value="" />
+      <setting name="params" value="" />
+      <setting name="workingDirectory" value="" />
+      <setting name="searchForTest" value="Across module dependencies" />
+      <setting name="testName" value="" />
+      <setting name="testKind" value="Class" />
+      <setting name="showProgressMessages" value="true" />
+      <classRegexps />
+      <testRegexps />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="Specs2RunConfiguration" factoryName="Specs2">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <setting name="path" value="" />
+      <setting name="package" value="" />
+      <setting name="vmparams" value="" />
+      <setting name="params" value="" />
+      <setting name="workingDirectory" value="" />
+      <setting name="searchForTest" value="Across module dependencies" />
+      <setting name="testName" value="" />
+      <setting name="testKind" value="Class" />
+      <setting name="showProgressMessages" value="true" />
+      <classRegexps />
+      <testRegexps />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="TestNG" factoryName="TestNG">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="ANNOTATION_TYPE" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" />
+      <envs />
+      <properties />
+      <listeners />
+      <method />
+    </configuration>
+    <configuration default="true" type="uTestRunConfiguration" factoryName="utest">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <setting name="path" value="" />
+      <setting name="package" value="" />
+      <setting name="vmparams" value="" />
+      <setting name="params" value="" />
+      <setting name="workingDirectory" value="" />
+      <setting name="searchForTest" value="Across module dependencies" />
+      <setting name="testName" value="" />
+      <setting name="testKind" value="Class" />
+      <setting name="showProgressMessages" value="true" />
+      <classRegexps />
+      <testRegexps />
+      <envs />
+      <method />
+    </configuration>
+  </component>
+  <component name="SbtLocalSettings">
+    <option name="externalProjectsViewState">
+      <projects_view />
+    </option>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="23da8053-1e9e-420a-be49-fa4761b32c44" name="Default" comment="" />
+      <created>1489495546355</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1489495546355</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="TodoView" selected-index="3">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-9" y="-9" width="1938" height="1048" extended-state="7" />
+    <editor active="false" />
+    <layout>
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Tool Output" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295583" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295583" sideWeight="0.50214595" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="ANTLR Preview" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3295583" sideWeight="0.49785408" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295583" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295583" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295583" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager />
+    <watches-manager />
+  </component>
+  <component name="antWorkspaceConfiguration">
+    <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
+    <option name="FILTER_TARGETS" value="false" />
+  </component>
+</project>
