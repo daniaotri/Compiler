@@ -67,7 +67,10 @@ exprBool: TRUE                                                      #exprBoolTru
 
 exprCase: ID PAR_OUVERT (exprD (VIRGULE exprD)*)? PAR_FERME         #exprCaseFonction
         | environnementCase                                         #exprCaseEnvironnement
-        | NEARBY CROCHET_OUVERT taille1=exprD VIRGULE taille2=exprD CROCHET_FERME   #exprCaseNearby
+        | NEARBY CROCHET_OUVERT exprEnt VIRGULE exprEnt CROCHET_FERME   #exprCaseNearbyEntEnt
+        | NEARBY CROCHET_OUVERT exprEnt VIRGULE exprG CROCHET_FERME   #exprCaseNearbyEntG
+        | NEARBY CROCHET_OUVERT exprG VIRGULE exprEnt CROCHET_FERME   #exprCaseNearbyGEnt
+        | NEARBY CROCHET_OUVERT taille1=exprG VIRGULE taille2=exprG CROCHET_FERME   #exprCaseNearbyGG
         | PAR_OUVERT exprCase PAR_FERME                               #exprCaseParennthese
         ;
 
