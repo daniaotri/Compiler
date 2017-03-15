@@ -192,6 +192,7 @@ public class Main {
     
     private B314Parser.ProgrammeContext parse(ANTLRInputStream input) throws ParseCancellationException, ParsingException{
         CommonTokenStream tokens = new CommonTokenStream(new B314Lexer(input));
+        System.out.println(input);
         parser = new B314Parser(tokens);
         parser.removeErrorListeners();;
         MyConsoleErrorListener errorListener = new MyConsoleErrorListener();

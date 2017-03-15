@@ -18,7 +18,7 @@ array: scalar CROCHET_OUVERT taille1=NUMBER (VIRGULE taille2=NUMBER)? CROCHET_FE
 varDecl: ID AS type
         ;
 
-exprD : exprEnt                 #exprDInteger
+exprD: exprEnt                 #exprDInteger
       | exprBool               #exprDBoolean
       | exprCase               #exprDCase
       | exprG                  #exprDG
@@ -128,7 +128,7 @@ programme: DECLARE AND RETAIN progDecl WHEN YOUR TURN (clauseWhen)* clauseDefaul
 progDecl: (varDecl POINtVIRGULE | fctDecl)*
         ;
  
-fctDecl : ID AS FUNCTION PAR_OUVERT paramDecl? PAR_FERME DEUXPOINTS fctType (DECLARE LOCAL(varDecl POINtVIRGULE)+)? DO (instruction)+ DONE    
+fctDecl: ID AS FUNCTION PAR_OUVERT paramDecl? PAR_FERME DEUXPOINTS fctType (DECLARE LOCAL(varDecl POINtVIRGULE)+)? DO (instruction)+ DONE    
         ;
 
 fctType: scalar                                     #fctTypeScalar
