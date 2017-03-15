@@ -167,7 +167,9 @@ public class SymboleTableFiller extends B314BaseListener {
 	@Override 
         public void exitVarDecl(B314Parser.VarDeclContext ctx){
             if(CurrentSymbole.getType() == null) throw new RuntimeException();
-            CurrentScope.AddSymbole(CurrentSymbole);
+            Symbole symbole = CurrentScope.FoundSymbole(ctx.ID().getText());
+            if(symbole!= null)throw new RuntimeException();
+            else CurrentScope.AddSymbole(CurrentSymbole);
         }
         /**
          *
