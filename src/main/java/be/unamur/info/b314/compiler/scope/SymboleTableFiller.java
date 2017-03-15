@@ -67,7 +67,39 @@ public class SymboleTableFiller extends B314BaseListener {
             CurrentSymbole.setIsFunction(true);
             CurrentScope.AddSymbole(CurrentSymbole); // on ajoute le symbole fonction dans le scope parent
             CurrentScope = new ScopeImpl(ctx.ID().getText(),CurrentScope); //on change de scope
-            CurrentScope.AddSymbole(CurrentSymbole);   //on l'ajoute dans son propre scope                     
+            CurrentScope.AddSymbole(CurrentSymbole);   //on l'ajoute dans son propre scope  
+            
+            CurrentScope.AddSymbole(new Symbole("latitude",Type.INTEGER.toString()));
+            CurrentScope.AddSymbole(new Symbole("longitude",Type.INTEGER.toString()));
+            CurrentScope.AddSymbole(new Symbole("grid size",Type.INTEGER.toString()));
+            CurrentScope.AddSymbole(new Symbole("map count",Type.INTEGER.toString()));
+            CurrentScope.AddSymbole(new Symbole("ammo count",Type.INTEGER.toString()));
+            CurrentScope.AddSymbole(new Symbole("soda count",Type.INTEGER.toString()));
+            CurrentScope.AddSymbole(new Symbole("radio count",Type.INTEGER.toString()));
+            CurrentScope.AddSymbole(new Symbole("fruits count",Type.INTEGER.toString()));
+            CurrentScope.AddSymbole(new Symbole("life",Type.INTEGER.toString()));
+            CurrentScope.AddSymbole(new Symbole("true",Type.BOOLEAN.toString()));
+            CurrentScope.AddSymbole(new Symbole("false",Type.BOOLEAN.toString()));
+            CurrentScope.AddSymbole(new Symbole("ennemi is north",Type.BOOLEAN.toString()));
+            CurrentScope.AddSymbole(new Symbole("ennemi is south",Type.BOOLEAN.toString()));
+            CurrentScope.AddSymbole(new Symbole("ennemi is east",Type.BOOLEAN.toString()));
+            CurrentScope.AddSymbole(new Symbole("ennemi is west",Type.BOOLEAN.toString()));
+            CurrentScope.AddSymbole(new Symbole("graal is north",Type.BOOLEAN.toString()));
+            CurrentScope.AddSymbole(new Symbole("graal is south",Type.BOOLEAN.toString()));
+            CurrentScope.AddSymbole(new Symbole("graal is east",Type.BOOLEAN.toString()));
+            CurrentScope.AddSymbole(new Symbole("graal is west",Type.BOOLEAN.toString()));
+            CurrentScope.AddSymbole(new Symbole("dirt",Type.SQUARE.toString()));
+            CurrentScope.AddSymbole(new Symbole("rock",Type.SQUARE.toString()));
+            CurrentScope.AddSymbole(new Symbole("vines",Type.SQUARE.toString()));
+            CurrentScope.AddSymbole(new Symbole("zombie",Type.SQUARE.toString()));
+            CurrentScope.AddSymbole(new Symbole("player",Type.SQUARE.toString()));
+            CurrentScope.AddSymbole(new Symbole("ennemi",Type.SQUARE.toString()));
+            CurrentScope.AddSymbole(new Symbole("map",Type.SQUARE.toString()));
+            CurrentScope.AddSymbole(new Symbole("radio",Type.SQUARE.toString()));
+            CurrentScope.AddSymbole(new Symbole("ammo",Type.SQUARE.toString()));
+            CurrentScope.AddSymbole(new Symbole("fruits",Type.SQUARE.toString()));
+            CurrentScope.AddSymbole(new Symbole("soda",Type.SQUARE.toString()));
+                        
         }
 
 	@Override 
@@ -369,7 +401,7 @@ public class SymboleTableFiller extends B314BaseListener {
             else {
                 String type1 = GetType((ParserRuleContext) ctx.taille1.getChild(0));
                 String type2 = GetType((ParserRuleContext) ctx.taille2.getChild(0));
-                if(type1!=Type.INTEGER.toString() ||type2!=Type.INTEGER.toString())throw new RuntimeException();
+                CheckType(type1,type2,Type.INTEGER.toString());
             }         
         }     
         /**
