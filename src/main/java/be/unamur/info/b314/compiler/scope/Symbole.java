@@ -31,7 +31,13 @@ public class Symbole {
         this.isArray = false;
         this.isFunction = false;
     }
-
+    public Symbole(String name,String type){
+        this.name = name;
+        this.type = name;
+        this.isArray = false;
+        this.isFunction = false;
+    }
+    
     public Boolean getIsFunction() {
         return isFunction;
     }

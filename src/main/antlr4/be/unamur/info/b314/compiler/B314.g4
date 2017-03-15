@@ -27,8 +27,14 @@ exprD : exprEnt                 #exprDInteger
 exprEnt: entier                                                   #exprEntEntier
         | environnementInt                                         #exprEntEnvironnement
         | ID PAR_OUVERT (exprD (VIRGULE exprD)*)? PAR_FERME        #exprEntFonction
-        | expr1=exprEnt op=(MUL|DIV|DIV_ENT) expr2=exprEnt             #exprEntMulDiv
-        | expr1=exprEnt op=(PLUS|MOINS) expr2=exprEnt                 #exprEntPlusMoins
+        | exprEnt op=(MUL|DIV|DIV_ENT) exprEnt             #exprEntMulDivEntEnt
+        | exprEnt op=(MUL|DIV|DIV_ENT) exprG             #exprEntMulDivEntGauhe
+        | exprG op=(MUL|DIV|DIV_ENT) exprEnt             #exprEntMulDivGauheEnt
+        | expr3=exprG op=(MUL|DIV|DIV_ENT) expr4=exprG             #exprEntMulDivGaucheGauhe
+        | exprEnt op=(PLUS|MOINS) exprEnt             #exprEntPlusMoinsEntEnt
+        | exprEnt op=(PLUS|MOINS) exprG             #exprEntPlusMoinsEntGauhe
+        | exprG op=(PLUS|MOINS) exprEnt             #exprEntPlusMoinsGauheEnt
+        | expr3=exprG op=(PLUS|MOINS) expr4=exprG             #exprEntPlusMoinsGaucheGauhe
         | PAR_OUVERT exprEnt PAR_FERME                               #exprEntParennthese
         ;
 
@@ -39,10 +45,23 @@ exprBool: TRUE                                                      #exprBoolTru
          | exprEnt EGALE exprEnt                                 #exprBoolEgaleInteger
          | exprBool EGALE exprBool                               #exprBoolEgaleBoolean
          | exprCase EGALE exprCase                               #exprBoolEgaleCase
-         | expr1=exprG EGALE expr2=exprG                          #exprBoolEgaleGauche
-         | exprEnt op=(INF|SUP) exprEnt                           #exprBoolInfSupEgale
-         | exprBool op=(AND|OR) exprBool                         #exprBoolAndOr
+         | expr3=exprG EGALE expr4=exprG                        #exprBoolEgaleGaucheGauche
+         | exprG EGALE exprEnt                      #exprBoolEgaleGaucheEnt
+         | exprG EGALE exprBool                     #exprBoolEgaleGaucheBool
+         | exprG EGALE exprCase                     #exprBoolEgaleGaucheCase
+         | exprEnt EGALE exprG                      #exprBoolEgaleEntGauche
+         | exprBool EGALE exprG                     #exprBoolEgaleBoolGauche
+         | exprCase EGALE exprG                     #exprBoolEgaleCaseGauche
+         | exprEnt op=(INF|SUP) exprEnt                           #exprBoolInfSupEnt
+         | exprEnt op=(INF|SUP) expr2=exprG                             #exprBoolInfSupEntGauche
+         | expr1=exprG op=(INF|SUP) exprEnt                               #exprBoolInfSupGEnt
+         | expr1=exprG op=(INF|SUP) expr2=exprG                               #exprBoolInfSupGG
+         | exprBool op=(AND|OR) exprBool                         #exprBoolAndOrBoolBool
+         | exprBool op=(AND|OR) exprG                         #exprBoolAndOrBoolGauche
+         | exprG op=(AND|OR) exprBool                         #exprBoolAndOrGaucheBool
+         | expr5=exprG op=(AND|OR) expr6=exprG                         #exprBoolAndOrGaucheGauche
          | NOT exprBool                                                 #exprBoolNot
+         | NOT exprG                                                    #exprBoolNotGauche
          | PAR_OUVERT exprBool PAR_FERME                               #exprBoolParennthese
          ;
 
