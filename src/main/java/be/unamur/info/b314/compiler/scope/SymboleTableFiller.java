@@ -197,16 +197,18 @@ public class SymboleTableFiller extends B314BaseListener {
          */        
 	@Override 
         public void enterArray(B314Parser.ArrayContext ctx) {
-            if(ctx.taille1==null && ctx.taille2==null)throw new RuntimeException();
-            else if (ctx.taille1 !=null){
+            if(ctx.taille1==null && ctx.taille2==null)throw new RuntimeException();            
+            else 
+            {   CurrentSymbole.setType(ctx.scalar().getChild(0).getText());
+                if (ctx.taille1 !=null){
                 int i = Integer.parseInt(ctx.taille1.getText());
                 if(ctx.taille2!=null){
                     int j = Integer.parseInt(ctx.taille2.getText());
                     CurrentSymbole.setLength(new int []{i,j});
                 }
                 CurrentSymbole.setLength(new int []{i});
-            }
-            CurrentSymbole.setType(ctx.scalar().getChild(0).getText());
+            }            
+        }
         }
 
 	@Override 
