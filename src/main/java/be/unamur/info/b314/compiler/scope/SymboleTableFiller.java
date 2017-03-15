@@ -69,7 +69,7 @@ public class SymboleTableFiller extends B314BaseListener {
             CurrentScope = new ScopeImpl(ctx.ID().getText(),CurrentScope); //on change de scope
             CurrentScope.AddSymbole(CurrentSymbole);   //on l'ajoute dans son propre scope  
             
-            CurrentScope.AddSymbole(new Symbole("latitude",Type.INTEGER.toString()));
+           /* CurrentScope.AddSymbole(new Symbole("latitude",Type.INTEGER.toString()));
             CurrentScope.AddSymbole(new Symbole("longitude",Type.INTEGER.toString()));
             CurrentScope.AddSymbole(new Symbole("grid size",Type.INTEGER.toString()));
             CurrentScope.AddSymbole(new Symbole("map count",Type.INTEGER.toString()));
@@ -99,7 +99,7 @@ public class SymboleTableFiller extends B314BaseListener {
             CurrentScope.AddSymbole(new Symbole("ammo",Type.SQUARE.toString()));
             CurrentScope.AddSymbole(new Symbole("fruits",Type.SQUARE.toString()));
             CurrentScope.AddSymbole(new Symbole("soda",Type.SQUARE.toString()));
-                        
+               */         
         }
 
 	@Override 
