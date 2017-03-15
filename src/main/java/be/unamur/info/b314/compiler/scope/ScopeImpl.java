@@ -52,10 +52,9 @@ public class ScopeImpl implements Scope{
     @Override
     public void AddSymbole(Symbole symbole) {
         if(symbole == null)throw new RuntimeException();
-        String name = symbole.getName();
-        Symbole sym=FoundSymbole(name);
+        //String name = symbole.getName();
+        //Symbole sym=FoundSymbole(name);
         if(symboles.contains(symbole))throw new RuntimeException();
-        //else if(sym!=null) throw new RuntimeException();
         else symboles.add(symbole);
     }
 
