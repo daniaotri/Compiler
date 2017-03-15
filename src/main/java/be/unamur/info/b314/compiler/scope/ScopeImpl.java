@@ -55,7 +55,7 @@ public class ScopeImpl implements Scope{
         String name = symbole.getName();
         Symbole sym=FoundSymbole(name);
         if(symboles.contains(symbole))throw new RuntimeException();
-        else if(sym!=null) throw new RuntimeException();
+        //else if(sym!=null) throw new RuntimeException();
         else symboles.add(symbole);
     }
 
