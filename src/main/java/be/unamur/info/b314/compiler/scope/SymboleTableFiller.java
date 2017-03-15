@@ -46,6 +46,7 @@ public class SymboleTableFiller extends B314BaseListener {
          *  Renvoie le scope general
          */
         public ScopeImpl getScope(){
+            GeneralScope.deleteDuplicateSymbole();
             return GeneralScope;
         }
         /**
