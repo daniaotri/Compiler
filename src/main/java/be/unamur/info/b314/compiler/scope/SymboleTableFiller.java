@@ -262,103 +262,114 @@ public class SymboleTableFiller extends B314BaseListener {
 	@Override 
         public void enterExprBoolFonction(B314Parser.ExprBoolFonctionContext ctx) {
             Symbole symbole = CurrentScope.FoundSymbole(ctx.ID().getText());
-            testType(symbole,Type.BOOLEAN.toString()); 
+            if(symbole.getType()!=Type.BOOLEAN.toString())throw new RuntimeException();
         }
         
         @Override 
         public void enterExprBoolEgaleGaucheGauche(B314Parser.ExprBoolEgaleGaucheGaucheContext ctx) { 
-            Symbole symbole1 = CurrentScope.FoundSymbole(ctx.expr3.getChild(0).getText());
-            Symbole symbole2 = CurrentScope.FoundSymbole(ctx.expr4.getChild(0).getText());
-            testType(symbole1,symbole2.getType());          
+            String type1 = CurrentScope.FoundSymbole(ctx.expr3.getChild(0).getText()).getType();
+            String type2 = CurrentScope.FoundSymbole(ctx.expr4.getChild(0).getText()).getType();
+           if(type1!=type2)throw new RuntimeException();        
         }
 
         @Override 
         public void enterExprBoolEgaleGaucheEnt(B314Parser.ExprBoolEgaleGaucheEntContext ctx) {
-            Symbole symbole = CurrentScope.FoundSymbole(ctx.exprG().getChild(0).getText());
-            testType(symbole,Type.INTEGER.toString()); 
+            String type = CurrentScope.FoundSymbole(ctx.exprG().getChild(0).getText()).getType();
+            if(type!= Type.INTEGER.toString())throw new RuntimeException();
         }
 
 	@Override 
         public void enterExprBoolEgaleGaucheCase(B314Parser.ExprBoolEgaleGaucheCaseContext ctx) {
-            Symbole symbole = CurrentScope.FoundSymbole(ctx.exprG().getChild(0).getText());
-            testType(symbole,Type.SQUARE.toString());        
+            String type = CurrentScope.FoundSymbole(ctx.exprG().getChild(0).getText()).getType();
+            if(type!= Type.SQUARE.toString())throw new RuntimeException();        
         }
 
 	@Override 
         public void enterExprBoolEgaleGaucheBool(B314Parser.ExprBoolEgaleGaucheBoolContext ctx) {
-            Symbole symbole = CurrentScope.FoundSymbole(ctx.exprG().getChild(0).getText());
-            testType(symbole,Type.BOOLEAN.toString());          
+            String type = CurrentScope.FoundSymbole(ctx.exprG().getChild(0).getText()).getType();
+            if(type!= Type.BOOLEAN.toString())throw new RuntimeException();         
         }
 
 	@Override 
         public void enterExprBoolEgaleEntGauche(B314Parser.ExprBoolEgaleEntGaucheContext ctx) {
-            Symbole symbole = CurrentScope.FoundSymbole(ctx.exprG().getChild(0).getText());
-            testType(symbole,Type.INTEGER.toString());         
+            String type = CurrentScope.FoundSymbole(ctx.exprG().getChild(0).getText()).getType();
+            if(type!= Type.INTEGER.toString())throw new RuntimeException();        
         }
 
 	@Override 
         public void enterExprBoolEgaleBoolGauche(B314Parser.ExprBoolEgaleBoolGaucheContext ctx) {
-            Symbole symbole = CurrentScope.FoundSymbole(ctx.exprG().getChild(0).getText());
-            testType(symbole,Type.BOOLEAN.toString());          
+            String type = CurrentScope.FoundSymbole(ctx.exprG().getChild(0).getText()).getType();
+            if(type!= Type.BOOLEAN.toString())throw new RuntimeException();         
         }
 
         @Override 
         public void enterExprBoolEgaleCaseGauche(B314Parser.ExprBoolEgaleCaseGaucheContext ctx) {
-            Symbole symbole = CurrentScope.FoundSymbole(ctx.exprG().getChild(0).getText());
-            testType(symbole,Type.SQUARE.toString());          
+            String type = CurrentScope.FoundSymbole(ctx.exprG().getChild(0).getText()).getType();
+            if(type!= Type.SQUARE.toString())throw new RuntimeException();         
         }
 
 	@Override 
         public void enterExprBoolNotGauche(B314Parser.ExprBoolNotGaucheContext ctx) { 
-            Symbole symbole = CurrentScope.FoundSymbole(ctx.exprG().getChild(0).getText());
-            testType(symbole,Type.BOOLEAN.toString());            
+            String type = CurrentScope.FoundSymbole(ctx.exprG().getChild(0).getText()).getType();
+            if(type!= Type.BOOLEAN.toString())throw new RuntimeException();            
         }
 
         @Override 
         public void enterExprBoolAndOrGaucheGauche(B314Parser.ExprBoolAndOrGaucheGaucheContext ctx) {
-            Symbole symbole1 = CurrentScope.FoundSymbole(ctx.expr5.getChild(0).getText());
-            Symbole symbole2 = CurrentScope.FoundSymbole(ctx.expr6.getChild(0).getText());
-            testType(symbole1,Type.BOOLEAN.toString()); 
-            testType(symbole2,Type.BOOLEAN.toString());         
+            String type1 = CurrentScope.FoundSymbole(ctx.expr5.getChild(0).getText()).getType();
+            String type2 = CurrentScope.FoundSymbole(ctx.expr6.getChild(0).getText()).getType();
+           if(type1!=Type.BOOLEAN.toString() || type2!= Type.BOOLEAN.toString())throw new RuntimeException();        
         }
 
         @Override 
         public void enterExprBoolAndOrGaucheBool(B314Parser.ExprBoolAndOrGaucheBoolContext ctx) {
-            Symbole symbole = CurrentScope.FoundSymbole(ctx.exprG().getChild(0).getText());
-            testType(symbole,Type.BOOLEAN.toString());         
+            String type = CurrentScope.FoundSymbole(ctx.exprG().getChild(0).getText()).getType();
+           if(type!=Type.BOOLEAN.toString())throw new RuntimeException();        
         }
 
         @Override 
         public void enterExprBoolAndOrBoolGauche(B314Parser.ExprBoolAndOrBoolGaucheContext ctx) {
-            Symbole symbole = CurrentScope.FoundSymbole(ctx.exprG().getChild(0).getText());
-            testType(symbole,Type.BOOLEAN.toString());           
+            String type = CurrentScope.FoundSymbole(ctx.exprG().getChild(0).getText()).getType();
+           if(type!=Type.BOOLEAN.toString())throw new RuntimeException();          
         }
 
 	@Override 
         public void exitExprBoolAndOrBoolGauche(B314Parser.ExprBoolAndOrBoolGaucheContext ctx) {
-            Symbole symbole = CurrentScope.FoundSymbole(ctx.exprG().getChild(0).getText());
-            testType(symbole,Type.BOOLEAN.toString());           
+            String type = CurrentScope.FoundSymbole(ctx.exprG().getChild(0).getText()).getType();
+           if(type!=Type.BOOLEAN.toString())throw new RuntimeException();          
         }
         
         @Override 
         public void enterExprBoolInfSupGG(B314Parser.ExprBoolInfSupGGContext ctx) { 
-            Symbole symbole1 = CurrentScope.FoundSymbole(ctx.expr1.getChild(0).getText());
-            Symbole symbole2 = CurrentScope.FoundSymbole(ctx.expr2.getChild(0).getText());
-            testType(symbole1,Type.INTEGER.toString()); 
-            testType(symbole2,Type.INTEGER.toString()); 
+              if(ctx.expr1 == null || ctx.expr2 == null)throw new RuntimeException();
+              else{
+                Symbole symbole1 = CurrentScope.FoundSymbole(ctx.expr1.getChild(0).getText());
+                Symbole symbole2 = CurrentScope.FoundSymbole(ctx.expr2.getChild(0).getText()); 
+                String type1=symbole1.getType();
+                String type2= symbole2.getType();
+                if(type1!=Type.INTEGER.toString()||type2!=Type.INTEGER.toString())throw new RuntimeException();
+              }
               
         }
 
 	@Override 
         public void enterExprBoolInfSupGEnt(B314Parser.ExprBoolInfSupGEntContext ctx) { 
-            Symbole symbole = CurrentScope.FoundSymbole(ctx.exprG().getChild(0).getText());
-            testType(symbole,Type.INTEGER.toString());        
+              if(ctx.expr1 == null)throw new RuntimeException();
+              else{
+                Symbole symbole1 = CurrentScope.FoundSymbole(ctx.expr1.getChild(0).getText());
+                String type1=symbole1.getType();
+                if(type1!=Type.INTEGER.toString())throw new RuntimeException();
+              }        
         }
 
 	@Override 
         public void enterExprBoolInfSupEntGauche(B314Parser.ExprBoolInfSupEntGaucheContext ctx) {
-            Symbole symbole = CurrentScope.FoundSymbole(ctx.exprG().getChild(0).getText());
-            testType(symbole,Type.INTEGER.toString());        
+              if(ctx.expr2 == null)throw new RuntimeException();
+              else{
+                Symbole symbole2 = CurrentScope.FoundSymbole(ctx.expr2.getChild(0).getText()); 
+                String type2= symbole2.getType();
+                if(type2!=Type.INTEGER.toString())throw new RuntimeException();
+              }        
         }      
         /**
          *
@@ -367,24 +378,32 @@ public class SymboleTableFiller extends B314BaseListener {
 	@Override 
         public void enterExprCaseFonction(B314Parser.ExprCaseFonctionContext ctx) { 
             Symbole symbole = CurrentScope.FoundSymbole(ctx.ID().getText());
-            testType(symbole,Type.SQUARE.toString());              
+            if(symbole.getType()!=Type.SQUARE.toString())throw new RuntimeException();             
         }
 	@Override 
         public void enterExprCaseNearbyEntG(B314Parser.ExprCaseNearbyEntGContext ctx) {
-            Symbole symbole = CurrentScope.FoundSymbole(ctx.exprG().getChild(0).getText());
-            testType(symbole,Type.INTEGER.toString());          
+            if(ctx.exprG()==null)throw new RuntimeException();
+            else {
+                String type1 = GetType((ParserRuleContext) ctx.exprG().getChild(0));
+                if(type1!=Type.INTEGER.toString())throw new RuntimeException();
+            }         
         }
 	@Override 
         public void enterExprCaseNearbyGEnt(B314Parser.ExprCaseNearbyGEntContext ctx) {
-            Symbole symbole = CurrentScope.FoundSymbole(ctx.exprG().getChild(0).getText());
-            testType(symbole,Type.INTEGER.toString());        
+            if(ctx.exprG()==null)throw new RuntimeException();
+            else {
+                String type1 = GetType((ParserRuleContext) ctx.exprG().getChild(0));
+                if(type1!=Type.INTEGER.toString())throw new RuntimeException();
+            }         
         }
 	@Override 
         public void enterExprCaseNearbyGG(B314Parser.ExprCaseNearbyGGContext ctx) {
-            Symbole symbole1 = CurrentScope.FoundSymbole(ctx.taille1.getChild(0).getText());
-            Symbole symbole2 = CurrentScope.FoundSymbole(ctx.taille2.getChild(0).getText());
-            testType(symbole1,Type.INTEGER.toString()); 
-            testType(symbole2,Type.INTEGER.toString());        
+            if(ctx.taille1==null || ctx.taille2==null)throw new RuntimeException();
+            else {
+                String type1 = GetType((ParserRuleContext) ctx.taille1.getChild(0));
+                String type2 = GetType((ParserRuleContext) ctx.taille2.getChild(0));
+                CheckType(type1,type2,Type.INTEGER.toString());
+            }         
         }     
         /**
          *
@@ -419,8 +438,11 @@ public class SymboleTableFiller extends B314BaseListener {
         public void enterAffectation(B314Parser.AffectationContext ctx) { 
             String name = ctx.exprG().getChild(0).getText();
             Symbole symbole = CurrentScope.FoundSymbole(ctx.exprG().getChild(0).getText());
-            testType(symbole,GetType(ctx.exprD())); 
- 
+            if(symbole!=null){
+                CheckType(symbole.getType(),null,GetType(ctx.exprD()));
+            }
+            //voir nouvelle version si jamais
+            
         }
 	@Override 
         public void enterNextAction(B314Parser.NextActionContext ctx) {
@@ -442,11 +464,12 @@ public class SymboleTableFiller extends B314BaseListener {
             }            
             else throw new RuntimeException();
         }
-        private void testType(Symbole symbole,String symType){
-            if(symbole == null)throw new RuntimeException();
-            else{
-                String type = symbole.getType();
-                if(type!= symType)throw new RuntimeException();
-            }         
+        private void CheckType(String givenType1,String givenType2,String expectedType){
+            if(givenType2==null){
+                if(givenType1!=expectedType)throw new RuntimeException();
+            }
+            else {
+                if((givenType1!=expectedType)||(givenType2!=expectedType) )throw new RuntimeException();
+            }            
         }
 }
