@@ -218,44 +218,42 @@ public class SymboleTableFiller extends B314BaseListener {
 	@Override 
         public void enterExprEntFonction(B314Parser.ExprEntFonctionContext ctx) { 
             Symbole symbole = CurrentScope.FoundSymbole(ctx.ID().getText());
-            testType(symbole,Type.INTEGER.toString());       
+            if(symbole.getType()!=Type.INTEGER.toString())throw new RuntimeException();        
         }
 	@Override 
         public void enterExprEntMulDivEntGauhe(B314Parser.ExprEntMulDivEntGauheContext ctx) {
-            Symbole symbole = CurrentScope.FoundSymbole(ctx.exprG().getChild(0).getText());
-            testType(symbole,Type.INTEGER.toString());         
+            String type = CurrentScope.FoundSymbole(ctx.exprG().getChild(0).getText()).getType();
+            if(type!= Type.INTEGER.toString())throw new RuntimeException();          
         }
 
 	@Override 
         public void enterExprEntMulDivGaucheGauhe(B314Parser.ExprEntMulDivGaucheGauheContext ctx) { 
-            Symbole symbole1 = CurrentScope.FoundSymbole(ctx.expr3.getChild(0).getText());
-            Symbole symbole2 = CurrentScope.FoundSymbole(ctx.expr4.getChild(0).getText());
-            testType(symbole1,Type.INTEGER.toString()); 
-            testType(symbole2,Type.INTEGER.toString()); 
+            String type1 = CurrentScope.FoundSymbole(ctx.expr3.getChild(0).getText()).getType();
+            String type2 = CurrentScope.FoundSymbole(ctx.expr4.getChild(0).getText()).getType();
+           if(type1!=Type.INTEGER.toString()||type2!=Type.INTEGER.toString())throw new RuntimeException();          
         }
 
 	@Override 
         public void enterExprEntMulDivGauheEnt(B314Parser.ExprEntMulDivGauheEntContext ctx) {
-            Symbole symbole = CurrentScope.FoundSymbole(ctx.exprG().getChild(0).getText());
-            testType(symbole,Type.INTEGER.toString());          
+            String type = CurrentScope.FoundSymbole(ctx.exprG().getChild(0).getText()).getType();
+            if(type!= Type.INTEGER.toString())throw new RuntimeException();          
         }
 
         @Override 
         public void enterExprEntPlusMoinsEntGauhe(B314Parser.ExprEntPlusMoinsEntGauheContext ctx) {
-            Symbole symbole = CurrentScope.FoundSymbole(ctx.exprG().getChild(0).getText());
-            testType(symbole,Type.INTEGER.toString());               
+            String type = CurrentScope.FoundSymbole(ctx.exprG().getChild(0).getText()).getType();
+            if(type!= Type.INTEGER.toString())throw new RuntimeException();              
         }
 	@Override 
         public void enterExprEntPlusMoinsGaucheGauhe(B314Parser.ExprEntPlusMoinsGaucheGauheContext ctx) { 
-            Symbole symbole1 = CurrentScope.FoundSymbole(ctx.expr3.getChild(0).getText());
-            Symbole symbole2 = CurrentScope.FoundSymbole(ctx.expr4.getChild(0).getText());
-            testType(symbole1,Type.INTEGER.toString()); 
-            testType(symbole2,Type.INTEGER.toString());          
+            String type1 = CurrentScope.FoundSymbole(ctx.expr3.getChild(0).getText()).getType();
+            String type2 = CurrentScope.FoundSymbole(ctx.expr4.getChild(0).getText()).getType();
+           if(type1!=Type.INTEGER.toString()||type2!=Type.INTEGER.toString())throw new RuntimeException();          
         }	
         @Override 
         public void enterExprEntPlusMoinsGauheEnt(B314Parser.ExprEntPlusMoinsGauheEntContext ctx) {
-            Symbole symbole = CurrentScope.FoundSymbole(ctx.exprG().getChild(0).getText());
-            testType(symbole,Type.INTEGER.toString());          
+            String type = CurrentScope.FoundSymbole(ctx.exprG().getChild(0).getText()).getType();
+            if(type!= Type.INTEGER.toString())throw new RuntimeException();          
         }     
         /**
          *
