@@ -218,12 +218,14 @@ public class SymboleTableFiller extends B314BaseListener {
 	@Override 
         public void enterExprEntFonction(B314Parser.ExprEntFonctionContext ctx) { 
             Symbole symbole = CurrentScope.FoundSymbole(ctx.ID().getText());
-            if(symbole.getType()!=Type.INTEGER.toString())throw new RuntimeException();        
+            if(symbole == null)throw new RuntimeException();
+            else if(symbole.getType()!=Type.INTEGER.toString())throw new RuntimeException();        
         }
 	@Override 
         public void enterExprEntMulDivEntGauhe(B314Parser.ExprEntMulDivEntGauheContext ctx) {
-            String type = CurrentScope.FoundSymbole(ctx.exprG().getChild(0).getText()).getType();
-            if(type!= Type.INTEGER.toString())throw new RuntimeException();          
+            Symbole symbole = CurrentScope.FoundSymbole(ctx.exprG().getChild(0).getText());
+            if(symbole == null)throw new RuntimeException();
+            else if(symbole.getType()!=Type.INTEGER.toString())throw new RuntimeException();         
         }
 
 	@Override 
@@ -235,14 +237,16 @@ public class SymboleTableFiller extends B314BaseListener {
 
 	@Override 
         public void enterExprEntMulDivGauheEnt(B314Parser.ExprEntMulDivGauheEntContext ctx) {
-            String type = CurrentScope.FoundSymbole(ctx.exprG().getChild(0).getText()).getType();
-            if(type!= Type.INTEGER.toString())throw new RuntimeException();          
+            Symbole symbole = CurrentScope.FoundSymbole(ctx.exprG().getChild(0).getText());
+            if(symbole == null)throw new RuntimeException();
+            else if(symbole.getType()!=Type.INTEGER.toString())throw new RuntimeException();         
         }
 
         @Override 
         public void enterExprEntPlusMoinsEntGauhe(B314Parser.ExprEntPlusMoinsEntGauheContext ctx) {
-            String type = CurrentScope.FoundSymbole(ctx.exprG().getChild(0).getText()).getType();
-            if(type!= Type.INTEGER.toString())throw new RuntimeException();              
+            Symbole symbole = CurrentScope.FoundSymbole(ctx.exprG().getChild(0).getText());
+            if(symbole == null)throw new RuntimeException();
+            else if(symbole.getType()!=Type.INTEGER.toString())throw new RuntimeException();             
         }
 	@Override 
         public void enterExprEntPlusMoinsGaucheGauhe(B314Parser.ExprEntPlusMoinsGaucheGauheContext ctx) { 
@@ -252,8 +256,9 @@ public class SymboleTableFiller extends B314BaseListener {
         }	
         @Override 
         public void enterExprEntPlusMoinsGauheEnt(B314Parser.ExprEntPlusMoinsGauheEntContext ctx) {
-            String type = CurrentScope.FoundSymbole(ctx.exprG().getChild(0).getText()).getType();
-            if(type!= Type.INTEGER.toString())throw new RuntimeException();          
+            Symbole symbole = CurrentScope.FoundSymbole(ctx.exprG().getChild(0).getText());
+            if(symbole == null)throw new RuntimeException();
+            else if(symbole.getType()!=Type.INTEGER.toString())throw new RuntimeException();          
         }     
         /**
          *
