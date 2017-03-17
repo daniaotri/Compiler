@@ -71,6 +71,7 @@ public class SymboleTableFiller extends B314BaseListener {
             CurrentScope.AddSymbole(CurrentSymbole);   //on l'ajoute dans son propre scope  
 
         //debut de decomment
+/*
             CurrentScope.AddSymbole(new Symbole("latitude",Type.INTEGER.toString()));
             CurrentScope.AddSymbole(new Symbole("longitude",Type.INTEGER.toString()));
             CurrentScope.AddSymbole(new Symbole("grid size",Type.INTEGER.toString()));
@@ -101,6 +102,7 @@ public class SymboleTableFiller extends B314BaseListener {
             CurrentScope.AddSymbole(new Symbole("ammo",Type.SQUARE.toString()));
             CurrentScope.AddSymbole(new Symbole("fruits",Type.SQUARE.toString()));
             CurrentScope.AddSymbole(new Symbole("soda",Type.SQUARE.toString()));
+*/
                //Fin de decomment
         }
 
@@ -445,7 +447,7 @@ public class SymboleTableFiller extends B314BaseListener {
             String name = ctx.exprG().getChild(0).getText();
             Symbole symbole = CurrentScope.FoundSymbole(name);
             if(symbole!=null){
-                CheckType(symbole.getType(),null,GetType(ctx.exprD()));
+                checkType(symbole.getType(),GetType(ctx.exprD()));
             }
             //voir nouvelle version si jamais
             
@@ -470,12 +472,19 @@ public class SymboleTableFiller extends B314BaseListener {
             }            
             else throw new RuntimeException();
         }
+
         private void CheckType(String givenType1,String givenType2,String expectedType){
             if(givenType2==null){
-                if(givenType1!=expectedType)throw new RuntimeException();
+                if(givenType1 != expectedType)throw new RuntimeException();
             }
             else {
                 if((givenType1!=expectedType)||(givenType2!=expectedType) )throw new RuntimeException();
             }            
+        }
+
+        private void checkType(String type1, String type2) throws RuntimeException{
+            if(!type1.equals(type2)){
+                throw new RuntimeException("Type mismatch !");
+            }
         }
 }
