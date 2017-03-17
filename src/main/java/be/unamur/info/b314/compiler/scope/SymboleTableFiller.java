@@ -69,8 +69,9 @@ public class SymboleTableFiller extends B314BaseListener {
             CurrentScope.AddSymbole(CurrentSymbole); // on ajoute le symbole fonction dans le scope parent
             CurrentScope = new ScopeImpl(ctx.ID().getText(),CurrentScope); //on change de scope
             CurrentScope.AddSymbole(CurrentSymbole);   //on l'ajoute dans son propre scope  
-            
-           /* CurrentScope.AddSymbole(new Symbole("latitude",Type.INTEGER.toString()));
+
+        //debut de decomment
+            CurrentScope.AddSymbole(new Symbole("latitude",Type.INTEGER.toString()));
             CurrentScope.AddSymbole(new Symbole("longitude",Type.INTEGER.toString()));
             CurrentScope.AddSymbole(new Symbole("grid size",Type.INTEGER.toString()));
             CurrentScope.AddSymbole(new Symbole("map count",Type.INTEGER.toString()));
@@ -100,7 +101,7 @@ public class SymboleTableFiller extends B314BaseListener {
             CurrentScope.AddSymbole(new Symbole("ammo",Type.SQUARE.toString()));
             CurrentScope.AddSymbole(new Symbole("fruits",Type.SQUARE.toString()));
             CurrentScope.AddSymbole(new Symbole("soda",Type.SQUARE.toString()));
-               */         
+               //Fin de decomment
         }
 
 	@Override 
@@ -442,7 +443,7 @@ public class SymboleTableFiller extends B314BaseListener {
 	@Override 
         public void enterAffectation(B314Parser.AffectationContext ctx) { 
             String name = ctx.exprG().getChild(0).getText();
-            Symbole symbole = CurrentScope.FoundSymbole(ctx.exprG().getChild(0).getText());
+            Symbole symbole = CurrentScope.FoundSymbole(name);
             if(symbole!=null){
                 CheckType(symbole.getType(),null,GetType(ctx.exprD()));
             }
