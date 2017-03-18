@@ -99,10 +99,10 @@ environnementCase: DIRT
                  ;
         
 exprG: ID                                                              #exprGVariable
-      | ID CROCHET_OUVERT exprEnt (VIRGULE exprEnt)? CROCHET_FERME      #exprGTableauEntEnt
-      | ID CROCHET_OUVERT exprEnt (VIRGULE exprG)? CROCHET_FERME      #exprGTableauEntG
-      | ID CROCHET_OUVERT exprG (VIRGULE exprEnt)? CROCHET_FERME      #exprGTableauGEnt
-      | ID CROCHET_OUVERT t3=exprG (VIRGULE t4=exprG)? CROCHET_FERME      #exprGTableauGG
+      | ID CROCHET_OUVERT t3=exprD (VIRGULE t4=exprD)? CROCHET_FERME      #exprGTableau
+      //| ID CROCHET_OUVERT exprEnt (VIRGULE exprG)? CROCHET_FERME      #exprGTableauEntG
+      //| ID CROCHET_OUVERT exprG (VIRGULE exprEnt)? CROCHET_FERME      #exprGTableauGEnt
+      //| ID CROCHET_OUVERT t3=exprG (VIRGULE t4=exprG)? CROCHET_FERME      #exprGTableauGG
       ;
 
 entier: (MOINS)?NUMBER  

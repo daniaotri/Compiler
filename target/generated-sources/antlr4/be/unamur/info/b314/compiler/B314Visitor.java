@@ -419,33 +419,12 @@ public interface B314Visitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitExprGVariable(B314Parser.ExprGVariableContext ctx);
 	/**
-	 * Visit a parse tree produced by the {@code exprGTableauEntEnt}
+	 * Visit a parse tree produced by the {@code exprGTableau}
 	 * labeled alternative in {@link B314Parser#exprG}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitExprGTableauEntEnt(B314Parser.ExprGTableauEntEntContext ctx);
-	/**
-	 * Visit a parse tree produced by the {@code exprGTableauEntG}
-	 * labeled alternative in {@link B314Parser#exprG}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitExprGTableauEntG(B314Parser.ExprGTableauEntGContext ctx);
-	/**
-	 * Visit a parse tree produced by the {@code exprGTableauGEnt}
-	 * labeled alternative in {@link B314Parser#exprG}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitExprGTableauGEnt(B314Parser.ExprGTableauGEntContext ctx);
-	/**
-	 * Visit a parse tree produced by the {@code exprGTableauGG}
-	 * labeled alternative in {@link B314Parser#exprG}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitExprGTableauGG(B314Parser.ExprGTableauGGContext ctx);
+	T visitExprGTableau(B314Parser.ExprGTableauContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link B314Parser#entier}.
 	 * @param ctx the parse tree

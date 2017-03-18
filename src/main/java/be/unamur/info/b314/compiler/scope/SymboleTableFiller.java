@@ -7,6 +7,11 @@ package be.unamur.info.b314.compiler.scope;
 
 import be.unamur.info.b314.compiler.B314BaseListener;
 import be.unamur.info.b314.compiler.B314Parser;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import org.antlr.v4.runtime.ANTLRInputStream;
+import org.antlr.v4.runtime.ParserRuleContext;
 /*
  *
  *@author jessi
@@ -135,13 +140,16 @@ public class SymboleTableFiller extends B314BaseListener {
 	@Override 
         public void enterClauseWhen(B314Parser.ClauseWhenContext ctx) { 
             String nomScope = "clauseWhen"+position;
+            System.out.println("le scope parent"+CurrentScope.GetName());
             CurrentScope = new ScopeImpl(nomScope,CurrentScope);
+            System.out.println("le scope ensfant"+CurrentScope.GetName());
             position = position +1;
         }
 
 	@Override 
         public void exitClauseWhen(B314Parser.ClauseWhenContext ctx) { 
             CurrentScope = (ScopeImpl) CurrentScope.getParent();
+            System.out.println("le scope parent"+CurrentScope.GetName());
         }
         /**
          *
@@ -149,7 +157,9 @@ public class SymboleTableFiller extends B314BaseListener {
          */
 	@Override 
         public void enterClauseDefault(B314Parser.ClauseDefaultContext ctx) {
+            System.out.println("le scope parent"+CurrentScope.GetName());
             CurrentScope = new ScopeImpl("clauseDefault",CurrentScope);
+            System.out.println("le scope enfant"+CurrentScope.GetName());
         }
 
 	@Override 
@@ -163,12 +173,14 @@ public class SymboleTableFiller extends B314BaseListener {
 	@Override 
         public void enterVarDecl(B314Parser.VarDeclContext ctx) {
             CurrentSymbole = new Symbole(ctx.ID().getText());
+            System.out.println("variable"+CurrentSymbole.getName());
         }
 
 	@Override 
         public void exitVarDecl(B314Parser.VarDeclContext ctx){
             if(CurrentSymbole.getType() == null) throw new RuntimeException();
             CurrentScope.AddSymbole(CurrentSymbole);
+            System.out.println("variable type "+CurrentSymbole.getType());
         }
         /**
          *
@@ -220,46 +232,47 @@ public class SymboleTableFiller extends B314BaseListener {
         public void enterExprEntFonction(B314Parser.ExprEntFonctionContext ctx) { 
             Symbole symbole = CurrentScope.FoundSymbole(ctx.ID().getText());
             if(symbole == null)throw new RuntimeException();
-            else if(symbole.getType()!=Type.INTEGER.toString())throw new RuntimeException();        
+            else if(!(symbole.getType().equals(Type.INTEGER.toString().toLowerCase())))throw new RuntimeException();        
         }
 	@Override 
         public void enterExprEntMulDivEntGauhe(B314Parser.ExprEntMulDivEntGauheContext ctx) {
             Symbole symbole = CurrentScope.FoundSymbole(ctx.exprG().getChild(0).getText());
             if(symbole == null)throw new RuntimeException();
-            else if(symbole.getType()!=Type.INTEGER.toString())throw new RuntimeException();         
+            else if(!(symbole.getType().equals(Type.INTEGER.toString().toLowerCase())))throw new RuntimeException();         
         }
 
 	@Override 
         public void enterExprEntMulDivGaucheGauhe(B314Parser.ExprEntMulDivGaucheGauheContext ctx) { 
             String type1 = CurrentScope.FoundSymbole(ctx.expr3.getChild(0).getText()).getType();
             String type2 = CurrentScope.FoundSymbole(ctx.expr4.getChild(0).getText()).getType();
-           if(type1!=Type.INTEGER.toString()||type2!=Type.INTEGER.toString())throw new RuntimeException();          
+           if((!(type1.equals(Type.INTEGER.toString().toLowerCase()))) || (!(type2.equals(Type.INTEGER.toString().toLowerCase()))))throw new RuntimeException();          
         }
 
 	@Override 
         public void enterExprEntMulDivGauheEnt(B314Parser.ExprEntMulDivGauheEntContext ctx) {
             Symbole symbole = CurrentScope.FoundSymbole(ctx.exprG().getChild(0).getText());
             if(symbole == null)throw new RuntimeException();
-            else if(symbole.getType()!=Type.INTEGER.toString())throw new RuntimeException();         
+            else if(!(symbole.getType().equals(Type.INTEGER.toString().toLowerCase())))throw new RuntimeException();         
         }
 
         @Override 
         public void enterExprEntPlusMoinsEntGauhe(B314Parser.ExprEntPlusMoinsEntGauheContext ctx) {
             Symbole symbole = CurrentScope.FoundSymbole(ctx.exprG().getChild(0).getText());
+            System.out.println(symbole.getName()+" "+symbole.getType());
             if(symbole == null)throw new RuntimeException();
-            else if(symbole.getType()!=Type.INTEGER.toString())throw new RuntimeException();             
+            else if(!(symbole.getType().equals(Type.INTEGER.toString().toLowerCase())))throw new RuntimeException();             
         }
 	@Override 
         public void enterExprEntPlusMoinsGaucheGauhe(B314Parser.ExprEntPlusMoinsGaucheGauheContext ctx) { 
             String type1 = CurrentScope.FoundSymbole(ctx.expr3.getChild(0).getText()).getType();
             String type2 = CurrentScope.FoundSymbole(ctx.expr4.getChild(0).getText()).getType();
-           if(type1!=Type.INTEGER.toString()||type2!=Type.INTEGER.toString())throw new RuntimeException();          
+           if((!(type1.equals(Type.INTEGER.toString().toLowerCase()))) || (!(type2.equals(Type.INTEGER.toString().toLowerCase()))))throw new RuntimeException();          
         }	
         @Override 
         public void enterExprEntPlusMoinsGauheEnt(B314Parser.ExprEntPlusMoinsGauheEntContext ctx) {
             Symbole symbole = CurrentScope.FoundSymbole(ctx.exprG().getChild(0).getText());
             if(symbole == null)throw new RuntimeException();
-            else if(symbole.getType()!=Type.INTEGER.toString())throw new RuntimeException();          
+            else if(!(symbole.getType().equals(Type.INTEGER.toString().toLowerCase())))throw new RuntimeException();          
         }     
         /**
          *
@@ -268,81 +281,81 @@ public class SymboleTableFiller extends B314BaseListener {
 	@Override 
         public void enterExprBoolFonction(B314Parser.ExprBoolFonctionContext ctx) {
             Symbole symbole = CurrentScope.FoundSymbole(ctx.ID().getText());
-            if(symbole.getType()!=Type.BOOLEAN.toString())throw new RuntimeException();
+            if(!(symbole.getType().equals(Type.BOOLEAN.toString().toLowerCase())))throw new RuntimeException();
         }
         
         @Override 
         public void enterExprBoolEgaleGaucheGauche(B314Parser.ExprBoolEgaleGaucheGaucheContext ctx) { 
             String type1 = CurrentScope.FoundSymbole(ctx.expr3.getChild(0).getText()).getType();
             String type2 = CurrentScope.FoundSymbole(ctx.expr4.getChild(0).getText()).getType();
-           if(type1!=type2)throw new RuntimeException();        
+           if(!(type1.equals(type2)))throw new RuntimeException();        
         }
 
         @Override 
         public void enterExprBoolEgaleGaucheEnt(B314Parser.ExprBoolEgaleGaucheEntContext ctx) {
             String type = CurrentScope.FoundSymbole(ctx.exprG().getChild(0).getText()).getType();
-            if(type!= Type.INTEGER.toString())throw new RuntimeException();
+            if(!(type.equals(Type.INTEGER.toString().toLowerCase())))throw new RuntimeException();
         }
 
 	@Override 
         public void enterExprBoolEgaleGaucheCase(B314Parser.ExprBoolEgaleGaucheCaseContext ctx) {
             String type = CurrentScope.FoundSymbole(ctx.exprG().getChild(0).getText()).getType();
-            if(type!= Type.SQUARE.toString())throw new RuntimeException();        
+            if(!(type.equals(Type.SQUARE.toString().toLowerCase())))throw new RuntimeException();        
         }
 
 	@Override 
         public void enterExprBoolEgaleGaucheBool(B314Parser.ExprBoolEgaleGaucheBoolContext ctx) {
             String type = CurrentScope.FoundSymbole(ctx.exprG().getChild(0).getText()).getType();
-            if(type!= Type.BOOLEAN.toString())throw new RuntimeException();         
+            if(!(type.equals(Type.BOOLEAN.toString().toLowerCase())))throw new RuntimeException();         
         }
 
 	@Override 
         public void enterExprBoolEgaleEntGauche(B314Parser.ExprBoolEgaleEntGaucheContext ctx) {
             String type = CurrentScope.FoundSymbole(ctx.exprG().getChild(0).getText()).getType();
-            if(type!= Type.INTEGER.toString())throw new RuntimeException();        
+            if(!(type.equals(Type.INTEGER.toString().toLowerCase())))throw new RuntimeException();        
         }
 
 	@Override 
         public void enterExprBoolEgaleBoolGauche(B314Parser.ExprBoolEgaleBoolGaucheContext ctx) {
             String type = CurrentScope.FoundSymbole(ctx.exprG().getChild(0).getText()).getType();
-            if(type!= Type.BOOLEAN.toString())throw new RuntimeException();         
+            if(!(type.equals(Type.BOOLEAN.toString().toLowerCase())))throw new RuntimeException();         
         }
 
         @Override 
         public void enterExprBoolEgaleCaseGauche(B314Parser.ExprBoolEgaleCaseGaucheContext ctx) {
             String type = CurrentScope.FoundSymbole(ctx.exprG().getChild(0).getText()).getType();
-            if(type!= Type.SQUARE.toString())throw new RuntimeException();         
+            if(!(type.equals(Type.SQUARE.toString().toLowerCase())))throw new RuntimeException();         
         }
 
 	@Override 
         public void enterExprBoolNotGauche(B314Parser.ExprBoolNotGaucheContext ctx) { 
             String type = CurrentScope.FoundSymbole(ctx.exprG().getChild(0).getText()).getType();
-            if(type!= Type.BOOLEAN.toString())throw new RuntimeException();            
+            if(!(type.equals(Type.BOOLEAN.toString().toLowerCase())))throw new RuntimeException();            
         }
 
         @Override 
         public void enterExprBoolAndOrGaucheGauche(B314Parser.ExprBoolAndOrGaucheGaucheContext ctx) {
             String type1 = CurrentScope.FoundSymbole(ctx.expr5.getChild(0).getText()).getType();
             String type2 = CurrentScope.FoundSymbole(ctx.expr6.getChild(0).getText()).getType();
-           if(type1!=Type.BOOLEAN.toString() || type2!= Type.BOOLEAN.toString())throw new RuntimeException();        
+           if((!(type1.equals(Type.BOOLEAN.toString().toLowerCase()))) || (!(type2.equals(Type.BOOLEAN.toString().toLowerCase()))))throw new RuntimeException();        
         }
 
         @Override 
         public void enterExprBoolAndOrGaucheBool(B314Parser.ExprBoolAndOrGaucheBoolContext ctx) {
             String type = CurrentScope.FoundSymbole(ctx.exprG().getChild(0).getText()).getType();
-           if(type!=Type.BOOLEAN.toString())throw new RuntimeException();        
+           if(!(type.equals(Type.BOOLEAN.toString().toLowerCase())))throw new RuntimeException();        
         }
 
         @Override 
         public void enterExprBoolAndOrBoolGauche(B314Parser.ExprBoolAndOrBoolGaucheContext ctx) {
             String type = CurrentScope.FoundSymbole(ctx.exprG().getChild(0).getText()).getType();
-           if(type!=Type.BOOLEAN.toString())throw new RuntimeException();          
+           if(!(type.equals(Type.BOOLEAN.toString().toLowerCase())))throw new RuntimeException();          
         }
 
 	@Override 
         public void exitExprBoolAndOrBoolGauche(B314Parser.ExprBoolAndOrBoolGaucheContext ctx) {
             String type = CurrentScope.FoundSymbole(ctx.exprG().getChild(0).getText()).getType();
-           if(type!=Type.BOOLEAN.toString())throw new RuntimeException();          
+           if(!(type.equals(Type.BOOLEAN.toString().toLowerCase())))throw new RuntimeException();          
         }
         
         @Override 
@@ -353,7 +366,7 @@ public class SymboleTableFiller extends B314BaseListener {
                 Symbole symbole2 = CurrentScope.FoundSymbole(ctx.expr2.getChild(0).getText()); 
                 String type1=symbole1.getType();
                 String type2= symbole2.getType();
-                if(type1!=Type.INTEGER.toString()||type2!=Type.INTEGER.toString())throw new RuntimeException();
+                if((!(type1.equals(Type.INTEGER.toString().toLowerCase())))||(!(type2.equals(Type.INTEGER.toString().toLowerCase()))))throw new RuntimeException();
               }
               
         }
@@ -364,7 +377,7 @@ public class SymboleTableFiller extends B314BaseListener {
               else{
                 Symbole symbole1 = CurrentScope.FoundSymbole(ctx.expr1.getChild(0).getText());
                 String type1=symbole1.getType();
-                if(type1!=Type.INTEGER.toString())throw new RuntimeException();
+                if(!(type1.equals(Type.INTEGER.toString().toLowerCase())))throw new RuntimeException();
               }        
         }
 
@@ -374,7 +387,7 @@ public class SymboleTableFiller extends B314BaseListener {
               else{
                 Symbole symbole2 = CurrentScope.FoundSymbole(ctx.expr2.getChild(0).getText()); 
                 String type2= symbole2.getType();
-                if(type2!=Type.INTEGER.toString())throw new RuntimeException();
+                if(!(type2.equals(Type.INTEGER.toString().toLowerCase())))throw new RuntimeException();
               }        
         }      
         /**
@@ -384,14 +397,14 @@ public class SymboleTableFiller extends B314BaseListener {
 	@Override 
         public void enterExprCaseFonction(B314Parser.ExprCaseFonctionContext ctx) { 
             Symbole symbole = CurrentScope.FoundSymbole(ctx.ID().getText());
-            if(symbole.getType()!=Type.SQUARE.toString())throw new RuntimeException();             
+            if(!(symbole.getType().equals(Type.SQUARE.toString().toLowerCase())))throw new RuntimeException();             
         }
 	@Override 
         public void enterExprCaseNearbyEntG(B314Parser.ExprCaseNearbyEntGContext ctx) {
             if(ctx.exprG()==null)throw new RuntimeException();
             else {
                 String type1 = CurrentScope.FoundSymbole(ctx.exprG().getChild(0).getText()).getType();
-                if(type1!=Type.INTEGER.toString())throw new RuntimeException();
+                if(!(type1.equals(Type.INTEGER.toString().toLowerCase())))throw new RuntimeException();
             }         
         }
 	@Override 
@@ -399,7 +412,7 @@ public class SymboleTableFiller extends B314BaseListener {
             if(ctx.exprG()==null)throw new RuntimeException();
             else {
                 String type1 = CurrentScope.FoundSymbole(ctx.exprG().getChild(0).getText()).getType();
-                if(type1!=Type.INTEGER.toString())throw new RuntimeException();
+                if(!(type1.equals(Type.INTEGER.toString().toLowerCase())))throw new RuntimeException();
             }         
         }
 	@Override 
@@ -408,7 +421,8 @@ public class SymboleTableFiller extends B314BaseListener {
             else {
                 Symbole s1 = CurrentScope.FoundSymbole(ctx.taille1.getChild(0).getText());
                 Symbole s2 = CurrentScope.FoundSymbole(ctx.taille2.getChild(0).getText());
-                CheckType(s1.getType(),s2.getType(),Type.INTEGER.toString());
+                if((!(s1.getType().equals(Type.INTEGER.toString().toLowerCase()))) || (!(s2.getType().equals(Type.INTEGER.toString().toLowerCase()))))
+                throw new RuntimeException();
             }         
         }     
         /**
@@ -421,7 +435,7 @@ public class SymboleTableFiller extends B314BaseListener {
             CurrentSymbole = CurrentScope.FoundSymbole(ctx.ID().getText());
             if(CurrentSymbole == null)throw new RuntimeException();
         }
-        /*
+        
 	@Override 
         public void enterExprGTableau(B314Parser.ExprGTableauContext ctx) {
             CurrentSymbole = CurrentScope.FoundSymbole(ctx.ID().getText());
@@ -429,17 +443,17 @@ public class SymboleTableFiller extends B314BaseListener {
             if(CurrentSymbole.getIsArray()){
                 if(CurrentSymbole.getLength().length==1){
                     if(ctx.t3==null)throw new RuntimeException();
-                    else if (GetType(ctx.t3)!=Type.INTEGER.toString())throw new RuntimeException();
-                    else if(ctx.t4!=null)throw new RuntimeException();
+                    else if (!(GetType((ParserRuleContext) ctx.t3.getChild(0)).equals(Type.INTEGER.toString().toLowerCase())))throw new RuntimeException();
+                    if(ctx.t4!=null)throw new RuntimeException();    
                 }
                 else{
                     if(ctx.t3==null || ctx.t4==null)throw new RuntimeException();
-                    else if(GetType(ctx.t3)!=Type.INTEGER.toString() || GetType(ctx.t4)!=Type.INTEGER.toString() )throw new RuntimeException();
+                    else if((!(GetType((ParserRuleContext) ctx.t3.getChild(0)).equals(Type.INTEGER.toString().toLowerCase()))) || (!(GetType((ParserRuleContext) ctx.t4.getChild(0)).equals(Type.INTEGER.toString().toLowerCase()))) )throw new RuntimeException();
                 }
             }
-            else if(ctx.t3!=null) throw new RuntimeException();
+            else if(!(ctx.t3.equals(null))) throw new RuntimeException();
         }
-        */
+        /*
         @Override 
         public void enterExprGTableauEntEnt(B314Parser.ExprGTableauEntEntContext ctx) {
             CurrentSymbole = CurrentScope.FoundSymbole(ctx.ID().getText());
@@ -447,7 +461,7 @@ public class SymboleTableFiller extends B314BaseListener {
             if(CurrentSymbole.getIsArray()){
                 if(CurrentSymbole.getLength().length==1){
                     if(ctx.exprEnt(0)==null)throw new RuntimeException();
-                    else if(ctx.exprEnt(1)!=null)throw new RuntimeException();
+                    else if(!(ctx.exprEnt(1).equals(null)))throw new RuntimeException();
                 }
                 else{
                     if(ctx.exprEnt(0)==null || ctx.exprEnt(1)==null)throw new RuntimeException();                    
@@ -471,7 +485,7 @@ public class SymboleTableFiller extends B314BaseListener {
                 }
                 else{
                     if(t3 ==null || ctx.exprEnt()==null)throw new RuntimeException();
-                    else if(t3.getType()!=Type.INTEGER.toString())throw new RuntimeException();
+                    else if(!(t3.getType().equals(Type.INTEGER.toString().toLowerCase())))throw new RuntimeException();
                 }
             }
             else if(ctx.exprEnt()!=null) throw new RuntimeException();         
@@ -487,13 +501,13 @@ public class SymboleTableFiller extends B314BaseListener {
                     if(ctx.exprG()==null)throw new RuntimeException();
                     else 
                     {
-                        if (t3.getType()!=Type.INTEGER.toString())throw new RuntimeException();
+                        if (!(t3.getType().equals(Type.INTEGER.toString().toLowerCase())))throw new RuntimeException();
                         else if(ctx.exprEnt()!=null)throw new RuntimeException();
                     }
                 }
                 else{
                     if(t3 ==null || ctx.exprEnt()==null)throw new RuntimeException();
-                    else if(t3.getType()!=Type.INTEGER.toString())throw new RuntimeException();
+                    else if((!(t3.getType().equals(Type.INTEGER.toString().toLowerCase()))))throw new RuntimeException();
                 }
             }
             else if(ctx.exprG()!=null) throw new RuntimeException();       
@@ -511,18 +525,18 @@ public class SymboleTableFiller extends B314BaseListener {
                     if(ctx.t3==null)throw new RuntimeException();
                     else 
                     {
-                        if (t3.getType()!=Type.INTEGER.toString())throw new RuntimeException();
+                        if (!(t3.getType().equals(Type.INTEGER.toString().toLowerCase())))throw new RuntimeException();
                         else if(t4!=null)throw new RuntimeException();
                     }
                 }
                 else{
                     if(t3 ==null || t4==null)throw new RuntimeException();
-                    else if(t3.getType()!=Type.INTEGER.toString() || t4.getType()!=Type.INTEGER.toString() )throw new RuntimeException();
+                    else if((!(t3.getType().equals(Type.INTEGER.toString().toLowerCase()))) || (!(t4.getType().equals(Type.INTEGER.toString().toLowerCase()))) )throw new RuntimeException();
                 }
             }
             else if(ctx.t3!=null) throw new RuntimeException();      
         }
-
+*/
         
         /***
          * Les instructions
@@ -551,8 +565,11 @@ public class SymboleTableFiller extends B314BaseListener {
 	@Override 
         public void enterAffectationGaucheEnt(B314Parser.AffectationGaucheEntContext ctx) {
             String name = ctx.exprG().getChild(0).getText();
+            System.out.print(name+" ");
             Symbole symbole = CurrentScope.FoundSymbole(name);
-            if(symbole==null || symbole.getType()!=Type.INTEGER.toString())
+            System.out.println(symbole.getName()+" "+symbole.getType()+" "+symbole.getIsArray()+" "+symbole.getIsFunction());
+            System.out.println(Type.INTEGER.toString().toLowerCase());
+            if((symbole==null)||!(symbole.getType().equals(Type.INTEGER.name().toLowerCase())))
                 throw new RuntimeException();        
         }
 
@@ -560,7 +577,7 @@ public class SymboleTableFiller extends B314BaseListener {
         public void enterAffectationGaucheBool(B314Parser.AffectationGaucheBoolContext ctx) {
             String name = ctx.exprG().getChild(0).getText();
             Symbole symbole = CurrentScope.FoundSymbole(name);
-            if(symbole==null || symbole.getType()!=Type.BOOLEAN.toString())
+            if(symbole==null || !(symbole.getType()!=Type.BOOLEAN.name().toLowerCase()))
                 throw new RuntimeException();          
         }
 
@@ -568,7 +585,7 @@ public class SymboleTableFiller extends B314BaseListener {
         public void enterAffectationGaucheCase(B314Parser.AffectationGaucheCaseContext ctx) {
             String name = ctx.exprG().getChild(0).getText();
             Symbole symbole = CurrentScope.FoundSymbole(name);
-            if(symbole==null || symbole.getType()!=Type.SQUARE.toString())
+            if(symbole==null || !(symbole.getType()!=Type.SQUARE.toString().toLowerCase()))
                 throw new RuntimeException();          
         }
         
@@ -576,25 +593,13 @@ public class SymboleTableFiller extends B314BaseListener {
         public void enterNextAction(B314Parser.NextActionContext ctx) {
               if(ctx.action().children.isEmpty()) throw new RuntimeException();
         }
-        
-        /**
-         *
-         * Les méthodes privates
-         */
-
-        private void CheckType(String givenType1,String givenType2,String expectedType){
-            if(givenType2==null){
-                if(givenType1 != expectedType)throw new RuntimeException();
+        private String GetType(ParserRuleContext ctx){
+            String result = null;
+            if(ctx instanceof B314Parser.ExprEntContext) result= Type.INTEGER.toString().toLowerCase();
+            else if(ctx instanceof B314Parser.ExprGContext){
+                Symbole symbole = CurrentScope.FoundSymbole(ctx.getChild(0).getText());
+                result= symbole.getType(); 
             }
-            else {
-                if((givenType1!=expectedType)||(givenType2!=expectedType) )throw new RuntimeException();
-            }            
+            return result;
         }
-
-        private void checkType(String type1, String type2) throws RuntimeException{
-            if(!type1.equals(type2)){
-                throw new RuntimeException("Type mismatch !");
-            }
-        }
-        
 }

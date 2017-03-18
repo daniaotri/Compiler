@@ -430,28 +430,7 @@ public class B314BaseVisitor<T> extends AbstractParseTreeVisitor<T> implements B
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitExprGTableauEntEnt(B314Parser.ExprGTableauEntEntContext ctx) { return visitChildren(ctx); }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	@Override public T visitExprGTableauEntG(B314Parser.ExprGTableauEntGContext ctx) { return visitChildren(ctx); }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	@Override public T visitExprGTableauGEnt(B314Parser.ExprGTableauGEntContext ctx) { return visitChildren(ctx); }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	@Override public T visitExprGTableauGG(B314Parser.ExprGTableauGGContext ctx) { return visitChildren(ctx); }
+	@Override public T visitExprGTableau(B314Parser.ExprGTableauContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
