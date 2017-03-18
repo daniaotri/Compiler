@@ -43,7 +43,7 @@ public class ScopeImpl implements Scope{
     public void addChildScope(Scope child) {
         String nameChild = child.GetName();
         Scope scope = WhoIsThisScope(nameChild);
-        if(scope!=null){
+        if(scope==null){
             Children.add(child);
         }
         else throw new RuntimeException();    
