@@ -556,7 +556,7 @@ public class SymboleTableFiller extends B314BaseListener {
         public void enterAffectationGaucheGauche(B314Parser.AffectationGaucheGaucheContext ctx) {
             String name1 = ctx.exprG(0).getChild(0).getText();
             Symbole symbole1 = CurrentScope.FoundSymbole(name1);
-            String name2 = ctx.exprG(0).getChild(0).getText();
+            String name2 = ctx.exprG(1).getChild(0).getText();
             Symbole symbole2 = CurrentScope.FoundSymbole(name2);
             if(symbole1==null || symbole2==null || symbole1.getType()!=symbole2.getType())
                 throw new RuntimeException();
@@ -565,10 +565,8 @@ public class SymboleTableFiller extends B314BaseListener {
 	@Override 
         public void enterAffectationGaucheEnt(B314Parser.AffectationGaucheEntContext ctx) {
             String name = ctx.exprG().getChild(0).getText();
-            System.out.print(name+" ");
             Symbole symbole = CurrentScope.FoundSymbole(name);
             System.out.println(symbole.getName()+" "+symbole.getType()+" "+symbole.getIsArray()+" "+symbole.getIsFunction());
-            System.out.println(Type.INTEGER.toString().toLowerCase());
             if((symbole==null)||!(symbole.getType().equals(Type.INTEGER.name().toLowerCase())))
                 throw new RuntimeException();        
         }
@@ -577,7 +575,8 @@ public class SymboleTableFiller extends B314BaseListener {
         public void enterAffectationGaucheBool(B314Parser.AffectationGaucheBoolContext ctx) {
             String name = ctx.exprG().getChild(0).getText();
             Symbole symbole = CurrentScope.FoundSymbole(name);
-            if(symbole==null || !(symbole.getType()!=Type.BOOLEAN.name().toLowerCase()))
+            System.out.println(symbole.getName()+" "+symbole.getType()+" "+symbole.getIsArray()+" "+symbole.getIsFunction());
+            if((symbole==null) || !(symbole.getType().equals(Type.BOOLEAN.name().toLowerCase())))
                 throw new RuntimeException();          
         }
 
@@ -585,7 +584,8 @@ public class SymboleTableFiller extends B314BaseListener {
         public void enterAffectationGaucheCase(B314Parser.AffectationGaucheCaseContext ctx) {
             String name = ctx.exprG().getChild(0).getText();
             Symbole symbole = CurrentScope.FoundSymbole(name);
-            if(symbole==null || !(symbole.getType()!=Type.SQUARE.toString().toLowerCase()))
+            System.out.println(symbole.getName()+" "+symbole.getType()+" "+symbole.getIsArray()+" "+symbole.getIsFunction());
+            if((symbole==null) || !(symbole.getType().equals(Type.SQUARE.toString().toLowerCase())))
                 throw new RuntimeException();          
         }
         
