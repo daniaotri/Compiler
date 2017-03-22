@@ -450,7 +450,7 @@ public class SymboleTableFiller extends B314BaseListener {
             String name = ctx.exprG().getChild(0).getText();
             Symbole symbole = CurrentScope.FoundSymbole(name);
             if(symbole!=null){
-                checkType(symbole.getType(),GetType(ctx.exprD()));
+                checkType(symbole.getType(),GetType((ParserRuleContext) ctx.exprD().getChild(0)));
             }
             //voir nouvelle version si jamais
             
