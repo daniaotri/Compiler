@@ -159,6 +159,18 @@ public class Main {
      */
     
     private void compile() throws FileNotFoundException, IOException, ParseCancellationException, ParsingException {
+
+
+        BufferedReader br= new BufferedReader(new FileReader(inputFile));
+        String line= br.readLine();
+        String printprog="";
+
+        while(line !=null){
+            printprog+=line +"\n";
+            line= br.readLine();
+        }
+        //Fin de la discussion
+
         /*
         LOG.debug("Parsing input");
         B314Parser.ProgrammeContext tree =parse(new ANTLRInputStream(new FileInputStream(inputFile)));
