@@ -430,7 +430,28 @@ public class B314BaseVisitor<T> extends AbstractParseTreeVisitor<T> implements B
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitExprGTableau(B314Parser.ExprGTableauContext ctx) { return visitChildren(ctx); }
+	@Override public T visitExprGTableauEntEnt(B314Parser.ExprGTableauEntEntContext ctx) { return visitChildren(ctx); }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation returns the result of calling
+	 * {@link #visitChildren} on {@code ctx}.</p>
+	 */
+	@Override public T visitExprGTableauEntG(B314Parser.ExprGTableauEntGContext ctx) { return visitChildren(ctx); }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation returns the result of calling
+	 * {@link #visitChildren} on {@code ctx}.</p>
+	 */
+	@Override public T visitExprGTableauGEnt(B314Parser.ExprGTableauGEntContext ctx) { return visitChildren(ctx); }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation returns the result of calling
+	 * {@link #visitChildren} on {@code ctx}.</p>
+	 */
+	@Override public T visitExprGTableauGG(B314Parser.ExprGTableauGGContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -472,7 +493,28 @@ public class B314BaseVisitor<T> extends AbstractParseTreeVisitor<T> implements B
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitAffectation(B314Parser.AffectationContext ctx) { return visitChildren(ctx); }
+	@Override public T visitAffectationGaucheGauche(B314Parser.AffectationGaucheGaucheContext ctx) { return visitChildren(ctx); }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation returns the result of calling
+	 * {@link #visitChildren} on {@code ctx}.</p>
+	 */
+	@Override public T visitAffectationGaucheEnt(B314Parser.AffectationGaucheEntContext ctx) { return visitChildren(ctx); }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation returns the result of calling
+	 * {@link #visitChildren} on {@code ctx}.</p>
+	 */
+	@Override public T visitAffectationGaucheBool(B314Parser.AffectationGaucheBoolContext ctx) { return visitChildren(ctx); }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation returns the result of calling
+	 * {@link #visitChildren} on {@code ctx}.</p>
+	 */
+	@Override public T visitAffectationGaucheCase(B314Parser.AffectationGaucheCaseContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *

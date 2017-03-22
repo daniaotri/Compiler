@@ -706,17 +706,53 @@ public interface B314Listener extends ParseTreeListener {
 	 */
 	void exitExprGVariable(B314Parser.ExprGVariableContext ctx);
 	/**
-	 * Enter a parse tree produced by the {@code exprGTableau}
+	 * Enter a parse tree produced by the {@code exprGTableauEntEnt}
 	 * labeled alternative in {@link B314Parser#exprG}.
 	 * @param ctx the parse tree
 	 */
-	void enterExprGTableau(B314Parser.ExprGTableauContext ctx);
+	void enterExprGTableauEntEnt(B314Parser.ExprGTableauEntEntContext ctx);
 	/**
-	 * Exit a parse tree produced by the {@code exprGTableau}
+	 * Exit a parse tree produced by the {@code exprGTableauEntEnt}
 	 * labeled alternative in {@link B314Parser#exprG}.
 	 * @param ctx the parse tree
 	 */
-	void exitExprGTableau(B314Parser.ExprGTableauContext ctx);
+	void exitExprGTableauEntEnt(B314Parser.ExprGTableauEntEntContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code exprGTableauEntG}
+	 * labeled alternative in {@link B314Parser#exprG}.
+	 * @param ctx the parse tree
+	 */
+	void enterExprGTableauEntG(B314Parser.ExprGTableauEntGContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code exprGTableauEntG}
+	 * labeled alternative in {@link B314Parser#exprG}.
+	 * @param ctx the parse tree
+	 */
+	void exitExprGTableauEntG(B314Parser.ExprGTableauEntGContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code exprGTableauGEnt}
+	 * labeled alternative in {@link B314Parser#exprG}.
+	 * @param ctx the parse tree
+	 */
+	void enterExprGTableauGEnt(B314Parser.ExprGTableauGEntContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code exprGTableauGEnt}
+	 * labeled alternative in {@link B314Parser#exprG}.
+	 * @param ctx the parse tree
+	 */
+	void exitExprGTableauGEnt(B314Parser.ExprGTableauGEntContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code exprGTableauGG}
+	 * labeled alternative in {@link B314Parser#exprG}.
+	 * @param ctx the parse tree
+	 */
+	void enterExprGTableauGG(B314Parser.ExprGTableauGGContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code exprGTableauGG}
+	 * labeled alternative in {@link B314Parser#exprG}.
+	 * @param ctx the parse tree
+	 */
+	void exitExprGTableauGG(B314Parser.ExprGTableauGGContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link B314Parser#entier}.
 	 * @param ctx the parse tree
@@ -776,17 +812,53 @@ public interface B314Listener extends ParseTreeListener {
 	 */
 	void exitWhile(B314Parser.WhileContext ctx);
 	/**
-	 * Enter a parse tree produced by the {@code affectation}
+	 * Enter a parse tree produced by the {@code affectationGaucheGauche}
 	 * labeled alternative in {@link B314Parser#instruction}.
 	 * @param ctx the parse tree
 	 */
-	void enterAffectation(B314Parser.AffectationContext ctx);
+	void enterAffectationGaucheGauche(B314Parser.AffectationGaucheGaucheContext ctx);
 	/**
-	 * Exit a parse tree produced by the {@code affectation}
+	 * Exit a parse tree produced by the {@code affectationGaucheGauche}
 	 * labeled alternative in {@link B314Parser#instruction}.
 	 * @param ctx the parse tree
 	 */
-	void exitAffectation(B314Parser.AffectationContext ctx);
+	void exitAffectationGaucheGauche(B314Parser.AffectationGaucheGaucheContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code affectationGaucheEnt}
+	 * labeled alternative in {@link B314Parser#instruction}.
+	 * @param ctx the parse tree
+	 */
+	void enterAffectationGaucheEnt(B314Parser.AffectationGaucheEntContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code affectationGaucheEnt}
+	 * labeled alternative in {@link B314Parser#instruction}.
+	 * @param ctx the parse tree
+	 */
+	void exitAffectationGaucheEnt(B314Parser.AffectationGaucheEntContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code affectationGaucheBool}
+	 * labeled alternative in {@link B314Parser#instruction}.
+	 * @param ctx the parse tree
+	 */
+	void enterAffectationGaucheBool(B314Parser.AffectationGaucheBoolContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code affectationGaucheBool}
+	 * labeled alternative in {@link B314Parser#instruction}.
+	 * @param ctx the parse tree
+	 */
+	void exitAffectationGaucheBool(B314Parser.AffectationGaucheBoolContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code affectationGaucheCase}
+	 * labeled alternative in {@link B314Parser#instruction}.
+	 * @param ctx the parse tree
+	 */
+	void enterAffectationGaucheCase(B314Parser.AffectationGaucheCaseContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code affectationGaucheCase}
+	 * labeled alternative in {@link B314Parser#instruction}.
+	 * @param ctx the parse tree
+	 */
+	void exitAffectationGaucheCase(B314Parser.AffectationGaucheCaseContext ctx);
 	/**
 	 * Enter a parse tree produced by the {@code compute}
 	 * labeled alternative in {@link B314Parser#instruction}.

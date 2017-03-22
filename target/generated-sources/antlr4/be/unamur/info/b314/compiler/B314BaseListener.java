@@ -724,13 +724,49 @@ public class B314BaseListener implements B314Listener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterExprGTableau(B314Parser.ExprGTableauContext ctx) { }
+	@Override public void enterExprGTableauEntEnt(B314Parser.ExprGTableauEntEntContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitExprGTableau(B314Parser.ExprGTableauContext ctx) { }
+	@Override public void exitExprGTableauEntEnt(B314Parser.ExprGTableauEntEntContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterExprGTableauEntG(B314Parser.ExprGTableauEntGContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitExprGTableauEntG(B314Parser.ExprGTableauEntGContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterExprGTableauGEnt(B314Parser.ExprGTableauGEntContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitExprGTableauGEnt(B314Parser.ExprGTableauGEntContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterExprGTableauGG(B314Parser.ExprGTableauGGContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitExprGTableauGG(B314Parser.ExprGTableauGGContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -796,13 +832,49 @@ public class B314BaseListener implements B314Listener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterAffectation(B314Parser.AffectationContext ctx) { }
+	@Override public void enterAffectationGaucheGauche(B314Parser.AffectationGaucheGaucheContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitAffectation(B314Parser.AffectationContext ctx) { }
+	@Override public void exitAffectationGaucheGauche(B314Parser.AffectationGaucheGaucheContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterAffectationGaucheEnt(B314Parser.AffectationGaucheEntContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitAffectationGaucheEnt(B314Parser.AffectationGaucheEntContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterAffectationGaucheBool(B314Parser.AffectationGaucheBoolContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitAffectationGaucheBool(B314Parser.AffectationGaucheBoolContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterAffectationGaucheCase(B314Parser.AffectationGaucheCaseContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitAffectationGaucheCase(B314Parser.AffectationGaucheCaseContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
