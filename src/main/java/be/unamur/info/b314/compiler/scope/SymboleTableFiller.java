@@ -465,15 +465,15 @@ public class SymboleTableFiller extends B314BaseListener {
          * Les méthodes privates
          */
         private String GetType(ParserRuleContext ctx){
-            //if(ctx == null) throw new RuntimeException();
-            if(ctx instanceof B314Parser.ExprEntContext) return Type.INTEGER.toString();
-            else if (ctx instanceof B314Parser.ExprBoolContext) return Type.BOOLEAN.toString();
-            else if (ctx instanceof B314Parser.ExprCaseContext) return Type.SQUARE.toString();
+            String result=null;
+            if(ctx instanceof B314Parser.ExprDIntegerContext) result=Type.INTEGER.toString();
+            else if (ctx instanceof B314Parser.ExprDBooleanContext) result= Type.BOOLEAN.toString();
+            else if (ctx instanceof B314Parser.ExprDCaseContext) result=Type.SQUARE.toString();
             else if(ctx instanceof B314Parser.ExprGContext){
                 Symbole sym = CurrentScope.FoundSymbole(ctx.getChild(0).getText());
-                return sym.getType();
-            }            
-            else throw new RuntimeException();
+                result=sym.getType();
+            } 
+            return result;
         }
 
         private void CheckType(String givenType1,String givenType2,String expectedType){
