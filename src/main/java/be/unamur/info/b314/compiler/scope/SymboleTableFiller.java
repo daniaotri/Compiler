@@ -423,19 +423,22 @@ public class SymboleTableFiller extends B314BaseListener {
 	@Override 
         public void enterExprGTableau(B314Parser.ExprGTableauContext ctx) {
             CurrentSymbole = CurrentScope.FoundSymbole(ctx.ID().getText());
-            if(CurrentSymbole == null)throw new RuntimeException();
+            //if(CurrentSymbole == null)throw new RuntimeException();
             if(CurrentSymbole.getIsArray()){
                 if(CurrentSymbole.getLength().length==1){
-                    if(ctx.taille1==null || ctx.taille2!=null)throw new RuntimeException();
+                    if(ctx.taille1==null)throw new RuntimeException();
                     else if (GetType(ctx.taille1)!=Type.INTEGER.toString())throw new RuntimeException();
+                    else if(ctx.taille2!=null)throw new RuntimeException();
                 }
                 else{
                     if(ctx.taille1==null || ctx.taille2==null)throw new RuntimeException();
-                    else if(GetType(ctx.taille1)!=Type.INTEGER.toString() ||GetType(ctx.taille2)!=Type.INTEGER.toString() )throw new RuntimeException();
+                    else if(GetType(ctx.taille1)!=Type.INTEGER.toString() || GetType(ctx.taille2)!=Type.INTEGER.toString() )throw new RuntimeException();
                 }
             }
-            else throw new RuntimeException();
+            else if(ctx.taille1!=null) throw new RuntimeException();
         }
+        
+        
         /***
          * Les instructions
          */
