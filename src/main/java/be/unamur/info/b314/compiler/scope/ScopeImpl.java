@@ -77,7 +77,8 @@ public class ScopeImpl implements Scope{
         /*Ausun symbole trouvé*/
         else return null;
     }
-    private Scope WhoIsThisScope(String name){
+    @Override
+    public Scope WhoIsThisScope(String name){
         Scope scope = null;
         if(Children.size()!=0)
         {

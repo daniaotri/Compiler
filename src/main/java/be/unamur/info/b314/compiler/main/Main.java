@@ -3,6 +3,7 @@ package be.unamur.info.b314.compiler.main;
 import be.unamur.info.b314.compiler.B314Lexer;
 import be.unamur.info.b314.compiler.B314Parser;
 import be.unamur.info.b314.compiler.exception.ParsingException;
+import be.unamur.info.b314.compiler.scope.FillScope;
 import be.unamur.info.b314.compiler.scope.Scope;
 import be.unamur.info.b314.compiler.scope.SymboleTableFiller;
 import static com.google.common.base.Preconditions.checkArgument;
@@ -192,21 +193,27 @@ public class Main {
 
         B314Parser.ProgrammeContext tree =parse(new ANTLRInputStream(new FileInputStream(inputFile)));
         Scope x = fillSymTable(tree); 
-        System.out.println(x);
+        //System.out.println(x);
+        //System.out.println(x.GetName());
+        //System.out.println(x.getChildren().size());
     }
    
     private Scope fillSymTable(B314Parser.ProgrammeContext ctx){
-        SymboleTableFiller filler = new SymboleTableFiller();
+        FillScope fill = new FillScope();
+        ParseTreeWalker walk1 = new ParseTreeWalker(); 
+        walk1.walk(fill, ctx);
+        SymboleTableFiller filler = new SymboleTableFiller((Scope) fill.getScope());
         ParseTreeWalker walker = new ParseTreeWalker(); 
         walker.walk(filler, ctx);
         return filler.getScope();
+        //return fill.getScope();
     }
     
     private B314Parser.ProgrammeContext parse(ANTLRInputStream input) throws ParseCancellationException, ParsingException{
         CommonTokenStream tokens = new CommonTokenStream(new B314Lexer(input));
         System.out.println(input);
         parser = new B314Parser(tokens);
-        parser.removeErrorListeners();;
+        parser.removeErrorListeners();
         MyConsoleErrorListener errorListener = new MyConsoleErrorListener();
         parser.addErrorListener(errorListener);
         B314Parser.ProgrammeContext ctx;

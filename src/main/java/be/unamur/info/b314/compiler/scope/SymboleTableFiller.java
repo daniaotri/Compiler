@@ -7,11 +7,8 @@ package be.unamur.info.b314.compiler.scope;
 
 import be.unamur.info.b314.compiler.B314BaseListener;
 import be.unamur.info.b314.compiler.B314Parser;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import org.antlr.v4.runtime.ANTLRInputStream;
 import org.antlr.v4.runtime.ParserRuleContext;
+import org.antlr.v4.runtime.tree.ParseTreeWalker;
 /*
  *
  *@author jessi
@@ -32,17 +29,15 @@ public class SymboleTableFiller extends B314BaseListener {
         Symbole CurrentSymbole;
         boolean CurrentIsFonction;
         int position;
-
-        /**
-         *
-         *  Constructeur
-         */
-        public SymboleTableFiller() {
-            GeneralScope = new ScopeImpl("Programme");
-            CurrentScope = GeneralScope;
+        
+        public SymboleTableFiller(Scope x){
+            GeneralScope = (ScopeImpl) x;
+            CurrentScope = GeneralScope;            
             CurrentIsFonction=false;
-            position=1;
-            //CurrentSymbole=null;
+            position = 1;
+            System.out.println(CurrentScope.GetName());
+            for(int i = 0;i < CurrentScope.getChildren().size();i++)
+                System.out.println(CurrentScope.getChildren().get(i).GetName());
         }
         /**
          *
@@ -58,7 +53,6 @@ public class SymboleTableFiller extends B314BaseListener {
          */
 	@Override 
         public void enterProgramme(B314Parser.ProgrammeContext ctx) {
-            GeneralScope= new ScopeImpl("Programme");            
         }
         /**
          *
@@ -66,47 +60,7 @@ public class SymboleTableFiller extends B314BaseListener {
          */
 	@Override 
         public void enterFctDecl(B314Parser.FctDeclContext ctx) {
-            CurrentIsFonction = true;
-            CurrentSymbole = new Symbole(ctx.ID().getText());
-            CurrentSymbole.setIsFunction(true);
-            CurrentScope.AddSymbole(CurrentSymbole); // on ajoute le symbole fonction dans le scope parent
-            CurrentScope = new ScopeImpl(ctx.ID().getText(),CurrentScope); //on change de scope
-            CurrentScope.AddSymbole(CurrentSymbole);   //on l'ajoute dans son propre scope  
-
-        //debut de decomment
-/*
-            CurrentScope.AddSymbole(new Symbole("latitude",Type.INTEGER.toString()));
-            CurrentScope.AddSymbole(new Symbole("longitude",Type.INTEGER.toString()));
-            CurrentScope.AddSymbole(new Symbole("grid size",Type.INTEGER.toString()));
-            CurrentScope.AddSymbole(new Symbole("map count",Type.INTEGER.toString()));
-            CurrentScope.AddSymbole(new Symbole("ammo count",Type.INTEGER.toString()));
-            CurrentScope.AddSymbole(new Symbole("soda count",Type.INTEGER.toString()));
-            CurrentScope.AddSymbole(new Symbole("radio count",Type.INTEGER.toString()));
-            CurrentScope.AddSymbole(new Symbole("fruits count",Type.INTEGER.toString()));
-            CurrentScope.AddSymbole(new Symbole("life",Type.INTEGER.toString()));
-            CurrentScope.AddSymbole(new Symbole("true",Type.BOOLEAN.toString()));
-            CurrentScope.AddSymbole(new Symbole("false",Type.BOOLEAN.toString()));
-            CurrentScope.AddSymbole(new Symbole("ennemi is north",Type.BOOLEAN.toString()));
-            CurrentScope.AddSymbole(new Symbole("ennemi is south",Type.BOOLEAN.toString()));
-            CurrentScope.AddSymbole(new Symbole("ennemi is east",Type.BOOLEAN.toString()));
-            CurrentScope.AddSymbole(new Symbole("ennemi is west",Type.BOOLEAN.toString()));
-            CurrentScope.AddSymbole(new Symbole("graal is north",Type.BOOLEAN.toString()));
-            CurrentScope.AddSymbole(new Symbole("graal is south",Type.BOOLEAN.toString()));
-            CurrentScope.AddSymbole(new Symbole("graal is east",Type.BOOLEAN.toString()));
-            CurrentScope.AddSymbole(new Symbole("graal is west",Type.BOOLEAN.toString()));
-            CurrentScope.AddSymbole(new Symbole("dirt",Type.SQUARE.toString()));
-            CurrentScope.AddSymbole(new Symbole("rock",Type.SQUARE.toString()));
-            CurrentScope.AddSymbole(new Symbole("vines",Type.SQUARE.toString()));
-            CurrentScope.AddSymbole(new Symbole("zombie",Type.SQUARE.toString()));
-            CurrentScope.AddSymbole(new Symbole("player",Type.SQUARE.toString()));
-            CurrentScope.AddSymbole(new Symbole("ennemi",Type.SQUARE.toString()));
-            CurrentScope.AddSymbole(new Symbole("map",Type.SQUARE.toString()));
-            CurrentScope.AddSymbole(new Symbole("radio",Type.SQUARE.toString()));
-            CurrentScope.AddSymbole(new Symbole("ammo",Type.SQUARE.toString()));
-            CurrentScope.AddSymbole(new Symbole("fruits",Type.SQUARE.toString()));
-            CurrentScope.AddSymbole(new Symbole("soda",Type.SQUARE.toString()));
-*/
-               //Fin de decomment
+            CurrentScope = (ScopeImpl) CurrentScope.WhoIsThisScope(ctx.ID().getText()); 
         }
 
 	@Override 
@@ -115,41 +69,20 @@ public class SymboleTableFiller extends B314BaseListener {
             CurrentScope = (ScopeImpl) CurrentScope.getParent();
         }
 
-	@Override 
-        public void exitFctTypeVoid(B314Parser.FctTypeVoidContext ctx) {
-            if(CurrentIsFonction){
-                CurrentIsFonction = false;
-                CurrentSymbole.setType(ctx.VOID().getText());
-            }
-            else throw new RuntimeException();
-        }
-
-	@Override 
-        public void enterParamDecl(B314Parser.ParamDeclContext ctx) {
-            CurrentIsFonction = false;
-        }
-
-	@Override 
-        public void exitParamDecl(B314Parser.ParamDeclContext ctx) { 
-            CurrentIsFonction = true;
-        }
-        /**
+        /*
          *
          *  Clause When
          */
 	@Override 
         public void enterClauseWhen(B314Parser.ClauseWhenContext ctx) { 
             String nomScope = "clauseWhen"+position;
-            System.out.println("le scope parent"+CurrentScope.GetName());
-            CurrentScope = new ScopeImpl(nomScope,CurrentScope);
-            System.out.println("le scope ensfant"+CurrentScope.GetName());
+            CurrentScope= (ScopeImpl) CurrentScope.WhoIsThisScope(nomScope);
             position = position +1;
         }
 
 	@Override 
         public void exitClauseWhen(B314Parser.ClauseWhenContext ctx) { 
             CurrentScope = (ScopeImpl) CurrentScope.getParent();
-            System.out.println("le scope parent"+CurrentScope.GetName());
         }
         /**
          *
@@ -157,72 +90,12 @@ public class SymboleTableFiller extends B314BaseListener {
          */
 	@Override 
         public void enterClauseDefault(B314Parser.ClauseDefaultContext ctx) {
-            System.out.println("le scope parent"+CurrentScope.GetName());
-            CurrentScope = new ScopeImpl("clauseDefault",CurrentScope);
-            System.out.println("le scope enfant"+CurrentScope.GetName());
+            CurrentScope=(ScopeImpl) CurrentScope.WhoIsThisScope("clauseDefault");             
         }
 
 	@Override 
         public void exitClauseDefault(B314Parser.ClauseDefaultContext ctx) {
             CurrentScope = (ScopeImpl) CurrentScope.getParent();
-        }
-        /**
-         *
-         *  Declaration des variables
-         */
-	@Override 
-        public void enterVarDecl(B314Parser.VarDeclContext ctx) {
-            CurrentSymbole = new Symbole(ctx.ID().getText());
-            System.out.println("variable"+CurrentSymbole.getName());
-        }
-
-	@Override 
-        public void exitVarDecl(B314Parser.VarDeclContext ctx){
-            if(CurrentSymbole.getType() == null) throw new RuntimeException();
-            CurrentScope.AddSymbole(CurrentSymbole);
-            System.out.println("variable type "+CurrentSymbole.getType());
-        }
-        /**
-         *
-         *  type Scalar
-         */
-	@Override 
-        public void exitTypeScalar(B314Parser.TypeScalarContext ctx) {
-            if(CurrentIsFonction)CurrentIsFonction=false;
-        }
-	@Override 
-        public void enterScalarBoolean(B314Parser.ScalarBooleanContext ctx) {
-            CurrentSymbole.setType(ctx.BOOLEAN().getText());
-        }
-	@Override 
-        public void enterScalarInteger(B314Parser.ScalarIntegerContext ctx) { 
-            CurrentSymbole.setType(ctx.INTEGER().getText());
-        }
-	@Override 
-        public void enterScalarSquare(B314Parser.ScalarSquareContext ctx) { 
-            CurrentSymbole.setType(ctx.SQUARE().getText());
-        }
-        /**
-         *
-         *  type tableau
-         */        
-	@Override 
-        public void enterArray(B314Parser.ArrayContext ctx) {
-            if(ctx.taille1==null && ctx.taille2==null)throw new RuntimeException();
-            else if (ctx.taille1 !=null){
-                int i = Integer.parseInt(ctx.taille1.getText());
-                if(ctx.taille2!=null){
-                    int j = Integer.parseInt(ctx.taille2.getText());
-                    CurrentSymbole.setLength(new int []{i,j});
-                }
-                else CurrentSymbole.setLength(new int []{i});
-            }
-            CurrentSymbole.setType(ctx.scalar().getChild(0).getText());
-        }
-
-	@Override 
-        public void exitArray(B314Parser.ArrayContext ctx) {
-            if(CurrentIsFonction)CurrentIsFonction=false;           
         }
         /**
          *
@@ -453,105 +326,7 @@ public class SymboleTableFiller extends B314BaseListener {
             }
             else if(!(ctx.t3.equals(null))) throw new RuntimeException();
         }
-        /*
-        @Override 
-        public void enterExprGTableauEntEnt(B314Parser.ExprGTableauEntEntContext ctx) {
-            CurrentSymbole = CurrentScope.FoundSymbole(ctx.ID().getText());
-            //if(CurrentSymbole == null)throw new RuntimeException();
-            if(CurrentSymbole.getIsArray()){
-                if(CurrentSymbole.getLength().length==1){
-                    if(ctx.exprEnt(0)==null)throw new RuntimeException();
-                    else if(!(ctx.exprEnt(1).equals(null)))throw new RuntimeException();
-                }
-                else{
-                    if(ctx.exprEnt(0)==null || ctx.exprEnt(1)==null)throw new RuntimeException();                    
-                }
-            }
-            else if(ctx.exprEnt(1)!=null) throw new RuntimeException();        
-        }
 
-	@Override 
-        public void enterExprGTableauEntG(B314Parser.ExprGTableauEntGContext ctx) {
-            CurrentSymbole = CurrentScope.FoundSymbole(ctx.ID().getText());
-            //if(CurrentSymbole == null)throw new RuntimeException();
-            if(CurrentSymbole.getIsArray()){
-                Symbole t3= CurrentScope.FoundSymbole(ctx.exprG().getChild(0).getText());
-                if(CurrentSymbole.getLength().length==1){
-                    if(ctx.exprEnt()==null)throw new RuntimeException();
-                    else 
-                    {
-                        if(ctx.exprG()!=null)throw new RuntimeException();
-                    }
-                }
-                else{
-                    if(t3 ==null || ctx.exprEnt()==null)throw new RuntimeException();
-                    else if(!(t3.getType().equals(Type.INTEGER.toString().toLowerCase())))throw new RuntimeException();
-                }
-            }
-            else if(ctx.exprEnt()!=null) throw new RuntimeException();         
-        }
-
-	@Override 
-        public void enterExprGTableauGEnt(B314Parser.ExprGTableauGEntContext ctx) {
-            CurrentSymbole = CurrentScope.FoundSymbole(ctx.ID().getText());
-            //if(CurrentSymbole == null)throw new RuntimeException();
-            if(CurrentSymbole.getIsArray()){
-                Symbole t3= CurrentScope.FoundSymbole(ctx.exprG().getChild(0).getText());
-                if(CurrentSymbole.getLength().length==1){
-                    if(ctx.exprG()==null)throw new RuntimeException();
-                    else 
-                    {
-                        if (!(t3.getType().equals(Type.INTEGER.toString().toLowerCase())))throw new RuntimeException();
-                        else if(ctx.exprEnt()!=null)throw new RuntimeException();
-                    }
-                }
-                else{
-                    if(t3 ==null || ctx.exprEnt()==null)throw new RuntimeException();
-                    else if((!(t3.getType().equals(Type.INTEGER.toString().toLowerCase()))))throw new RuntimeException();
-                }
-            }
-            else if(ctx.exprG()!=null) throw new RuntimeException();       
-        }        
-        
-
-	@Override 
-        public void enterExprGTableauGG(B314Parser.ExprGTableauGGContext ctx) {
-            CurrentSymbole = CurrentScope.FoundSymbole(ctx.ID().getText());
-            //if(CurrentSymbole == null)throw new RuntimeException();
-            if(CurrentSymbole.getIsArray()){
-                Symbole t3= CurrentScope.FoundSymbole(ctx.t3.getChild(0).getText());
-                Symbole t4= CurrentScope.FoundSymbole(ctx.t4.getChild(0).getText());
-                if(CurrentSymbole.getLength().length==1){
-                    if(ctx.t3==null)throw new RuntimeException();
-                    else 
-                    {
-                        if (!(t3.getType().equals(Type.INTEGER.toString().toLowerCase())))throw new RuntimeException();
-                        else if(t4!=null)throw new RuntimeException();
-                    }
-                }
-                else{
-                    if(t3 ==null || t4==null)throw new RuntimeException();
-                    else if((!(t3.getType().equals(Type.INTEGER.toString().toLowerCase()))) || (!(t4.getType().equals(Type.INTEGER.toString().toLowerCase()))) )throw new RuntimeException();
-                }
-            }
-            else if(ctx.t3!=null) throw new RuntimeException();      
-        }
-*/
-        
-        /***
-         * Les instructions
-         */
-        /*
-	@Override 
-        public void enterAffectation(B314Parser.AffectationContext ctx) { 
-            String name = ctx.exprG().getChild(0).getText();
-            Symbole symbole = CurrentScope.FoundSymbole(name);
-            if(symbole!=null){
-                checkType(symbole.getType(),GetType((ParserRuleContext) ctx.exprD().getChild(0)));
-            }
-            //voir nouvelle version si jamais
-            
-        }*/
         @Override 
         public void enterAffectationGaucheGauche(B314Parser.AffectationGaucheGaucheContext ctx) {
             String name1 = ctx.exprG(0).getChild(0).getText();

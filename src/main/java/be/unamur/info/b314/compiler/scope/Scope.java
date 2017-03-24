@@ -51,5 +51,5 @@ public interface Scope {
     public String GetName();
     public void deleteDuplicateSCope();
     public void deleteDuplicateSymbole();
-
+    public Scope WhoIsThisScope(String name);
 }

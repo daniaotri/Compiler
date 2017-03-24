@@ -29,6 +29,7 @@ public class B314commentsSyntaxTest {
     //
     // Serie comments OK
     //
+    
     @Test
     public void testcomments_comments_everywhere_ok() throws Exception{
         CompilerTestHelper.launchCompilation("/syntax/comments/ok/comments_everywhere.b314", testFolder.newFile(), true, "comments: comments_everywhere");
@@ -52,6 +53,7 @@ public class B314commentsSyntaxTest {
     //
     // Serie comments KO
     //
+    
     @Test
     public void testcomments_at_least_one_instruction_in_default_ko() throws Exception {
         CompilerTestHelper.launchCompilation("/syntax/comments/ko/at_least_one_instruction_in_default.b314", testFolder.newFile(), false, "comments: at_least_one_instruction_in_default");
