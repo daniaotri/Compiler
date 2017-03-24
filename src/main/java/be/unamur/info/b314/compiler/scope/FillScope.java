@@ -180,8 +180,10 @@ public class FillScope extends B314BaseListener {
             if(ctx.taille1==null && ctx.taille2==null)throw new RuntimeException();
             else if (ctx.taille1 !=null){
                 int i = Integer.parseInt(ctx.taille1.getText());
+                if(i<0)throw new RuntimeException();
                 if(ctx.taille2!=null){
                     int j = Integer.parseInt(ctx.taille2.getText());
+                    if(j<0)throw new RuntimeException();
                     CurrentSymbole.setLength(new int []{i,j});
                 }
                 else CurrentSymbole.setLength(new int []{i});
