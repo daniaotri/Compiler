@@ -1,0 +1,11 @@
+declare and retain
+mybool as boolean[3];
+myint as integer[3];
+mycase as square[3];
+when your turn
+by default
+do
+set mybool[1] to true
+set myint[2] to 3
+set mycase[1] to rock
+done

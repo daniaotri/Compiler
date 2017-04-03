@@ -36,17 +36,12 @@ public class FillScope extends B314BaseListener {
             CurrentScope = GeneralScope;
             CurrentIsFonction=false;
             position=1;
-            //CurrentSymbole=null;
         }
         /**
          *
          *  Renvoie le scope general
          */
         public ScopeImpl getScope(){
-            //GeneralScope.CorrectEveryThing();
-           // Scope x = this.GeneralScope;
-           // System.out.println("Jessica "+x.GetName());
-           //System.out.println("Jessica2 "+x.getChildren().size());
             return this.GeneralScope;
         }
         /**
@@ -55,9 +50,10 @@ public class FillScope extends B314BaseListener {
          */
 	@Override 
         public void enterProgramme(B314Parser.ProgrammeContext ctx) {
-           //GeneralScope= new ScopeImpl("Programme");   
-           //System.out.println()
-          System.out.println("Programme "+GeneralScope.GetName()); 
+            GeneralScope = new ScopeImpl("Programme");
+            CurrentScope = GeneralScope;
+            CurrentIsFonction=false;
+            position=1;
         }
         /**
          *
@@ -143,13 +139,14 @@ public class FillScope extends B314BaseListener {
 	@Override 
         public void enterVarDecl(B314Parser.VarDeclContext ctx) {
             CurrentSymbole = new Symbole(ctx.ID().getText());
-            System.out.println("variable"+CurrentScope.FoundSymbole(CurrentSymbole.getName()).getName());
         }
 
 	@Override 
         public void exitVarDecl(B314Parser.VarDeclContext ctx){
+            System.out.println(CurrentSymbole.toString());
+            System.out.println( "le scope "+ CurrentScope.toString());
             if(CurrentSymbole.getType() == null) throw new RuntimeException();
-            CurrentScope.AddSymbole(CurrentSymbole);
+            else CurrentScope.AddSymbole(CurrentSymbole);
         }
         /**
          *
@@ -162,6 +159,7 @@ public class FillScope extends B314BaseListener {
 	@Override 
         public void enterScalarBoolean(B314Parser.ScalarBooleanContext ctx) {
             CurrentSymbole.setType(ctx.BOOLEAN().getText());
+            
         }
 	@Override 
         public void enterScalarInteger(B314Parser.ScalarIntegerContext ctx) { 

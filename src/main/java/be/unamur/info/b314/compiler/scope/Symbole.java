@@ -74,4 +74,8 @@ public class Symbole {
         this.isArray = isArray;
     }
     
+    @Override
+    public String toString() {
+        return "Symbole{" + "name=" + name + ", type=" + type + ", length=" + length + ", isArray=" + isArray + ", isFunction=" + isFunction + '}';
+    }
 }

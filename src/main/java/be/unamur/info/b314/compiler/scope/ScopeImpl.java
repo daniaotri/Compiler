@@ -163,4 +163,10 @@ public class ScopeImpl implements Scope{
         }
         
     }
+
+    @Override
+    public String toString() {
+        return "ScopeImpl{" + "Parent=" + Parent + ", name=" + name + ", Children=" + Children + ", symboles=" + symboles + '}';
+    }
+    
 }
