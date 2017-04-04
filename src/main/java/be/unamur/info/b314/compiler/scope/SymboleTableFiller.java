@@ -78,6 +78,7 @@ public class SymboleTableFiller extends B314BaseListener {
             String nomScope = "clauseWhen"+position;
             CurrentScope= (ScopeImpl) CurrentScope.WhoIsThisScope(nomScope);
             position = position +1;
+            if(!(ctx.getChild(1) instanceof B314Parser.ExprBoolContext)) throw new RuntimeException();
         }
 
 	@Override 
@@ -346,46 +347,34 @@ public class SymboleTableFiller extends B314BaseListener {
 
         @Override 
         public void enterAffectationGaucheGauche(B314Parser.AffectationGaucheGaucheContext ctx) {
-            Symbole symbole1 = CurrentScope.FoundSymbole(ctx.exprG(0).getChild(0).getText());
-            if(symbole1.getIsFunction())throw new RuntimeException();
-            else{
-            String type1 = GetTypeSymbole(symbole1);
+            VerifyArrayLength(ctx);
+            String type1 = GetTypeSymbole(CurrentScope.FoundSymbole(ctx.exprG(0).getChild(0).getText()));
             String type2 = GetTypeSymbole(CurrentScope.FoundSymbole(ctx.exprG(1).getChild(0).getText()));
             if(!(type1.equals(type2)))
-                throw new RuntimeException();                
-            }
+                throw new RuntimeException();
         }
 
 	@Override 
         public void enterAffectationGaucheEnt(B314Parser.AffectationGaucheEntContext ctx) {
-            Symbole symbole = CurrentScope.FoundSymbole(ctx.exprG().getChild(0).getText());
-            if(symbole.getIsFunction()) throw new RuntimeException();
-            else {
-                String type = GetTypeSymbole(symbole);   
-                if(!(type.equals(Type.INTEGER.name().toLowerCase())))throw new RuntimeException();              
-            }      
+            VerifyArrayLength(ctx);
+            String type = GetTypeSymbole(CurrentScope.FoundSymbole(ctx.exprG().getChild(0).getText()));   
+            if(!(type.equals(Type.INTEGER.name().toLowerCase())))throw new RuntimeException();        
         }
 
 	@Override 
         public void enterAffectationGaucheBool(B314Parser.AffectationGaucheBoolContext ctx) {
-            Symbole symbole = CurrentScope.FoundSymbole(ctx.exprG().getChild(0).getText());
-            if(symbole.getIsFunction())throw new RuntimeException();
-            else {
-                String type = GetTypeSymbole(symbole);
-                if(!(type.equals(Type.BOOLEAN.name().toLowerCase())))
-                throw new RuntimeException(); 
-            }         
+            VerifyArrayLength(ctx);
+            String type = GetTypeSymbole(CurrentScope.FoundSymbole(ctx.exprG().getChild(0).getText()));
+            if(!(type.equals(Type.BOOLEAN.name().toLowerCase())))
+                throw new RuntimeException();          
         }
 
 	@Override 
         public void enterAffectationGaucheCase(B314Parser.AffectationGaucheCaseContext ctx) {
-            Symbole symbole = CurrentScope.FoundSymbole(ctx.exprG().getChild(0).getText());            
-            if(symbole.getIsFunction())throw new RuntimeException();
-            else {
-                String type = GetTypeSymbole(symbole);
-                if(!(type.equals(Type.SQUARE.toString().toLowerCase())))
-                throw new RuntimeException();     
-            }
+            VerifyArrayLength(ctx);
+            String type = GetTypeSymbole(CurrentScope.FoundSymbole(ctx.exprG().getChild(0).getText()));
+            if(!(type.equals(Type.SQUARE.toString().toLowerCase())))
+                throw new RuntimeException();          
         }
         
 	@Override 
@@ -405,5 +394,18 @@ public class SymboleTableFiller extends B314BaseListener {
             if(sym.equals(null)) throw new RuntimeException();
             if(sym.getIsFunction()) return CurrentScope.getParent().FoundSymbole(sym.getName()).getType();
                     else return sym.getType();
+        }
+        
+        private void VerifyArrayLength(ParserRuleContext ctx){
+            if(ctx instanceof B314Parser.ExprGTableauContext){
+                Symbole sym = CurrentScope.FoundSymbole(ctx.getChild(0).getText());
+                if(sym.getIsArray()){
+                    int taille = sym.getLength().length;
+                    boolean EstEntier = false;
+                    if(taille == 1)if(ctx.getChild(2) instanceof B314Parser.ExprEntContext)EstEntier = true;      
+                    else if(taille == 2)if((ctx.getChild(2) instanceof B314Parser.ExprEntContext)&&(ctx.getChild(4) instanceof B314Parser.ExprEntContext) ) EstEntier = true;                
+                    if(!EstEntier)throw new RuntimeException();
+                }
+            }   
         }
 }

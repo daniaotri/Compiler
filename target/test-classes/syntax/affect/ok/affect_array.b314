@@ -7,5 +7,5 @@ by default
 do
 set mybool[1] to true
 set myint[2] to 3
-set mycase[1] to rock
+set mycase[2] to rock
 done
