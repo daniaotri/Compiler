@@ -1,18 +1,15 @@
 declare and retain 
-    b as boolean;
-    i as integer;
-    s as square;
-when your turn
-by default
-    do 
-        set b to true
-        set b to false
-        set b to graal is north
-        set i to latitude
-        set i to grid size
-        set b to 42  /* wrong type */
-        set i to 34
-        set s to fruits
-        set s to soda
-        set s to nearby[2,2]
+	b1 as boolean;
+	b2 as boolean;
+	s1 as square;
+        i1 as integer;
+    fct1 as function():square
+    	do
+    		compute i1 
+    		set i1 to i1 + 1 % longitude + grid size - i1
+    	done 
+when your turn 
+by default 
+    do
+    	compute fct1()
     done

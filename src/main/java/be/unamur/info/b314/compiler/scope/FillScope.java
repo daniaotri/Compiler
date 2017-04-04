@@ -134,7 +134,7 @@ public class FillScope extends B314BaseListener {
             if(CurrentSymbole.getType() == null) throw new RuntimeException();
             else if(CurrentIsFonction && CurrentSymbole.getIsArray()) throw new RuntimeException();
             else CurrentScope.AddSymbole(CurrentSymbole);
-            //if(CurrentIsFonction)CurrentScope.FoundSymbole(CurrentScope.GetName()).getLesParametres().add(CurrentSymbole);
+            if(CurrentIsFonction)CurrentScope.FoundSymbole(CurrentScope.GetName()).AddParam(CurrentSymbole);
         }
         /**
          *

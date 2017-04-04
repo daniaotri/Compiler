@@ -86,6 +86,11 @@ public class Symbole {
     public void setLesParametres(ArrayList<Symbole> LesParametres) {
         this.LesParametres = LesParametres;
     }
+    
+    public void AddParam(Symbole sym){
+        if(LesParametres.contains(sym))throw new RuntimeException();
+        else LesParametres.add(sym);
+    }
 
     @Override
     public String toString() {

@@ -106,7 +106,6 @@ public class SymboleTableFiller extends B314BaseListener {
 	@Override 
         public void enterExprEntFonction(B314Parser.ExprEntFonctionContext ctx) { 
             Symbole symbole = CurrentScope.FoundSymbole(ctx.ID().getText());
-            if(symbole.equals(null))System.out.println("youpi");
             if(symbole == null)throw new RuntimeException();
             else {
                 String type = GetTypeSymbole(symbole);
@@ -348,6 +347,8 @@ public class SymboleTableFiller extends B314BaseListener {
         @Override 
         public void enterAffectationGaucheGauche(B314Parser.AffectationGaucheGaucheContext ctx) {
             VerifyArrayLength(ctx);
+            VerfiedParam(ctx.exprG(0));
+            VerfiedParam(ctx.exprG(1));
             String type1 = GetTypeSymbole(CurrentScope.FoundSymbole(ctx.exprG(0).getChild(0).getText()));
             String type2 = GetTypeSymbole(CurrentScope.FoundSymbole(ctx.exprG(1).getChild(0).getText()));
             if(!(type1.equals(type2)))
@@ -357,6 +358,7 @@ public class SymboleTableFiller extends B314BaseListener {
 	@Override 
         public void enterAffectationGaucheEnt(B314Parser.AffectationGaucheEntContext ctx) {
             VerifyArrayLength(ctx);
+            VerfiedParam(ctx.exprG());
             String type = GetTypeSymbole(CurrentScope.FoundSymbole(ctx.exprG().getChild(0).getText()));   
             if(!(type.equals(Type.INTEGER.name().toLowerCase())))throw new RuntimeException();        
         }
@@ -364,6 +366,7 @@ public class SymboleTableFiller extends B314BaseListener {
 	@Override 
         public void enterAffectationGaucheBool(B314Parser.AffectationGaucheBoolContext ctx) {
             VerifyArrayLength(ctx);
+            VerfiedParam(ctx.exprG());
             String type = GetTypeSymbole(CurrentScope.FoundSymbole(ctx.exprG().getChild(0).getText()));
             if(!(type.equals(Type.BOOLEAN.name().toLowerCase())))
                 throw new RuntimeException();          
@@ -372,6 +375,7 @@ public class SymboleTableFiller extends B314BaseListener {
 	@Override 
         public void enterAffectationGaucheCase(B314Parser.AffectationGaucheCaseContext ctx) {
             VerifyArrayLength(ctx);
+            VerfiedParam(ctx.exprG());
             String type = GetTypeSymbole(CurrentScope.FoundSymbole(ctx.exprG().getChild(0).getText()));
             if(!(type.equals(Type.SQUARE.toString().toLowerCase())))
                 throw new RuntimeException();          
@@ -387,6 +391,7 @@ public class SymboleTableFiller extends B314BaseListener {
             else if(ctx instanceof B314Parser.ExprGContext){
                 Symbole symbole = CurrentScope.FoundSymbole(ctx.getChild(0).getText());
                 result= symbole.getType(); 
+               
             }
             return result;
         }
@@ -407,5 +412,26 @@ public class SymboleTableFiller extends B314BaseListener {
                     if(!EstEntier)throw new RuntimeException();
                 }
             }   
+        }
+        private void VerfiedParam(ParserRuleContext ctx){
+            if(ctx instanceof B314Parser.ExprEntFonctionContext ||
+                    ctx instanceof B314Parser.ExprBoolFonctionContext ||
+                            ctx instanceof B314Parser.ExprCaseFonctionContext ){
+                Symbole sym = CurrentScope.FoundSymbole(ctx.getChild(0).getText());
+                if(sym.getLesParametres().size()>0){
+                    int j = 0;
+                    for(int i = 0; i<sym.getLesParametres().size();i++){
+                        j=j+2;
+                        Symbole symbole = sym.getLesParametres().get(i);
+                        String type = "";
+                        if (ctx.getChild(j) instanceof B314Parser.ExprBoolContext) type = Type.BOOLEAN.toString().toLowerCase();
+                        else if (ctx.getChild(j) instanceof B314Parser.ExprCaseContext) type = Type.SQUARE.toString().toLowerCase();
+                        else if(ctx.getChild(j) instanceof B314Parser.ExprEntContext) type = Type.INTEGER.toString().toLowerCase();
+                        else if(ctx.getChild(j) instanceof B314Parser.ExprGContext)type = CurrentScope.FoundSymbole(ctx.getChild(0).getText()).getType();          
+                        if(!type.equals(symbole.getType()))throw new RuntimeException();                      
+                    }
+                }
+            }
+                
         }
 }
