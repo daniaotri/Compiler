@@ -101,7 +101,7 @@ public class SymboleTableFiller extends B314BaseListener {
          *
          *  les expressions entières
          */
-        /*
+        
 	@Override 
         public void enterExprEntFonction(B314Parser.ExprEntFonctionContext ctx) { 
             Symbole symbole = CurrentScope.FoundSymbole(ctx.ID().getText());
@@ -112,7 +112,7 @@ public class SymboleTableFiller extends B314BaseListener {
                 if(!(type.equals(Type.INTEGER.toString().toLowerCase())))throw new RuntimeException();
             }        
         }
-        */
+        
 	@Override 
         public void enterExprEntMulDivEntGauhe(B314Parser.ExprEntMulDivEntGauheContext ctx) {
             Symbole symbole = CurrentScope.FoundSymbole(ctx.exprG().getChild(0).getText());
@@ -184,13 +184,13 @@ public class SymboleTableFiller extends B314BaseListener {
             String type2 = GetTypeSymbole(CurrentScope.FoundSymbole(ctx.expr4.getChild(0).getText()));
            if(!(type1.equals(type2)))throw new RuntimeException();        
         }
-/*
+
         @Override 
         public void enterExprBoolEgaleGaucheEnt(B314Parser.ExprBoolEgaleGaucheEntContext ctx) {
             String type = GetTypeSymbole(CurrentScope.FoundSymbole(ctx.exprG().getChild(0).getText()));
             if(!(type.equals(Type.INTEGER.toString().toLowerCase())))throw new RuntimeException();
         }
-*/
+
 	@Override 
         public void enterExprBoolEgaleGaucheCase(B314Parser.ExprBoolEgaleGaucheCaseContext ctx) {
             String type = GetTypeSymbole(CurrentScope.FoundSymbole(ctx.exprG().getChild(0).getText()));
@@ -346,30 +346,46 @@ public class SymboleTableFiller extends B314BaseListener {
 
         @Override 
         public void enterAffectationGaucheGauche(B314Parser.AffectationGaucheGaucheContext ctx) {
-            String type1 = GetTypeSymbole(CurrentScope.FoundSymbole(ctx.exprG(0).getChild(0).getText()));
+            Symbole symbole1 = CurrentScope.FoundSymbole(ctx.exprG(0).getChild(0).getText());
+            if(symbole1.getIsFunction())throw new RuntimeException();
+            else{
+            String type1 = GetTypeSymbole(symbole1);
             String type2 = GetTypeSymbole(CurrentScope.FoundSymbole(ctx.exprG(1).getChild(0).getText()));
             if(!(type1.equals(type2)))
-                throw new RuntimeException();
+                throw new RuntimeException();                
+            }
         }
-/*
+
 	@Override 
         public void enterAffectationGaucheEnt(B314Parser.AffectationGaucheEntContext ctx) {
-            String type = GetTypeSymbole(CurrentScope.FoundSymbole(ctx.exprG().getChild(0).getText()));   
-            if(!(type.equals(Type.INTEGER.name().toLowerCase())))throw new RuntimeException();        
+            Symbole symbole = CurrentScope.FoundSymbole(ctx.exprG().getChild(0).getText());
+            if(symbole.getIsFunction()) throw new RuntimeException();
+            else {
+                String type = GetTypeSymbole(symbole);   
+                if(!(type.equals(Type.INTEGER.name().toLowerCase())))throw new RuntimeException();              
+            }      
         }
-*/
+
 	@Override 
         public void enterAffectationGaucheBool(B314Parser.AffectationGaucheBoolContext ctx) {
-            String type = GetTypeSymbole(CurrentScope.FoundSymbole(ctx.exprG().getChild(0).getText()));
-            if(!(type.equals(Type.BOOLEAN.name().toLowerCase())))
-                throw new RuntimeException();          
+            Symbole symbole = CurrentScope.FoundSymbole(ctx.exprG().getChild(0).getText());
+            if(symbole.getIsFunction())throw new RuntimeException();
+            else {
+                String type = GetTypeSymbole(symbole);
+                if(!(type.equals(Type.BOOLEAN.name().toLowerCase())))
+                throw new RuntimeException(); 
+            }         
         }
 
 	@Override 
         public void enterAffectationGaucheCase(B314Parser.AffectationGaucheCaseContext ctx) {
-            String type = GetTypeSymbole(CurrentScope.FoundSymbole(ctx.exprG().getChild(0).getText()));
-            if(!(type.equals(Type.SQUARE.toString().toLowerCase())))
-                throw new RuntimeException();          
+            Symbole symbole = CurrentScope.FoundSymbole(ctx.exprG().getChild(0).getText());            
+            if(symbole.getIsFunction())throw new RuntimeException();
+            else {
+                String type = GetTypeSymbole(symbole);
+                if(!(type.equals(Type.SQUARE.toString().toLowerCase())))
+                throw new RuntimeException();     
+            }
         }
         
 	@Override 

@@ -132,8 +132,8 @@ public class FillScope extends B314BaseListener {
 	@Override 
         public void exitVarDecl(B314Parser.VarDeclContext ctx){
             if(CurrentSymbole.getType() == null) throw new RuntimeException();
-            else //if(CurrentIsFonction)CurrentScope.FoundSymbole(CurrentScope.GetName()).getLesParametres().add(CurrentSymbole)
-            CurrentScope.AddSymbole(CurrentSymbole);
+            else CurrentScope.AddSymbole(CurrentSymbole);
+            //if(CurrentIsFonction)CurrentScope.FoundSymbole(CurrentScope.GetName()).getLesParametres().add(CurrentSymbole);
         }
         /**
          *
