@@ -29,6 +29,7 @@ public class B314affectSyntaxTest {
     //
     // Serie affect OK
     //
+    
     @Test
     public void testaffect_affect_int_right_expressions_ok() throws Exception{
         CompilerTestHelper.launchCompilation("/syntax/affect/ok/affect_int_right_expressions.b314", testFolder.newFile(), true, "affect: affect_int_right_expressions");

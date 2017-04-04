@@ -21,9 +21,10 @@ public class FillScope extends B314BaseListener {
     VOID
     }
     
-        ScopeImpl GeneralScope;
-        ScopeImpl CurrentScope;
+        Scope GeneralScope;
+        Scope CurrentScope;
         Symbole CurrentSymbole;
+        SymboleIsFunction CurrentIsFunction;
         boolean CurrentIsFonction;
         int position;
 
@@ -41,7 +42,7 @@ public class FillScope extends B314BaseListener {
          *
          *  Renvoie le scope general
          */
-        public ScopeImpl getScope(){
+        public Scope getScope(){
             return this.GeneralScope;
         }
         /**
@@ -61,39 +62,31 @@ public class FillScope extends B314BaseListener {
          */
 	@Override 
         public void enterFctDecl(B314Parser.FctDeclContext ctx) {
-            CurrentIsFonction = true;
             CurrentSymbole = new Symbole(ctx.ID().getText());
             CurrentSymbole.setIsFunction(true);
-            CurrentScope.AddSymbole(CurrentSymbole); // on ajoute le symbole fonction dans le scope parent
+            //CurrentScope.AddSymbole(CurrentSymbole); // on ajoute le symbole fonction dans le scope parent
             Scope x = new ScopeImpl(ctx.ID().getText(),CurrentScope); //on change de scope
             CurrentScope.addChildScope(x);
-            CurrentScope = (ScopeImpl) x;
-            CurrentScope.AddSymbole(CurrentSymbole);   //on l'ajoute dans son propre scope  
+            CurrentScope =   x;
+            CurrentScope.AddSymbole(CurrentSymbole);   //on l'ajoute dans son propre scope  */
         }
 
 	@Override 
         public void exitFctDecl(B314Parser.FctDeclContext ctx) {
-            CurrentIsFonction = false;
-            CurrentScope = (ScopeImpl) CurrentScope.getParent();
+            //CurrentIsFonction = false;
+            System.out.println(CurrentScope.toString());
+            CurrentScope = CurrentScope.getParent();
         }
 
-	@Override 
-        public void exitFctTypeVoid(B314Parser.FctTypeVoidContext ctx) {
-            if(CurrentIsFonction){
-                CurrentIsFonction = false;
-                CurrentSymbole.setType(ctx.VOID().getText());
-            }
-            else throw new RuntimeException();
-        }
 
 	@Override 
         public void enterParamDecl(B314Parser.ParamDeclContext ctx) {
-            CurrentIsFonction = false;
+            CurrentIsFonction = true;
         }
 
 	@Override 
         public void exitParamDecl(B314Parser.ParamDeclContext ctx) { 
-            CurrentIsFonction = true;
+            CurrentIsFonction = false;
         }
         /**
          *
@@ -104,13 +97,13 @@ public class FillScope extends B314BaseListener {
             String nomScope = "clauseWhen"+position;
             Scope x = new ScopeImpl(nomScope,CurrentScope);
             CurrentScope.addChildScope(x);
-            CurrentScope = (ScopeImpl) x;
+            CurrentScope =   x;
             position = position +1;
         }
 
 	@Override 
         public void exitClauseWhen(B314Parser.ClauseWhenContext ctx) { 
-            CurrentScope = (ScopeImpl) CurrentScope.getParent();
+            CurrentScope =   CurrentScope.getParent();
         }
         /**
          *
@@ -120,17 +113,12 @@ public class FillScope extends B314BaseListener {
         public void enterClauseDefault(B314Parser.ClauseDefaultContext ctx) {
             Scope x = new ScopeImpl("clauseDefault",CurrentScope);
             CurrentScope.addChildScope(x);
-            CurrentScope = (ScopeImpl) x;
-            System.out.println("nom clause "+CurrentScope.GetName());
-            System.out.println("nom parent clause "+CurrentScope.getParent().GetName());
-          //System.out.println("clause3 "+GeneralScope.GetName()); 
-            
+            CurrentScope =   x;           
         }
 
 	@Override 
         public void exitClauseDefault(B314Parser.ClauseDefaultContext ctx) {
-            CurrentScope = (ScopeImpl) CurrentScope.getParent();
-            System.out.println("exit clause "+GeneralScope.GetName()); 
+            CurrentScope = CurrentScope.getParent();
         }
         /**
          *
@@ -143,10 +131,9 @@ public class FillScope extends B314BaseListener {
 
 	@Override 
         public void exitVarDecl(B314Parser.VarDeclContext ctx){
-            System.out.println(CurrentSymbole.toString());
-            System.out.println( "le scope "+ CurrentScope.toString());
             if(CurrentSymbole.getType() == null) throw new RuntimeException();
-            else CurrentScope.AddSymbole(CurrentSymbole);
+            else //if(CurrentIsFonction)CurrentScope.FoundSymbole(CurrentScope.GetName()).getLesParametres().add(CurrentSymbole)
+            CurrentScope.AddSymbole(CurrentSymbole);
         }
         /**
          *
@@ -193,5 +180,31 @@ public class FillScope extends B314BaseListener {
         public void exitArray(B314Parser.ArrayContext ctx) {
             if(CurrentIsFonction)CurrentIsFonction=false;           
         }
+        
+	@Override 
+        public void enterFctTypeScalar(B314Parser.FctTypeScalarContext ctx) {
+            CurrentSymbole = CurrentScope.FoundSymbole(CurrentScope.GetName());
+            //CurrentSymbole.setType(ctx.);
+        }
 
+	@Override 
+        public void exitFctTypeScalar(B314Parser.FctTypeScalarContext ctx) {
+            CurrentScope.getParent().AddSymbole(CurrentSymbole);
+        }
+
+	@Override 
+        public void enterFctTypeVoid(B314Parser.FctTypeVoidContext ctx) { 
+            CurrentSymbole = CurrentScope.FoundSymbole(CurrentScope.GetName());
+        }
+	       
+	@Override 
+        public void exitFctTypeVoid(B314Parser.FctTypeVoidContext ctx) {
+            if(CurrentIsFonction){
+                CurrentIsFonction = false;
+                CurrentSymbole.setType(ctx.VOID().getText());
+                CurrentScope.getParent().AddSymbole(CurrentSymbole);
+            }
+            else throw new RuntimeException();
+        }
+        
 }

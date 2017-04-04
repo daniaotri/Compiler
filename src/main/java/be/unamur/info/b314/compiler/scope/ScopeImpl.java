@@ -24,7 +24,8 @@ public class ScopeImpl implements Scope{
     
     /*Liste des symboles du scope*/
     private ArrayList<Symbole> symboles;
-
+    
+    
     public ScopeImpl(String st) {
         this.name = st;
         this.Children = new ArrayList();
@@ -54,8 +55,9 @@ public class ScopeImpl implements Scope{
         if(symbole == null)throw new RuntimeException();
         String name = symbole.getName();
         Symbole sym=FoundSymbole(name);
+        //SymboleIsFunction funct = FoundFunction(name);
         if(symboles.contains(symbole))throw new RuntimeException();
-        else if (sym!=null) throw new RuntimeException();
+        else if ((sym!= null)) throw new RuntimeException();
         else symboles.add(symbole);
     }
 
@@ -72,11 +74,12 @@ public class ScopeImpl implements Scope{
             if(name.equals(symboles.get(position).getName()))symbole = symboles.get(position); /*Le symbole est trouvé*/
         }
         if(symbole!=null)return symbole; 
-        if(Parent != null)return Parent.FoundSymbole(name);
+        else if(Parent != null)return Parent.FoundSymbole(name);
         
         /*Ausun symbole trouvé*/
         else return null;
     }
+
     @Override
     public Scope WhoIsThisScope(String name){
         Scope scope = null;
@@ -163,10 +166,4 @@ public class ScopeImpl implements Scope{
         }
         
     }
-
-    @Override
-    public String toString() {
-        return "ScopeImpl{" + "Parent=" + Parent + ", name=" + name + ", Children=" + Children + ", symboles=" + symboles + '}';
-    }
-    
 }

@@ -5,6 +5,8 @@
  */
 package be.unamur.info.b314.compiler.scope;
 
+import java.util.ArrayList;
+
 /**
  *
  * Represente un symbole du langage
@@ -18,6 +20,7 @@ public class Symbole {
     private int [] length = {};
     private Boolean isArray;
     private Boolean isFunction;
+    private ArrayList<Symbole> LesParametres;
     
         
     /**
@@ -30,12 +33,14 @@ public class Symbole {
         this.type = null;
         this.isArray = false;
         this.isFunction = false;
+        this.LesParametres = new ArrayList<>();
     }
     public Symbole(String name,String type){
         this.name = name;
         this.type = name;
         this.isArray = false;
         this.isFunction = false;
+        this.LesParametres = new ArrayList<>();
     }
     
     public Boolean getIsFunction() {
@@ -73,9 +78,19 @@ public class Symbole {
     public void setIsArray(Boolean isArray) {
         this.isArray = isArray;
     }
-    
+
+    public ArrayList<Symbole> getLesParametres() {
+        return LesParametres;
+    }
+
+    public void setLesParametres(ArrayList<Symbole> LesParametres) {
+        this.LesParametres = LesParametres;
+    }
+
     @Override
     public String toString() {
-        return "Symbole{" + "name=" + name + ", type=" + type + ", length=" + length + ", isArray=" + isArray + ", isFunction=" + isFunction + '}';
+        return "Symbole{" + "name=" + name + ", type=" + type + ", length=" + length + ", isArray=" + isArray + ", isFunction=" + isFunction + ", LesParametres=" + LesParametres + '}';
     }
+    
+
 }
