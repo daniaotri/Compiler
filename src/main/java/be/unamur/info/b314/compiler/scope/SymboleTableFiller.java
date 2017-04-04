@@ -36,8 +36,8 @@ public class SymboleTableFiller extends B314BaseListener {
             CurrentIsFonction=false;
             position = 1;
             
-            //for(int i =0;i<CurrentScope.getSymboles().size();i++)
-            //    System.out.println(CurrentScope.getSymboles().get(i).toString());
+            for(int i =0;i<CurrentScope.getSymboles().size();i++)
+            System.out.println(CurrentScope.getSymboles().get(i).toString());
         }
         /**
          *
@@ -184,16 +184,13 @@ public class SymboleTableFiller extends B314BaseListener {
             String type2 = GetTypeSymbole(CurrentScope.FoundSymbole(ctx.expr4.getChild(0).getText()));
            if(!(type1.equals(type2)))throw new RuntimeException();        
         }
-
+/*
         @Override 
         public void enterExprBoolEgaleGaucheEnt(B314Parser.ExprBoolEgaleGaucheEntContext ctx) {
-            Symbole x = CurrentScope.FoundSymbole(ctx.exprG().getChild(0).getText());
             String type = GetTypeSymbole(CurrentScope.FoundSymbole(ctx.exprG().getChild(0).getText()));
-            //System.out.println(CurrentScope.FoundSymbole(ctx.exprG().getChild(0).getText()).toString());
-            //System.out.println(ctx.getText() + " "+type);
             if(!(type.equals(Type.INTEGER.toString().toLowerCase())))throw new RuntimeException();
         }
-
+*/
 	@Override 
         public void enterExprBoolEgaleGaucheCase(B314Parser.ExprBoolEgaleGaucheCaseContext ctx) {
             String type = GetTypeSymbole(CurrentScope.FoundSymbole(ctx.exprG().getChild(0).getText()));
@@ -354,13 +351,13 @@ public class SymboleTableFiller extends B314BaseListener {
             if(!(type1.equals(type2)))
                 throw new RuntimeException();
         }
-
+/*
 	@Override 
         public void enterAffectationGaucheEnt(B314Parser.AffectationGaucheEntContext ctx) {
             String type = GetTypeSymbole(CurrentScope.FoundSymbole(ctx.exprG().getChild(0).getText()));   
             if(!(type.equals(Type.INTEGER.name().toLowerCase())))throw new RuntimeException();        
         }
-
+*/
 	@Override 
         public void enterAffectationGaucheBool(B314Parser.AffectationGaucheBoolContext ctx) {
             String type = GetTypeSymbole(CurrentScope.FoundSymbole(ctx.exprG().getChild(0).getText()));
