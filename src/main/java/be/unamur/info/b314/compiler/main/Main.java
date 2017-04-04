@@ -6,6 +6,8 @@ import be.unamur.info.b314.compiler.exception.ParsingException;
 import be.unamur.info.b314.compiler.scope.FillScope;
 import be.unamur.info.b314.compiler.scope.Scope;
 import be.unamur.info.b314.compiler.scope.SymboleTableFiller;
+import be.unamur.info.b314.compiler.Visitor.PCodePrinter;
+import be.unamur.info.b314.compiler.Visitor.PCodeVisitor;
 import static com.google.common.base.Preconditions.checkArgument;
 import java.io.BufferedReader;
 import java.io.File;
@@ -29,6 +31,7 @@ import org.slf4j.LoggerFactory;
 
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.util.Map;
 
 
 /**
@@ -193,6 +196,7 @@ public class Main {
 
         B314Parser.ProgrammeContext tree =parse(new ANTLRInputStream(new FileInputStream(inputFile)));
         Scope x = fillSymTable(tree); 
+        printPCode(tree, x);
         //System.out.println(x);
         //System.out.println(x.GetName());
         //System.out.println(x.getChildren().size());
@@ -223,6 +227,15 @@ public class Main {
         if(errorListener.errorHasBeenReported()) throw new ParsingException("Error while parsing input!");
         return ctx;
     }
-    
+    /**
+     * Print PCode from AST and symtable.
+     */
+    private void printPCode(B314Parser.ProgrammeContext tree, Scope symTable) throws FileNotFoundException {
+        PCodePrinter printer = new PCodePrinter(outputFile);
+        PCodeVisitor visitor = new PCodeVisitor(symTable, printer);
+        tree.accept(visitor);
+        printer.flush();
+        printer.close();
+    }    
 
 }
