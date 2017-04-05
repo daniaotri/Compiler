@@ -396,30 +396,42 @@ public class SymboleTableFiller extends B314BaseListener {
         @Override 
         public void enterAppelDeFonction(B314Parser.AppelDeFonctionContext ctx) {
             Symbole sym = CurrentScope.FoundSymbole(ctx.ID().getText());
-            System.out.println(CurrentScope.GetName()+" "+sym.getName()+" "+sym.getLesParametres().size());
-            if(sym.getLesParametres().size()> ctx.exprD().size()) throw new RuntimeException();
-            else 
-                if(sym.getLesParametres().size() > 0){
-                int j = 0;
+            if (sym.getLesParametres().size()>0)
+                    {
                     for(int i = 0; i<sym.getLesParametres().size();i++){
                         String typeSave = GetTypeParmInFonction(sym.getName(),sym.getLesParametres().get(i));
-                        j = j + 2;
-                        System.out.println(typeSave+" "+sym.getLesParametres().get(i));
-                        if(ctx.getChild(j).equals(null)) throw new RuntimeException();
-                        else if (ctx.getChild(j) instanceof B314Parser.ExprBoolContext)if(Type.BOOLEAN.toString().toLowerCase() != typeSave)throw new RuntimeException(); 
-                        else if (ctx.getChild(j) instanceof B314Parser.ExprCaseContext)if(!Type.SQUARE.toString().toLowerCase().equals(typeSave))throw new RuntimeException(); 
-                        else if(ctx.getChild(j) instanceof B314Parser.ExprEntContext) if(!Type.INTEGER.toString().toLowerCase().equals(typeSave))throw new RuntimeException(); 
-                        else if(ctx.getChild(j) instanceof B314Parser.ExprGContext)if(!CurrentScope.FoundSymbole(ctx.exprD(i).getChild(0).getText()).getType().equals(typeSave))throw new RuntimeException();
-                        else if(ctx.getChild(j) instanceof B314Parser.AppelDeFonctionContext) if(!CurrentScope.WhoIsThisScope(sym.getName()).FoundSymbole(ctx.exprD(i).getChild(0).getText()).getType().equals(typeSave))throw new RuntimeException();                         
+                        if(ctx.exprBool(i) != null){
+                            if(Type.BOOLEAN.toString().toLowerCase() != typeSave)throw new RuntimeException();
+                        }
+                        else if(ctx.exprCase(i) != null){
+                            if(!Type.SQUARE.toString().toLowerCase().equals(typeSave))throw new RuntimeException();
+                        }
+                        else if(ctx.exprEnt(i) != null){
+                            if(!Type.INTEGER.toString().toLowerCase().equals(typeSave))throw new RuntimeException(); 
+                        }
+                        else if(ctx.exprG(i) !=null){
+                            Symbole s = CurrentScope.FoundSymbole(ctx.exprG(i).getChild(0).getText());
+                            String type = s.getType();
+                            System.out.println(s.getName()+" "+type);
+                            if(!type.equals(typeSave)) throw new RuntimeException();                        
+                        }
+                        else if(ctx.appelDeFonction(i) != null){
+                            Symbole s = CurrentScope.FoundSymbole(ctx.appelDeFonction(i).getChild(0).getText());                          
+                            String type = s.getType();
+                            System.out.println(s.getName()+" "+type);
+                            if(type != typeSave) throw new RuntimeException();                            
+                        }
+                        else throw new RuntimeException(); 
+                        
                     }
                 }
             
-            else if(ctx.exprD(0) != null) throw new RuntimeException();
+            else if(ctx.exprBool(0) != null || ctx.exprCase(0) != null | ctx.exprEnt(0) != null
+                    || ctx.exprG(0) != null || ctx.appelDeFonction(0) != null) throw new RuntimeException();
         }
         private String GetTypeParmInFonction(String nameFct, String nameParam){
             Scope parent = CurrentScope.getParent();
             Scope scopefct = parent.WhoIsThisScope(nameFct);
-            System.out.println(scopefct.toString());
             Symbole sym = scopefct.FoundSymbole(nameParam);
             return sym.getType();            
         }
