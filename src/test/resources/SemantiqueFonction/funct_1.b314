@@ -1,9 +1,6 @@
 declare and retain 
-	b1 as boolean;
-	b2 as boolean;
-	s1 as square;
         i1 as integer;
-    fct1 as function():square
+    fct1 as function(x as integer):square
     	do
     		compute i1 
     		set i1 to i1 + 1 % longitude + grid size - i1
@@ -11,5 +8,6 @@ declare and retain
 when your turn 
 by default 
     do
-    	compute fct1()
+    	set i1 to 2
+        compute fct1(i1)
     done

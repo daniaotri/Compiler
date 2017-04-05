@@ -20,7 +20,7 @@ public class Symbole {
     private int [] length = {};
     private Boolean isArray;
     private Boolean isFunction;
-    private ArrayList<Symbole> LesParametres;
+    private ArrayList<String> LesParametres;
     
         
     /**
@@ -79,15 +79,15 @@ public class Symbole {
         this.isArray = isArray;
     }
 
-    public ArrayList<Symbole> getLesParametres() {
+    public ArrayList<String> getLesParametres() {
         return LesParametres;
     }
 
-    public void setLesParametres(ArrayList<Symbole> LesParametres) {
+    public void setLesParametres(ArrayList<String> LesParametres) {
         this.LesParametres = LesParametres;
     }
     
-    public void AddParam(Symbole sym){
+    public void AddParam(String sym){
         if(LesParametres.contains(sym))throw new RuntimeException();
         else LesParametres.add(sym);
     }

@@ -26,7 +26,7 @@ exprD: exprEnt                 #exprDInteger
 
 exprEnt: entier                                                   #exprEntEntier
         | environnementInt                                         #exprEntEnvironnement
-        | ID PAR_OUVERT (exprD (VIRGULE exprD)*)? PAR_FERME        #exprEntFonction
+        | exprInt=ID PAR_OUVERT (exprD (VIRGULE exprD)*)? PAR_FERME        #exprEntFonction
         | exprEnt op=(MUL|DIV|DIV_ENT) exprEnt             #exprEntMulDivEntEnt
         | exprEnt op=(MUL|DIV|DIV_ENT) exprG             #exprEntMulDivEntGauhe
         | exprG op=(MUL|DIV|DIV_ENT) exprEnt             #exprEntMulDivGauheEnt
@@ -38,9 +38,18 @@ exprEnt: entier                                                   #exprEntEntier
         | PAR_OUVERT exprEnt PAR_FERME                               #exprEntParennthese
         ;
 
+exprCase: exprSquare=ID PAR_OUVERT (exprD (VIRGULE exprD)*)? PAR_FERME         #exprCaseFonction
+        | environnementCase                                         #exprCaseEnvironnement
+        | NEARBY CROCHET_OUVERT exprEnt VIRGULE exprEnt CROCHET_FERME   #exprCaseNearbyEntEnt
+        | NEARBY CROCHET_OUVERT exprEnt VIRGULE exprG CROCHET_FERME   #exprCaseNearbyEntG
+        | NEARBY CROCHET_OUVERT exprG VIRGULE exprEnt CROCHET_FERME   #exprCaseNearbyGEnt
+        | NEARBY CROCHET_OUVERT taille1=exprG VIRGULE taille2=exprG CROCHET_FERME   #exprCaseNearbyGG
+        | PAR_OUVERT exprCase PAR_FERME                               #exprCaseParennthese
+        ;
+
 exprBool: TRUE                                                      #exprBoolTrue
          | FALSE                                                    #exprBoolFalse
-         | ID PAR_OUVERT (exprD (VIRGULE exprD)*)? PAR_FERME        #exprBoolFonction
+         | exprBoolean=ID PAR_OUVERT (exprD (VIRGULE exprD)*)? PAR_FERME        #exprBoolFonction
          | environnementBool                                        #exprBoolEnvironnement
          | exprEnt EGALE exprEnt                                 #exprBoolEgaleInteger
          | exprBool EGALE exprBool                               #exprBoolEgaleBoolean
@@ -65,7 +74,7 @@ exprBool: TRUE                                                      #exprBoolTru
          | PAR_OUVERT exprBool PAR_FERME                               #exprBoolParennthese
          ;
 
-exprCase: ID PAR_OUVERT (exprD (VIRGULE exprD)*)? PAR_FERME         #exprCaseFonction
+exprCase: exprSquare=ID PAR_OUVERT (exprD (VIRGULE exprD)*)? PAR_FERME         #exprCaseFonction
         | environnementCase                                         #exprCaseEnvironnement
         | NEARBY CROCHET_OUVERT exprEnt VIRGULE exprEnt CROCHET_FERME   #exprCaseNearbyEntEnt
         | NEARBY CROCHET_OUVERT exprEnt VIRGULE exprG CROCHET_FERME   #exprCaseNearbyEntG

@@ -25,7 +25,7 @@ public class B314affectSyntaxTest {
         }
     ;
     };
-
+/*
     //
     // Serie affect OK
     //
@@ -107,10 +107,12 @@ public class B314affectSyntaxTest {
     public void testaffect_affect_reserved_word_ko() throws Exception {
         CompilerTestHelper.launchCompilation("/syntax/affect/ko/affect_reserved_word.b314", testFolder.newFile(), false, "affect: affect_reserved_word");
     }
+    */
     /*
     @Test
     public void testaffect_ko() throws Exception{
         CompilerTestHelper.launchCompilation("/SemantiqueFonction/funct_1.b314", testFolder.newFile(), true, "affect: funct");
-    }*/
+    }
+*/
 
 }

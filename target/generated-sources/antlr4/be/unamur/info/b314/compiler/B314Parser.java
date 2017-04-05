@@ -719,9 +719,10 @@ public class B314Parser extends Parser {
 		}
 	}
 	public static class ExprEntFonctionContext extends ExprEntContext {
-		public TerminalNode ID() { return getToken(B314Parser.ID, 0); }
+		public Token exprInt;
 		public TerminalNode PAR_OUVERT() { return getToken(B314Parser.PAR_OUVERT, 0); }
 		public TerminalNode PAR_FERME() { return getToken(B314Parser.PAR_FERME, 0); }
+		public TerminalNode ID() { return getToken(B314Parser.ID, 0); }
 		public List<ExprDContext> exprD() {
 			return getRuleContexts(ExprDContext.class);
 		}
@@ -924,7 +925,7 @@ public class B314Parser extends Parser {
 				_ctx = _localctx;
 				_prevctx = _localctx;
 				setState(75);
-				match(ID);
+				((ExprEntFonctionContext)_localctx).exprInt = match(ID);
 				setState(76);
 				match(PAR_OUVERT);
 				setState(85);
@@ -1274,9 +1275,10 @@ public class B314Parser extends Parser {
 		}
 	}
 	public static class ExprBoolFonctionContext extends ExprBoolContext {
-		public TerminalNode ID() { return getToken(B314Parser.ID, 0); }
+		public Token exprBoolean;
 		public TerminalNode PAR_OUVERT() { return getToken(B314Parser.PAR_OUVERT, 0); }
 		public TerminalNode PAR_FERME() { return getToken(B314Parser.PAR_FERME, 0); }
+		public TerminalNode ID() { return getToken(B314Parser.ID, 0); }
 		public List<ExprDContext> exprD() {
 			return getRuleContexts(ExprDContext.class);
 		}
@@ -1812,7 +1814,7 @@ public class B314Parser extends Parser {
 				_ctx = _localctx;
 				_prevctx = _localctx;
 				setState(130);
-				match(ID);
+				((ExprBoolFonctionContext)_localctx).exprBoolean = match(ID);
 				setState(131);
 				match(PAR_OUVERT);
 				setState(140);
@@ -2356,9 +2358,10 @@ public class B314Parser extends Parser {
 		}
 	}
 	public static class ExprCaseFonctionContext extends ExprCaseContext {
-		public TerminalNode ID() { return getToken(B314Parser.ID, 0); }
+		public Token exprSquare;
 		public TerminalNode PAR_OUVERT() { return getToken(B314Parser.PAR_OUVERT, 0); }
 		public TerminalNode PAR_FERME() { return getToken(B314Parser.PAR_FERME, 0); }
+		public TerminalNode ID() { return getToken(B314Parser.ID, 0); }
 		public List<ExprDContext> exprD() {
 			return getRuleContexts(ExprDContext.class);
 		}
@@ -2424,7 +2427,7 @@ public class B314Parser extends Parser {
 				enterOuterAlt(_localctx, 1);
 				{
 				setState(227);
-				match(ID);
+				((ExprCaseFonctionContext)_localctx).exprSquare = match(ID);
 				setState(228);
 				match(PAR_OUVERT);
 				setState(237);

@@ -24,9 +24,9 @@ public class FillScope extends B314BaseListener {
         Scope GeneralScope;
         Scope CurrentScope;
         Symbole CurrentSymbole;
-        SymboleIsFunction CurrentIsFunction;
         boolean CurrentIsFonction;
         int position;
+        boolean IsParam;
 
         /**
          *
@@ -37,6 +37,7 @@ public class FillScope extends B314BaseListener {
             CurrentScope = GeneralScope;
             CurrentIsFonction=false;
             position=1;
+            IsParam = false;
         }
         /**
          *
@@ -55,6 +56,7 @@ public class FillScope extends B314BaseListener {
             CurrentScope = GeneralScope;
             CurrentIsFonction=false;
             position=1;
+            IsParam = false;
         }
         /**
          *
@@ -73,8 +75,6 @@ public class FillScope extends B314BaseListener {
 
 	@Override 
         public void exitFctDecl(B314Parser.FctDeclContext ctx) {
-            //CurrentIsFonction = false;
-            System.out.println(CurrentScope.toString());
             CurrentScope = CurrentScope.getParent();
         }
 
@@ -82,11 +82,13 @@ public class FillScope extends B314BaseListener {
 	@Override 
         public void enterParamDecl(B314Parser.ParamDeclContext ctx) {
             CurrentIsFonction = true;
+            //System.out.println("Enter param "+CurrentIsFonction+" ");
         }
 
 	@Override 
         public void exitParamDecl(B314Parser.ParamDeclContext ctx) { 
             CurrentIsFonction = false;
+            //System.out.println("Exit param "+CurrentIsFonction+" ");
         }
         /**
          *
@@ -127,14 +129,22 @@ public class FillScope extends B314BaseListener {
 	@Override 
         public void enterVarDecl(B314Parser.VarDeclContext ctx) {
             CurrentSymbole = new Symbole(ctx.ID().getText());
+            if(CurrentIsFonction)IsParam = true;
         }
 
 	@Override 
         public void exitVarDecl(B314Parser.VarDeclContext ctx){
             if(CurrentSymbole.getType() == null) throw new RuntimeException();
             else if(CurrentIsFonction && CurrentSymbole.getIsArray()) throw new RuntimeException();
-            else CurrentScope.AddSymbole(CurrentSymbole);
-            if(CurrentIsFonction)CurrentScope.FoundSymbole(CurrentScope.GetName()).AddParam(CurrentSymbole);
+            else {
+                CurrentScope.AddSymbole(CurrentSymbole);
+                if(IsParam){
+                    Symbole x = CurrentScope.FoundSymbole(CurrentScope.GetName());
+                    x.AddParam(CurrentSymbole.getName());               
+                }
+            }
+            IsParam = false;
+            
         }
         /**
          *
