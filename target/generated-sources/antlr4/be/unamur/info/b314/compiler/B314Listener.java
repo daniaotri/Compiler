@@ -702,6 +702,66 @@ public interface B314Listener extends ParseTreeListener {
 	 */
 	void exitAppelDeFonction(B314Parser.AppelDeFonctionContext ctx);
 	/**
+	 * Enter a parse tree produced by the {@code mulDivFonction}
+	 * labeled alternative in {@link B314Parser#manipulationFonction}.
+	 * @param ctx the parse tree
+	 */
+	void enterMulDivFonction(B314Parser.MulDivFonctionContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code mulDivFonction}
+	 * labeled alternative in {@link B314Parser#manipulationFonction}.
+	 * @param ctx the parse tree
+	 */
+	void exitMulDivFonction(B314Parser.MulDivFonctionContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code plusmoinsFonction}
+	 * labeled alternative in {@link B314Parser#manipulationFonction}.
+	 * @param ctx the parse tree
+	 */
+	void enterPlusmoinsFonction(B314Parser.PlusmoinsFonctionContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code plusmoinsFonction}
+	 * labeled alternative in {@link B314Parser#manipulationFonction}.
+	 * @param ctx the parse tree
+	 */
+	void exitPlusmoinsFonction(B314Parser.PlusmoinsFonctionContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code supEgaleFonction}
+	 * labeled alternative in {@link B314Parser#manipulationFonction}.
+	 * @param ctx the parse tree
+	 */
+	void enterSupEgaleFonction(B314Parser.SupEgaleFonctionContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code supEgaleFonction}
+	 * labeled alternative in {@link B314Parser#manipulationFonction}.
+	 * @param ctx the parse tree
+	 */
+	void exitSupEgaleFonction(B314Parser.SupEgaleFonctionContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code andOrFonction}
+	 * labeled alternative in {@link B314Parser#manipulationFonction}.
+	 * @param ctx the parse tree
+	 */
+	void enterAndOrFonction(B314Parser.AndOrFonctionContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code andOrFonction}
+	 * labeled alternative in {@link B314Parser#manipulationFonction}.
+	 * @param ctx the parse tree
+	 */
+	void exitAndOrFonction(B314Parser.AndOrFonctionContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code notFonction}
+	 * labeled alternative in {@link B314Parser#manipulationFonction}.
+	 * @param ctx the parse tree
+	 */
+	void enterNotFonction(B314Parser.NotFonctionContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code notFonction}
+	 * labeled alternative in {@link B314Parser#manipulationFonction}.
+	 * @param ctx the parse tree
+	 */
+	void exitNotFonction(B314Parser.NotFonctionContext ctx);
+	/**
 	 * Enter a parse tree produced by the {@code skipppp}
 	 * labeled alternative in {@link B314Parser#instruction}.
 	 * @param ctx the parse tree

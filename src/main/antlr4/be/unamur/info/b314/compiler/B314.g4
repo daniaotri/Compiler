@@ -104,10 +104,17 @@ entier: (MOINS)?NUMBER
 
 appelDeFonction: ID PAR_OUVERT ((exprEnt|exprBool|exprCase|exprG|appelDeFonction) (VIRGULE (exprEnt|exprBool|exprCase|exprG|appelDeFonction))*)? PAR_FERME;
 
+manipulationFonction : (exprEnt|exprG|appelDeFonction) op=(MUL|DIV|DIV_ENT) (exprEnt|exprG|appelDeFonction)   #mulDivFonction
+                        |(exprEnt|exprG|appelDeFonction) op=(PLUS|MOINS) (exprEnt|exprG|appelDeFonction)        #plusmoinsFonction
+                        |(exprEnt|exprG|appelDeFonction) op=(SUP|INF|EGALE) (exprEnt|exprG|appelDeFonction)     #supEgaleFonction
+                        | (exprBool|exprG|appelDeFonction) op=(AND|OR) (exprBool|exprG|appelDeFonction)           #andOrFonction
+                        |NOT appelDeFonction              #notFonction
+                        ;
+
 instruction: SKIPPPP                                                   #skipppp
-             | IF exprBool THEN instruction+ DONE                       #if
-             | IF exprBool THEN instruction+ ELSE instruction+ DONE   #ifthenelse
-             | WHILE exprBool DO instruction+ DONE                      #while
+             | IF (exprBool|appelDeFonction) THEN instruction+ DONE                       #if
+             | IF (exprBool|appelDeFonction) THEN instruction+ ELSE instruction+ DONE   #ifthenelse
+             | WHILE (exprBool|appelDeFonction) DO instruction+ DONE                      #while
              | SET exprG TO exprG                                      #affectationGaucheGauche
              | SET exprG TO exprEnt                                      #affectationGaucheEnt
              | SET exprG TO exprBool                                      #affectationGaucheBool

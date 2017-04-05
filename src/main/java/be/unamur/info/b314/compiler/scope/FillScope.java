@@ -115,8 +115,12 @@ public class FillScope extends B314BaseListener {
 	@Override 
         public void enterClauseDefault(B314Parser.ClauseDefaultContext ctx) {
             Scope x = new ScopeImpl("clauseDefault",CurrentScope);
-            CurrentScope.addChildScope(x);
-            CurrentScope =   x;           
+            Scope found = CurrentScope.WhoIsThisScope("clauseDefault");
+            if(found == null){
+                CurrentScope.addChildScope(x);
+                CurrentScope =   x;            
+            }
+            else new RuntimeException();           
         }
 
 	@Override 

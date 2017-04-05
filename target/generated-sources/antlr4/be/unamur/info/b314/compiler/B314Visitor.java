@@ -417,6 +417,41 @@ public interface B314Visitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitAppelDeFonction(B314Parser.AppelDeFonctionContext ctx);
 	/**
+	 * Visit a parse tree produced by the {@code mulDivFonction}
+	 * labeled alternative in {@link B314Parser#manipulationFonction}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitMulDivFonction(B314Parser.MulDivFonctionContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code plusmoinsFonction}
+	 * labeled alternative in {@link B314Parser#manipulationFonction}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitPlusmoinsFonction(B314Parser.PlusmoinsFonctionContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code supEgaleFonction}
+	 * labeled alternative in {@link B314Parser#manipulationFonction}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitSupEgaleFonction(B314Parser.SupEgaleFonctionContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code andOrFonction}
+	 * labeled alternative in {@link B314Parser#manipulationFonction}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitAndOrFonction(B314Parser.AndOrFonctionContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code notFonction}
+	 * labeled alternative in {@link B314Parser#manipulationFonction}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitNotFonction(B314Parser.NotFonctionContext ctx);
+	/**
 	 * Visit a parse tree produced by the {@code skipppp}
 	 * labeled alternative in {@link B314Parser#instruction}.
 	 * @param ctx the parse tree

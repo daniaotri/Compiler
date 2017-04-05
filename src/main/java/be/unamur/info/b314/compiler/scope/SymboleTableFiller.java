@@ -429,6 +429,7 @@ public class SymboleTableFiller extends B314BaseListener {
             else if(ctx.exprBool(0) != null || ctx.exprCase(0) != null | ctx.exprEnt(0) != null
                     || ctx.exprG(0) != null || ctx.appelDeFonction(0) != null) throw new RuntimeException();
         }
+
         private String GetTypeParmInFonction(String nameFct, String nameParam){
             Scope parent = CurrentScope.getParent();
             Scope scopefct = parent.WhoIsThisScope(nameFct);
@@ -445,4 +446,88 @@ public class SymboleTableFiller extends B314BaseListener {
             String typeDroite = TypeFonction(ctx);
             if(!typeGauche.equals(typeDroite)) throw new RuntimeException();
         }
+        
+        @Override public void enterIf(B314Parser.IfContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitIf(B314Parser.IfContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterIfthenelse(B314Parser.IfthenelseContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitIfthenelse(B314Parser.IfthenelseContext ctx) { }
+        
+        @Override public void enterWhile(B314Parser.WhileContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitWhile(B314Parser.WhileContext ctx) { }
+        
+        @Override public void enterMulDivFonction(B314Parser.MulDivFonctionContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitMulDivFonction(B314Parser.MulDivFonctionContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterPlusmoinsFonction(B314Parser.PlusmoinsFonctionContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitPlusmoinsFonction(B314Parser.PlusmoinsFonctionContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterSupEgaleFonction(B314Parser.SupEgaleFonctionContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitSupEgaleFonction(B314Parser.SupEgaleFonctionContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterAndOrFonction(B314Parser.AndOrFonctionContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitAndOrFonction(B314Parser.AndOrFonctionContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterNotFonction(B314Parser.NotFonctionContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitNotFonction(B314Parser.NotFonctionContext ctx) { }	
 }
