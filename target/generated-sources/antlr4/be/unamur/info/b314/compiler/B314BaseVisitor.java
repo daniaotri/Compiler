@@ -136,13 +136,6 @@ public class B314BaseVisitor<T> extends AbstractParseTreeVisitor<T> implements B
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitExprEntFonction(B314Parser.ExprEntFonctionContext ctx) { return visitChildren(ctx); }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
 	@Override public T visitExprEntMulDivEntEnt(B314Parser.ExprEntMulDivEntEntContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
@@ -199,62 +192,6 @@ public class B314BaseVisitor<T> extends AbstractParseTreeVisitor<T> implements B
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitExprBoolNotGauche(B314Parser.ExprBoolNotGaucheContext ctx) { return visitChildren(ctx); }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	@Override public T visitExprBoolFonction(B314Parser.ExprBoolFonctionContext ctx) { return visitChildren(ctx); }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	@Override public T visitExprBoolAndOrBoolBool(B314Parser.ExprBoolAndOrBoolBoolContext ctx) { return visitChildren(ctx); }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	@Override public T visitExprBoolEgaleBoolean(B314Parser.ExprBoolEgaleBooleanContext ctx) { return visitChildren(ctx); }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	@Override public T visitExprBoolParennthese(B314Parser.ExprBoolParenntheseContext ctx) { return visitChildren(ctx); }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	@Override public T visitExprBoolEgaleCase(B314Parser.ExprBoolEgaleCaseContext ctx) { return visitChildren(ctx); }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	@Override public T visitExprBoolEgaleGaucheEnt(B314Parser.ExprBoolEgaleGaucheEntContext ctx) { return visitChildren(ctx); }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	@Override public T visitExprBoolInfSupEnt(B314Parser.ExprBoolInfSupEntContext ctx) { return visitChildren(ctx); }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
 	@Override public T visitExprBoolTrue(B314Parser.ExprBoolTrueContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
@@ -263,6 +200,13 @@ public class B314BaseVisitor<T> extends AbstractParseTreeVisitor<T> implements B
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
 	@Override public T visitExprBoolNot(B314Parser.ExprBoolNotContext ctx) { return visitChildren(ctx); }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation returns the result of calling
+	 * {@link #visitChildren} on {@code ctx}.</p>
+	 */
+	@Override public T visitExprBoolNotGauche(B314Parser.ExprBoolNotGaucheContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -284,6 +228,13 @@ public class B314BaseVisitor<T> extends AbstractParseTreeVisitor<T> implements B
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
 	@Override public T visitExprBoolEgaleGaucheGauche(B314Parser.ExprBoolEgaleGaucheGaucheContext ctx) { return visitChildren(ctx); }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation returns the result of calling
+	 * {@link #visitChildren} on {@code ctx}.</p>
+	 */
+	@Override public T visitExprBoolAndOrBoolBool(B314Parser.ExprBoolAndOrBoolBoolContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -312,6 +263,34 @@ public class B314BaseVisitor<T> extends AbstractParseTreeVisitor<T> implements B
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
 	@Override public T visitExprBoolInfSupEntGauche(B314Parser.ExprBoolInfSupEntGaucheContext ctx) { return visitChildren(ctx); }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation returns the result of calling
+	 * {@link #visitChildren} on {@code ctx}.</p>
+	 */
+	@Override public T visitExprBoolEgaleBoolean(B314Parser.ExprBoolEgaleBooleanContext ctx) { return visitChildren(ctx); }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation returns the result of calling
+	 * {@link #visitChildren} on {@code ctx}.</p>
+	 */
+	@Override public T visitExprBoolParennthese(B314Parser.ExprBoolParenntheseContext ctx) { return visitChildren(ctx); }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation returns the result of calling
+	 * {@link #visitChildren} on {@code ctx}.</p>
+	 */
+	@Override public T visitExprBoolEgaleCase(B314Parser.ExprBoolEgaleCaseContext ctx) { return visitChildren(ctx); }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation returns the result of calling
+	 * {@link #visitChildren} on {@code ctx}.</p>
+	 */
+	@Override public T visitExprBoolEgaleGaucheEnt(B314Parser.ExprBoolEgaleGaucheEntContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -353,7 +332,7 @@ public class B314BaseVisitor<T> extends AbstractParseTreeVisitor<T> implements B
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitExprCaseFonction(B314Parser.ExprCaseFonctionContext ctx) { return visitChildren(ctx); }
+	@Override public T visitExprBoolInfSupEnt(B314Parser.ExprBoolInfSupEntContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -444,6 +423,13 @@ public class B314BaseVisitor<T> extends AbstractParseTreeVisitor<T> implements B
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
+	@Override public T visitAppelDeFonction(B314Parser.AppelDeFonctionContext ctx) { return visitChildren(ctx); }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation returns the result of calling
+	 * {@link #visitChildren} on {@code ctx}.</p>
+	 */
 	@Override public T visitSkipppp(B314Parser.SkippppContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
@@ -494,6 +480,13 @@ public class B314BaseVisitor<T> extends AbstractParseTreeVisitor<T> implements B
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
 	@Override public T visitAffectationGaucheCase(B314Parser.AffectationGaucheCaseContext ctx) { return visitChildren(ctx); }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation returns the result of calling
+	 * {@link #visitChildren} on {@code ctx}.</p>
+	 */
+	@Override public T visitAffectationGaucheFonction(B314Parser.AffectationGaucheFonctionContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *

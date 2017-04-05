@@ -83,15 +83,14 @@ public class ScopeImpl implements Scope{
     @Override
     public Scope WhoIsThisScope(String name){
         Scope scope = null;
-        if(Children.size()!=0)
-        {
-            for (int i = 0;i<Children.size();i++){
+        for (int i = 0;i<Children.size();i++){
                 String result = Children.get(i).GetName();
                 if(result.equals(name)){
                   scope= Children.get(i); 
                   break;
-                }} 
-        }
+                }
+        } 
+        
             return scope;
     }
     

@@ -1,5 +1,6 @@
 declare and retain 
         i1 as integer;
+        b as square;
     fct1 as function(x as integer):square
     	do
     		compute i1 
@@ -9,5 +10,5 @@ when your turn
 by default 
     do
     	set i1 to 2
-        compute fct1(i1)
+        compute fct1(b)
     done

@@ -75,6 +75,7 @@ public class FillScope extends B314BaseListener {
 
 	@Override 
         public void exitFctDecl(B314Parser.FctDeclContext ctx) {
+            //System.out.println(CurrentScope.getSymboles().toString());
             CurrentScope = CurrentScope.getParent();
         }
 

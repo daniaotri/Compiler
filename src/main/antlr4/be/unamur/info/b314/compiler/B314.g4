@@ -102,7 +102,7 @@ exprG: ID                                                              #exprGVar
 entier: (MOINS)?NUMBER  
        ;
 
-appelDeFonction: ID PAR_OUVERT (exprD (VIRGULE exprD)*)? PAR_FERME;
+appelDeFonction: ID PAR_OUVERT ((exprD|appelDeFonction) (VIRGULE (exprD|appelDeFonction))*)? PAR_FERME;
 
 instruction: SKIPPPP                                                   #skipppp
              | IF exprBool THEN instruction+ DONE                       #if
@@ -112,6 +112,7 @@ instruction: SKIPPPP                                                   #skipppp
              | SET exprG TO exprEnt                                      #affectationGaucheEnt
              | SET exprG TO exprBool                                      #affectationGaucheBool
              | SET exprG TO exprCase                                      #affectationGaucheCase
+             | SET exprG TO appelDeFonction                             #affectationGaucheFonction
              | COMPUTE (exprD|appelDeFonction)                                          #compute
              | NEXT action                                             #nextAction
              ;

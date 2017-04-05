@@ -1,16 +1,16 @@
 -------------------------------------------------------------------------------
 Test set: be.unamur.info.b314.compiler.main.B314affectSyntaxTest
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 3.506 sec <<< FAILURE!
-testaffect_ko(be.unamur.info.b314.compiler.main.B314affectSyntaxTest)  Time elapsed: 1.78 sec  <<< FAILURE!
+Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 2.029 sec <<< FAILURE!
+testaffect_ko(be.unamur.info.b314.compiler.main.B314affectSyntaxTest)  Time elapsed: 0.694 sec  <<< FAILURE!
 java.lang.AssertionError: affect: funct
-Expected: a string ending with "OK\r\n"
-     but: was "KO
+Expected: a string ending with "KO\r\n"
+     but: was "OK
 "
 	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
 	at org.junit.Assert.assertThat(Assert.java:956)
 	at be.unamur.info.b314.compiler.main.CompilerTestHelper.launchCompilation(CompilerTestHelper.java:42)
-	at be.unamur.info.b314.compiler.main.B314affectSyntaxTest.testaffect_ko(B314affectSyntaxTest.java:113)
+	at be.unamur.info.b314.compiler.main.B314affectSyntaxTest.testaffect_ko(B314affectSyntaxTest.java:114)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
