@@ -144,7 +144,6 @@ public class PCodeVisitor extends B314BaseVisitor<Object>{
             ExpressionEntiere(ctx);
             return null; 
         }
-	@Override public Object visitExprEntFonction(B314Parser.ExprEntFonctionContext ctx) { return  null; }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -201,7 +200,6 @@ public class PCodeVisitor extends B314BaseVisitor<Object>{
             BoolNot(ctx);
             return null;
         }
-	@Override public Object visitExprBoolFonction(B314Parser.ExprBoolFonctionContext ctx) { return  null; }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -338,7 +336,6 @@ public class PCodeVisitor extends B314BaseVisitor<Object>{
             if(ctx.EGALE()!=null)printer.printEqualsValues(PCodePrinter.PCodeTypes.Int);
             return null; 
         }
-	@Override public Object visitExprCaseFonction(B314Parser.ExprCaseFonctionContext ctx) { return  null; }
 	/**
 	 * {@inheritDoc}
 	 *

@@ -26,7 +26,6 @@ exprD: exprEnt                 #exprDInteger
 
 exprEnt: entier                                                   #exprEntEntier
         | environnementInt                                         #exprEntEnvironnement
-        | exprInt=ID PAR_OUVERT (exprD (VIRGULE exprD)*)? PAR_FERME        #exprEntFonction
         | exprEnt op=(MUL|DIV|DIV_ENT) exprEnt             #exprEntMulDivEntEnt
         | exprEnt op=(MUL|DIV|DIV_ENT) exprG             #exprEntMulDivEntGauhe
         | exprG op=(MUL|DIV|DIV_ENT) exprEnt             #exprEntMulDivGauheEnt
@@ -38,18 +37,8 @@ exprEnt: entier                                                   #exprEntEntier
         | PAR_OUVERT exprEnt PAR_FERME                               #exprEntParennthese
         ;
 
-exprCase: exprSquare=ID PAR_OUVERT (exprD (VIRGULE exprD)*)? PAR_FERME         #exprCaseFonction
-        | environnementCase                                         #exprCaseEnvironnement
-        | NEARBY CROCHET_OUVERT exprEnt VIRGULE exprEnt CROCHET_FERME   #exprCaseNearbyEntEnt
-        | NEARBY CROCHET_OUVERT exprEnt VIRGULE exprG CROCHET_FERME   #exprCaseNearbyEntG
-        | NEARBY CROCHET_OUVERT exprG VIRGULE exprEnt CROCHET_FERME   #exprCaseNearbyGEnt
-        | NEARBY CROCHET_OUVERT taille1=exprG VIRGULE taille2=exprG CROCHET_FERME   #exprCaseNearbyGG
-        | PAR_OUVERT exprCase PAR_FERME                               #exprCaseParennthese
-        ;
-
 exprBool: TRUE                                                      #exprBoolTrue
          | FALSE                                                    #exprBoolFalse
-         | exprBoolean=ID PAR_OUVERT (exprD (VIRGULE exprD)*)? PAR_FERME        #exprBoolFonction
          | environnementBool                                        #exprBoolEnvironnement
          | exprEnt EGALE exprEnt                                 #exprBoolEgaleInteger
          | exprBool EGALE exprBool                               #exprBoolEgaleBoolean
@@ -74,8 +63,7 @@ exprBool: TRUE                                                      #exprBoolTru
          | PAR_OUVERT exprBool PAR_FERME                               #exprBoolParennthese
          ;
 
-exprCase: exprSquare=ID PAR_OUVERT (exprD (VIRGULE exprD)*)? PAR_FERME         #exprCaseFonction
-        | environnementCase                                         #exprCaseEnvironnement
+exprCase: environnementCase                                         #exprCaseEnvironnement
         | NEARBY CROCHET_OUVERT exprEnt VIRGULE exprEnt CROCHET_FERME   #exprCaseNearbyEntEnt
         | NEARBY CROCHET_OUVERT exprEnt VIRGULE exprG CROCHET_FERME   #exprCaseNearbyEntG
         | NEARBY CROCHET_OUVERT exprG VIRGULE exprEnt CROCHET_FERME   #exprCaseNearbyGEnt
@@ -108,14 +96,13 @@ environnementCase: DIRT
                  ;
         
 exprG: ID                                                              #exprGVariable
-      | ID CROCHET_OUVERT t3=exprD (VIRGULE t4=exprD)? CROCHET_FERME      #exprGTableau
-      //| ID CROCHET_OUVERT exprEnt (VIRGULE exprG)? CROCHET_FERME      #exprGTableauEntG
-      //| ID CROCHET_OUVERT exprG (VIRGULE exprEnt)? CROCHET_FERME      #exprGTableauGEnt
-      //| ID CROCHET_OUVERT t3=exprG (VIRGULE t4=exprG)? CROCHET_FERME      #exprGTableauGG
+      | ID CROCHET_OUVERT (exprD|appelDeFonction) (VIRGULE (exprD|appelDeFonction))? CROCHET_FERME      #exprGTableau
       ;
 
 entier: (MOINS)?NUMBER  
        ;
+
+appelDeFonction: ID PAR_OUVERT (exprD (VIRGULE exprD)*)? PAR_FERME;
 
 instruction: SKIPPPP                                                   #skipppp
              | IF exprBool THEN instruction+ DONE                       #if
@@ -125,7 +112,7 @@ instruction: SKIPPPP                                                   #skipppp
              | SET exprG TO exprEnt                                      #affectationGaucheEnt
              | SET exprG TO exprBool                                      #affectationGaucheBool
              | SET exprG TO exprCase                                      #affectationGaucheCase
-             | COMPUTE exprD                                           #compute
+             | COMPUTE (exprD|appelDeFonction)                                          #compute
              | NEXT action                                             #nextAction
              ;
 
@@ -154,7 +141,7 @@ paramDecl: (varDecl (VIRGULE varDecl)*)
          ;
 
 
-clauseWhen: WHEN exprD (DECLARE LOCAL (varDecl POINtVIRGULE)+)? DO (instruction)+ DONE  
+clauseWhen: WHEN (exprD|appelDeFonction) (DECLARE LOCAL (varDecl POINtVIRGULE)+)? DO (instruction)+ DONE  
           ;
 
 clauseDefault: BY DEFAULT (DECLARE LOCAL (varDecl POINtVIRGULE)+)? DO (instruction)+ DONE 
