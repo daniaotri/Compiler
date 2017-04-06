@@ -22,52 +22,42 @@ exprD: exprEnt                 #exprDInteger
       | exprBool               #exprDBoolean
       | exprCase               #exprDCase
       | exprG                  #exprDG
+      | appelDeFonction        #exprDFonction
+      |PAR_OUVERT appelDeFonction PAR_FERME                               #exprFonctionParennthese
       ;
 
 exprEnt: entier                                                   #exprEntEntier
         | environnementInt                                         #exprEntEnvironnement
         | exprEnt op=(MUL|DIV|DIV_ENT) exprEnt             #exprEntMulDivEntEnt
-        | exprEnt op=(MUL|DIV|DIV_ENT) exprG             #exprEntMulDivEntGauhe
-        | exprG op=(MUL|DIV|DIV_ENT) exprEnt             #exprEntMulDivGauheEnt
-        | expr3=exprG op=(MUL|DIV|DIV_ENT) expr4=exprG             #exprEntMulDivGaucheGauhe
+        | exprEnt op=(MUL|DIV|DIV_ENT) (exprG|appelDeFonction)            #exprEntMulDivEntGauhe
+        | (exprG|appelDeFonction) op=(MUL|DIV|DIV_ENT) exprEnt             #exprEntMulDivGauheEnt
+        | (exprG|appelDeFonction) op=(MUL|DIV|DIV_ENT) (exprG|appelDeFonction)             #exprEntMulDivGaucheGauhe
         | exprEnt op=(PLUS|MOINS) exprEnt             #exprEntPlusMoinsEntEnt
-        | exprEnt op=(PLUS|MOINS) exprG             #exprEntPlusMoinsEntGauhe
-        | exprG op=(PLUS|MOINS) exprEnt             #exprEntPlusMoinsGauheEnt
-        | expr3=exprG op=(PLUS|MOINS) expr4=exprG             #exprEntPlusMoinsGaucheGauhe
+        | exprEnt op=(PLUS|MOINS) (exprG|appelDeFonction)             #exprEntPlusMoinsEntGauhe
+        | (exprG|appelDeFonction) op=(PLUS|MOINS) exprEnt             #exprEntPlusMoinsGauheEnt
+        | (exprG|appelDeFonction) op=(PLUS|MOINS) (exprG|appelDeFonction)             #exprEntPlusMoinsGaucheGauhe
         | PAR_OUVERT exprEnt PAR_FERME                               #exprEntParennthese
         ;
 
 exprBool: TRUE                                                      #exprBoolTrue
          | FALSE                                                    #exprBoolFalse
          | environnementBool                                        #exprBoolEnvironnement
-         | exprEnt EGALE exprEnt                                 #exprBoolEgaleInteger
+         | (exprEnt|appelDeFonction|exprG|exprCase) EGALE (exprEnt|appelDeFonction|exprG|exprCase)                                 #exprBoolEgaleOther
          | exprBool EGALE exprBool                               #exprBoolEgaleBoolean
-         | exprCase EGALE exprCase                               #exprBoolEgaleCase
-         | expr3=exprG EGALE expr4=exprG                        #exprBoolEgaleGaucheGauche
-         | exprG EGALE exprEnt                      #exprBoolEgaleGaucheEnt
-         | exprG EGALE exprBool                     #exprBoolEgaleGaucheBool
-         | exprG EGALE exprCase                     #exprBoolEgaleGaucheCase
-         | exprEnt EGALE exprG                      #exprBoolEgaleEntGauche
-         | exprBool EGALE exprG                     #exprBoolEgaleBoolGauche
-         | exprCase EGALE exprG                     #exprBoolEgaleCaseGauche
-         | exprEnt op=(INF|SUP) exprEnt                           #exprBoolInfSupEnt
-         | exprEnt op=(INF|SUP) expr2=exprG                             #exprBoolInfSupEntGauche
-         | expr1=exprG op=(INF|SUP) exprEnt                               #exprBoolInfSupGEnt
-         | expr1=exprG op=(INF|SUP) expr2=exprG                               #exprBoolInfSupGG
+         | (exprEnt|appelDeFonction|exprG|exprCase) EGALE exprBool                     #exprBoolEgaleGaucheBool
+         | exprBool EGALE (exprEnt|appelDeFonction|exprG|exprCase)                     #exprBoolEgaleBoolGauche
+         | (exprEnt|appelDeFonction|exprG) op=(INF|SUP) (exprEnt|appelDeFonction|exprG)                          #exprBoolInfSupEnt
          | exprBool op=(AND|OR) exprBool                         #exprBoolAndOrBoolBool
-         | exprBool op=(AND|OR) exprG                         #exprBoolAndOrBoolGauche
-         | exprG op=(AND|OR) exprBool                         #exprBoolAndOrGaucheBool
-         | expr5=exprG op=(AND|OR) expr6=exprG                         #exprBoolAndOrGaucheGauche
+         | exprBool op=(AND|OR) (exprG|appelDeFonction)                         #exprBoolAndOrBoolGauche
+         | (exprG|appelDeFonction) op=(AND|OR) exprBool                         #exprBoolAndOrGaucheBool
+         | (exprG|appelDeFonction) op=(AND|OR) (exprG|appelDeFonction)                         #exprBoolAndOrGaucheGauche
          | NOT exprBool                                                 #exprBoolNot
-         | NOT exprG                                                    #exprBoolNotGauche
+         | NOT (exprG|appelDeFonction)                                                    #exprBoolNotGauche
          | PAR_OUVERT exprBool PAR_FERME                               #exprBoolParennthese
          ;
 
 exprCase: environnementCase                                         #exprCaseEnvironnement
-        | NEARBY CROCHET_OUVERT exprEnt VIRGULE exprEnt CROCHET_FERME   #exprCaseNearbyEntEnt
-        | NEARBY CROCHET_OUVERT exprEnt VIRGULE exprG CROCHET_FERME   #exprCaseNearbyEntG
-        | NEARBY CROCHET_OUVERT exprG VIRGULE exprEnt CROCHET_FERME   #exprCaseNearbyGEnt
-        | NEARBY CROCHET_OUVERT taille1=exprG VIRGULE taille2=exprG CROCHET_FERME   #exprCaseNearbyGG
+        | NEARBY CROCHET_OUVERT (exprEnt|appelDeFonction|exprG) VIRGULE (exprEnt|appelDeFonction|exprG) CROCHET_FERME   #exprCaseNearby
         | PAR_OUVERT exprCase PAR_FERME                               #exprCaseParennthese
         ;
 
@@ -96,33 +86,20 @@ environnementCase: DIRT
                  ;
         
 exprG: ID                                                              #exprGVariable
-      | ID CROCHET_OUVERT (exprD|appelDeFonction) (VIRGULE (exprD|appelDeFonction))? CROCHET_FERME      #exprGTableau
+      | ID CROCHET_OUVERT exprD (VIRGULE exprD)? CROCHET_FERME      #exprGTableau
       ;
 
 entier: (MOINS)?NUMBER  
        ;
 
-appelDeFonction: ID PAR_OUVERT ((exprEnt|exprBool|exprCase|exprG|appelDeFonction) (VIRGULE (exprEnt|exprBool|exprCase|exprG|appelDeFonction))*)? PAR_FERME;
-
-manipulationFonction :  PAR_OUVERT manipulationFonction PAR_FERME                           #parentheseFonction
-                        |(exprEnt|exprG|appelDeFonction) op=(MUL|DIV|DIV_ENT) (exprEnt|exprG|appelDeFonction)   #mulDivFonction
-                        |(exprEnt|exprG|appelDeFonction) op=(PLUS|MOINS) (exprEnt|exprG|appelDeFonction)        #plusmoinsFonction
-                        |(exprEnt|exprG|appelDeFonction) op=(SUP|INF|EGALE) (exprEnt|exprG|appelDeFonction)     #supEgaleFonction
-                        | (exprBool|exprG|appelDeFonction) op=(AND|OR) (exprBool|exprG|appelDeFonction)           #andOrFonction
-                        |NOT appelDeFonction              #notFonction
-                        | NEARBY CROCHET_OUVERT (exprEnt|exprG|appelDeFonction) VIRGULE (exprEnt|exprG|appelDeFonction) CROCHET_FERME   #exprCaseNearbyFonction
-                        ;
+appelDeFonction: ID PAR_OUVERT (exprD (VIRGULE exprD)*)? PAR_FERME;
 
 instruction: SKIPPPP                                                   #skipppp
-             | IF (exprBool|appelDeFonction) THEN instruction+ DONE                       #if
-             | IF (exprBool|appelDeFonction) THEN instruction+ ELSE instruction+ DONE   #ifthenelse
-             | WHILE (exprBool|appelDeFonction) DO instruction+ DONE                      #while
-             | SET exprG TO exprG                                      #affectationGaucheGauche
-             | SET exprG TO exprEnt                                      #affectationGaucheEnt
-             | SET exprG TO exprBool                                      #affectationGaucheBool
-             | SET exprG TO exprCase                                      #affectationGaucheCase
-             | SET exprG TO appelDeFonction                             #affectationGaucheFonction
-             | COMPUTE (exprD|appelDeFonction)                                          #compute
+             | IF exprD THEN instruction+ DONE                       #if
+             | IF exprD  THEN instruction+ ELSE instruction+ DONE   #ifthenelse
+             | WHILE exprD  DO instruction+ DONE                      #while
+             | SET exprG TO exprD                                      #affectationGaucheDroite
+             | COMPUTE exprD                                         #compute
              | NEXT action                                             #nextAction
              ;
 
@@ -151,7 +128,7 @@ paramDecl: (varDecl (VIRGULE varDecl)*)
          ;
 
 
-clauseWhen: WHEN (exprD|appelDeFonction) (DECLARE LOCAL (varDecl POINtVIRGULE)+)? DO (instruction)+ DONE  
+clauseWhen: WHEN exprD (DECLARE LOCAL (varDecl POINtVIRGULE)+)? DO (instruction)+ DONE  
           ;
 
 clauseDefault: BY DEFAULT (DECLARE LOCAL (varDecl POINtVIRGULE)+)? DO (instruction)+ DONE 

@@ -176,18 +176,6 @@ public class PCodeVisitor extends B314BaseVisitor<Object>{
             ExpressionEntiere(ctx);
             return null; 
         }
-	@Override 
-        public Object visitExprBoolEgaleEntGauche(B314Parser.ExprBoolEgaleEntGaucheContext ctx) { 
-            ctx.getChild(0).accept(this);
-            ctx.getChild(2).accept(this);
-            if(ctx.EGALE()!=null)printer.printEqualsValues(PCodePrinter.PCodeTypes.Int);
-            return null; 
-        }
-	@Override 
-        public Object visitExprBoolInfSupGG(B314Parser.ExprBoolInfSupGGContext ctx)  { 
-            ExpressionEntiere(ctx);
-            return null; 
-        }
 	@Override public Object visitExprBoolFalse(B314Parser.ExprBoolFalseContext ctx) { return  null; }
 	/**
 	 * {@inheritDoc}
@@ -226,20 +214,6 @@ public class PCodeVisitor extends B314BaseVisitor<Object>{
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
 	@Override 
-        public Object visitExprBoolEgaleCase(B314Parser.ExprBoolEgaleCaseContext ctx){ 
-            ctx.getChild(0).accept(this);
-            ctx.getChild(2).accept(this);
-            if(ctx.EGALE()!=null)printer.printEqualsValues(PCodePrinter.PCodeTypes.Int);
-            return null; 
-        }
-	@Override 
-        public Object visitExprBoolEgaleGaucheEnt(B314Parser.ExprBoolEgaleGaucheEntContext ctx) { 
-            ctx.getChild(0).accept(this);
-            ctx.getChild(2).accept(this);
-            if(ctx.EGALE()!=null)printer.printEqualsValues(PCodePrinter.PCodeTypes.Int);
-            return null; 
-        }
-	@Override 
         public Object visitExprBoolInfSupEnt(B314Parser.ExprBoolInfSupEntContext ctx)  { 
             ExpressionEntiere(ctx);
             return null; 
@@ -261,14 +235,6 @@ public class PCodeVisitor extends B314BaseVisitor<Object>{
             BoolAndOr(ctx);
             return null; 
         }
-	@Override 
-        public Object visitExprBoolEgaleCaseGauche(B314Parser.ExprBoolEgaleCaseGaucheContext ctx){ 
-            ctx.getChild(0).accept(this);
-            ctx.getChild(2).accept(this);
-            if(ctx.EGALE()!=null)printer.printEqualsValues(PCodePrinter.PCodeTypes.Int);
-            return null; 
-        }
-	@Override public Object visitExprBoolEgaleGaucheGauche(B314Parser.ExprBoolEgaleGaucheGaucheContext ctx) { return  null; }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -282,11 +248,7 @@ public class PCodeVisitor extends B314BaseVisitor<Object>{
             if(ctx.EGALE()!=null)printer.printEqualsValues(PCodePrinter.PCodeTypes.Bool);
             return null; 
         }
-	@Override 
-        public Object visitExprBoolInfSupGEnt(B314Parser.ExprBoolInfSupGEntContext ctx)   { 
-            ExpressionEntiere(ctx);
-            return null; 
-        }
+
 	@Override public Object visitExprBoolEnvironnement(B314Parser.ExprBoolEnvironnementContext ctx) { return  null; }
 	/**
 	 * {@inheritDoc}
@@ -295,20 +257,8 @@ public class PCodeVisitor extends B314BaseVisitor<Object>{
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
 	@Override 
-        public Object visitExprBoolInfSupEntGauche(B314Parser.ExprBoolInfSupEntGaucheContext ctx)   { 
-            ExpressionEntiere(ctx);
-            return null; 
-        }
-	@Override 
         public Object visitExprBoolAndOrGaucheBool(B314Parser.ExprBoolAndOrGaucheBoolContext ctx){ 
             BoolAndOr(ctx);
-            return null; 
-        }
-	@Override 
-        public Object visitExprBoolEgaleGaucheCase(B314Parser.ExprBoolEgaleGaucheCaseContext ctx){ 
-            ctx.getChild(0).accept(this);
-            ctx.getChild(2).accept(this);
-            if(ctx.EGALE()!=null)printer.printEqualsValues(PCodePrinter.PCodeTypes.Int);
             return null; 
         }
 	@Override 
@@ -329,19 +279,6 @@ public class PCodeVisitor extends B314BaseVisitor<Object>{
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override 
-        public Object visitExprBoolEgaleInteger(B314Parser.ExprBoolEgaleIntegerContext ctx) { 
-            ctx.getChild(0).accept(this);
-            ctx.getChild(2).accept(this);
-            if(ctx.EGALE()!=null)printer.printEqualsValues(PCodePrinter.PCodeTypes.Int);
-            return null; 
-        }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
 	@Override public Object visitExprCaseEnvironnement(B314Parser.ExprCaseEnvironnementContext ctx) { return  null; }
 	/**
 	 * {@inheritDoc}
@@ -349,28 +286,12 @@ public class PCodeVisitor extends B314BaseVisitor<Object>{
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public Object visitExprCaseNearbyEntEnt(B314Parser.ExprCaseNearbyEntEntContext ctx) { return  null; }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public Object visitExprCaseNearbyEntG(B314Parser.ExprCaseNearbyEntGContext ctx) { return  null; }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	@Override public Object visitExprCaseNearbyGEnt(B314Parser.ExprCaseNearbyGEntContext ctx) { return  null; }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	@Override public Object visitExprCaseNearbyGG(B314Parser.ExprCaseNearbyGGContext ctx) { return  null; }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -454,28 +375,7 @@ public class PCodeVisitor extends B314BaseVisitor<Object>{
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public Object visitAffectationGaucheGauche(B314Parser.AffectationGaucheGaucheContext ctx) { return  null; }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	@Override public Object visitAffectationGaucheEnt(B314Parser.AffectationGaucheEntContext ctx) { return  null; }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	@Override public Object visitAffectationGaucheBool(B314Parser.AffectationGaucheBoolContext ctx) { return  null; }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	@Override public Object visitAffectationGaucheCase(B314Parser.AffectationGaucheCaseContext ctx) { return  null; }
+
 	/**
 	 * {@inheritDoc}
 	 *

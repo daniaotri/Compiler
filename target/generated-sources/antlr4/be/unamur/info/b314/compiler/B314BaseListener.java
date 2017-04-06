@@ -148,6 +148,30 @@ public class B314BaseListener implements B314Listener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
+	@Override public void enterExprDFonction(B314Parser.ExprDFonctionContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitExprDFonction(B314Parser.ExprDFonctionContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterExprFonctionParennthese(B314Parser.ExprFonctionParenntheseContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitExprFonctionParennthese(B314Parser.ExprFonctionParenntheseContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
 	@Override public void enterExprEntParennthese(B314Parser.ExprEntParenntheseContext ctx) { }
 	/**
 	 * {@inheritDoc}
@@ -280,30 +304,6 @@ public class B314BaseListener implements B314Listener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterExprBoolEgaleEntGauche(B314Parser.ExprBoolEgaleEntGaucheContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitExprBoolEgaleEntGauche(B314Parser.ExprBoolEgaleEntGaucheContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void enterExprBoolInfSupGG(B314Parser.ExprBoolInfSupGGContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitExprBoolInfSupGG(B314Parser.ExprBoolInfSupGGContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
 	@Override public void enterExprBoolFalse(B314Parser.ExprBoolFalseContext ctx) { }
 	/**
 	 * {@inheritDoc}
@@ -364,30 +364,6 @@ public class B314BaseListener implements B314Listener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterExprBoolEgaleCaseGauche(B314Parser.ExprBoolEgaleCaseGaucheContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitExprBoolEgaleCaseGauche(B314Parser.ExprBoolEgaleCaseGaucheContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void enterExprBoolEgaleGaucheGauche(B314Parser.ExprBoolEgaleGaucheGaucheContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitExprBoolEgaleGaucheGauche(B314Parser.ExprBoolEgaleGaucheGaucheContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
 	@Override public void enterExprBoolAndOrBoolBool(B314Parser.ExprBoolAndOrBoolBoolContext ctx) { }
 	/**
 	 * {@inheritDoc}
@@ -412,18 +388,6 @@ public class B314BaseListener implements B314Listener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterExprBoolInfSupGEnt(B314Parser.ExprBoolInfSupGEntContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitExprBoolInfSupGEnt(B314Parser.ExprBoolInfSupGEntContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
 	@Override public void enterExprBoolEnvironnement(B314Parser.ExprBoolEnvironnementContext ctx) { }
 	/**
 	 * {@inheritDoc}
@@ -431,18 +395,6 @@ public class B314BaseListener implements B314Listener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitExprBoolEnvironnement(B314Parser.ExprBoolEnvironnementContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void enterExprBoolInfSupEntGauche(B314Parser.ExprBoolInfSupEntGaucheContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitExprBoolInfSupEntGauche(B314Parser.ExprBoolInfSupEntGaucheContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -472,25 +424,13 @@ public class B314BaseListener implements B314Listener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterExprBoolEgaleCase(B314Parser.ExprBoolEgaleCaseContext ctx) { }
+	@Override public void enterExprBoolEgaleOther(B314Parser.ExprBoolEgaleOtherContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitExprBoolEgaleCase(B314Parser.ExprBoolEgaleCaseContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void enterExprBoolEgaleGaucheEnt(B314Parser.ExprBoolEgaleGaucheEntContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitExprBoolEgaleGaucheEnt(B314Parser.ExprBoolEgaleGaucheEntContext ctx) { }
+	@Override public void exitExprBoolEgaleOther(B314Parser.ExprBoolEgaleOtherContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -503,18 +443,6 @@ public class B314BaseListener implements B314Listener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitExprBoolAndOrGaucheBool(B314Parser.ExprBoolAndOrGaucheBoolContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void enterExprBoolEgaleGaucheCase(B314Parser.ExprBoolEgaleGaucheCaseContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitExprBoolEgaleGaucheCase(B314Parser.ExprBoolEgaleGaucheCaseContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -544,18 +472,6 @@ public class B314BaseListener implements B314Listener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterExprBoolEgaleInteger(B314Parser.ExprBoolEgaleIntegerContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitExprBoolEgaleInteger(B314Parser.ExprBoolEgaleIntegerContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
 	@Override public void enterExprBoolInfSupEnt(B314Parser.ExprBoolInfSupEntContext ctx) { }
 	/**
 	 * {@inheritDoc}
@@ -580,49 +496,13 @@ public class B314BaseListener implements B314Listener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterExprCaseNearbyEntEnt(B314Parser.ExprCaseNearbyEntEntContext ctx) { }
+	@Override public void enterExprCaseNearby(B314Parser.ExprCaseNearbyContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitExprCaseNearbyEntEnt(B314Parser.ExprCaseNearbyEntEntContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void enterExprCaseNearbyEntG(B314Parser.ExprCaseNearbyEntGContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitExprCaseNearbyEntG(B314Parser.ExprCaseNearbyEntGContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void enterExprCaseNearbyGEnt(B314Parser.ExprCaseNearbyGEntContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitExprCaseNearbyGEnt(B314Parser.ExprCaseNearbyGEntContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void enterExprCaseNearbyGG(B314Parser.ExprCaseNearbyGGContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitExprCaseNearbyGG(B314Parser.ExprCaseNearbyGGContext ctx) { }
+	@Override public void exitExprCaseNearby(B314Parser.ExprCaseNearbyContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -724,90 +604,6 @@ public class B314BaseListener implements B314Listener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterParentheseFonction(B314Parser.ParentheseFonctionContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitParentheseFonction(B314Parser.ParentheseFonctionContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void enterMulDivFonction(B314Parser.MulDivFonctionContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitMulDivFonction(B314Parser.MulDivFonctionContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void enterPlusmoinsFonction(B314Parser.PlusmoinsFonctionContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitPlusmoinsFonction(B314Parser.PlusmoinsFonctionContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void enterSupEgaleFonction(B314Parser.SupEgaleFonctionContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitSupEgaleFonction(B314Parser.SupEgaleFonctionContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void enterAndOrFonction(B314Parser.AndOrFonctionContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitAndOrFonction(B314Parser.AndOrFonctionContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void enterNotFonction(B314Parser.NotFonctionContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitNotFonction(B314Parser.NotFonctionContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void enterExprCaseNearbyFonction(B314Parser.ExprCaseNearbyFonctionContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitExprCaseNearbyFonction(B314Parser.ExprCaseNearbyFonctionContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
 	@Override public void enterSkipppp(B314Parser.SkippppContext ctx) { }
 	/**
 	 * {@inheritDoc}
@@ -856,61 +652,13 @@ public class B314BaseListener implements B314Listener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterAffectationGaucheGauche(B314Parser.AffectationGaucheGaucheContext ctx) { }
+	@Override public void enterAffectationGaucheDroite(B314Parser.AffectationGaucheDroiteContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitAffectationGaucheGauche(B314Parser.AffectationGaucheGaucheContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void enterAffectationGaucheEnt(B314Parser.AffectationGaucheEntContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitAffectationGaucheEnt(B314Parser.AffectationGaucheEntContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void enterAffectationGaucheBool(B314Parser.AffectationGaucheBoolContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitAffectationGaucheBool(B314Parser.AffectationGaucheBoolContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void enterAffectationGaucheCase(B314Parser.AffectationGaucheCaseContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitAffectationGaucheCase(B314Parser.AffectationGaucheCaseContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void enterAffectationGaucheFonction(B314Parser.AffectationGaucheFonctionContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitAffectationGaucheFonction(B314Parser.AffectationGaucheFonctionContext ctx) { }
+	@Override public void exitAffectationGaucheDroite(B314Parser.AffectationGaucheDroiteContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
