@@ -327,19 +327,7 @@ public class PCodeVisitor extends B314BaseVisitor<Object>{
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
 	@Override public Object visitExprGVariable(B314Parser.ExprGVariableContext ctx) { return  null; }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	@Override public Object visitExprGTableau(B314Parser.ExprGTableauContext ctx) { return  null; }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
+
 	@Override public Object visitEntier(B314Parser.EntierContext ctx) { return  null; }
 	/**
 	 * {@inheritDoc}

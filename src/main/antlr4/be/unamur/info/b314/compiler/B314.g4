@@ -86,7 +86,10 @@ environnementCase: DIRT
                  ;
         
 exprG: ID                                                              #exprGVariable
-      | ID CROCHET_OUVERT (exprEnt|appelDeFonction|exprG) (VIRGULE (exprEnt|appelDeFonction|exprG) )? CROCHET_FERME      #exprGTableau
+      | ID CROCHET_OUVERT exprEnt (VIRGULE (appelDeFonction|exprG) )? CROCHET_FERME      #exprGTableauEntFonct
+      | ID CROCHET_OUVERT (appelDeFonction|exprG) (VIRGULE (appelDeFonction|exprG) )? CROCHET_FERME      #exprGTableauFonctEnt
+      | ID CROCHET_OUVERT (appelDeFonction|exprG) (VIRGULE (appelDeFonction|exprG) )? CROCHET_FERME      #exprGTableauFonctFonct
+      | ID CROCHET_OUVERT exprEnt (VIRGULE exprEnt )? CROCHET_FERME      #exprGTableauEntEnt
       ;
 
 entier: (MOINS)?NUMBER  

@@ -550,17 +550,53 @@ public interface B314Listener extends ParseTreeListener {
 	 */
 	void exitExprGVariable(B314Parser.ExprGVariableContext ctx);
 	/**
-	 * Enter a parse tree produced by the {@code exprGTableau}
+	 * Enter a parse tree produced by the {@code exprGTableauEntFonct}
 	 * labeled alternative in {@link B314Parser#exprG}.
 	 * @param ctx the parse tree
 	 */
-	void enterExprGTableau(B314Parser.ExprGTableauContext ctx);
+	void enterExprGTableauEntFonct(B314Parser.ExprGTableauEntFonctContext ctx);
 	/**
-	 * Exit a parse tree produced by the {@code exprGTableau}
+	 * Exit a parse tree produced by the {@code exprGTableauEntFonct}
 	 * labeled alternative in {@link B314Parser#exprG}.
 	 * @param ctx the parse tree
 	 */
-	void exitExprGTableau(B314Parser.ExprGTableauContext ctx);
+	void exitExprGTableauEntFonct(B314Parser.ExprGTableauEntFonctContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code exprGTableauFonctEnt}
+	 * labeled alternative in {@link B314Parser#exprG}.
+	 * @param ctx the parse tree
+	 */
+	void enterExprGTableauFonctEnt(B314Parser.ExprGTableauFonctEntContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code exprGTableauFonctEnt}
+	 * labeled alternative in {@link B314Parser#exprG}.
+	 * @param ctx the parse tree
+	 */
+	void exitExprGTableauFonctEnt(B314Parser.ExprGTableauFonctEntContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code exprGTableauFonctFonct}
+	 * labeled alternative in {@link B314Parser#exprG}.
+	 * @param ctx the parse tree
+	 */
+	void enterExprGTableauFonctFonct(B314Parser.ExprGTableauFonctFonctContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code exprGTableauFonctFonct}
+	 * labeled alternative in {@link B314Parser#exprG}.
+	 * @param ctx the parse tree
+	 */
+	void exitExprGTableauFonctFonct(B314Parser.ExprGTableauFonctFonctContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code exprGTableauEntEnt}
+	 * labeled alternative in {@link B314Parser#exprG}.
+	 * @param ctx the parse tree
+	 */
+	void enterExprGTableauEntEnt(B314Parser.ExprGTableauEntEntContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code exprGTableauEntEnt}
+	 * labeled alternative in {@link B314Parser#exprG}.
+	 * @param ctx the parse tree
+	 */
+	void exitExprGTableauEntEnt(B314Parser.ExprGTableauEntEntContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link B314Parser#entier}.
 	 * @param ctx the parse tree

@@ -328,12 +328,33 @@ public interface B314Visitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitExprGVariable(B314Parser.ExprGVariableContext ctx);
 	/**
-	 * Visit a parse tree produced by the {@code exprGTableau}
+	 * Visit a parse tree produced by the {@code exprGTableauEntFonct}
 	 * labeled alternative in {@link B314Parser#exprG}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitExprGTableau(B314Parser.ExprGTableauContext ctx);
+	T visitExprGTableauEntFonct(B314Parser.ExprGTableauEntFonctContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code exprGTableauFonctEnt}
+	 * labeled alternative in {@link B314Parser#exprG}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitExprGTableauFonctEnt(B314Parser.ExprGTableauFonctEntContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code exprGTableauFonctFonct}
+	 * labeled alternative in {@link B314Parser#exprG}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitExprGTableauFonctFonct(B314Parser.ExprGTableauFonctFonctContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code exprGTableauEntEnt}
+	 * labeled alternative in {@link B314Parser#exprG}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitExprGTableauEntEnt(B314Parser.ExprGTableauEntEntContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link B314Parser#entier}.
 	 * @param ctx the parse tree

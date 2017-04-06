@@ -568,13 +568,49 @@ public class B314BaseListener implements B314Listener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterExprGTableau(B314Parser.ExprGTableauContext ctx) { }
+	@Override public void enterExprGTableauEntFonct(B314Parser.ExprGTableauEntFonctContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitExprGTableau(B314Parser.ExprGTableauContext ctx) { }
+	@Override public void exitExprGTableauEntFonct(B314Parser.ExprGTableauEntFonctContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterExprGTableauFonctEnt(B314Parser.ExprGTableauFonctEntContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitExprGTableauFonctEnt(B314Parser.ExprGTableauFonctEntContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterExprGTableauFonctFonct(B314Parser.ExprGTableauFonctFonctContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitExprGTableauFonctFonct(B314Parser.ExprGTableauFonctFonctContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterExprGTableauEntEnt(B314Parser.ExprGTableauEntEntContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitExprGTableauEntEnt(B314Parser.ExprGTableauEntEntContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *

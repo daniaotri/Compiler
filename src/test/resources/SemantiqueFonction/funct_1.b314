@@ -15,8 +15,6 @@ declare and retain
 when your turn
 by default
     do 
-        compute not x < 5
-        compute x = 2 and ennemi is north
-        compute not graal is south or ennemi is north and x > 42
-		compute t7[41] = dirt and t8[t1[0], t6[0, 0]] = ennemi /* wrong type in t8 index */
+
+		compute x and y /* wrong type */
     done
