@@ -1,7 +1,11 @@
+
 /* My comments */ 
 declare and retain 
     x as integer;
     y as square;
+    t1 as boolean[42];
+    t2 as boolean[42, 42];
+    t3 as boolean[42, 42];
     t4 as integer[42];
     t5 as integer[42, 42];
     t6 as integer[42, 42];
@@ -11,6 +15,8 @@ declare and retain
 when your turn
 by default
     do 
-    	compute t7[true]
-        compute t7[t4[0]]
+        compute not x < 5
+        compute x = 2 and ennemi is north
+        compute not graal is south or ennemi is north and x > 42
+		compute t7[41] = dirt and t8[t1[0], t6[0, 0]] = ennemi /* wrong type in t8 index */
     done
