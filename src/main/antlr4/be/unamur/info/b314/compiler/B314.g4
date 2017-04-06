@@ -95,9 +95,9 @@ entier: (MOINS)?NUMBER
 appelDeFonction: ID PAR_OUVERT (exprD (VIRGULE exprD)*)? PAR_FERME;
 
 instruction: SKIPPPP                                                   #skipppp
-             | IF exprD THEN instruction+ DONE                       #if
-             | IF exprD  THEN instruction+ ELSE instruction+ DONE   #ifthenelse
-             | WHILE exprD  DO instruction+ DONE                      #while
+             | IF (exprBool|exprG|appelDeFonction) THEN instruction+ DONE                       #if
+             | IF (exprBool|exprG|appelDeFonction)  THEN instruction+ ELSE instruction+ DONE   #ifthenelse
+             | WHILE (exprBool|exprG|appelDeFonction)  DO instruction+ DONE                      #while
              | SET exprG TO exprEnt                                      #affectationGaucheDroite
              | SET exprG TO exprBool                                      #affectationGaucheDroiteBool 
              | SET exprG TO exprCase                                      #affectationGaucheDroiteCase 
@@ -132,7 +132,7 @@ paramDecl: (varDecl (VIRGULE varDecl)*)
          ;
 
 
-clauseWhen: WHEN exprD (DECLARE LOCAL (varDecl POINtVIRGULE)+)? DO (instruction)+ DONE  
+clauseWhen: WHEN (exprBool|exprG|appelDeFonction) (DECLARE LOCAL (varDecl POINtVIRGULE)+)? DO (instruction)+ DONE  
           ;
 
 clauseDefault: BY DEFAULT (DECLARE LOCAL (varDecl POINtVIRGULE)+)? DO (instruction)+ DONE 
