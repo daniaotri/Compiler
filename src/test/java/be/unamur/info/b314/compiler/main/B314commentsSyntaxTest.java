@@ -71,7 +71,7 @@ public class B314commentsSyntaxTest {
     */
     @Test
     public void testcomments_ko() throws Exception {
-        CompilerTestHelper.launchCompilation("/SemantiqueFonction/funct_1.b314", testFolder.newFile(), false, "type: jessica");
+        CompilerTestHelper.launchCompilation("/SemantiqueFonction/funct_1.b314", testFolder.newFile(), true, "type: jessica");
     }
     
 

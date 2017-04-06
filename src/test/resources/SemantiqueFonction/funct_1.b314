@@ -3,9 +3,6 @@
 declare and retain 
     x as integer;
     y as square;
-    t1 as boolean[42];
-    t2 as boolean[42, 42];
-    t3 as boolean[42, 42];
     t4 as integer[42];
     t5 as integer[42, 42];
     t6 as integer[42, 42];
@@ -15,6 +12,7 @@ declare and retain
 when your turn
 by default
     do 
-
-		compute x and y /* wrong type */
+    	compute t7[0]
+    	compute t8[0, t4[1]]
+    	compute t9[t5[0, 0], t6[0, grid size]]
     done
