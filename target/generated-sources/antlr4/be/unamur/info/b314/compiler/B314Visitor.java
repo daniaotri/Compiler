@@ -382,6 +382,34 @@ public interface B314Visitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitAffectationGaucheDroite(B314Parser.AffectationGaucheDroiteContext ctx);
 	/**
+	 * Visit a parse tree produced by the {@code affectationGaucheDroiteBool}
+	 * labeled alternative in {@link B314Parser#instruction}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitAffectationGaucheDroiteBool(B314Parser.AffectationGaucheDroiteBoolContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code affectationGaucheDroiteCase}
+	 * labeled alternative in {@link B314Parser#instruction}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitAffectationGaucheDroiteCase(B314Parser.AffectationGaucheDroiteCaseContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code affectationGaucheDroiteGauche}
+	 * labeled alternative in {@link B314Parser#instruction}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitAffectationGaucheDroiteGauche(B314Parser.AffectationGaucheDroiteGaucheContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code affectationGaucheDroiteFonction}
+	 * labeled alternative in {@link B314Parser#instruction}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitAffectationGaucheDroiteFonction(B314Parser.AffectationGaucheDroiteFonctionContext ctx);
+	/**
 	 * Visit a parse tree produced by the {@code compute}
 	 * labeled alternative in {@link B314Parser#instruction}.
 	 * @param ctx the parse tree

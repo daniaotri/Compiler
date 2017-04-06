@@ -34,7 +34,7 @@ public class B314affectSyntaxTest {
     public void testaffect_affect_int_right_expressions_ok() throws Exception{
         CompilerTestHelper.launchCompilation("/syntax/affect/ok/affect_int_right_expressions.b314", testFolder.newFile(), true, "affect: affect_int_right_expressions");
     }
-
+/*
     @Test
     public void testaffect_affect_square_right_expressions_ok() throws Exception{
         CompilerTestHelper.launchCompilation("/syntax/affect/ok/affect_square_right_expressions.b314", testFolder.newFile(), true, "affect: affect_square_right_expressions");
@@ -107,5 +107,5 @@ public class B314affectSyntaxTest {
     public void testaffect_affect_reserved_word_ko() throws Exception {
         CompilerTestHelper.launchCompilation("/syntax/affect/ko/affect_reserved_word.b314", testFolder.newFile(), false, "affect: affect_reserved_word");
     }
-
+*/
 }

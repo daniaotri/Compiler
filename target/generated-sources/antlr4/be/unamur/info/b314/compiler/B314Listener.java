@@ -642,6 +642,54 @@ public interface B314Listener extends ParseTreeListener {
 	 */
 	void exitAffectationGaucheDroite(B314Parser.AffectationGaucheDroiteContext ctx);
 	/**
+	 * Enter a parse tree produced by the {@code affectationGaucheDroiteBool}
+	 * labeled alternative in {@link B314Parser#instruction}.
+	 * @param ctx the parse tree
+	 */
+	void enterAffectationGaucheDroiteBool(B314Parser.AffectationGaucheDroiteBoolContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code affectationGaucheDroiteBool}
+	 * labeled alternative in {@link B314Parser#instruction}.
+	 * @param ctx the parse tree
+	 */
+	void exitAffectationGaucheDroiteBool(B314Parser.AffectationGaucheDroiteBoolContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code affectationGaucheDroiteCase}
+	 * labeled alternative in {@link B314Parser#instruction}.
+	 * @param ctx the parse tree
+	 */
+	void enterAffectationGaucheDroiteCase(B314Parser.AffectationGaucheDroiteCaseContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code affectationGaucheDroiteCase}
+	 * labeled alternative in {@link B314Parser#instruction}.
+	 * @param ctx the parse tree
+	 */
+	void exitAffectationGaucheDroiteCase(B314Parser.AffectationGaucheDroiteCaseContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code affectationGaucheDroiteGauche}
+	 * labeled alternative in {@link B314Parser#instruction}.
+	 * @param ctx the parse tree
+	 */
+	void enterAffectationGaucheDroiteGauche(B314Parser.AffectationGaucheDroiteGaucheContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code affectationGaucheDroiteGauche}
+	 * labeled alternative in {@link B314Parser#instruction}.
+	 * @param ctx the parse tree
+	 */
+	void exitAffectationGaucheDroiteGauche(B314Parser.AffectationGaucheDroiteGaucheContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code affectationGaucheDroiteFonction}
+	 * labeled alternative in {@link B314Parser#instruction}.
+	 * @param ctx the parse tree
+	 */
+	void enterAffectationGaucheDroiteFonction(B314Parser.AffectationGaucheDroiteFonctionContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code affectationGaucheDroiteFonction}
+	 * labeled alternative in {@link B314Parser#instruction}.
+	 * @param ctx the parse tree
+	 */
+	void exitAffectationGaucheDroiteFonction(B314Parser.AffectationGaucheDroiteFonctionContext ctx);
+	/**
 	 * Enter a parse tree produced by the {@code compute}
 	 * labeled alternative in {@link B314Parser#instruction}.
 	 * @param ctx the parse tree

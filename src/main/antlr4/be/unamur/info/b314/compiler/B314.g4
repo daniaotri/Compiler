@@ -86,7 +86,7 @@ environnementCase: DIRT
                  ;
         
 exprG: ID                                                              #exprGVariable
-      | ID CROCHET_OUVERT exprD (VIRGULE exprD)? CROCHET_FERME      #exprGTableau
+      | ID CROCHET_OUVERT (exprEnt|appelDeFonction|exprG) (VIRGULE (exprEnt|appelDeFonction|exprG) )? CROCHET_FERME      #exprGTableau
       ;
 
 entier: (MOINS)?NUMBER  
@@ -98,7 +98,11 @@ instruction: SKIPPPP                                                   #skipppp
              | IF exprD THEN instruction+ DONE                       #if
              | IF exprD  THEN instruction+ ELSE instruction+ DONE   #ifthenelse
              | WHILE exprD  DO instruction+ DONE                      #while
-             | SET exprG TO exprD                                      #affectationGaucheDroite
+             | SET exprG TO exprEnt                                      #affectationGaucheDroite
+             | SET exprG TO exprBool                                      #affectationGaucheDroiteBool 
+             | SET exprG TO exprCase                                      #affectationGaucheDroiteCase 
+             | SET exprG TO exprG                                      #affectationGaucheDroiteGauche 
+             | SET exprG TO appelDeFonction                                      #affectationGaucheDroiteFonction 
              | COMPUTE exprD                                         #compute
              | NEXT action                                             #nextAction
              ;
