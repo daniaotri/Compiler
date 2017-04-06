@@ -724,6 +724,18 @@ public class B314BaseListener implements B314Listener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
+	@Override public void enterParentheseFonction(B314Parser.ParentheseFonctionContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitParentheseFonction(B314Parser.ParentheseFonctionContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
 	@Override public void enterMulDivFonction(B314Parser.MulDivFonctionContext ctx) { }
 	/**
 	 * {@inheritDoc}
@@ -779,6 +791,18 @@ public class B314BaseListener implements B314Listener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitNotFonction(B314Parser.NotFonctionContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterExprCaseNearbyFonction(B314Parser.ExprCaseNearbyFonctionContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitExprCaseNearbyFonction(B314Parser.ExprCaseNearbyFonctionContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *

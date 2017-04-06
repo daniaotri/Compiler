@@ -702,6 +702,18 @@ public interface B314Listener extends ParseTreeListener {
 	 */
 	void exitAppelDeFonction(B314Parser.AppelDeFonctionContext ctx);
 	/**
+	 * Enter a parse tree produced by the {@code parentheseFonction}
+	 * labeled alternative in {@link B314Parser#manipulationFonction}.
+	 * @param ctx the parse tree
+	 */
+	void enterParentheseFonction(B314Parser.ParentheseFonctionContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code parentheseFonction}
+	 * labeled alternative in {@link B314Parser#manipulationFonction}.
+	 * @param ctx the parse tree
+	 */
+	void exitParentheseFonction(B314Parser.ParentheseFonctionContext ctx);
+	/**
 	 * Enter a parse tree produced by the {@code mulDivFonction}
 	 * labeled alternative in {@link B314Parser#manipulationFonction}.
 	 * @param ctx the parse tree
@@ -761,6 +773,18 @@ public interface B314Listener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitNotFonction(B314Parser.NotFonctionContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code exprCaseNearbyFonction}
+	 * labeled alternative in {@link B314Parser#manipulationFonction}.
+	 * @param ctx the parse tree
+	 */
+	void enterExprCaseNearbyFonction(B314Parser.ExprCaseNearbyFonctionContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code exprCaseNearbyFonction}
+	 * labeled alternative in {@link B314Parser#manipulationFonction}.
+	 * @param ctx the parse tree
+	 */
+	void exitExprCaseNearbyFonction(B314Parser.ExprCaseNearbyFonctionContext ctx);
 	/**
 	 * Enter a parse tree produced by the {@code skipppp}
 	 * labeled alternative in {@link B314Parser#instruction}.

@@ -417,6 +417,13 @@ public interface B314Visitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitAppelDeFonction(B314Parser.AppelDeFonctionContext ctx);
 	/**
+	 * Visit a parse tree produced by the {@code parentheseFonction}
+	 * labeled alternative in {@link B314Parser#manipulationFonction}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitParentheseFonction(B314Parser.ParentheseFonctionContext ctx);
+	/**
 	 * Visit a parse tree produced by the {@code mulDivFonction}
 	 * labeled alternative in {@link B314Parser#manipulationFonction}.
 	 * @param ctx the parse tree
@@ -451,6 +458,13 @@ public interface B314Visitor<T> extends ParseTreeVisitor<T> {
 	 * @return the visitor result
 	 */
 	T visitNotFonction(B314Parser.NotFonctionContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code exprCaseNearbyFonction}
+	 * labeled alternative in {@link B314Parser#manipulationFonction}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitExprCaseNearbyFonction(B314Parser.ExprCaseNearbyFonctionContext ctx);
 	/**
 	 * Visit a parse tree produced by the {@code skipppp}
 	 * labeled alternative in {@link B314Parser#instruction}.

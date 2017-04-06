@@ -27,6 +27,7 @@ public class FillScope extends B314BaseListener {
         boolean CurrentIsFonction;
         int position;
         boolean IsParam;
+        int defaultclause;
 
         /**
          *
@@ -38,6 +39,7 @@ public class FillScope extends B314BaseListener {
             CurrentIsFonction=false;
             position=1;
             IsParam = false;
+            defaultclause = 0;
         }
         /**
          *
@@ -57,6 +59,7 @@ public class FillScope extends B314BaseListener {
             CurrentIsFonction=false;
             position=1;
             IsParam = false;
+            defaultclause = 0; 
         }
         /**
          *
@@ -115,8 +118,7 @@ public class FillScope extends B314BaseListener {
 	@Override 
         public void enterClauseDefault(B314Parser.ClauseDefaultContext ctx) {
             Scope x = new ScopeImpl("clauseDefault",CurrentScope);
-            Scope found = CurrentScope.WhoIsThisScope("clauseDefault");
-            if(found == null){
+            if(defaultclause == 0){
                 CurrentScope.addChildScope(x);
                 CurrentScope =   x;            
             }
@@ -126,6 +128,7 @@ public class FillScope extends B314BaseListener {
 	@Override 
         public void exitClauseDefault(B314Parser.ClauseDefaultContext ctx) {
             CurrentScope = CurrentScope.getParent();
+            defaultclause = defaultclause + 1;
         }
         /**
          *

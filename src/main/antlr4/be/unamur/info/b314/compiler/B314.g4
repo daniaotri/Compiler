@@ -104,11 +104,13 @@ entier: (MOINS)?NUMBER
 
 appelDeFonction: ID PAR_OUVERT ((exprEnt|exprBool|exprCase|exprG|appelDeFonction) (VIRGULE (exprEnt|exprBool|exprCase|exprG|appelDeFonction))*)? PAR_FERME;
 
-manipulationFonction : (exprEnt|exprG|appelDeFonction) op=(MUL|DIV|DIV_ENT) (exprEnt|exprG|appelDeFonction)   #mulDivFonction
+manipulationFonction :  PAR_OUVERT manipulationFonction PAR_FERME                           #parentheseFonction
+                        |(exprEnt|exprG|appelDeFonction) op=(MUL|DIV|DIV_ENT) (exprEnt|exprG|appelDeFonction)   #mulDivFonction
                         |(exprEnt|exprG|appelDeFonction) op=(PLUS|MOINS) (exprEnt|exprG|appelDeFonction)        #plusmoinsFonction
                         |(exprEnt|exprG|appelDeFonction) op=(SUP|INF|EGALE) (exprEnt|exprG|appelDeFonction)     #supEgaleFonction
                         | (exprBool|exprG|appelDeFonction) op=(AND|OR) (exprBool|exprG|appelDeFonction)           #andOrFonction
                         |NOT appelDeFonction              #notFonction
+                        | NEARBY CROCHET_OUVERT (exprEnt|exprG|appelDeFonction) VIRGULE (exprEnt|exprG|appelDeFonction) CROCHET_FERME   #exprCaseNearbyFonction
                         ;
 
 instruction: SKIPPPP                                                   #skipppp

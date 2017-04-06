@@ -447,87 +447,143 @@ public class SymboleTableFiller extends B314BaseListener {
             if(!typeGauche.equals(typeDroite)) throw new RuntimeException();
         }
         
-        @Override public void enterIf(B314Parser.IfContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitIf(B314Parser.IfContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void enterIfthenelse(B314Parser.IfthenelseContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitIfthenelse(B314Parser.IfthenelseContext ctx) { }
+        @Override
+        public void enterIf(B314Parser.IfContext ctx) {
+            if(ctx.appelDeFonction().ID() != null){
+                Symbole s = CurrentScope.FoundSymbole(ctx.appelDeFonction().ID().getText());
+                if(s.getType()!= Type.BOOLEAN.toString().toLowerCase())throw new RuntimeException();
+            }
+        }
+
+	@Override 
+        public void enterIfthenelse(B314Parser.IfthenelseContext ctx) {
+            if(ctx.appelDeFonction().ID() != null){
+                Symbole s = CurrentScope.FoundSymbole(ctx.appelDeFonction().ID().getText());
+                if(s.getType()!= Type.BOOLEAN.toString().toLowerCase())throw new RuntimeException();   
+            }
+        }
         
-        @Override public void enterWhile(B314Parser.WhileContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitWhile(B314Parser.WhileContext ctx) { }
+        @Override 
+        public void enterWhile(B314Parser.WhileContext ctx) {
+            
+            if(ctx.appelDeFonction().ID() != null){
+                Symbole s = CurrentScope.FoundSymbole(ctx.appelDeFonction().ID().getText());
+                if(s.getType()!= Type.BOOLEAN.toString().toLowerCase())throw new RuntimeException();  
+            }
+        }
+
+        @Override 
+        public void enterMulDivFonction(B314Parser.MulDivFonctionContext ctx) {
+            if(ctx.getChild(0) == null || ctx.getChild(2) == null) throw new RuntimeException();
+            if(ctx.appelDeFonction(0) != null){
+                Symbole s = CurrentScope.FoundSymbole(ctx.appelDeFonction(0).ID().getText());
+                if(s.getType()!= Type.INTEGER.toString().toLowerCase())throw new RuntimeException();                 
+            }
+            if(ctx.appelDeFonction(1) != null){
+                Symbole s = CurrentScope.FoundSymbole(ctx.appelDeFonction(1).ID().getText());
+                if(s.getType()!= Type.INTEGER.toString().toLowerCase())throw new RuntimeException();                 
+            }   
+            if(ctx.exprG(0) != null){
+                Symbole s = CurrentScope.FoundSymbole(ctx.exprG(0).getChild(0).getText());
+                if(s.getType()!= Type.INTEGER.toString().toLowerCase())throw new RuntimeException();                 
+            }
+            if(ctx.exprG(1) != null){
+                Symbole s = CurrentScope.FoundSymbole(ctx.exprG(0).getChild(0).getText());
+                if(s.getType()!= Type.INTEGER.toString().toLowerCase())throw new RuntimeException();                 
+            }            
+        }
+
+	@Override 
+        public void enterPlusmoinsFonction(B314Parser.PlusmoinsFonctionContext ctx) { 
+            if(ctx.getChild(0) == null || ctx.getChild(2) == null) throw new RuntimeException();
+            if(ctx.appelDeFonction(0) != null){
+                Symbole s = CurrentScope.FoundSymbole(ctx.appelDeFonction(0).ID().getText());
+                if(s.getType()!= Type.INTEGER.toString().toLowerCase())throw new RuntimeException();                 
+            }
         
-        @Override public void enterMulDivFonction(B314Parser.MulDivFonctionContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitMulDivFonction(B314Parser.MulDivFonctionContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void enterPlusmoinsFonction(B314Parser.PlusmoinsFonctionContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitPlusmoinsFonction(B314Parser.PlusmoinsFonctionContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void enterSupEgaleFonction(B314Parser.SupEgaleFonctionContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitSupEgaleFonction(B314Parser.SupEgaleFonctionContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void enterAndOrFonction(B314Parser.AndOrFonctionContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitAndOrFonction(B314Parser.AndOrFonctionContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void enterNotFonction(B314Parser.NotFonctionContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitNotFonction(B314Parser.NotFonctionContext ctx) { }	
+            if(ctx.appelDeFonction(1) != null){
+                Symbole s = CurrentScope.FoundSymbole(ctx.appelDeFonction(1).ID().getText());
+                if(s.getType()!= Type.INTEGER.toString().toLowerCase())throw new RuntimeException();                 
+            }   
+            if(ctx.exprG(0) != null){
+                Symbole s = CurrentScope.FoundSymbole(ctx.exprG(0).getChild(0).getText());
+                if(s.getType()!= Type.INTEGER.toString().toLowerCase())throw new RuntimeException();                 
+            }
+            if(ctx.exprG(1) != null){
+                Symbole s = CurrentScope.FoundSymbole(ctx.exprG(0).getChild(0).getText());
+                if(s.getType()!= Type.INTEGER.toString().toLowerCase())throw new RuntimeException();                 
+            }
+        }
+
+	@Override 
+        public void enterSupEgaleFonction(B314Parser.SupEgaleFonctionContext ctx) {
+            if(ctx.getChild(0) == null || ctx.getChild(2) == null) throw new RuntimeException();
+            if(ctx.appelDeFonction(0) != null){
+                Symbole s = CurrentScope.FoundSymbole(ctx.appelDeFonction(0).ID().getText());
+                if(s.getType()!= Type.INTEGER.toString().toLowerCase())throw new RuntimeException();                 
+            }
+            if(ctx.appelDeFonction(1) != null){
+                Symbole s = CurrentScope.FoundSymbole(ctx.appelDeFonction(1).ID().getText());
+                if(s.getType()!= Type.INTEGER.toString().toLowerCase())throw new RuntimeException();                 
+            }   
+            if(ctx.exprG(0) != null){
+                Symbole s = CurrentScope.FoundSymbole(ctx.exprG(0).getChild(0).getText());
+                if(s.getType()!= Type.INTEGER.toString().toLowerCase())throw new RuntimeException();                 
+            }
+            if(ctx.exprG(1) != null){
+                Symbole s = CurrentScope.FoundSymbole(ctx.exprG(0).getChild(0).getText());
+                if(s.getType()!= Type.INTEGER.toString().toLowerCase())throw new RuntimeException();                 
+            }              
+        }
+
+	@Override 
+        public void enterAndOrFonction(B314Parser.AndOrFonctionContext ctx) {
+            if(ctx.getChild(0) == null || ctx.getChild(2) == null) throw new RuntimeException();
+            if(ctx.appelDeFonction(0) != null){
+                Symbole s = CurrentScope.FoundSymbole(ctx.appelDeFonction(0).ID().getText());
+                if(s.getType()!= Type.BOOLEAN.toString().toLowerCase())throw new RuntimeException();                 
+            }
+            if(ctx.appelDeFonction(1) != null){
+                Symbole s = CurrentScope.FoundSymbole(ctx.appelDeFonction(1).ID().getText());
+                if(s.getType()!= Type.BOOLEAN.toString().toLowerCase())throw new RuntimeException();                 
+            }   
+            if(ctx.exprG(0) != null){
+                Symbole s = CurrentScope.FoundSymbole(ctx.exprG(0).getChild(0).getText());
+                if(s.getType()!= Type.BOOLEAN.toString().toLowerCase())throw new RuntimeException();                 
+            }
+            if(ctx.exprG(1) != null){
+                Symbole s = CurrentScope.FoundSymbole(ctx.exprG(0).getChild(0).getText());
+                if(s.getType()!= Type.BOOLEAN.toString().toLowerCase())throw new RuntimeException();                 
+            }        
+        }
+
+	@Override 
+        public void enterNotFonction(B314Parser.NotFonctionContext ctx) { 
+            if(ctx.getChild(1) == null) throw new RuntimeException();
+            if(ctx.appelDeFonction() != null){
+                Symbole s = CurrentScope.FoundSymbole(ctx.appelDeFonction().ID().getText());
+                if(s.getType()!= Type.BOOLEAN.toString().toLowerCase())throw new RuntimeException();                 
+            }      
+        }
+        @Override 
+        public void enterExprCaseNearbyFonction(B314Parser.ExprCaseNearbyFonctionContext ctx) {
+            if(ctx.getChild(0) == null || ctx.getChild(2) == null) throw new RuntimeException();
+            if(ctx.appelDeFonction(0) != null){
+                Symbole s = CurrentScope.FoundSymbole(ctx.appelDeFonction(0).ID().getText());
+                if(s.getType()!= Type.INTEGER.toString().toLowerCase())throw new RuntimeException();                 
+            }
+            if(ctx.appelDeFonction(1) != null){
+                Symbole s = CurrentScope.FoundSymbole(ctx.appelDeFonction(1).ID().getText());
+                if(s.getType()!= Type.INTEGER.toString().toLowerCase())throw new RuntimeException();                 
+            }   
+            if(ctx.exprG(0) != null){
+                Symbole s = CurrentScope.FoundSymbole(ctx.exprG(0).getChild(0).getText());
+                if(s.getType()!= Type.INTEGER.toString().toLowerCase())throw new RuntimeException();                 
+            }
+            if(ctx.exprG(1) != null){
+                Symbole s = CurrentScope.FoundSymbole(ctx.exprG(0).getChild(0).getText());
+                if(s.getType()!= Type.INTEGER.toString().toLowerCase())throw new RuntimeException();                 
+            }        
+        }
+	
 }
