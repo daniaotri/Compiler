@@ -40,6 +40,7 @@ public class FillScope extends B314BaseListener {
             position=1;
             IsParam = false;
             defaultclause = 0;
+            
         }
         /**
          *
@@ -67,13 +68,17 @@ public class FillScope extends B314BaseListener {
          */
 	@Override 
         public void enterFctDecl(B314Parser.FctDeclContext ctx) {
-            CurrentSymbole = new Symbole(ctx.ID().getText());
-            CurrentSymbole.setIsFunction(true);
-            //CurrentScope.AddSymbole(CurrentSymbole); // on ajoute le symbole fonction dans le scope parent
-            Scope x = new ScopeImpl(ctx.ID().getText(),CurrentScope); //on change de scope
-            CurrentScope.addChildScope(x);
-            CurrentScope =   x;
-            CurrentScope.AddSymbole(CurrentSymbole);   //on l'ajoute dans son propre scope  */
+            if(defaultclause == 0){
+                CurrentSymbole = new Symbole(ctx.ID().getText());
+                CurrentSymbole.setIsFunction(true);
+                //CurrentScope.AddSymbole(CurrentSymbole); // on ajoute le symbole fonction dans le scope parent
+                Scope x = new ScopeImpl(ctx.ID().getText(),CurrentScope); //on change de scope
+                CurrentScope.addChildScope(x);
+                CurrentScope =   x;
+                CurrentScope.AddSymbole(CurrentSymbole);   //on l'ajoute dans son propre scope  */            
+            }
+            else throw new RuntimeException();
+
         }
 
 	@Override 
@@ -99,12 +104,15 @@ public class FillScope extends B314BaseListener {
          *  Clause When
          */
 	@Override 
-        public void enterClauseWhen(B314Parser.ClauseWhenContext ctx) { 
-            String nomScope = "clauseWhen"+position;
-            Scope x = new ScopeImpl(nomScope,CurrentScope);
-            CurrentScope.addChildScope(x);
-            CurrentScope =   x;
-            position = position +1;
+        public void enterClauseWhen(B314Parser.ClauseWhenContext ctx) {
+            if(defaultclause>0)throw new RuntimeException();
+            else{
+                String nomScope = "clauseWhen"+position;
+                Scope x = new ScopeImpl(nomScope,CurrentScope);
+                CurrentScope.addChildScope(x);
+                CurrentScope =   x;
+                position = position +1;            
+            }
         }
 
 	@Override 
@@ -120,7 +128,8 @@ public class FillScope extends B314BaseListener {
             Scope x = new ScopeImpl("clauseDefault",CurrentScope);
             if(defaultclause == 0){
                 CurrentScope.addChildScope(x);
-                CurrentScope =   x;            
+                CurrentScope =   x; 
+                defaultclause = defaultclause + 10;
             }
             else new RuntimeException();           
         }
@@ -128,7 +137,6 @@ public class FillScope extends B314BaseListener {
 	@Override 
         public void exitClauseDefault(B314Parser.ClauseDefaultContext ctx) {
             CurrentScope = CurrentScope.getParent();
-            defaultclause = defaultclause + 1;
         }
         /**
          *
