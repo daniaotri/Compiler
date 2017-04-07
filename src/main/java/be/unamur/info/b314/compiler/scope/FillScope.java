@@ -91,13 +91,13 @@ public class FillScope extends B314BaseListener {
 	@Override 
         public void enterParamDecl(B314Parser.ParamDeclContext ctx) {
             CurrentIsFonction = true;
-            //System.out.println("Enter param "+CurrentIsFonction+" ");
+            System.out.println("Enter param "+CurrentIsFonction+" ");
         }
 
 	@Override 
         public void exitParamDecl(B314Parser.ParamDeclContext ctx) { 
             CurrentIsFonction = false;
-            //System.out.println("Exit param "+CurrentIsFonction+" ");
+            System.out.println("Exit param "+CurrentIsFonction+" ");
         }
         /**
          *
@@ -144,23 +144,23 @@ public class FillScope extends B314BaseListener {
          */
 	@Override 
         public void enterVarDecl(B314Parser.VarDeclContext ctx) {
+            System.out.println("ENter var ..."+CurrentIsFonction);
             CurrentSymbole = new Symbole(ctx.ID().getText());
-            if(CurrentIsFonction)IsParam = true;
+            if(CurrentIsFonction)CurrentSymbole.setIsParam(true);
         }
 
 	@Override 
         public void exitVarDecl(B314Parser.VarDeclContext ctx){
             if(CurrentSymbole.getType() == null) throw new RuntimeException();
-            else if(CurrentIsFonction && CurrentSymbole.getIsArray()) throw new RuntimeException();
             else {
                 CurrentScope.AddSymbole(CurrentSymbole);
-                if(IsParam){
-                    Symbole x = CurrentScope.FoundSymbole(CurrentScope.GetName());
-                    x.AddParam(CurrentSymbole.getName());               
+                System.out.println(CurrentSymbole.toString());
+                if(CurrentSymbole.getIsParam()){
+                    Symbole sym = CurrentScope.FoundSymbole(CurrentScope.GetName());
+                    sym.AddParam(CurrentSymbole.getName());
+                    if(CurrentSymbole.getIsArray())throw new RuntimeException();
                 }
-            }
-            IsParam = false;
-            
+            }            
         }
         /**
          *
@@ -168,7 +168,7 @@ public class FillScope extends B314BaseListener {
          */
 	@Override 
         public void exitTypeScalar(B314Parser.TypeScalarContext ctx) {
-            if(CurrentIsFonction)CurrentIsFonction=false;
+            //if(CurrentIsFonction)CurrentIsFonction=false;
         }
 	@Override 
         public void enterScalarBoolean(B314Parser.ScalarBooleanContext ctx) {
@@ -205,7 +205,7 @@ public class FillScope extends B314BaseListener {
 
 	@Override 
         public void exitArray(B314Parser.ArrayContext ctx) {
-            if(CurrentIsFonction)CurrentIsFonction=false;           
+            //if(CurrentIsFonction)CurrentIsFonction=false;           
         }
         
 	@Override 
@@ -227,7 +227,7 @@ public class FillScope extends B314BaseListener {
 	@Override 
         public void exitFctTypeVoid(B314Parser.FctTypeVoidContext ctx) {
             if(CurrentIsFonction){
-                CurrentIsFonction = false;
+                //CurrentIsFonction = false;
                 CurrentSymbole.setType(ctx.VOID().getText());
                 CurrentScope.getParent().AddSymbole(CurrentSymbole);
             }

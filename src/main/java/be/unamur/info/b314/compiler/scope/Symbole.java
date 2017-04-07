@@ -21,6 +21,7 @@ public class Symbole {
     private Boolean isArray;
     private Boolean isFunction;
     private ArrayList<String> LesParametres;
+    private Boolean isParam;
     
         
     /**
@@ -34,6 +35,7 @@ public class Symbole {
         this.isArray = false;
         this.isFunction = false;
         this.LesParametres = new ArrayList<>();
+        this.isParam = false;
     }
     public Symbole(String name,String type){
         this.name = name;
@@ -41,6 +43,7 @@ public class Symbole {
         this.isArray = false;
         this.isFunction = false;
         this.LesParametres = new ArrayList<>();
+        this.isParam = false;
     }
     
     public Boolean getIsFunction() {
@@ -92,10 +95,20 @@ public class Symbole {
         else LesParametres.add(sym);
     }
 
+    public Boolean getIsParam() {
+        return isParam;
+    }
+
+    public void setIsParam(Boolean isParam) {
+        this.isParam = isParam;
+    }
+
     @Override
     public String toString() {
-        return "Symbole{" + "name=" + name + ", type=" + type + ", length=" + length + ", isArray=" + isArray + ", isFunction=" + isFunction + ", LesParametres=" + LesParametres + '}';
+        return "Symbole{" + "name=" + name + ", type=" + type + ", length=" + length + ", isArray=" + isArray + ", isFunction=" + isFunction + ", LesParametres=" + LesParametres + ", isParam=" + isParam + '}';
     }
+    
+
     
 
 }
