@@ -44,8 +44,8 @@ exprBool: TRUE                                                      #exprBoolTru
          | environnementBool                                        #exprBoolEnvironnement
          | (exprEnt|appelDeFonction|exprG|exprCase) EGALE (exprEnt|appelDeFonction|exprG|exprCase)                                 #exprBoolEgaleOther
          | exprBool EGALE exprBool                               #exprBoolEgaleBoolean
-         | (exprEnt|appelDeFonction|exprG|exprCase) EGALE exprBool                     #exprBoolEgaleGaucheBool
-         | exprBool EGALE (exprEnt|appelDeFonction|exprG|exprCase)                     #exprBoolEgaleBoolGauche
+         | (appelDeFonction|exprG) EGALE exprBool                     #exprBoolEgaleGaucheBool
+         | exprBool EGALE (appelDeFonction|exprG)                     #exprBoolEgaleBoolGauche
          | (exprEnt|appelDeFonction|exprG) op=(INF|SUP) (exprEnt|appelDeFonction|exprG)                          #exprBoolInfSupEnt
          | exprBool op=(AND|OR) exprBool                         #exprBoolAndOrBoolBool
          | exprBool op=(AND|OR) (exprG|appelDeFonction)                         #exprBoolAndOrBoolGauche
