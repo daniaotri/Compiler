@@ -304,29 +304,26 @@ public class SymboleTableFiller extends B314BaseListener {
         public void enterExprBoolEgaleOther(B314Parser.ExprBoolEgaleOtherContext ctx) {
             if(ctx.exprCase(0)!= null){
                 if(ctx.exprEnt(1)!= null) throw new RuntimeException();
-                else if(ctx.exprG(1) != null)CheckTwoType(GetType(ctx.exprG(1)),Type.SQUARE.toString().toLowerCase( ));
-                else if(ctx.appelDeFonction(1)!= null)CheckTwoType(GetType(ctx.appelDeFonction(1)),Type.SQUARE.toString().toLowerCase( ));
-                else new RuntimeException();
+                if(ctx.exprG(1) != null)CheckTwoType(GetType(ctx.exprG(1)),Type.SQUARE.toString().toLowerCase( ));
+                if(ctx.appelDeFonction(1)!= null)CheckTwoType(GetType(ctx.appelDeFonction(1)),Type.SQUARE.toString().toLowerCase( ));
             }
             if(ctx.exprEnt(0)!= null){
                 if(ctx.exprCase(1) != null) throw new RuntimeException();
-                else if(ctx.exprG(1) != null)CheckTwoType(GetType(ctx.exprG(1)),Type.INTEGER.toString().toLowerCase( ));
-                else if(ctx.appelDeFonction(1)!= null)CheckTwoType(GetType(ctx.appelDeFonction(1)),Type.INTEGER.toString().toLowerCase( ));
-                else new RuntimeException();
+                if(ctx.exprG(1) != null)CheckTwoType(GetType(ctx.exprG(1)),Type.INTEGER.toString().toLowerCase( ));
+                if(ctx.appelDeFonction(1)!= null)CheckTwoType(GetType(ctx.appelDeFonction(1)),Type.INTEGER.toString().toLowerCase( ));
             }
             if(ctx.exprG(0)!= null){
                 System.out.println("Hello ...");
                 if (ctx.exprCase(1) != null){CheckTwoType(GetType(ctx.exprG(0)),Type.SQUARE.toString().toLowerCase( ));}
-                else if(ctx.exprG(1) != null){CheckTwoType(GetType(ctx.exprG(1)),GetType(ctx.exprG(0)));}
-                else if(ctx.appelDeFonction(1)!= null){CheckTwoType(GetType(ctx.appelDeFonction(1)),GetType(ctx.exprG(0)));}
-                else CheckTwoType(GetType(ctx.exprG(1)),Type.INTEGER.toString().toLowerCase( ));
+                if(ctx.exprG(1) != null){CheckTwoType(GetType(ctx.exprG(1)),GetType(ctx.exprG(0)));}
+                if(ctx.appelDeFonction(1)!= null){CheckTwoType(GetType(ctx.appelDeFonction(1)),GetType(ctx.exprG(0)));}
+                if(ctx.exprEnt(1)!= null)CheckTwoType(GetType(ctx.exprG(1)),Type.INTEGER.toString().toLowerCase( ));
             }
             if(ctx.appelDeFonction(0)!= null){
                 if(ctx.exprEnt(1)!= null) CheckTwoType(GetType(ctx.appelDeFonction(0)),Type.INTEGER.toString().toLowerCase());
-                else if (ctx.exprCase(1) != null)CheckTwoType(GetType(ctx.appelDeFonction(0)),Type.SQUARE.toString().toLowerCase( ));
-                else if(ctx.exprG(1) != null)CheckTwoType(GetType(ctx.exprG(1)),GetType(ctx.appelDeFonction(0)));
-                else if(ctx.appelDeFonction(1)!= null)CheckTwoType(GetType(ctx.appelDeFonction(1)),GetType(ctx.appelDeFonction(0)));   
-                else new RuntimeException();
+                if (ctx.exprCase(1) != null)CheckTwoType(GetType(ctx.appelDeFonction(0)),Type.SQUARE.toString().toLowerCase( ));
+                if(ctx.exprG(1) != null)CheckTwoType(GetType(ctx.exprG(1)),GetType(ctx.appelDeFonction(0)));
+                if(ctx.appelDeFonction(1)!= null)CheckTwoType(GetType(ctx.appelDeFonction(1)),GetType(ctx.appelDeFonction(0)));   
             }
             
         }
