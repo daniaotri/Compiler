@@ -42,7 +42,13 @@ exprEnt: entier                                                   #exprEntEntier
 exprBool: TRUE                                                      #exprBoolTrue
          | FALSE                                                    #exprBoolFalse
          | environnementBool                                        #exprBoolEnvironnement
-         | (exprEnt|appelDeFonction|exprG|exprCase) EGALE (exprEnt|appelDeFonction|exprG|exprCase)                                 #exprBoolEgaleOther
+         | exprEnt EGALE (exprG|appelDeFonction)                    #exprBoolEgaleEntG
+         | (exprG|appelDeFonction) EGALE exprEnt                    #exprBoolEgaleGEnt
+         | exprCase EGALE (exprG|appelDeFonction)                    #exprBoolEgaleCaseG
+         | (exprG|appelDeFonction) EGALE exprCase                    #exprBoolEgaleGCase
+         | (exprG|appelDeFonction) EGALE (exprG|appelDeFonction)                    #exprBoolEgaleGG
+         | exprEnt EGALE exprEnt                                                    #exprBoolEgaleEntEnt
+         | exprCase EGALE exprCase                                                    #exprBoolEgaleCaseCase
          | exprBool EGALE exprBool                               #exprBoolEgaleBoolean
          | (appelDeFonction|exprG) EGALE exprBool                     #exprBoolEgaleGaucheBool
          | exprBool EGALE (appelDeFonction|exprG)                     #exprBoolEgaleBoolGauche

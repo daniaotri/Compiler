@@ -292,6 +292,18 @@ public interface B314Listener extends ParseTreeListener {
 	 */
 	void exitExprEntPlusMoinsGaucheGauhe(B314Parser.ExprEntPlusMoinsGaucheGauheContext ctx);
 	/**
+	 * Enter a parse tree produced by the {@code exprBoolEgaleGEnt}
+	 * labeled alternative in {@link B314Parser#exprBool}.
+	 * @param ctx the parse tree
+	 */
+	void enterExprBoolEgaleGEnt(B314Parser.ExprBoolEgaleGEntContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code exprBoolEgaleGEnt}
+	 * labeled alternative in {@link B314Parser#exprBool}.
+	 * @param ctx the parse tree
+	 */
+	void exitExprBoolEgaleGEnt(B314Parser.ExprBoolEgaleGEntContext ctx);
+	/**
 	 * Enter a parse tree produced by the {@code exprBoolFalse}
 	 * labeled alternative in {@link B314Parser#exprBool}.
 	 * @param ctx the parse tree
@@ -303,6 +315,30 @@ public interface B314Listener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitExprBoolFalse(B314Parser.ExprBoolFalseContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code exprBoolEgaleGCase}
+	 * labeled alternative in {@link B314Parser#exprBool}.
+	 * @param ctx the parse tree
+	 */
+	void enterExprBoolEgaleGCase(B314Parser.ExprBoolEgaleGCaseContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code exprBoolEgaleGCase}
+	 * labeled alternative in {@link B314Parser#exprBool}.
+	 * @param ctx the parse tree
+	 */
+	void exitExprBoolEgaleGCase(B314Parser.ExprBoolEgaleGCaseContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code exprBoolEgaleCaseCase}
+	 * labeled alternative in {@link B314Parser#exprBool}.
+	 * @param ctx the parse tree
+	 */
+	void enterExprBoolEgaleCaseCase(B314Parser.ExprBoolEgaleCaseCaseContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code exprBoolEgaleCaseCase}
+	 * labeled alternative in {@link B314Parser#exprBool}.
+	 * @param ctx the parse tree
+	 */
+	void exitExprBoolEgaleCaseCase(B314Parser.ExprBoolEgaleCaseCaseContext ctx);
 	/**
 	 * Enter a parse tree produced by the {@code exprBoolTrue}
 	 * labeled alternative in {@link B314Parser#exprBool}.
@@ -352,6 +388,30 @@ public interface B314Listener extends ParseTreeListener {
 	 */
 	void exitExprBoolAndOrBoolGauche(B314Parser.ExprBoolAndOrBoolGaucheContext ctx);
 	/**
+	 * Enter a parse tree produced by the {@code exprBoolEgaleEntG}
+	 * labeled alternative in {@link B314Parser#exprBool}.
+	 * @param ctx the parse tree
+	 */
+	void enterExprBoolEgaleEntG(B314Parser.ExprBoolEgaleEntGContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code exprBoolEgaleEntG}
+	 * labeled alternative in {@link B314Parser#exprBool}.
+	 * @param ctx the parse tree
+	 */
+	void exitExprBoolEgaleEntG(B314Parser.ExprBoolEgaleEntGContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code exprBoolEgaleEntEnt}
+	 * labeled alternative in {@link B314Parser#exprBool}.
+	 * @param ctx the parse tree
+	 */
+	void enterExprBoolEgaleEntEnt(B314Parser.ExprBoolEgaleEntEntContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code exprBoolEgaleEntEnt}
+	 * labeled alternative in {@link B314Parser#exprBool}.
+	 * @param ctx the parse tree
+	 */
+	void exitExprBoolEgaleEntEnt(B314Parser.ExprBoolEgaleEntEntContext ctx);
+	/**
 	 * Enter a parse tree produced by the {@code exprBoolAndOrBoolBool}
 	 * labeled alternative in {@link B314Parser#exprBool}.
 	 * @param ctx the parse tree
@@ -375,6 +435,18 @@ public interface B314Listener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitExprBoolEgaleBoolGauche(B314Parser.ExprBoolEgaleBoolGaucheContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code exprBoolEgaleCaseG}
+	 * labeled alternative in {@link B314Parser#exprBool}.
+	 * @param ctx the parse tree
+	 */
+	void enterExprBoolEgaleCaseG(B314Parser.ExprBoolEgaleCaseGContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code exprBoolEgaleCaseG}
+	 * labeled alternative in {@link B314Parser#exprBool}.
+	 * @param ctx the parse tree
+	 */
+	void exitExprBoolEgaleCaseG(B314Parser.ExprBoolEgaleCaseGContext ctx);
 	/**
 	 * Enter a parse tree produced by the {@code exprBoolEnvironnement}
 	 * labeled alternative in {@link B314Parser#exprBool}.
@@ -412,17 +484,17 @@ public interface B314Listener extends ParseTreeListener {
 	 */
 	void exitExprBoolParennthese(B314Parser.ExprBoolParenntheseContext ctx);
 	/**
-	 * Enter a parse tree produced by the {@code exprBoolEgaleOther}
+	 * Enter a parse tree produced by the {@code exprBoolEgaleGG}
 	 * labeled alternative in {@link B314Parser#exprBool}.
 	 * @param ctx the parse tree
 	 */
-	void enterExprBoolEgaleOther(B314Parser.ExprBoolEgaleOtherContext ctx);
+	void enterExprBoolEgaleGG(B314Parser.ExprBoolEgaleGGContext ctx);
 	/**
-	 * Exit a parse tree produced by the {@code exprBoolEgaleOther}
+	 * Exit a parse tree produced by the {@code exprBoolEgaleGG}
 	 * labeled alternative in {@link B314Parser#exprBool}.
 	 * @param ctx the parse tree
 	 */
-	void exitExprBoolEgaleOther(B314Parser.ExprBoolEgaleOtherContext ctx);
+	void exitExprBoolEgaleGG(B314Parser.ExprBoolEgaleGGContext ctx);
 	/**
 	 * Enter a parse tree produced by the {@code exprBoolAndOrGaucheBool}
 	 * labeled alternative in {@link B314Parser#exprBool}.

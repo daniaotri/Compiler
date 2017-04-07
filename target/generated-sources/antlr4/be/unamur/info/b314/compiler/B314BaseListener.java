@@ -304,6 +304,18 @@ public class B314BaseListener implements B314Listener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
+	@Override public void enterExprBoolEgaleGEnt(B314Parser.ExprBoolEgaleGEntContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitExprBoolEgaleGEnt(B314Parser.ExprBoolEgaleGEntContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
 	@Override public void enterExprBoolFalse(B314Parser.ExprBoolFalseContext ctx) { }
 	/**
 	 * {@inheritDoc}
@@ -311,6 +323,30 @@ public class B314BaseListener implements B314Listener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitExprBoolFalse(B314Parser.ExprBoolFalseContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterExprBoolEgaleGCase(B314Parser.ExprBoolEgaleGCaseContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitExprBoolEgaleGCase(B314Parser.ExprBoolEgaleGCaseContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterExprBoolEgaleCaseCase(B314Parser.ExprBoolEgaleCaseCaseContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitExprBoolEgaleCaseCase(B314Parser.ExprBoolEgaleCaseCaseContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -364,6 +400,30 @@ public class B314BaseListener implements B314Listener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
+	@Override public void enterExprBoolEgaleEntG(B314Parser.ExprBoolEgaleEntGContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitExprBoolEgaleEntG(B314Parser.ExprBoolEgaleEntGContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterExprBoolEgaleEntEnt(B314Parser.ExprBoolEgaleEntEntContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitExprBoolEgaleEntEnt(B314Parser.ExprBoolEgaleEntEntContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
 	@Override public void enterExprBoolAndOrBoolBool(B314Parser.ExprBoolAndOrBoolBoolContext ctx) { }
 	/**
 	 * {@inheritDoc}
@@ -383,6 +443,18 @@ public class B314BaseListener implements B314Listener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitExprBoolEgaleBoolGauche(B314Parser.ExprBoolEgaleBoolGaucheContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterExprBoolEgaleCaseG(B314Parser.ExprBoolEgaleCaseGContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitExprBoolEgaleCaseG(B314Parser.ExprBoolEgaleCaseGContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -424,13 +496,13 @@ public class B314BaseListener implements B314Listener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterExprBoolEgaleOther(B314Parser.ExprBoolEgaleOtherContext ctx) { }
+	@Override public void enterExprBoolEgaleGG(B314Parser.ExprBoolEgaleGGContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitExprBoolEgaleOther(B314Parser.ExprBoolEgaleOtherContext ctx) { }
+	@Override public void exitExprBoolEgaleGG(B314Parser.ExprBoolEgaleGGContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *

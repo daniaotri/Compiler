@@ -1,14 +1,12 @@
 declare and retain 
-    b as boolean[42];
-    b2 as boolean[42,42];
-    i as integer;
-    s as square;
+    x as integer;
+    y as square;
 when your turn
 by default
     do 
-        set b[0] to true and false or true
-        set b2[0,i+41] to not false and 0 > 45 + 3 or s = player
-        set b[0] to graal is north or (b2[0,0] and nearby[1,1] = zombie)
-        set b[0] to ennemi is north and not b[0]
-
+        compute not x < 5
+        compute x = 2 and ennemi is north
+        compute not graal is south or ennemi is north and x > 42
+        compute nearby[2, 2] = ammo and y = map and not x < 5
+        compute x = true
     done

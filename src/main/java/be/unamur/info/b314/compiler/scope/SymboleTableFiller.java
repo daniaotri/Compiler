@@ -300,6 +300,7 @@ public class SymboleTableFiller extends B314BaseListener {
             else if(ctx.appelDeFonction()!= null)CheckTwoType(GetType(ctx.appelDeFonction()),Type.BOOLEAN.toString().toLowerCase( ));
             else throw new RuntimeException();
         }
+        /*
 	@Override 
         public void enterExprBoolEgaleOther(B314Parser.ExprBoolEgaleOtherContext ctx) {
             if(ctx.exprCase(0)!= null){
@@ -326,7 +327,48 @@ public class SymboleTableFiller extends B314BaseListener {
                 if(ctx.appelDeFonction(1)!= null)CheckTwoType(GetType(ctx.appelDeFonction(1)),GetType(ctx.appelDeFonction(0)));   
             }
             
+        }*/
+        @Override 
+        public void enterExprBoolEgaleGEnt(B314Parser.ExprBoolEgaleGEntContext ctx) {
+            if(ctx.exprG() == null){
+                CheckTwoType(GetType(ctx.appelDeFonction()),Type.INTEGER.toString().toLowerCase());
+            }
+            else{
+                CheckTwoType(GetType(ctx.exprG()),Type.INTEGER.toString().toLowerCase());
+            }
         }
+        @Override 
+        public void enterExprBoolEgaleGCase(B314Parser.ExprBoolEgaleGCaseContext ctx) { 
+           if(ctx.exprG() == null){
+                CheckTwoType(GetType(ctx.appelDeFonction()),Type.SQUARE.toString().toLowerCase());
+            }
+            else{
+                CheckTwoType(GetType(ctx.exprG()),Type.SQUARE.toString().toLowerCase());
+            }        
+        }
+        @Override 
+        public void enterExprBoolEgaleEntG(B314Parser.ExprBoolEgaleEntGContext ctx) {
+           if(ctx.exprG() == null){
+                CheckTwoType(GetType(ctx.appelDeFonction()),Type.INTEGER.toString().toLowerCase());
+            }
+            else{
+                CheckTwoType(GetType(ctx.exprG()),Type.INTEGER.toString().toLowerCase());
+            }            
+        }
+        @Override 
+        public void enterExprBoolEgaleCaseG(B314Parser.ExprBoolEgaleCaseGContext ctx) {
+           if(ctx.exprG() == null){
+                CheckTwoType(GetType(ctx.appelDeFonction()),Type.SQUARE.toString().toLowerCase());
+            }
+            else{
+                CheckTwoType(GetType(ctx.exprG()),Type.SQUARE.toString().toLowerCase());
+            }        
+        }
+        @Override 
+        public void enterExprBoolEgaleGG(B314Parser.ExprBoolEgaleGGContext ctx) { 
+            CheckTwoType(GetType((ParserRuleContext)ctx.getChild(0)), GetType((ParserRuleContext)ctx.getChild(2)));
+        }
+        
 	@Override 
         public void enterExprBoolAndOrGaucheBool(B314Parser.ExprBoolAndOrGaucheBoolContext ctx) {
             if(ctx.exprG()!= null)CheckTwoType(GetType(ctx.exprG()),Type.BOOLEAN.toString().toLowerCase( ));
