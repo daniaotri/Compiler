@@ -73,6 +73,10 @@ public class PCodePrinter {
         writer.printf("ssp %d", spValue).println();
     }
 
+    public void printPutValueToStackPoint(PCodeTypes type ,int j){writer.printf("ldc %s %d",type.representation, j);}
+
+    public void  printSetTo(PCodeTypes type){writer.printf("sto %s").println();}
+
     public void printReturnFromProcedure() {
         writer.println("retp");
     }
@@ -96,6 +100,8 @@ public class PCodePrinter {
     public void printUnconditionalJump(String label) {
         writer.printf("ujp @%s", label).println();
     }
+
+    public void printDefine(String label){writer.printf("define @%s", label).println();}
 
     public void printFalseJump(String label) {
         writer.printf("fjp @%s", label).println();

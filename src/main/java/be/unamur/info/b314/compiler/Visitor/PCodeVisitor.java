@@ -4,11 +4,19 @@
  * and open the template in the editor.
  */
 package be.unamur.info.b314.compiler.Visitor;
+import java.util.*;
 
 import be.unamur.info.b314.compiler.B314BaseVisitor;
 import be.unamur.info.b314.compiler.B314Parser;
 import be.unamur.info.b314.compiler.scope.Scope;
-import org.antlr.v4.runtime.ParserRuleContext;
+//import com.sun.xml.internal.ws.api.pipe.NextAction;
+import be.unamur.info.b314.compiler.main.Main;
+import com.sun.xml.internal.ws.api.pipe.NextAction;
+
+//import org.antlr.v4.runtime.ParserRuleContext;
+
+
+
 
 
 
@@ -19,12 +27,33 @@ import org.antlr.v4.runtime.ParserRuleContext;
  */
 public class PCodeVisitor extends B314BaseVisitor<Object>{
     
-       private final Scope scope;
-       private final PCodePrinter printer;
+		   private final Scope scope;
+		   private final PCodePrinter printer;
+			//private Scope globalScope;
+
+			private int position;
+			//private int whileNumber;
+			//private int depth;
+
+
 
     public PCodeVisitor(Scope scope, PCodePrinter printer) {
         this.scope = scope;
         this.printer = printer;
+        //globalScope = scope;
+		position=1;
+        //whileNumber=1;
+        //depth=0;
+		//Debut Nath
+
+		//Initialisation des variables d'environnement
+        for(int i= 0; i<99;i++){
+			printer.printLoadAdress(PCodePrinter.PCodeTypes.Int, 0, i);
+			printer.printRead();
+			printer.printStore(PCodePrinter.PCodeTypes.Int);
+
+		}
+  		//
     }
        
        
@@ -225,14 +254,21 @@ public class PCodeVisitor extends B314BaseVisitor<Object>{
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public Object visitExprBoolTrue(B314Parser.ExprBoolTrueContext ctx) { return visitChildren(ctx); }
+	@Override public Object visitExprBoolTrue(B314Parser.ExprBoolTrueContext ctx) {
+		printer.printPutValueToStackPoint(PCodePrinter.PCodeTypes.Bool,1);
+		return null;
+
+	}
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public Object visitExprBoolNot(B314Parser.ExprBoolNotContext ctx) { return visitChildren(ctx); }
+	@Override public Object visitExprBoolNot(B314Parser.ExprBoolNotContext ctx) {
+		printer.printPutValueToStackPoint(PCodePrinter.PCodeTypes.Bool,0);
+		return null;
+	}
 	/**
 	 * {@inheritDoc}
 	 *
@@ -505,7 +541,14 @@ public class PCodeVisitor extends B314BaseVisitor<Object>{
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public Object visitNextAction(B314Parser.NextActionContext ctx) { return visitChildren(ctx); }
+	@Override public Object visitNextAction(B314Parser.NextActionContext ctx) {
+		String nomAction = ctx.action().getText().toLowerCase().replace("\\s+","");
+		//printer.printLoadAdress(PCodePrinter.PCodeTypes.Int, NextAction.valueOf(nomAction).getValue());
+
+
+				return null;
+
+	}
 	/**
 	 * {@inheritDoc}
 	 *
@@ -519,14 +562,42 @@ public class PCodeVisitor extends B314BaseVisitor<Object>{
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public Object visitProgramme(B314Parser.ProgrammeContext ctx) { return visitChildren(ctx); }
+	//Nath
+	@Override public Object visitProgramme(B314Parser.ProgrammeContext ctx) {
+		printer.printSetStackPointer(scope.getChildren().size()+99);
+		printer.printUnconditionalJump("Begin");
+		printer.printDefineLabel("Begin");
+		printer.printLoadConstant(PCodePrinter.PCodeTypes.Int,0);
+		printer.printPrin();
+		printer.printUnconditionalJump("byDefault");
+		super.visitProgramme(ctx);
+		printer.printStop();
+		return null;
+		}
+
+
+
+
+
+
+
+
+
+
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public Object visitProgDecl(B314Parser.ProgDeclContext ctx) { return visitChildren(ctx); }
+	@Override public Object visitProgDecl(B314Parser.ProgDeclContext ctx) {
+		//printer.printSetStackPointer();
+
+
+
+
+
+		return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -561,15 +632,41 @@ public class PCodeVisitor extends B314BaseVisitor<Object>{
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public Object visitClauseWhen(B314Parser.ClauseWhenContext ctx) { return visitChildren(ctx); }
+	@Override public Object visitClauseWhen(B314Parser.ClauseWhenContext ctx) {
+
+		/*String nomScope = "clauseWhen"+position;
+				position ++;
+		try{
+			//Scope currentFunction= scope.getChildren(nomScope);
+
+
+
+
+		}catch(Exception e){}*/
+
+
+
+
+		return null;
+	}
+;
+
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public Object visitClauseDefault(B314Parser.ClauseDefaultContext ctx) { return visitChildren(ctx); }
-    
+	@Override public Object visitClauseDefault(B314Parser.ClauseDefaultContext ctx) {
+
+
+
+		return visitChildren(ctx);
+	}
+
+
+
+
 }
       
     
