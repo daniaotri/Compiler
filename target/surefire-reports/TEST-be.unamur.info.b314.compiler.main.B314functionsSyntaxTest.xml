@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="32" failures="0" name="be.unamur.info.b314.compiler.main.B314functionsSyntaxTest" time="0.463" errors="0" skipped="0">
+<testsuite tests="32" failures="0" name="be.unamur.info.b314.compiler.main.B314functionsSyntaxTest" time="0.567" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.8.0_91\jre\bin"/>
@@ -61,36 +61,36 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase classname="be.unamur.info.b314.compiler.main.B314functionsSyntaxTest" name="testfunctions_multiple_global_vars_and_functions_with_parameters_and_instructions_no_local_var_ok" time="0.013"/>
-  <testcase classname="be.unamur.info.b314.compiler.main.B314functionsSyntaxTest" name="testfunctions_multiple_global_vars_and_functions_with_parameters_no_local_var_ok" time="0.002"/>
-  <testcase classname="be.unamur.info.b314.compiler.main.B314functionsSyntaxTest" name="testfunctions_multiple_global_vars_and_functions_with_parameters_and_instructions_using_global_vars_no_local_var_ok" time="0.11"/>
-  <testcase classname="be.unamur.info.b314.compiler.main.B314functionsSyntaxTest" name="testfunctions_one_void_function_no_body_no_local_var_ko" time="0"/>
-  <testcase classname="be.unamur.info.b314.compiler.main.B314functionsSyntaxTest" name="testfunctions_multiple_global_vars_and_functions_with_parameters_and_wrongly_typed_instructions_no_local_var_ko" time="0.009"/>
-  <testcase classname="be.unamur.info.b314.compiler.main.B314functionsSyntaxTest" name="testfunctions_multiple_global_vars_and_functions_with_parameters_with_same_name_as_function_ko" time="0.006"/>
-  <testcase classname="be.unamur.info.b314.compiler.main.B314functionsSyntaxTest" name="testfunctions_multiple_global_vars_and_functions_with_parameters_calling_other_functions_ok" time="0.033"/>
+  <testcase classname="be.unamur.info.b314.compiler.main.B314functionsSyntaxTest" name="testfunctions_multiple_global_vars_and_functions_with_parameters_and_instructions_no_local_var_ok" time="0.05"/>
+  <testcase classname="be.unamur.info.b314.compiler.main.B314functionsSyntaxTest" name="testfunctions_multiple_global_vars_and_functions_with_parameters_no_local_var_ok" time="0.01"/>
+  <testcase classname="be.unamur.info.b314.compiler.main.B314functionsSyntaxTest" name="testfunctions_multiple_global_vars_and_functions_with_parameters_and_instructions_using_global_vars_no_local_var_ok" time="0.009"/>
+  <testcase classname="be.unamur.info.b314.compiler.main.B314functionsSyntaxTest" name="testfunctions_one_void_function_no_body_no_local_var_ko" time="0.008"/>
+  <testcase classname="be.unamur.info.b314.compiler.main.B314functionsSyntaxTest" name="testfunctions_multiple_global_vars_and_functions_with_parameters_and_wrongly_typed_instructions_no_local_var_ko" time="0.001"/>
+  <testcase classname="be.unamur.info.b314.compiler.main.B314functionsSyntaxTest" name="testfunctions_multiple_global_vars_and_functions_with_parameters_with_same_name_as_function_ko" time="0.013"/>
+  <testcase classname="be.unamur.info.b314.compiler.main.B314functionsSyntaxTest" name="testfunctions_multiple_global_vars_and_functions_with_parameters_calling_other_functions_ok" time="0.074"/>
   <testcase classname="be.unamur.info.b314.compiler.main.B314functionsSyntaxTest" name="testfunctions_one_square_function_no_local_var_ok" time="0"/>
   <testcase classname="be.unamur.info.b314.compiler.main.B314functionsSyntaxTest" name="testfunctions_multiple_global_vars_and_functions_no_local_var_ok" time="0.001"/>
-  <testcase classname="be.unamur.info.b314.compiler.main.B314functionsSyntaxTest" name="testfunctions_multiple_global_vars_and_functions_with_parameters_call_from_when_ok" time="0.013"/>
-  <testcase classname="be.unamur.info.b314.compiler.main.B314functionsSyntaxTest" name="testfunctions_wrong_type_in_parameters_when_calling_function_ko" time="0.009"/>
-  <testcase classname="be.unamur.info.b314.compiler.main.B314functionsSyntaxTest" name="testfunctions_wrong_type_in_expression_with_function_call_ko" time="0.007"/>
-  <testcase classname="be.unamur.info.b314.compiler.main.B314functionsSyntaxTest" name="testfunctions_multiple_global_vars_and_functions_with_parameters_array_in_parameters_ko" time="0.008"/>
-  <testcase classname="be.unamur.info.b314.compiler.main.B314functionsSyntaxTest" name="testfunctions_wrong_type_is_return_3_ko" time="0.013"/>
-  <testcase classname="be.unamur.info.b314.compiler.main.B314functionsSyntaxTest" name="testfunctions_multiple_global_vars_and_functions_with_parameters_with_parameter_list_ending_by_comma_ko" time="0.005"/>
-  <testcase classname="be.unamur.info.b314.compiler.main.B314functionsSyntaxTest" name="testfunctions_calling_undeclared_function_ko" time="0.01"/>
-  <testcase classname="be.unamur.info.b314.compiler.main.B314functionsSyntaxTest" name="testfunctions_multiple_global_vars_and_functions_with_same_name_no_local_var_ko" time="0"/>
-  <testcase classname="be.unamur.info.b314.compiler.main.B314functionsSyntaxTest" name="testfunctions_multiple_functions_with_same_name_no_local_var_ko" time="0.007"/>
-  <testcase classname="be.unamur.info.b314.compiler.main.B314functionsSyntaxTest" name="testfunctions_one_array_function_no_local_var_ko" time="0.129"/>
-  <testcase classname="be.unamur.info.b314.compiler.main.B314functionsSyntaxTest" name="testfunctions_multiple_global_vars_and_functions_with_parameters_and_instructions_using_global_vars_wrong_type_expression_no_local_var_ko" time="0.006"/>
-  <testcase classname="be.unamur.info.b314.compiler.main.B314functionsSyntaxTest" name="testfunctions_one_void_function_at_least_one_instruction_no_local_var_ko" time="0.009"/>
+  <testcase classname="be.unamur.info.b314.compiler.main.B314functionsSyntaxTest" name="testfunctions_multiple_global_vars_and_functions_with_parameters_call_from_when_ok" time="0.101"/>
+  <testcase classname="be.unamur.info.b314.compiler.main.B314functionsSyntaxTest" name="testfunctions_wrong_type_in_parameters_when_calling_function_ko" time="0.007"/>
+  <testcase classname="be.unamur.info.b314.compiler.main.B314functionsSyntaxTest" name="testfunctions_wrong_type_in_expression_with_function_call_ko" time="0.013"/>
+  <testcase classname="be.unamur.info.b314.compiler.main.B314functionsSyntaxTest" name="testfunctions_multiple_global_vars_and_functions_with_parameters_array_in_parameters_ko" time="0.006"/>
+  <testcase classname="be.unamur.info.b314.compiler.main.B314functionsSyntaxTest" name="testfunctions_wrong_type_is_return_3_ko" time="0.009"/>
+  <testcase classname="be.unamur.info.b314.compiler.main.B314functionsSyntaxTest" name="testfunctions_multiple_global_vars_and_functions_with_parameters_with_parameter_list_ending_by_comma_ko" time="0.01"/>
+  <testcase classname="be.unamur.info.b314.compiler.main.B314functionsSyntaxTest" name="testfunctions_calling_undeclared_function_ko" time="0.016"/>
+  <testcase classname="be.unamur.info.b314.compiler.main.B314functionsSyntaxTest" name="testfunctions_multiple_global_vars_and_functions_with_same_name_no_local_var_ko" time="0.014"/>
+  <testcase classname="be.unamur.info.b314.compiler.main.B314functionsSyntaxTest" name="testfunctions_multiple_functions_with_same_name_no_local_var_ko" time="0.015"/>
+  <testcase classname="be.unamur.info.b314.compiler.main.B314functionsSyntaxTest" name="testfunctions_one_array_function_no_local_var_ko" time="0.015"/>
+  <testcase classname="be.unamur.info.b314.compiler.main.B314functionsSyntaxTest" name="testfunctions_multiple_global_vars_and_functions_with_parameters_and_instructions_using_global_vars_wrong_type_expression_no_local_var_ko" time="0.018"/>
+  <testcase classname="be.unamur.info.b314.compiler.main.B314functionsSyntaxTest" name="testfunctions_one_void_function_at_least_one_instruction_no_local_var_ko" time="0.015"/>
   <testcase classname="be.unamur.info.b314.compiler.main.B314functionsSyntaxTest" name="testfunctions_factorial_ok" time="0.001"/>
-  <testcase classname="be.unamur.info.b314.compiler.main.B314functionsSyntaxTest" name="testfunctions_wrong_type_in_return_1_ko" time="0.013"/>
-  <testcase classname="be.unamur.info.b314.compiler.main.B314functionsSyntaxTest" name="testfunctions_wrong_type_in_return_2_ko" time="0.008"/>
+  <testcase classname="be.unamur.info.b314.compiler.main.B314functionsSyntaxTest" name="testfunctions_wrong_type_in_return_1_ko" time="0.065"/>
+  <testcase classname="be.unamur.info.b314.compiler.main.B314functionsSyntaxTest" name="testfunctions_wrong_type_in_return_2_ko" time="0.011"/>
   <testcase classname="be.unamur.info.b314.compiler.main.B314functionsSyntaxTest" name="testfunctions_one_boolean_function_no_local_var_ok" time="0"/>
-  <testcase classname="be.unamur.info.b314.compiler.main.B314functionsSyntaxTest" name="testfunctions_one_void_function_no_local_var_ok" time="0.009"/>
+  <testcase classname="be.unamur.info.b314.compiler.main.B314functionsSyntaxTest" name="testfunctions_one_void_function_no_local_var_ok" time="0.036"/>
   <testcase classname="be.unamur.info.b314.compiler.main.B314functionsSyntaxTest" name="testfunctions_one_int_function_no_local_var_ok" time="0"/>
-  <testcase classname="be.unamur.info.b314.compiler.main.B314functionsSyntaxTest" name="testfunctions_multiple_functions_no_local_var_ok" time="0.005"/>
+  <testcase classname="be.unamur.info.b314.compiler.main.B314functionsSyntaxTest" name="testfunctions_multiple_functions_no_local_var_ok" time="0.007"/>
   <testcase classname="be.unamur.info.b314.compiler.main.B314functionsSyntaxTest" name="testfunctions_multiple_global_vars_and_functions_with_parameters_with_same_name_ko" time="0.009"/>
-  <testcase classname="be.unamur.info.b314.compiler.main.B314functionsSyntaxTest" name="testfunctions_wrong_number_of_parameters_when_calling_function_1_ko" time="0.007"/>
-  <testcase classname="be.unamur.info.b314.compiler.main.B314functionsSyntaxTest" name="testfunctions_wrong_number_of_parameters_when_calling_function_2_ko" time="0.013"/>
-  <testcase classname="be.unamur.info.b314.compiler.main.B314functionsSyntaxTest" name="testfunctions_multiple_global_vars_and_functions_with_parameters_same_name_different_signatures_ko" time="0.006"/>
+  <testcase classname="be.unamur.info.b314.compiler.main.B314functionsSyntaxTest" name="testfunctions_wrong_number_of_parameters_when_calling_function_1_ko" time="0.012"/>
+  <testcase classname="be.unamur.info.b314.compiler.main.B314functionsSyntaxTest" name="testfunctions_wrong_number_of_parameters_when_calling_function_2_ko" time="0.009"/>
+  <testcase classname="be.unamur.info.b314.compiler.main.B314functionsSyntaxTest" name="testfunctions_multiple_global_vars_and_functions_with_parameters_same_name_different_signatures_ko" time="0.008"/>
 </testsuite>

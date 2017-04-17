@@ -230,8 +230,9 @@ public class SymboleTableFiller extends B314BaseListener {
             else if(ctx.getChild(2)!= null)  throw new RuntimeException();             
         }
         @Override
-        public void enterExprGTableauEntEnt(B314Parser.ExprGTableauEntEntContext ctx){
+        public void enterExprGTableauEntEnt(B314Parser.ExprGTableauEntEntContext ctx){            
             CurrentSymbole = CurrentScope.FoundSymbole(ctx.ID().getText());
+            System.out.println("Alors : "+ CurrentSymbole);
             if(CurrentSymbole.getIsArray()){
                 if(CurrentSymbole.getLength().length==1){
                     if(ctx.getChild(2)==null)throw new RuntimeException();
@@ -493,5 +494,6 @@ public class SymboleTableFiller extends B314BaseListener {
         private void CheckTwoType(String type1, String type2){
             if(!type1.equals(type2)) throw new RuntimeException();
         }
+        
         
 }

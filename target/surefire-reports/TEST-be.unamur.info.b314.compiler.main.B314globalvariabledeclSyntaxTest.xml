@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="11" failures="0" name="be.unamur.info.b314.compiler.main.B314globalvariabledeclSyntaxTest" time="0.137" errors="0" skipped="0">
+<testsuite tests="11" failures="0" name="be.unamur.info.b314.compiler.main.B314globalvariabledeclSyntaxTest" time="0.046" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.8.0_91\jre\bin"/>
@@ -61,15 +61,15 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase classname="be.unamur.info.b314.compiler.main.B314globalvariabledeclSyntaxTest" name="testglobalvariabledecl_id_starts_with_number_ko" time="0.008"/>
-  <testcase classname="be.unamur.info.b314.compiler.main.B314globalvariabledeclSyntaxTest" name="testglobalvariabledecl_mixing_ok" time="0.006"/>
-  <testcase classname="be.unamur.info.b314.compiler.main.B314globalvariabledeclSyntaxTest" name="testglobalvariabledecl_one_boolean_variable_ok" time="0"/>
+  <testcase classname="be.unamur.info.b314.compiler.main.B314globalvariabledeclSyntaxTest" name="testglobalvariabledecl_id_starts_with_number_ko" time="0.012"/>
+  <testcase classname="be.unamur.info.b314.compiler.main.B314globalvariabledeclSyntaxTest" name="testglobalvariabledecl_mixing_ok" time="0.005"/>
+  <testcase classname="be.unamur.info.b314.compiler.main.B314globalvariabledeclSyntaxTest" name="testglobalvariabledecl_one_boolean_variable_ok" time="0.001"/>
   <testcase classname="be.unamur.info.b314.compiler.main.B314globalvariabledeclSyntaxTest" name="testglobalvariabledecl_array_with_negative_size_ko" time="0.005"/>
-  <testcase classname="be.unamur.info.b314.compiler.main.B314globalvariabledeclSyntaxTest" name="testglobalvariabledecl_nul_size_array_ok" time="0.004"/>
-  <testcase classname="be.unamur.info.b314.compiler.main.B314globalvariabledeclSyntaxTest" name="testglobalvariabledecl_one_integer_variable_ok" time="0.002"/>
-  <testcase classname="be.unamur.info.b314.compiler.main.B314globalvariabledeclSyntaxTest" name="testglobalvariabledecl_same_id_ko" time="0.004"/>
+  <testcase classname="be.unamur.info.b314.compiler.main.B314globalvariabledeclSyntaxTest" name="testglobalvariabledecl_nul_size_array_ok" time="0.002"/>
+  <testcase classname="be.unamur.info.b314.compiler.main.B314globalvariabledeclSyntaxTest" name="testglobalvariabledecl_one_integer_variable_ok" time="0"/>
+  <testcase classname="be.unamur.info.b314.compiler.main.B314globalvariabledeclSyntaxTest" name="testglobalvariabledecl_same_id_ko" time="0.006"/>
   <testcase classname="be.unamur.info.b314.compiler.main.B314globalvariabledeclSyntaxTest" name="testglobalvariabledecl_one_square_variable_ok" time="0"/>
-  <testcase classname="be.unamur.info.b314.compiler.main.B314globalvariabledeclSyntaxTest" name="testglobalvariabledecl_underscore_in_id_ko" time="0.077"/>
-  <testcase classname="be.unamur.info.b314.compiler.main.B314globalvariabledeclSyntaxTest" name="testglobalvariabledecl_arrays_in_all_shapes_ok" time="0.021"/>
-  <testcase classname="be.unamur.info.b314.compiler.main.B314globalvariabledeclSyntaxTest" name="testglobalvariabledecl_keyword_as_id_ko" time="0.01"/>
+  <testcase classname="be.unamur.info.b314.compiler.main.B314globalvariabledeclSyntaxTest" name="testglobalvariabledecl_underscore_in_id_ko" time="0.005"/>
+  <testcase classname="be.unamur.info.b314.compiler.main.B314globalvariabledeclSyntaxTest" name="testglobalvariabledecl_arrays_in_all_shapes_ok" time="0"/>
+  <testcase classname="be.unamur.info.b314.compiler.main.B314globalvariabledeclSyntaxTest" name="testglobalvariabledecl_keyword_as_id_ko" time="0.008"/>
 </testsuite>

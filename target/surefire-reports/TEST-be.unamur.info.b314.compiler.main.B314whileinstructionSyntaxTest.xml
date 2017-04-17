@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="12" failures="0" name="be.unamur.info.b314.compiler.main.B314whileinstructionSyntaxTest" time="0.062" errors="0" skipped="0">
+<testsuite tests="12" failures="0" name="be.unamur.info.b314.compiler.main.B314whileinstructionSyntaxTest" time="0.076" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.8.0_91\jre\bin"/>
@@ -62,15 +62,15 @@
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
   <testcase classname="be.unamur.info.b314.compiler.main.B314whileinstructionSyntaxTest" name="testwhileinstruction_while_with_sub_whiles_ok" time="0"/>
-  <testcase classname="be.unamur.info.b314.compiler.main.B314whileinstructionSyntaxTest" name="testwhileinstruction_if_with_sub_compute_wrong_type_condition_1_ko" time="0.009"/>
+  <testcase classname="be.unamur.info.b314.compiler.main.B314whileinstructionSyntaxTest" name="testwhileinstruction_if_with_sub_compute_wrong_type_condition_1_ko" time="0.004"/>
   <testcase classname="be.unamur.info.b314.compiler.main.B314whileinstructionSyntaxTest" name="testwhileinstruction_while_multiple_instructions_ok" time="0"/>
   <testcase classname="be.unamur.info.b314.compiler.main.B314whileinstructionSyntaxTest" name="testwhileinstruction_while_rightexpr_conditions_skip_ok" time="0.001"/>
-  <testcase classname="be.unamur.info.b314.compiler.main.B314whileinstructionSyntaxTest" name="testwhileinstruction_if_with_sub_if_wrong_type_condition_1_ko" time="0.006"/>
-  <testcase classname="be.unamur.info.b314.compiler.main.B314whileinstructionSyntaxTest" name="testwhileinstruction_for_as_while_ok" time="0"/>
-  <testcase classname="be.unamur.info.b314.compiler.main.B314whileinstructionSyntaxTest" name="testwhileinstruction_array_tour_ok" time="0.012"/>
+  <testcase classname="be.unamur.info.b314.compiler.main.B314whileinstructionSyntaxTest" name="testwhileinstruction_if_with_sub_if_wrong_type_condition_1_ko" time="0.01"/>
+  <testcase classname="be.unamur.info.b314.compiler.main.B314whileinstructionSyntaxTest" name="testwhileinstruction_for_as_while_ok" time="0.001"/>
+  <testcase classname="be.unamur.info.b314.compiler.main.B314whileinstructionSyntaxTest" name="testwhileinstruction_array_tour_ok" time="0.009"/>
   <testcase classname="be.unamur.info.b314.compiler.main.B314whileinstructionSyntaxTest" name="testwhileinstruction_while_with_sub_affect_wrong_type_condition_1_ko" time="0.008"/>
   <testcase classname="be.unamur.info.b314.compiler.main.B314whileinstructionSyntaxTest" name="testwhileinstruction_while_constant_conditions_skip_ok" time="0"/>
-  <testcase classname="be.unamur.info.b314.compiler.main.B314whileinstructionSyntaxTest" name="testwhileinstruction_if_wrong_type_condition_ko" time="0.013"/>
-  <testcase classname="be.unamur.info.b314.compiler.main.B314whileinstructionSyntaxTest" name="testwhileinstruction_if_wrong_type_condition_1_ko" time="0.007"/>
-  <testcase classname="be.unamur.info.b314.compiler.main.B314whileinstructionSyntaxTest" name="testwhileinstruction_if_wrong_type_condition_2_ko" time="0.005"/>
+  <testcase classname="be.unamur.info.b314.compiler.main.B314whileinstructionSyntaxTest" name="testwhileinstruction_if_wrong_type_condition_ko" time="0.019"/>
+  <testcase classname="be.unamur.info.b314.compiler.main.B314whileinstructionSyntaxTest" name="testwhileinstruction_if_wrong_type_condition_1_ko" time="0.01"/>
+  <testcase classname="be.unamur.info.b314.compiler.main.B314whileinstructionSyntaxTest" name="testwhileinstruction_if_wrong_type_condition_2_ko" time="0.011"/>
 </testsuite>
