@@ -196,7 +196,7 @@ public class Main {
 
         B314Parser.ProgrammeContext tree =parse(new ANTLRInputStream(new FileInputStream(inputFile)));
         Scope x = fillSymTable(tree); 
-        printPCode(tree, x);
+        //printPCode(tree, x);
         //System.out.println(x);
         //System.out.println(x.GetName());
         //System.out.println(x.getChildren().size());
