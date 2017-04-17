@@ -54,11 +54,14 @@ public class ScopeImpl implements Scope{
     public void AddSymbole(Symbole symbole) {
         if(symbole == null)throw new RuntimeException();
         String name = symbole.getName();
-        Symbole sym=FoundSymbole(name);
-        //SymboleIsFunction funct = FoundFunction(name);
         if(symboles.contains(symbole))throw new RuntimeException();
-        else if ((sym!= null)) throw new RuntimeException();
-        else symboles.add(symbole);
+        else {
+            for (int i = 0; i<symboles.size();i++){
+            Symbole sym = symboles.get(i);
+            if(symbole.getName().equals(sym.getName()))throw new RuntimeException();
+            }
+        }
+        symboles.add(symbole);
     }
 
     /**

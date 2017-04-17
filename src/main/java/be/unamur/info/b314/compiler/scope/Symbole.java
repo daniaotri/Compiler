@@ -105,7 +105,7 @@ public class Symbole {
 
     @Override
     public String toString() {
-        return "Symbole{" + "name=" + name + ", type=" + type + ", length=" + length + ", isArray=" + isArray + ", isFunction=" + isFunction + ", LesParametres=" + LesParametres + ", isParam=" + isParam + '}';
+        return "Symbole{" + "name=" + name + ", type=" + type + ", length=" + length.length + ", isArray=" + isArray + ", isFunction=" + isFunction + ", LesParametres=" + LesParametres + ", isParam=" + isParam + '}';
     }
     
 

@@ -29,7 +29,6 @@ public class B314commentsSyntaxTest {
     //
     // Serie comments OK
     //
-  /*  
     @Test
     public void testcomments_comments_everywhere_ok() throws Exception{
         CompilerTestHelper.launchCompilation("/syntax/comments/ok/comments_everywhere.b314", testFolder.newFile(), true, "comments: comments_everywhere");
@@ -45,15 +44,9 @@ public class B314commentsSyntaxTest {
         CompilerTestHelper.launchCompilation("/syntax/comments/ok/empty_multiple_lines_and_tab.b314", testFolder.newFile(), true, "comments: empty_multiple_lines_and_tab");
     }
 
-    @Test
-    public void testcomments_fruits_ok_ok() throws Exception{
-        CompilerTestHelper.launchCompilation("/syntax/comments/ok/fruits_ok.b314", testFolder.newFile(), true, "comments: fruits_ok");
-    }
-
     //
     // Serie comments KO
     //
-    
     @Test
     public void testcomments_at_least_one_instruction_in_default_ko() throws Exception {
         CompilerTestHelper.launchCompilation("/syntax/comments/ko/at_least_one_instruction_in_default.b314", testFolder.newFile(), false, "comments: at_least_one_instruction_in_default");
@@ -68,11 +61,5 @@ public class B314commentsSyntaxTest {
     public void testcomments_missing_default_bloc_ko() throws Exception {
         CompilerTestHelper.launchCompilation("/syntax/comments/ko/missing_default_bloc.b314", testFolder.newFile(), false, "comments: missing_default_bloc");
     }
-    */
-    @Test
-    public void testcomments_ko() throws Exception {
-        CompilerTestHelper.launchCompilation("/SemantiqueFonction/funct_1.b314", testFolder.newFile(), false, "type: jessica");
-    }
-    
 
 }

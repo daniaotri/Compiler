@@ -81,7 +81,9 @@ public class SymboleTableFiller extends B314BaseListener {
             CurrentScope= (ScopeImpl) CurrentScope.WhoIsThisScope(nomScope);
             position = position +1;  
             if(ctx.exprG() != null || ctx.appelDeFonction() != null){
-                Symbole sym= CurrentScope.FoundSymbole(ctx.getChild(1).getChild(0).getText());
+                Scope parent = CurrentScope.getParent();
+                Symbole sym= parent.FoundSymbole(ctx.getChild(1).getChild(0).getText());
+                System.out.println("Hello ..."+sym);
                 CheckTwoType(sym.getType(), Type.BOOLEAN.toString().toLowerCase());
             }
         }

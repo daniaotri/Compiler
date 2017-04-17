@@ -91,13 +91,13 @@ public class FillScope extends B314BaseListener {
 	@Override 
         public void enterParamDecl(B314Parser.ParamDeclContext ctx) {
             CurrentIsFonction = true;
-            System.out.println("Enter param "+CurrentIsFonction+" ");
+            //System.out.println("Enter param "+CurrentIsFonction+" ");
         }
 
 	@Override 
         public void exitParamDecl(B314Parser.ParamDeclContext ctx) { 
             CurrentIsFonction = false;
-            System.out.println("Exit param "+CurrentIsFonction+" ");
+            //System.out.println("Exit param "+CurrentIsFonction+" ");
         }
         /**
          *
@@ -144,7 +144,7 @@ public class FillScope extends B314BaseListener {
          */
 	@Override 
         public void enterVarDecl(B314Parser.VarDeclContext ctx) {
-            System.out.println("ENter var ..."+CurrentIsFonction);
+            //System.out.println("ENter var ..."+CurrentIsFonction);
             CurrentSymbole = new Symbole(ctx.ID().getText());
             if(CurrentIsFonction)CurrentSymbole.setIsParam(true);
         }
@@ -153,8 +153,8 @@ public class FillScope extends B314BaseListener {
         public void exitVarDecl(B314Parser.VarDeclContext ctx){
             if(CurrentSymbole.getType() == null) throw new RuntimeException();
             else {
-                CurrentScope.AddSymbole(CurrentSymbole);
                 System.out.println(CurrentSymbole.toString());
+                CurrentScope.AddSymbole(CurrentSymbole);                
                 if(CurrentSymbole.getIsParam()){
                     Symbole sym = CurrentScope.FoundSymbole(CurrentScope.GetName());
                     sym.AddParam(CurrentSymbole.getName());
@@ -226,7 +226,9 @@ public class FillScope extends B314BaseListener {
 	       
 	@Override 
         public void exitFctTypeVoid(B314Parser.FctTypeVoidContext ctx) {
-            if(CurrentIsFonction){
+            System.out.println("Hello jessi");
+            System.out.println(CurrentSymbole);
+            if(CurrentSymbole.getIsFunction() == true){
                 //CurrentIsFonction = false;
                 CurrentSymbole.setType(ctx.VOID().getText());
                 CurrentScope.getParent().AddSymbole(CurrentSymbole);
