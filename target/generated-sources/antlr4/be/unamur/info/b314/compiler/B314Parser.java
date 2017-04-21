@@ -703,18 +703,17 @@ public class B314Parser extends Parser {
 		}
 	}
 	public static class ExprEntPlusMoinsGauheEntContext extends ExprEntContext {
-		public Token op;
 		public ExprEntContext exprEnt() {
 			return getRuleContext(ExprEntContext.class,0);
 		}
+		public TerminalNode PLUS() { return getToken(B314Parser.PLUS, 0); }
+		public TerminalNode MOINS() { return getToken(B314Parser.MOINS, 0); }
 		public ExprGContext exprG() {
 			return getRuleContext(ExprGContext.class,0);
 		}
 		public AppelDeFonctionContext appelDeFonction() {
 			return getRuleContext(AppelDeFonctionContext.class,0);
 		}
-		public TerminalNode PLUS() { return getToken(B314Parser.PLUS, 0); }
-		public TerminalNode MOINS() { return getToken(B314Parser.MOINS, 0); }
 		public ExprEntPlusMoinsGauheEntContext(ExprEntContext ctx) { copyFrom(ctx); }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
@@ -731,7 +730,6 @@ public class B314Parser extends Parser {
 		}
 	}
 	public static class ExprEntPlusMoinsEntEntContext extends ExprEntContext {
-		public Token op;
 		public List<ExprEntContext> exprEnt() {
 			return getRuleContexts(ExprEntContext.class);
 		}
@@ -756,7 +754,6 @@ public class B314Parser extends Parser {
 		}
 	}
 	public static class ExprEntMulDivEntGauheContext extends ExprEntContext {
-		public Token op;
 		public ExprEntContext exprEnt() {
 			return getRuleContext(ExprEntContext.class,0);
 		}
@@ -785,7 +782,6 @@ public class B314Parser extends Parser {
 		}
 	}
 	public static class ExprEntMulDivEntEntContext extends ExprEntContext {
-		public Token op;
 		public List<ExprEntContext> exprEnt() {
 			return getRuleContexts(ExprEntContext.class);
 		}
@@ -811,7 +807,9 @@ public class B314Parser extends Parser {
 		}
 	}
 	public static class ExprEntMulDivGaucheGauheContext extends ExprEntContext {
-		public Token op;
+		public TerminalNode MUL() { return getToken(B314Parser.MUL, 0); }
+		public TerminalNode DIV() { return getToken(B314Parser.DIV, 0); }
+		public TerminalNode DIV_ENT() { return getToken(B314Parser.DIV_ENT, 0); }
 		public List<ExprGContext> exprG() {
 			return getRuleContexts(ExprGContext.class);
 		}
@@ -824,9 +822,6 @@ public class B314Parser extends Parser {
 		public AppelDeFonctionContext appelDeFonction(int i) {
 			return getRuleContext(AppelDeFonctionContext.class,i);
 		}
-		public TerminalNode MUL() { return getToken(B314Parser.MUL, 0); }
-		public TerminalNode DIV() { return getToken(B314Parser.DIV, 0); }
-		public TerminalNode DIV_ENT() { return getToken(B314Parser.DIV_ENT, 0); }
 		public ExprEntMulDivGaucheGauheContext(ExprEntContext ctx) { copyFrom(ctx); }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
@@ -843,19 +838,18 @@ public class B314Parser extends Parser {
 		}
 	}
 	public static class ExprEntMulDivGauheEntContext extends ExprEntContext {
-		public Token op;
 		public ExprEntContext exprEnt() {
 			return getRuleContext(ExprEntContext.class,0);
 		}
+		public TerminalNode MUL() { return getToken(B314Parser.MUL, 0); }
+		public TerminalNode DIV() { return getToken(B314Parser.DIV, 0); }
+		public TerminalNode DIV_ENT() { return getToken(B314Parser.DIV_ENT, 0); }
 		public ExprGContext exprG() {
 			return getRuleContext(ExprGContext.class,0);
 		}
 		public AppelDeFonctionContext appelDeFonction() {
 			return getRuleContext(AppelDeFonctionContext.class,0);
 		}
-		public TerminalNode MUL() { return getToken(B314Parser.MUL, 0); }
-		public TerminalNode DIV() { return getToken(B314Parser.DIV, 0); }
-		public TerminalNode DIV_ENT() { return getToken(B314Parser.DIV_ENT, 0); }
 		public ExprEntMulDivGauheEntContext(ExprEntContext ctx) { copyFrom(ctx); }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
@@ -872,7 +866,6 @@ public class B314Parser extends Parser {
 		}
 	}
 	public static class ExprEntPlusMoinsEntGauheContext extends ExprEntContext {
-		public Token op;
 		public ExprEntContext exprEnt() {
 			return getRuleContext(ExprEntContext.class,0);
 		}
@@ -900,7 +893,8 @@ public class B314Parser extends Parser {
 		}
 	}
 	public static class ExprEntPlusMoinsGaucheGauheContext extends ExprEntContext {
-		public Token op;
+		public TerminalNode PLUS() { return getToken(B314Parser.PLUS, 0); }
+		public TerminalNode MOINS() { return getToken(B314Parser.MOINS, 0); }
 		public List<ExprGContext> exprG() {
 			return getRuleContexts(ExprGContext.class);
 		}
@@ -913,8 +907,6 @@ public class B314Parser extends Parser {
 		public AppelDeFonctionContext appelDeFonction(int i) {
 			return getRuleContext(AppelDeFonctionContext.class,i);
 		}
-		public TerminalNode PLUS() { return getToken(B314Parser.PLUS, 0); }
-		public TerminalNode MOINS() { return getToken(B314Parser.MOINS, 0); }
 		public ExprEntPlusMoinsGaucheGauheContext(ExprEntContext ctx) { copyFrom(ctx); }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
@@ -991,10 +983,9 @@ public class B314Parser extends Parser {
 					break;
 				}
 				setState(86);
-				((ExprEntMulDivGauheEntContext)_localctx).op = _input.LT(1);
 				_la = _input.LA(1);
 				if ( !((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << MUL) | (1L << DIV) | (1L << DIV_ENT))) != 0)) ) {
-					((ExprEntMulDivGauheEntContext)_localctx).op = (Token)_errHandler.recoverInline(this);
+				_errHandler.recoverInline(this);
 				}
 				else {
 					if ( _input.LA(1)==Token.EOF ) matchedEOF = true;
@@ -1027,10 +1018,9 @@ public class B314Parser extends Parser {
 					break;
 				}
 				setState(93);
-				((ExprEntMulDivGaucheGauheContext)_localctx).op = _input.LT(1);
 				_la = _input.LA(1);
 				if ( !((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << MUL) | (1L << DIV) | (1L << DIV_ENT))) != 0)) ) {
-					((ExprEntMulDivGaucheGauheContext)_localctx).op = (Token)_errHandler.recoverInline(this);
+				_errHandler.recoverInline(this);
 				}
 				else {
 					if ( _input.LA(1)==Token.EOF ) matchedEOF = true;
@@ -1077,10 +1067,9 @@ public class B314Parser extends Parser {
 					break;
 				}
 				setState(102);
-				((ExprEntPlusMoinsGauheEntContext)_localctx).op = _input.LT(1);
 				_la = _input.LA(1);
 				if ( !(_la==PLUS || _la==MOINS) ) {
-					((ExprEntPlusMoinsGauheEntContext)_localctx).op = (Token)_errHandler.recoverInline(this);
+				_errHandler.recoverInline(this);
 				}
 				else {
 					if ( _input.LA(1)==Token.EOF ) matchedEOF = true;
@@ -1113,10 +1102,9 @@ public class B314Parser extends Parser {
 					break;
 				}
 				setState(109);
-				((ExprEntPlusMoinsGaucheGauheContext)_localctx).op = _input.LT(1);
 				_la = _input.LA(1);
 				if ( !(_la==PLUS || _la==MOINS) ) {
-					((ExprEntPlusMoinsGaucheGauheContext)_localctx).op = (Token)_errHandler.recoverInline(this);
+				_errHandler.recoverInline(this);
 				}
 				else {
 					if ( _input.LA(1)==Token.EOF ) matchedEOF = true;
@@ -1174,10 +1162,9 @@ public class B314Parser extends Parser {
 						setState(120);
 						if (!(precpred(_ctx, 9))) throw new FailedPredicateException(this, "precpred(_ctx, 9)");
 						setState(121);
-						((ExprEntMulDivEntEntContext)_localctx).op = _input.LT(1);
 						_la = _input.LA(1);
 						if ( !((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << MUL) | (1L << DIV) | (1L << DIV_ENT))) != 0)) ) {
-							((ExprEntMulDivEntEntContext)_localctx).op = (Token)_errHandler.recoverInline(this);
+						_errHandler.recoverInline(this);
 						}
 						else {
 							if ( _input.LA(1)==Token.EOF ) matchedEOF = true;
@@ -1195,10 +1182,9 @@ public class B314Parser extends Parser {
 						setState(123);
 						if (!(precpred(_ctx, 5))) throw new FailedPredicateException(this, "precpred(_ctx, 5)");
 						setState(124);
-						((ExprEntPlusMoinsEntEntContext)_localctx).op = _input.LT(1);
 						_la = _input.LA(1);
 						if ( !(_la==PLUS || _la==MOINS) ) {
-							((ExprEntPlusMoinsEntEntContext)_localctx).op = (Token)_errHandler.recoverInline(this);
+						_errHandler.recoverInline(this);
 						}
 						else {
 							if ( _input.LA(1)==Token.EOF ) matchedEOF = true;
@@ -1216,10 +1202,9 @@ public class B314Parser extends Parser {
 						setState(126);
 						if (!(precpred(_ctx, 8))) throw new FailedPredicateException(this, "precpred(_ctx, 8)");
 						setState(127);
-						((ExprEntMulDivEntGauheContext)_localctx).op = _input.LT(1);
 						_la = _input.LA(1);
 						if ( !((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << MUL) | (1L << DIV) | (1L << DIV_ENT))) != 0)) ) {
-							((ExprEntMulDivEntGauheContext)_localctx).op = (Token)_errHandler.recoverInline(this);
+						_errHandler.recoverInline(this);
 						}
 						else {
 							if ( _input.LA(1)==Token.EOF ) matchedEOF = true;
@@ -1251,10 +1236,9 @@ public class B314Parser extends Parser {
 						setState(132);
 						if (!(precpred(_ctx, 4))) throw new FailedPredicateException(this, "precpred(_ctx, 4)");
 						setState(133);
-						((ExprEntPlusMoinsEntGauheContext)_localctx).op = _input.LT(1);
 						_la = _input.LA(1);
 						if ( !(_la==PLUS || _la==MOINS) ) {
-							((ExprEntPlusMoinsEntGauheContext)_localctx).op = (Token)_errHandler.recoverInline(this);
+						_errHandler.recoverInline(this);
 						}
 						else {
 							if ( _input.LA(1)==Token.EOF ) matchedEOF = true;
@@ -1463,7 +1447,6 @@ public class B314Parser extends Parser {
 		}
 	}
 	public static class ExprBoolAndOrBoolGaucheContext extends ExprBoolContext {
-		public Token op;
 		public ExprBoolContext exprBool() {
 			return getRuleContext(ExprBoolContext.class,0);
 		}
@@ -1540,7 +1523,6 @@ public class B314Parser extends Parser {
 		}
 	}
 	public static class ExprBoolAndOrBoolBoolContext extends ExprBoolContext {
-		public Token op;
 		public List<ExprBoolContext> exprBool() {
 			return getRuleContexts(ExprBoolContext.class);
 		}
@@ -1709,18 +1691,17 @@ public class B314Parser extends Parser {
 		}
 	}
 	public static class ExprBoolAndOrGaucheBoolContext extends ExprBoolContext {
-		public Token op;
 		public ExprBoolContext exprBool() {
 			return getRuleContext(ExprBoolContext.class,0);
 		}
+		public TerminalNode AND() { return getToken(B314Parser.AND, 0); }
+		public TerminalNode OR() { return getToken(B314Parser.OR, 0); }
 		public ExprGContext exprG() {
 			return getRuleContext(ExprGContext.class,0);
 		}
 		public AppelDeFonctionContext appelDeFonction() {
 			return getRuleContext(AppelDeFonctionContext.class,0);
 		}
-		public TerminalNode AND() { return getToken(B314Parser.AND, 0); }
-		public TerminalNode OR() { return getToken(B314Parser.OR, 0); }
 		public ExprBoolAndOrGaucheBoolContext(ExprBoolContext ctx) { copyFrom(ctx); }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
@@ -1763,7 +1744,8 @@ public class B314Parser extends Parser {
 		}
 	}
 	public static class ExprBoolAndOrGaucheGaucheContext extends ExprBoolContext {
-		public Token op;
+		public TerminalNode AND() { return getToken(B314Parser.AND, 0); }
+		public TerminalNode OR() { return getToken(B314Parser.OR, 0); }
 		public List<ExprGContext> exprG() {
 			return getRuleContexts(ExprGContext.class);
 		}
@@ -1776,8 +1758,6 @@ public class B314Parser extends Parser {
 		public AppelDeFonctionContext appelDeFonction(int i) {
 			return getRuleContext(AppelDeFonctionContext.class,i);
 		}
-		public TerminalNode AND() { return getToken(B314Parser.AND, 0); }
-		public TerminalNode OR() { return getToken(B314Parser.OR, 0); }
 		public ExprBoolAndOrGaucheGaucheContext(ExprBoolContext ctx) { copyFrom(ctx); }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
@@ -1794,7 +1774,8 @@ public class B314Parser extends Parser {
 		}
 	}
 	public static class ExprBoolInfSupEntContext extends ExprBoolContext {
-		public Token op;
+		public TerminalNode INF() { return getToken(B314Parser.INF, 0); }
+		public TerminalNode SUP() { return getToken(B314Parser.SUP, 0); }
 		public List<ExprEntContext> exprEnt() {
 			return getRuleContexts(ExprEntContext.class);
 		}
@@ -1813,8 +1794,6 @@ public class B314Parser extends Parser {
 		public ExprGContext exprG(int i) {
 			return getRuleContext(ExprGContext.class,i);
 		}
-		public TerminalNode INF() { return getToken(B314Parser.INF, 0); }
-		public TerminalNode SUP() { return getToken(B314Parser.SUP, 0); }
 		public ExprBoolInfSupEntContext(ExprBoolContext ctx) { copyFrom(ctx); }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
@@ -2108,10 +2087,9 @@ public class B314Parser extends Parser {
 					break;
 				}
 				setState(202);
-				((ExprBoolInfSupEntContext)_localctx).op = _input.LT(1);
 				_la = _input.LA(1);
 				if ( !(_la==INF || _la==SUP) ) {
-					((ExprBoolInfSupEntContext)_localctx).op = (Token)_errHandler.recoverInline(this);
+				_errHandler.recoverInline(this);
 				}
 				else {
 					if ( _input.LA(1)==Token.EOF ) matchedEOF = true;
@@ -2164,10 +2142,9 @@ public class B314Parser extends Parser {
 					break;
 				}
 				setState(212);
-				((ExprBoolAndOrGaucheBoolContext)_localctx).op = _input.LT(1);
 				_la = _input.LA(1);
 				if ( !(_la==AND || _la==OR) ) {
-					((ExprBoolAndOrGaucheBoolContext)_localctx).op = (Token)_errHandler.recoverInline(this);
+				_errHandler.recoverInline(this);
 				}
 				else {
 					if ( _input.LA(1)==Token.EOF ) matchedEOF = true;
@@ -2200,10 +2177,9 @@ public class B314Parser extends Parser {
 					break;
 				}
 				setState(219);
-				((ExprBoolAndOrGaucheGaucheContext)_localctx).op = _input.LT(1);
 				_la = _input.LA(1);
 				if ( !(_la==AND || _la==OR) ) {
-					((ExprBoolAndOrGaucheGaucheContext)_localctx).op = (Token)_errHandler.recoverInline(this);
+				_errHandler.recoverInline(this);
 				}
 				else {
 					if ( _input.LA(1)==Token.EOF ) matchedEOF = true;
@@ -2309,10 +2285,9 @@ public class B314Parser extends Parser {
 						setState(240);
 						if (!(precpred(_ctx, 7))) throw new FailedPredicateException(this, "precpred(_ctx, 7)");
 						setState(241);
-						((ExprBoolAndOrBoolBoolContext)_localctx).op = _input.LT(1);
 						_la = _input.LA(1);
 						if ( !(_la==AND || _la==OR) ) {
-							((ExprBoolAndOrBoolBoolContext)_localctx).op = (Token)_errHandler.recoverInline(this);
+						_errHandler.recoverInline(this);
 						}
 						else {
 							if ( _input.LA(1)==Token.EOF ) matchedEOF = true;
@@ -2356,10 +2331,9 @@ public class B314Parser extends Parser {
 						setState(249);
 						if (!(precpred(_ctx, 6))) throw new FailedPredicateException(this, "precpred(_ctx, 6)");
 						setState(250);
-						((ExprBoolAndOrBoolGaucheContext)_localctx).op = _input.LT(1);
 						_la = _input.LA(1);
 						if ( !(_la==AND || _la==OR) ) {
-							((ExprBoolAndOrBoolGaucheContext)_localctx).op = (Token)_errHandler.recoverInline(this);
+						_errHandler.recoverInline(this);
 						}
 						else {
 							if ( _input.LA(1)==Token.EOF ) matchedEOF = true;

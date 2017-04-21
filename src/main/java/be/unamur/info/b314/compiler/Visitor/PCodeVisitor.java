@@ -216,15 +216,6 @@ public class PCodeVisitor extends B314BaseVisitor<Object>{
 
 	@Override public Object visitWhile(B314Parser.WhileContext ctx) { return null; }
 
-	@Override public Object visitAffectationGaucheDroite(B314Parser.AffectationGaucheDroiteContext ctx) { return null; }
-
-	@Override public Object visitAffectationGaucheDroiteBool(B314Parser.AffectationGaucheDroiteBoolContext ctx) { return null; }
-
-	@Override public Object visitAffectationGaucheDroiteCase(B314Parser.AffectationGaucheDroiteCaseContext ctx) { return null; }
-
-	@Override public Object visitAffectationGaucheDroiteGauche(B314Parser.AffectationGaucheDroiteGaucheContext ctx) { return null; }
-
-	@Override public Object visitAffectationGaucheDroiteFonction(B314Parser.AffectationGaucheDroiteFonctionContext ctx) { return null; }
 
 	@Override public Object visitCompute(B314Parser.ComputeContext ctx) { return null; }
 

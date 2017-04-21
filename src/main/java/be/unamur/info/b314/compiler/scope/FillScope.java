@@ -153,7 +153,7 @@ public class FillScope extends B314BaseListener {
         public void exitVarDecl(B314Parser.VarDeclContext ctx){
             if(CurrentSymbole.getType() == null) throw new RuntimeException();
             else {
-                System.out.println(CurrentSymbole.toString());
+                //System.out.println(CurrentSymbole.toString());
                 CurrentScope.AddSymbole(CurrentSymbole);                
                 if(CurrentSymbole.getIsParam()){
                     Symbole sym = CurrentScope.FoundSymbole(CurrentScope.GetName());
@@ -226,8 +226,8 @@ public class FillScope extends B314BaseListener {
 	       
 	@Override 
         public void exitFctTypeVoid(B314Parser.FctTypeVoidContext ctx) {
-            System.out.println("Hello jessi");
-            System.out.println(CurrentSymbole);
+            //System.out.println("Hello jessi");
+            //System.out.println(CurrentSymbole);
             if(CurrentSymbole.getIsFunction() == true){
                 //CurrentIsFonction = false;
                 CurrentSymbole.setType(ctx.VOID().getText());

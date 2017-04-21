@@ -28,14 +28,14 @@ exprD: exprEnt                 #exprDInteger
 
 exprEnt: entier                                                   #exprEntEntier
         | environnementInt                                         #exprEntEnvironnement
-        | exprEnt op=(MUL|DIV|DIV_ENT) exprEnt             #exprEntMulDivEntEnt
-        | exprEnt op=(MUL|DIV|DIV_ENT) (exprG|appelDeFonction)            #exprEntMulDivEntGauhe
-        | (exprG|appelDeFonction) op=(MUL|DIV|DIV_ENT) exprEnt             #exprEntMulDivGauheEnt
-        | (exprG|appelDeFonction) op=(MUL|DIV|DIV_ENT) (exprG|appelDeFonction)             #exprEntMulDivGaucheGauhe
-        | exprEnt op=(PLUS|MOINS) exprEnt             #exprEntPlusMoinsEntEnt
-        | exprEnt op=(PLUS|MOINS) (exprG|appelDeFonction)             #exprEntPlusMoinsEntGauhe
-        | (exprG|appelDeFonction) op=(PLUS|MOINS) exprEnt             #exprEntPlusMoinsGauheEnt
-        | (exprG|appelDeFonction) op=(PLUS|MOINS) (exprG|appelDeFonction)             #exprEntPlusMoinsGaucheGauhe
+        | exprEnt  (MUL|DIV|DIV_ENT) exprEnt             #exprEntMulDivEntEnt
+        | exprEnt  (MUL|DIV|DIV_ENT) (exprG|appelDeFonction)            #exprEntMulDivEntGauhe
+        | (exprG|appelDeFonction)  (MUL|DIV|DIV_ENT) exprEnt             #exprEntMulDivGauheEnt
+        | (exprG|appelDeFonction)  (MUL|DIV|DIV_ENT) (exprG|appelDeFonction)             #exprEntMulDivGaucheGauhe
+        | exprEnt  (PLUS|MOINS) exprEnt             #exprEntPlusMoinsEntEnt
+        | exprEnt  (PLUS|MOINS) (exprG|appelDeFonction)             #exprEntPlusMoinsEntGauhe
+        | (exprG|appelDeFonction)  (PLUS|MOINS) exprEnt             #exprEntPlusMoinsGauheEnt
+        | (exprG|appelDeFonction)  (PLUS|MOINS) (exprG|appelDeFonction)             #exprEntPlusMoinsGaucheGauhe
         | PAR_OUVERT exprEnt PAR_FERME                               #exprEntParennthese
         ;
 
@@ -52,11 +52,11 @@ exprBool: TRUE                                                      #exprBoolTru
          | exprBool EGALE exprBool                               #exprBoolEgaleBoolean
          | (appelDeFonction|exprG) EGALE exprBool                     #exprBoolEgaleGaucheBool
          | exprBool EGALE (appelDeFonction|exprG)                     #exprBoolEgaleBoolGauche
-         | (exprEnt|appelDeFonction|exprG) op=(INF|SUP) (exprEnt|appelDeFonction|exprG)                          #exprBoolInfSupEnt
-         | exprBool op=(AND|OR) exprBool                         #exprBoolAndOrBoolBool
-         | exprBool op=(AND|OR) (exprG|appelDeFonction)                         #exprBoolAndOrBoolGauche
-         | (exprG|appelDeFonction) op=(AND|OR) exprBool                         #exprBoolAndOrGaucheBool
-         | (exprG|appelDeFonction) op=(AND|OR) (exprG|appelDeFonction)                         #exprBoolAndOrGaucheGauche
+         | (exprEnt|appelDeFonction|exprG)  (INF|SUP) (exprEnt|appelDeFonction|exprG)                          #exprBoolInfSupEnt
+         | exprBool  (AND|OR) exprBool                         #exprBoolAndOrBoolBool
+         | exprBool  (AND|OR) (exprG|appelDeFonction)                         #exprBoolAndOrBoolGauche
+         | (exprG|appelDeFonction)  (AND|OR) exprBool                         #exprBoolAndOrGaucheBool
+         | (exprG|appelDeFonction)  (AND|OR) (exprG|appelDeFonction)                         #exprBoolAndOrGaucheGauche
          | NOT exprBool                                                 #exprBoolNot
          | NOT (exprG|appelDeFonction)                                                    #exprBoolNotGauche
          | PAR_OUVERT exprBool PAR_FERME                               #exprBoolParennthese
@@ -112,7 +112,7 @@ instruction: SKIPPPP                                                   #skipppp
              | SET exprG TO exprCase                                      #affectationGaucheDroiteCase 
              | SET exprG TO exprG                                      #affectationGaucheDroiteGauche 
              | SET exprG TO appelDeFonction                                      #affectationGaucheDroiteFonction 
-             | COMPUTE exprD                                         #compute
+             | COMPUTE exprD                                        #compute
              | NEXT action                                             #nextAction
              ;
 
