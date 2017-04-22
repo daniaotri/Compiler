@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="21" failures="0" name="be.unamur.info.b314.compiler.main.B314nextinstructionSyntaxTest" time="0.063" errors="0" skipped="0">
+<testsuite tests="21" failures="0" name="be.unamur.info.b314.compiler.main.B314nextinstructionSyntaxTest" time="0.044" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.8.0_91\jre\bin"/>
@@ -61,25 +61,25 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase classname="be.unamur.info.b314.compiler.main.B314nextinstructionSyntaxTest" name="testnextinstruction_next_use_dirt_ko" time="0.004"/>
-  <testcase classname="be.unamur.info.b314.compiler.main.B314nextinstructionSyntaxTest" name="testnextinstruction_next_use_fruits_ok" time="0"/>
-  <testcase classname="be.unamur.info.b314.compiler.main.B314nextinstructionSyntaxTest" name="testnextinstruction_next_move_west_ok" time="0.004"/>
+  <testcase classname="be.unamur.info.b314.compiler.main.B314nextinstructionSyntaxTest" name="testnextinstruction_next_use_dirt_ko" time="0"/>
+  <testcase classname="be.unamur.info.b314.compiler.main.B314nextinstructionSyntaxTest" name="testnextinstruction_next_use_fruits_ok" time="0.006"/>
+  <testcase classname="be.unamur.info.b314.compiler.main.B314nextinstructionSyntaxTest" name="testnextinstruction_next_move_west_ok" time="0.006"/>
   <testcase classname="be.unamur.info.b314.compiler.main.B314nextinstructionSyntaxTest" name="testnextinstruction_next_use_radio_ok" time="0.001"/>
-  <testcase classname="be.unamur.info.b314.compiler.main.B314nextinstructionSyntaxTest" name="testnextinstruction_next_use_soda_ok" time="0.001"/>
-  <testcase classname="be.unamur.info.b314.compiler.main.B314nextinstructionSyntaxTest" name="testnextinstruction_next_move_north_ok" time="0.001"/>
-  <testcase classname="be.unamur.info.b314.compiler.main.B314nextinstructionSyntaxTest" name="testnextinstruction_next_do_nothing_ok" time="0.001"/>
-  <testcase classname="be.unamur.info.b314.compiler.main.B314nextinstructionSyntaxTest" name="testnextinstruction_next_use_map_ok" time="0.007"/>
-  <testcase classname="be.unamur.info.b314.compiler.main.B314nextinstructionSyntaxTest" name="testnextinstruction_next_move_south_ok" time="0.001"/>
-  <testcase classname="be.unamur.info.b314.compiler.main.B314nextinstructionSyntaxTest" name="testnextinstruction_next_move_soda_ko" time="0.004"/>
-  <testcase classname="be.unamur.info.b314.compiler.main.B314nextinstructionSyntaxTest" name="testnextinstruction_next_move_east_ok" time="0.003"/>
-  <testcase classname="be.unamur.info.b314.compiler.main.B314nextinstructionSyntaxTest" name="testnextinstruction_next_use_ammo_ko" time="0.005"/>
+  <testcase classname="be.unamur.info.b314.compiler.main.B314nextinstructionSyntaxTest" name="testnextinstruction_next_use_soda_ok" time="0.004"/>
+  <testcase classname="be.unamur.info.b314.compiler.main.B314nextinstructionSyntaxTest" name="testnextinstruction_next_move_north_ok" time="0"/>
+  <testcase classname="be.unamur.info.b314.compiler.main.B314nextinstructionSyntaxTest" name="testnextinstruction_next_do_nothing_ok" time="0.003"/>
+  <testcase classname="be.unamur.info.b314.compiler.main.B314nextinstructionSyntaxTest" name="testnextinstruction_next_use_map_ok" time="0"/>
+  <testcase classname="be.unamur.info.b314.compiler.main.B314nextinstructionSyntaxTest" name="testnextinstruction_next_move_south_ok" time="0.003"/>
+  <testcase classname="be.unamur.info.b314.compiler.main.B314nextinstructionSyntaxTest" name="testnextinstruction_next_move_soda_ko" time="0.002"/>
+  <testcase classname="be.unamur.info.b314.compiler.main.B314nextinstructionSyntaxTest" name="testnextinstruction_next_move_east_ok" time="0"/>
+  <testcase classname="be.unamur.info.b314.compiler.main.B314nextinstructionSyntaxTest" name="testnextinstruction_next_use_ammo_ko" time="0.003"/>
   <testcase classname="be.unamur.info.b314.compiler.main.B314nextinstructionSyntaxTest" name="testnextinstruction_next_shoot_north_ok" time="0.002"/>
-  <testcase classname="be.unamur.info.b314.compiler.main.B314nextinstructionSyntaxTest" name="testnextinstruction_next_use_north_ko" time="0.003"/>
-  <testcase classname="be.unamur.info.b314.compiler.main.B314nextinstructionSyntaxTest" name="testnextinstruction_next_shoot_south_ok" time="0.003"/>
+  <testcase classname="be.unamur.info.b314.compiler.main.B314nextinstructionSyntaxTest" name="testnextinstruction_next_use_north_ko" time="0.001"/>
+  <testcase classname="be.unamur.info.b314.compiler.main.B314nextinstructionSyntaxTest" name="testnextinstruction_next_shoot_south_ok" time="0.002"/>
   <testcase classname="be.unamur.info.b314.compiler.main.B314nextinstructionSyntaxTest" name="testnextinstruction_next_shoot_west_ok" time="0.002"/>
-  <testcase classname="be.unamur.info.b314.compiler.main.B314nextinstructionSyntaxTest" name="testnextinstruction_next_move_map_ko" time="0.003"/>
-  <testcase classname="be.unamur.info.b314.compiler.main.B314nextinstructionSyntaxTest" name="testnextinstruction_next_use_west_ko" time="0.006"/>
-  <testcase classname="be.unamur.info.b314.compiler.main.B314nextinstructionSyntaxTest" name="testnextinstruction_next_shoot_map_ko" time="0"/>
-  <testcase classname="be.unamur.info.b314.compiler.main.B314nextinstructionSyntaxTest" name="testnextinstruction_next_shoot_soda_ko" time="0.009"/>
+  <testcase classname="be.unamur.info.b314.compiler.main.B314nextinstructionSyntaxTest" name="testnextinstruction_next_move_map_ko" time="0.001"/>
+  <testcase classname="be.unamur.info.b314.compiler.main.B314nextinstructionSyntaxTest" name="testnextinstruction_next_use_west_ko" time="0.003"/>
+  <testcase classname="be.unamur.info.b314.compiler.main.B314nextinstructionSyntaxTest" name="testnextinstruction_next_shoot_map_ko" time="0.002"/>
+  <testcase classname="be.unamur.info.b314.compiler.main.B314nextinstructionSyntaxTest" name="testnextinstruction_next_shoot_soda_ko" time="0.002"/>
   <testcase classname="be.unamur.info.b314.compiler.main.B314nextinstructionSyntaxTest" name="testnextinstruction_next_shoot_east_ok" time="0"/>
 </testsuite>

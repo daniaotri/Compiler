@@ -130,7 +130,7 @@ programme: DECLARE AND RETAIN progDecl WHEN YOUR TURN (clauseWhen)* clauseDefaul
 progDecl: (varDecl POINtVIRGULE | fctDecl)*
         ;
  
-fctDecl: ID AS FUNCTION PAR_OUVERT paramDecl PAR_FERME DEUXPOINTS fctType (DECLARE LOCAL(varDecl POINtVIRGULE)+)? DO (instruction)+ DONE    
+fctDecl: ID AS FUNCTION PAR_OUVERT paramDecl PAR_FERME DEUXPOINTS fctType (DECLARE LOCAL(varDecl POINtVIRGULE)+)? DO (instruction)+ DONE   
         ;
 
 fctType: scalar                                     #fctTypeScalar

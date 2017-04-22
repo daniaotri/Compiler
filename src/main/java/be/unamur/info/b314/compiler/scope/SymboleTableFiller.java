@@ -31,6 +31,7 @@ public class SymboleTableFiller extends B314BaseListener {
         boolean CurrentIsFonction;
         int position;
         boolean visitExprD;
+        int level;
         
         public SymboleTableFiller(Scope x){
             GeneralScope = (ScopeImpl) x;
@@ -38,17 +39,13 @@ public class SymboleTableFiller extends B314BaseListener {
             CurrentIsFonction=false;
             position = 1;
             visitExprD = false;
-            //for(int j=0;j<CurrentScope.getChildren().size();j++)
-               // System.out.println(CurrentScope.getChildren().get(j).GetName());
-            //for(int i =0;i<CurrentScope.getSymboles().size();i++)
-            //System.out.println(CurrentScope.getSymboles().get(i).toString());
+            level = 0;
         }
         /**
          *
          *  Renvoie le scope general
          */
         public ScopeImpl getScope(){
-            //GeneralScope.CorrectEveryThing();
             return GeneralScope;
         }
         /**
@@ -85,7 +82,6 @@ public class SymboleTableFiller extends B314BaseListener {
             if(ctx.exprG() != null || ctx.appelDeFonction() != null){
                 Scope parent = CurrentScope.getParent();
                 Symbole sym= parent.FoundSymbole(ctx.getChild(1).getChild(0).getText());
-                //System.out.println("Hello ..."+sym);
                 CheckTwoType(sym.getType(), Type.BOOLEAN.toString().toLowerCase());
             }
         }
@@ -134,41 +130,26 @@ public class SymboleTableFiller extends B314BaseListener {
                 CheckTwoType(sym.getType(), Type.BOOLEAN.toString().toLowerCase());
             }
         }
-       /* 
-        @Override 
-        public void enterAffectation(B314Parser.AffectationContext ctx){
-            visitExprD = false;
-            CurrentSymbole = CurrentScope.FoundSymbole(ctx.exprG().getChild(0).getText());
-            System.out.println(CurrentSymbole.getName());
-            CheckTypeDroite(ctx.exprD(), CurrentSymbole.getType());
-            visitExprD = false;
-        }
-        */
-
+        
 	@Override 
         public void enterAffectationGaucheDroite(B314Parser.AffectationGaucheDroiteContext ctx) {
-                Symbole symbole = CurrentScope.FoundSymbole(ctx.exprG().getChild(0).getText());
-                System.out.println(symbole.getName()+" "+ symbole.getType());
-                String type = symbole.getType();  
-                CheckTwoType(type, Type.INTEGER.toString().toLowerCase());
+            level = 0;
+            checkExpressionGauche(ctx.exprG(),Type.INTEGER.toString().toLowerCase());
+            
         }
         @Override 
         public void enterAffectationGaucheDroiteBool(B314Parser.AffectationGaucheDroiteBoolContext ctx) {
-                Symbole symbole = CurrentScope.FoundSymbole(ctx.exprG().getChild(0).getText());
-                System.out.println(symbole.getName()+" "+ symbole.getType());
-                String type = symbole.getType();  
-                CheckTwoType(type, Type.BOOLEAN.toString().toLowerCase());        
+            level = 0;
+            checkExpressionGauche(ctx.exprG(),Type.BOOLEAN.toString().toLowerCase());      
         }
  
         public void enterAffectationGaucheDroiteCase(B314Parser.AffectationGaucheDroiteCaseContext ctx) {
-                Symbole symbole = CurrentScope.FoundSymbole(ctx.exprG().getChild(0).getText());
-                System.out.println(symbole.getName()+" "+ symbole.getType());
-                String type = symbole.getType();  
-                CheckTwoType(type, Type.SQUARE.toString().toLowerCase());        
+            level = 0;
+            checkExpressionGauche(ctx.exprG(),Type.SQUARE.toString().toLowerCase());   
         }
 
 	@Override 
-        public void enterAffectationGaucheDroiteGauche(B314Parser.AffectationGaucheDroiteGaucheContext ctx) {
+        public void enterAffectationGaucheDroiteGauche(B314Parser.AffectationGaucheDroiteGaucheContext ctx) {            
                 Symbole symbole1 = CurrentScope.FoundSymbole(ctx.exprG(0).getChild(0).getText());
                 Symbole symbole2 = CurrentScope.FoundSymbole(ctx.exprG(1).getChild(0).getText());                
                 CheckTwoType(symbole1.getType(), symbole2.getType());        
@@ -176,9 +157,9 @@ public class SymboleTableFiller extends B314BaseListener {
 
 	@Override 
         public void enterAffectationGaucheDroiteFonction(B314Parser.AffectationGaucheDroiteFonctionContext ctx) {
-                Symbole symbole1 = CurrentScope.FoundSymbole(ctx.exprG().getChild(0).getText());
-                Symbole symbole2 = CurrentScope.FoundSymbole(ctx.appelDeFonction().getChild(0).getText());
-                CheckTwoType(symbole1.getType(), symbole2.getType());
+            Symbole symbole = CurrentScope.FoundSymbole(ctx.appelDeFonction().getChild(0).getText());
+            level = 0;
+            checkExpressionGauche(ctx.exprG(),symbole.getType());
         }
 
         /**
@@ -192,7 +173,6 @@ public class SymboleTableFiller extends B314BaseListener {
             if (sym.getLesParametres().size()>0)
                     {
                     for(int i = 0; i<sym.getLesParametres().size();i++){
-                        //String typeSave = GetTypeParmInFonction(sym.getName(),sym.getLesParametres().get(i));
                         CurrentSymbole = GetSymboleParm(sym.getName(),sym.getLesParametres().get(i));
                         if(ctx.exprD(i)== null)throw new RuntimeException();
                     }        
@@ -213,7 +193,6 @@ public class SymboleTableFiller extends B314BaseListener {
 	@Override 
         public void enterExprGTableauEntFonct(B314Parser.ExprGTableauEntFonctContext ctx) {
             CurrentSymbole = CurrentScope.FoundSymbole(ctx.ID().getText());
-            //if(CurrentSymbole == null)throw new RuntimeException();
             if(CurrentSymbole.getIsArray()){
                 if(CurrentSymbole.getLength().length==1){
                       if(ctx.getChild(4)!=null)throw new RuntimeException();    
@@ -245,8 +224,7 @@ public class SymboleTableFiller extends B314BaseListener {
         }
         @Override
         public void enterExprGTableauEntEnt(B314Parser.ExprGTableauEntEntContext ctx){            
-            CurrentSymbole = CurrentScope.FoundSymbole(ctx.ID().getText());
-            //System.out.println("Alors : "+ CurrentSymbole);
+            CurrentSymbole =choiceTableauExprG(ctx.ID().getText(),ctx.getChild(2)!=null,ctx.getChild(4)!=null );
             if(CurrentSymbole.getIsArray()){
                 if(CurrentSymbole.getLength().length==1){
                     if(ctx.getChild(2)==null)throw new RuntimeException();
@@ -262,7 +240,6 @@ public class SymboleTableFiller extends B314BaseListener {
 	@Override 
         public void enterExprGTableauFonctFonct(B314Parser.ExprGTableauFonctFonctContext ctx) {
             CurrentSymbole = CurrentScope.FoundSymbole(ctx.ID().getText());
-            //System.out.println("Bonjour0 ");
             if(CurrentSymbole.getIsArray()){
                 if(CurrentSymbole.getLength().length==1){
                     if(ctx.getChild(2)==null)throw new RuntimeException();
@@ -270,10 +247,8 @@ public class SymboleTableFiller extends B314BaseListener {
                     if(ctx.getChild(4)!=null)throw new RuntimeException();    
                 }
                 else{
-                    //System.out.println("Bonjour1 ");
                     if(ctx.getChild(2)==null || ctx.getChild(4)==null)throw new RuntimeException();
                     else{
-                        //System.out.println("Bonjour2 ");
                         CheckTwoType(GetType((ParserRuleContext) ctx.getChild(2)),Type.INTEGER.toString().toLowerCase( ));
                         CheckTwoType(GetType((ParserRuleContext) ctx.getChild(4)),Type.INTEGER.toString().toLowerCase( ));                    
                     } 
@@ -313,8 +288,8 @@ public class SymboleTableFiller extends B314BaseListener {
         public void enterExprCaseNearby(B314Parser.ExprCaseNearbyContext ctx) {
             if(ctx.getChild(2) == null || ctx.getChild(4) == null)throw new RuntimeException();
             else{
-                if(ctx.exprG(0)!= null)CheckTwoType(GetType(ctx.exprG(0)),Type.INTEGER.toString().toLowerCase( ));
-                if(ctx.exprG(1)!= null)CheckTwoType(GetType(ctx.exprG(1)),Type.INTEGER.toString().toLowerCase( ));
+                if(ctx.exprG(0)!= null)checkExpressionGauche(ctx.exprG(0),Type.INTEGER.toString().toLowerCase());
+                if(ctx.exprG(1)!= null)checkExpressionGauche(ctx.exprG(1),Type.INTEGER.toString().toLowerCase());
                 if(ctx.appelDeFonction(0)!= null)CheckTwoType(GetType(ctx.appelDeFonction(0)),Type.INTEGER.toString().toLowerCase( ));
                 if(ctx.appelDeFonction(1)!= null)CheckTwoType(GetType(ctx.appelDeFonction(1)),Type.INTEGER.toString().toLowerCase( ));
             }
@@ -325,57 +300,29 @@ public class SymboleTableFiller extends B314BaseListener {
          */
 	@Override 
         public void enterExprBoolNotGauche(B314Parser.ExprBoolNotGaucheContext ctx) {
-            if(ctx.exprG()!= null)CheckTwoType(GetType(ctx.exprG()),Type.BOOLEAN.toString().toLowerCase( ));
+            if(ctx.exprG()!= null)checkExpressionGauche(ctx.exprG(),Type.BOOLEAN.toString().toLowerCase());
             else if(ctx.appelDeFonction()!= null)CheckTwoType(GetType(ctx.appelDeFonction()),Type.BOOLEAN.toString().toLowerCase( ));
             else throw new RuntimeException();
         }
 	@Override 
         public void enterExprBoolAndOrBoolGauche(B314Parser.ExprBoolAndOrBoolGaucheContext ctx) {
-            if(ctx.exprG()!= null)CheckTwoType(GetType(ctx.exprG()),Type.BOOLEAN.toString().toLowerCase( ));
+            if(ctx.exprG()!= null)checkExpressionGauche(ctx.exprG(),Type.BOOLEAN.toString().toLowerCase());
             else if(ctx.appelDeFonction()!= null)CheckTwoType(GetType(ctx.appelDeFonction()),Type.BOOLEAN.toString().toLowerCase( ));    
             else throw new RuntimeException();
         }
 	@Override 
         public void enterExprBoolEgaleBoolGauche(B314Parser.ExprBoolEgaleBoolGaucheContext ctx) {
-            if(ctx.exprG()!= null)CheckTwoType(GetType(ctx.exprG()),Type.BOOLEAN.toString().toLowerCase( ));
+            if(ctx.exprG()!= null)checkExpressionGauche(ctx.exprG(),Type.BOOLEAN.toString().toLowerCase());
             else if(ctx.appelDeFonction()!= null)CheckTwoType(GetType(ctx.appelDeFonction()),Type.BOOLEAN.toString().toLowerCase( ));
             else throw new RuntimeException();
         }
-        /*
-	@Override 
-        public void enterExprBoolEgaleOther(B314Parser.ExprBoolEgaleOtherContext ctx) {
-            if(ctx.exprCase(0)!= null){
-                if(ctx.exprEnt(1)!= null) throw new RuntimeException();
-                if(ctx.exprG(1) != null)CheckTwoType(GetType(ctx.exprG(1)),Type.SQUARE.toString().toLowerCase( ));
-                if(ctx.appelDeFonction(1)!= null)CheckTwoType(GetType(ctx.appelDeFonction(1)),Type.SQUARE.toString().toLowerCase( ));
-            }
-            if(ctx.exprEnt(0)!= null){
-                if(ctx.exprCase(1) != null) throw new RuntimeException();
-                if(ctx.exprG(1) != null)CheckTwoType(GetType(ctx.exprG(1)),Type.INTEGER.toString().toLowerCase( ));
-                if(ctx.appelDeFonction(1)!= null)CheckTwoType(GetType(ctx.appelDeFonction(1)),Type.INTEGER.toString().toLowerCase( ));
-            }
-            if(ctx.exprG(0)!= null){
-                System.out.println("Hello ...");
-                if (ctx.exprCase(1) != null){CheckTwoType(GetType(ctx.exprG(0)),Type.SQUARE.toString().toLowerCase( ));}
-                if(ctx.exprG(1) != null){CheckTwoType(GetType(ctx.exprG(1)),GetType(ctx.exprG(0)));}
-                if(ctx.appelDeFonction(1)!= null){CheckTwoType(GetType(ctx.appelDeFonction(1)),GetType(ctx.exprG(0)));}
-                if(ctx.getChild(2) instanceof B314Parser.ExprEntContext)CheckTwoType(GetType(ctx.exprG(1)),Type.INTEGER.toString().toLowerCase( ));
-            }
-            if(ctx.appelDeFonction(0)!= null){
-                if(ctx.exprEnt(1)!= null) CheckTwoType(GetType(ctx.appelDeFonction(0)),Type.INTEGER.toString().toLowerCase());
-                if (ctx.exprCase(1) != null)CheckTwoType(GetType(ctx.appelDeFonction(0)),Type.SQUARE.toString().toLowerCase( ));
-                if(ctx.exprG(1) != null)CheckTwoType(GetType(ctx.exprG(1)),GetType(ctx.appelDeFonction(0)));
-                if(ctx.appelDeFonction(1)!= null)CheckTwoType(GetType(ctx.appelDeFonction(1)),GetType(ctx.appelDeFonction(0)));   
-            }
-            
-        }*/
         @Override 
         public void enterExprBoolEgaleGEnt(B314Parser.ExprBoolEgaleGEntContext ctx) {
             if(ctx.exprG() == null){
                 CheckTwoType(GetType(ctx.appelDeFonction()),Type.INTEGER.toString().toLowerCase());
             }
             else{
-                CheckTwoType(GetType(ctx.exprG()),Type.INTEGER.toString().toLowerCase());
+                checkExpressionGauche(ctx.exprG(),Type.INTEGER.toString().toLowerCase());
             }
         }
         @Override 
@@ -384,7 +331,7 @@ public class SymboleTableFiller extends B314BaseListener {
                 CheckTwoType(GetType(ctx.appelDeFonction()),Type.SQUARE.toString().toLowerCase());
             }
             else{
-                CheckTwoType(GetType(ctx.exprG()),Type.SQUARE.toString().toLowerCase());
+                checkExpressionGauche(ctx.exprG(),Type.SQUARE.toString().toLowerCase());
             }        
         }
         @Override 
@@ -393,7 +340,7 @@ public class SymboleTableFiller extends B314BaseListener {
                 CheckTwoType(GetType(ctx.appelDeFonction()),Type.INTEGER.toString().toLowerCase());
             }
             else{
-                CheckTwoType(GetType(ctx.exprG()),Type.INTEGER.toString().toLowerCase());
+                checkExpressionGauche(ctx.exprG(),Type.INTEGER.toString().toLowerCase());
             }            
         }
         @Override 
@@ -402,7 +349,7 @@ public class SymboleTableFiller extends B314BaseListener {
                 CheckTwoType(GetType(ctx.appelDeFonction()),Type.SQUARE.toString().toLowerCase());
             }
             else{
-                CheckTwoType(GetType(ctx.exprG()),Type.SQUARE.toString().toLowerCase());
+                checkExpressionGauche(ctx.exprG(),Type.SQUARE.toString().toLowerCase());
             }        
         }
         @Override 
@@ -412,20 +359,21 @@ public class SymboleTableFiller extends B314BaseListener {
         
 	@Override 
         public void enterExprBoolAndOrGaucheBool(B314Parser.ExprBoolAndOrGaucheBoolContext ctx) {
-            if(ctx.exprG()!= null)CheckTwoType(GetType(ctx.exprG()),Type.BOOLEAN.toString().toLowerCase( ));
+            level = 0;                        
+            if(ctx.exprG()!= null)checkExpressionGauche(ctx.exprG(),Type.BOOLEAN.toString().toLowerCase());
             else if(ctx.appelDeFonction()!= null)CheckTwoType(GetType(ctx.appelDeFonction()),Type.BOOLEAN.toString().toLowerCase( ));                     
         }
 	@Override 
         public void enterExprBoolEgaleGaucheBool(B314Parser.ExprBoolEgaleGaucheBoolContext ctx) {
-            if(ctx.exprG()!= null)CheckTwoType(GetType(ctx.exprG()),Type.BOOLEAN.toString().toLowerCase( ));
+            if(ctx.exprG()!= null)checkExpressionGauche(ctx.exprG(),Type.BOOLEAN.toString().toLowerCase());
             else if(ctx.appelDeFonction()!= null)CheckTwoType(GetType(ctx.appelDeFonction()),Type.BOOLEAN.toString().toLowerCase( ));                    
         }
 
 	@Override 
         public void enterExprBoolAndOrGaucheGauche(B314Parser.ExprBoolAndOrGaucheGaucheContext ctx) {
-            if(ctx.exprG(0)!= null)CheckTwoType(GetType(ctx.exprG(0)),Type.BOOLEAN.toString().toLowerCase( ));
+            if(ctx.exprG(0)!= null)checkExpressionGauche(ctx.exprG(0),Type.BOOLEAN.toString().toLowerCase());
             else if(ctx.appelDeFonction(0)!= null)CheckTwoType(GetType(ctx.appelDeFonction(0)),Type.BOOLEAN.toString().toLowerCase( ));
-            if(ctx.exprG(1)!= null)CheckTwoType(GetType(ctx.exprG(1)),Type.BOOLEAN.toString().toLowerCase( ));
+            if(ctx.exprG(1)!= null)checkExpressionGauche(ctx.exprG(1),Type.BOOLEAN.toString().toLowerCase());
             else if(ctx.appelDeFonction(1)!= null)CheckTwoType(GetType(ctx.appelDeFonction(1)),Type.BOOLEAN.toString().toLowerCase( ));
         }
 
@@ -433,8 +381,8 @@ public class SymboleTableFiller extends B314BaseListener {
         public void enterExprBoolInfSupEnt(B314Parser.ExprBoolInfSupEntContext ctx) {
             if(ctx.exprEnt(0)!= null)CheckTwoType(GetType(ctx.exprEnt(0)),Type.INTEGER.toString().toLowerCase( ));
             if(ctx.exprEnt(1)!= null)CheckTwoType(GetType(ctx.exprEnt(1)),Type.INTEGER.toString().toLowerCase( ));
-            if(ctx.exprG(0)!= null)CheckTwoType(GetType(ctx.exprG(0)),Type.INTEGER.toString().toLowerCase( ));
-            if(ctx.exprG(1)!= null)CheckTwoType(GetType(ctx.exprG(1)),Type.INTEGER.toString().toLowerCase( ));
+            if(ctx.exprG(0)!= null)checkExpressionGauche(ctx.exprG(0),Type.INTEGER.toString().toLowerCase());
+            if(ctx.exprG(1)!= null)checkExpressionGauche(ctx.exprG(0),Type.INTEGER.toString().toLowerCase());
             if(ctx.appelDeFonction(0)!= null)CheckTwoType(GetType(ctx.appelDeFonction(0)),Type.INTEGER.toString().toLowerCase( ));
             if(ctx.appelDeFonction(1)!= null)CheckTwoType(GetType(ctx.appelDeFonction(1)),Type.INTEGER.toString().toLowerCase( ));                   
         }
@@ -444,38 +392,38 @@ public class SymboleTableFiller extends B314BaseListener {
          */
 	@Override 
         public void enterExprEntPlusMoinsGauheEnt(B314Parser.ExprEntPlusMoinsGauheEntContext ctx) {
-            if(ctx.exprG()!= null)CheckTwoType(GetType(ctx.exprG()),Type.INTEGER.toString().toLowerCase( ));
+            if(ctx.exprG()!= null)checkExpressionGauche(ctx.exprG(),Type.INTEGER.toString().toLowerCase());
             else if(ctx.appelDeFonction()!= null)CheckTwoType(GetType(ctx.appelDeFonction()),Type.INTEGER.toString().toLowerCase( ));        
         }
 
 	@Override 
         public void enterExprEntMulDivEntGauhe(B314Parser.ExprEntMulDivEntGauheContext ctx) {
-            if(ctx.exprG()!= null)CheckTwoType(GetType(ctx.exprG()),Type.INTEGER.toString().toLowerCase( ));
+            if(ctx.exprG()!= null)checkExpressionGauche(ctx.exprG(),Type.INTEGER.toString().toLowerCase());
             else if(ctx.appelDeFonction()!= null)CheckTwoType(GetType(ctx.appelDeFonction()),Type.INTEGER.toString().toLowerCase( ));        
         }
 
 	@Override 
         public void enterExprEntMulDivGaucheGauhe(B314Parser.ExprEntMulDivGaucheGauheContext ctx) {
-            if(ctx.exprG(0)!= null)CheckTwoType(GetType(ctx.exprG(0)),Type.INTEGER.toString().toLowerCase( ));
-            if(ctx.exprG(1)!= null)CheckTwoType(GetType(ctx.exprG(1)),Type.INTEGER.toString().toLowerCase( ));
+            if(ctx.exprG(0)!= null)checkExpressionGauche(ctx.exprG(0),Type.INTEGER.toString().toLowerCase());
+            if(ctx.exprG(1)!= null)checkExpressionGauche(ctx.exprG(1),Type.INTEGER.toString().toLowerCase());
             if(ctx.appelDeFonction(0)!= null)CheckTwoType(GetType(ctx.appelDeFonction(0)),Type.INTEGER.toString().toLowerCase( ));
             if(ctx.appelDeFonction(1)!= null)CheckTwoType(GetType(ctx.appelDeFonction(1)),Type.INTEGER.toString().toLowerCase( ));         
         }
 
 	@Override 
         public void enterExprEntMulDivGauheEnt(B314Parser.ExprEntMulDivGauheEntContext ctx) {
-            if(ctx.exprG()!= null)CheckTwoType(GetType(ctx.exprG()),Type.INTEGER.toString().toLowerCase( ));
+            if(ctx.exprG()!= null)checkExpressionGauche(ctx.exprG(),Type.INTEGER.toString().toLowerCase());
             else if(ctx.appelDeFonction()!= null)CheckTwoType(GetType(ctx.appelDeFonction()),Type.INTEGER.toString().toLowerCase( ));        
         }
 	@Override 
         public void enterExprEntPlusMoinsEntGauhe(B314Parser.ExprEntPlusMoinsEntGauheContext ctx) {
-            if(ctx.exprG()!= null)CheckTwoType(GetType(ctx.exprG()),Type.INTEGER.toString().toLowerCase( ));
+            if(ctx.exprG()!= null)checkExpressionGauche(ctx.exprG(),Type.INTEGER.toString().toLowerCase());
             else if(ctx.appelDeFonction()!= null)CheckTwoType(GetType(ctx.appelDeFonction()),Type.INTEGER.toString().toLowerCase( ));        
         }
 	@Override 
         public void enterExprEntPlusMoinsGaucheGauhe(B314Parser.ExprEntPlusMoinsGaucheGauheContext ctx) {
-            if(ctx.exprG(0)!= null)CheckTwoType(GetType(ctx.exprG(0)),Type.INTEGER.toString().toLowerCase( ));
-            if(ctx.exprG(1)!= null)CheckTwoType(GetType(ctx.exprG(1)),Type.INTEGER.toString().toLowerCase( ));
+            if(ctx.exprG(0)!= null)checkExpressionGauche(ctx.exprG(0),Type.INTEGER.toString().toLowerCase());
+            if(ctx.exprG(1)!= null)checkExpressionGauche(ctx.exprG(1),Type.INTEGER.toString().toLowerCase());
             if(ctx.appelDeFonction(0)!= null)CheckTwoType(GetType(ctx.appelDeFonction(0)),Type.INTEGER.toString().toLowerCase( ));
             if(ctx.appelDeFonction(1)!= null)CheckTwoType(GetType(ctx.appelDeFonction(1)),Type.INTEGER.toString().toLowerCase( ));         
         }      
@@ -483,45 +431,12 @@ public class SymboleTableFiller extends B314BaseListener {
          *
          * LEs méthodes privates
          */
-        private String GetTypeParmInFonction(String nameFct, String nameParam){
-            Scope parent = CurrentScope.getParent();
-            Scope scopefct = parent.WhoIsThisScope(nameFct);
-            Symbole sym = scopefct.FoundSymbole(nameParam);
-            return sym.getType();            
-        }
-        
         private Symbole GetSymboleParm(String nameFct, String nameParam){
             Scope parent = CurrentScope.getParent();
             Scope scopefct = parent.WhoIsThisScope(nameFct);
             Symbole sym = scopefct.FoundSymbole(nameParam);
             return sym;           
         }
-        private void CheckTypeDroite(ParserRuleContext ctx,String type ){
-            //System.out.println("Quoi???");
-                if(ctx.getChild(0) instanceof B314Parser.ExprDBooleanContext){
-                    //System.out.println("Hello boolean ");
-                    if(!Type.BOOLEAN.toString().toLowerCase().equals(type))throw new RuntimeException();
-                    }
-                if(ctx.getChild(0) instanceof B314Parser.ExprDCaseContext){
-                        //System.out.println("Hello square ");
-                        if(!Type.SQUARE.toString().toLowerCase().equals(type))throw new RuntimeException();
-                    }
-                if(ctx.getChild(0) instanceof B314Parser.ExprDIntegerContext){
-                       // System.out.println("Hello integer ");
-                        if(!Type.INTEGER.toString().toLowerCase().equals(type))throw new RuntimeException();
-                    }
-                if(ctx.getChild(0) instanceof B314Parser.ExprDFonctionContext || ctx.getChild(0) instanceof B314Parser.ExprDGContext){
-                        //System.out.print("Expression de Gauche + fonction ");
-                        Symbole sym = CurrentScope.FoundSymbole(ctx.getChild(0).getChild(0).getText());
-                        //System.out.print(" "+sym.getName()+" "+sym.getType()+ " "+sym.getIsArray());
-                        if(!sym.getType().equals(type)) throw new RuntimeException();                    
-                    }
-                if(ctx.getChild(1) instanceof B314Parser.ExprFonctionParenntheseContext){
-                        Symbole sym = CurrentScope.FoundSymbole(ctx.getChild(1).getChild(0).getText());
-                        if(!sym.getType().equals(type)) throw new RuntimeException();
-                    }                 
-                }            
-
         private String GetType(ParserRuleContext ctx){
             String result = null;
             if(ctx instanceof B314Parser.ExprEntContext) result= Type.INTEGER.toString().toLowerCase();
@@ -529,8 +444,6 @@ public class SymboleTableFiller extends B314BaseListener {
             if(ctx instanceof B314Parser.ExprGContext || ctx instanceof B314Parser.AppelDeFonctionContext){
                 Symbole symbole = CurrentScope.FoundSymbole(ctx.getChild(0).getText());
                 result= symbole.getType(); 
-                //System.out.println(symbole.getName()+" "+result);
-               
             }
             if(ctx instanceof B314Parser.ExprBoolContext)result= Type.BOOLEAN.toString().toLowerCase();
             if(ctx instanceof B314Parser.ExprCaseContext)result= Type.SQUARE.toString().toLowerCase();
@@ -540,5 +453,78 @@ public class SymboleTableFiller extends B314BaseListener {
             if(!type1.equals(type2)) throw new RuntimeException();
         }
         
-        
+        private void checkExpressionGauche(B314Parser.ExprGContext ctx,String type){
+            level = 0;
+            Symbole symbole = CurrentScope.FoundSymbole(ctx.getChild(0).getText());
+                Scope scope = CurrentScope.getParent();
+                Symbole symglobal = null;
+                if(scope != null){
+                    symglobal = scope.FoundSymbole(symbole.getName());
+                    if(symglobal != null){
+                        if(symglobal.equals(symbole))level = 1;
+                        else level = 2;
+                    }else level = 1;
+                }else level = 1;
+                if (level == 1) {
+                    CurrentSymbole = symbole;
+                    CheckTwoType(CurrentSymbole.getType(), type);
+                }
+                else {
+                    int i = 0;
+                    if(symbole.getType().equals(type)){
+                        i++;
+                        CurrentSymbole = symbole;
+                    }
+                    if(symglobal.getType().equals(type)){
+                        i++;
+                        CurrentSymbole = symglobal;
+                    }
+                    if(i==0) throw new RuntimeException();
+                }
+        }
+    private Symbole choiceTableauExprG(String name,boolean one,boolean two){
+            Symbole symbole = CurrentScope.FoundSymbole(name);
+                Scope scope = CurrentScope.getParent();
+                Symbole symglobal = null;
+                if(scope != null){
+                    symglobal = scope.FoundSymbole(symbole.getName());
+                    if(symglobal != null){
+                        if(symglobal.equals(symbole))level = 1;
+                        else level = 2;
+                    }else level = 1;
+                }else level = 1;
+                if (level == 1) {
+                    CurrentSymbole = symbole;
+                }
+                else {
+                    int i = 0;
+                    int j = 0;                
+                    if(symbole.getIsArray())i++;
+                    if(symglobal.getIsArray())j++;
+                    if(i==0 && j == 0) throw new RuntimeException();
+                    if(i==1 && j == 1){
+                        int tailleSymboleLocale = symbole.getLength().length;
+                        int tailleSymboleGlobale = symglobal.getLength().length;
+                        int x = chooseOne(tailleSymboleLocale, tailleSymboleGlobale, one, two);
+                        if(tailleSymboleLocale==x)CurrentSymbole= symbole;
+                        else CurrentSymbole= symglobal;
+                        
+                    }
+                    if(i==1) CurrentSymbole= symbole;
+                    if(j==1) CurrentSymbole= symglobal;                    
+                } 
+            return CurrentSymbole;
+    }
+    private int chooseOne(int i,int j, boolean x, boolean y){
+        if(x && y){
+            if(i == 2) return i;
+            else if(j==2) return j;
+            else throw new RuntimeException();
+        }
+        else {
+            if(i == 1) return i;
+            else if(j== 1) return j;
+            else throw  new RuntimeException();
+        }
+    }
 }

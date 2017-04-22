@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="24" failures="0" name="be.unamur.info.b314.compiler.main.B314ifinstructionSyntaxTest" time="0.592" errors="0" skipped="0">
+<testsuite tests="24" failures="0" name="be.unamur.info.b314.compiler.main.B314ifinstructionSyntaxTest" time="0.212" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.8.0_91\jre\bin"/>
@@ -61,28 +61,28 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase classname="be.unamur.info.b314.compiler.main.B314ifinstructionSyntaxTest" name="testifinstruction_if_else_rightexpr_conditions_skip_ok" time="0"/>
-  <testcase classname="be.unamur.info.b314.compiler.main.B314ifinstructionSyntaxTest" name="testifinstruction_if_else_wrong_type_condition_ko" time="0.501"/>
-  <testcase classname="be.unamur.info.b314.compiler.main.B314ifinstructionSyntaxTest" name="testifinstruction_previous_series_and_if_else_ok" time="0.005"/>
+  <testcase classname="be.unamur.info.b314.compiler.main.B314ifinstructionSyntaxTest" name="testifinstruction_if_else_rightexpr_conditions_skip_ok" time="0.016"/>
+  <testcase classname="be.unamur.info.b314.compiler.main.B314ifinstructionSyntaxTest" name="testifinstruction_if_else_wrong_type_condition_ko" time="0.005"/>
+  <testcase classname="be.unamur.info.b314.compiler.main.B314ifinstructionSyntaxTest" name="testifinstruction_previous_series_and_if_else_ok" time="0.01"/>
   <testcase classname="be.unamur.info.b314.compiler.main.B314ifinstructionSyntaxTest" name="testifinstruction_if_rightexpr_conditions_skip_ok" time="0"/>
-  <testcase classname="be.unamur.info.b314.compiler.main.B314ifinstructionSyntaxTest" name="testifinstruction_if_with_sub_if_wrong_type_condition_1_ko" time="0.002"/>
-  <testcase classname="be.unamur.info.b314.compiler.main.B314ifinstructionSyntaxTest" name="testifinstruction_if_wrong_type_condition_1_ko" time="0.006"/>
-  <testcase classname="be.unamur.info.b314.compiler.main.B314ifinstructionSyntaxTest" name="testifinstruction_if_wrong_type_condition_2_ko" time="0.003"/>
-  <testcase classname="be.unamur.info.b314.compiler.main.B314ifinstructionSyntaxTest" name="testifinstruction_if_else_with_sub_compute_wrong_type_condition_ko" time="0.004"/>
-  <testcase classname="be.unamur.info.b314.compiler.main.B314ifinstructionSyntaxTest" name="testifinstruction_if_else_with_sub_affect_wrong_type_condition_ko" time="0.005"/>
-  <testcase classname="be.unamur.info.b314.compiler.main.B314ifinstructionSyntaxTest" name="testifinstruction_if_with_sub_affect_wrong_type_condition_1_ko" time="0.027"/>
-  <testcase classname="be.unamur.info.b314.compiler.main.B314ifinstructionSyntaxTest" name="testifinstruction_previous_series_and_if_ok" time="0.003"/>
+  <testcase classname="be.unamur.info.b314.compiler.main.B314ifinstructionSyntaxTest" name="testifinstruction_if_with_sub_if_wrong_type_condition_1_ko" time="0.009"/>
+  <testcase classname="be.unamur.info.b314.compiler.main.B314ifinstructionSyntaxTest" name="testifinstruction_if_wrong_type_condition_1_ko" time="0.013"/>
+  <testcase classname="be.unamur.info.b314.compiler.main.B314ifinstructionSyntaxTest" name="testifinstruction_if_wrong_type_condition_2_ko" time="0.001"/>
+  <testcase classname="be.unamur.info.b314.compiler.main.B314ifinstructionSyntaxTest" name="testifinstruction_if_else_with_sub_compute_wrong_type_condition_ko" time="0.006"/>
+  <testcase classname="be.unamur.info.b314.compiler.main.B314ifinstructionSyntaxTest" name="testifinstruction_if_else_with_sub_affect_wrong_type_condition_ko" time="0.013"/>
+  <testcase classname="be.unamur.info.b314.compiler.main.B314ifinstructionSyntaxTest" name="testifinstruction_if_with_sub_affect_wrong_type_condition_1_ko" time="0.008"/>
+  <testcase classname="be.unamur.info.b314.compiler.main.B314ifinstructionSyntaxTest" name="testifinstruction_previous_series_and_if_ok" time="0.01"/>
   <testcase classname="be.unamur.info.b314.compiler.main.B314ifinstructionSyntaxTest" name="testifinstruction_if_else_constant_conditions_skip_ok" time="0"/>
-  <testcase classname="be.unamur.info.b314.compiler.main.B314ifinstructionSyntaxTest" name="testifinstruction_if_else_with_sub_ifs_ok" time="0.003"/>
+  <testcase classname="be.unamur.info.b314.compiler.main.B314ifinstructionSyntaxTest" name="testifinstruction_if_else_with_sub_ifs_ok" time="0.013"/>
   <testcase classname="be.unamur.info.b314.compiler.main.B314ifinstructionSyntaxTest" name="testifinstruction_if_constant_conditions_skip_ok" time="0"/>
-  <testcase classname="be.unamur.info.b314.compiler.main.B314ifinstructionSyntaxTest" name="testifinstruction_check_global_var_value_is_preserved_ok" time="0.003"/>
-  <testcase classname="be.unamur.info.b314.compiler.main.B314ifinstructionSyntaxTest" name="testifinstruction_if_else_with_sub_if_and_wrong_type_condition_ko" time="0.003"/>
-  <testcase classname="be.unamur.info.b314.compiler.main.B314ifinstructionSyntaxTest" name="testifinstruction_if_else_wrong_type_condition_1_ko" time="0.004"/>
-  <testcase classname="be.unamur.info.b314.compiler.main.B314ifinstructionSyntaxTest" name="testifinstruction_if_else_wrong_type_condition_2_ko" time="0.004"/>
+  <testcase classname="be.unamur.info.b314.compiler.main.B314ifinstructionSyntaxTest" name="testifinstruction_check_global_var_value_is_preserved_ok" time="0.001"/>
+  <testcase classname="be.unamur.info.b314.compiler.main.B314ifinstructionSyntaxTest" name="testifinstruction_if_else_with_sub_if_and_wrong_type_condition_ko" time="0.011"/>
+  <testcase classname="be.unamur.info.b314.compiler.main.B314ifinstructionSyntaxTest" name="testifinstruction_if_else_wrong_type_condition_1_ko" time="0.049"/>
+  <testcase classname="be.unamur.info.b314.compiler.main.B314ifinstructionSyntaxTest" name="testifinstruction_if_else_wrong_type_condition_2_ko" time="0.013"/>
   <testcase classname="be.unamur.info.b314.compiler.main.B314ifinstructionSyntaxTest" name="testifinstruction_if_multiple_instructions_ok" time="0"/>
-  <testcase classname="be.unamur.info.b314.compiler.main.B314ifinstructionSyntaxTest" name="testifinstruction_if_with_sub_compute_wrong_type_condition_1_ko" time="0.006"/>
-  <testcase classname="be.unamur.info.b314.compiler.main.B314ifinstructionSyntaxTest" name="testifinstruction_previous_series_and_if_with_sub_if_ok" time="0.004"/>
+  <testcase classname="be.unamur.info.b314.compiler.main.B314ifinstructionSyntaxTest" name="testifinstruction_if_with_sub_compute_wrong_type_condition_1_ko" time="0.012"/>
+  <testcase classname="be.unamur.info.b314.compiler.main.B314ifinstructionSyntaxTest" name="testifinstruction_previous_series_and_if_with_sub_if_ok" time="0.008"/>
   <testcase classname="be.unamur.info.b314.compiler.main.B314ifinstructionSyntaxTest" name="testifinstruction_if_else_multiple_instructions_ok" time="0"/>
-  <testcase classname="be.unamur.info.b314.compiler.main.B314ifinstructionSyntaxTest" name="testifinstruction_if_wrong_type_condition_ko" time="0.002"/>
-  <testcase classname="be.unamur.info.b314.compiler.main.B314ifinstructionSyntaxTest" name="testifinstruction_previous_series_and_if_else_with_sub_if_else_ok" time="0.003"/>
+  <testcase classname="be.unamur.info.b314.compiler.main.B314ifinstructionSyntaxTest" name="testifinstruction_if_wrong_type_condition_ko" time="0.001"/>
+  <testcase classname="be.unamur.info.b314.compiler.main.B314ifinstructionSyntaxTest" name="testifinstruction_previous_series_and_if_else_with_sub_if_else_ok" time="0.011"/>
 </testsuite>

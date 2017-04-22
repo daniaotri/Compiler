@@ -28,7 +28,7 @@ public class B314localvariabledeclSyntaxTest {
     //
     // Serie localvariabledecl OK
     //
-        /*
+        
     @Test
     public void testlocalvariabledecl_when_local_var_same_names_and_different_types_than_global_vars_condition_on_global_vars_in_when_ok() throws Exception{
         CompilerTestHelper.launchCompilation("/syntax/localvariabledecl/ok/when_local_var_same_names_and_different_types_than_global_vars_condition_on_global_vars_in_when.b314", testFolder.newFile(), true, "localvariabledecl: when_local_var_same_names_and_different_types_than_global_vars_condition_on_global_vars_in_when");
@@ -126,5 +126,5 @@ public class B314localvariabledeclSyntaxTest {
     public void testlocalvariabledecl_when_local_var_same_names_ko() throws Exception {
         CompilerTestHelper.launchCompilation("/syntax/localvariabledecl/ko/when_local_var_same_names.b314", testFolder.newFile(), false, "localvariabledecl: when_local_var_same_names");
     }
-*/
+
 }
