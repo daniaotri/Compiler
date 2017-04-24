@@ -114,6 +114,7 @@ public class PCodeVisitor extends B314BaseVisitor<Object>{
 	//Nath
 	@Override
         public Object visitProgramme(B314Parser.ProgrammeContext ctx) {
+	        LOG.error("Je passe ici ------------------------------------------------------");
             printer.printSetStackPointer(Globalscope.getChildren().size()+99);
             printer.printUnconditionalJump("Begin");
             printer.printDefineLabel("Begin");
