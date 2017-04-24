@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: be.unamur.info.b314.compiler.main.B314affectinstructionSyntaxTest
 -------------------------------------------------------------------------------
-Tests run: 36, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.686 sec
+Tests run: 36, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.734 sec
