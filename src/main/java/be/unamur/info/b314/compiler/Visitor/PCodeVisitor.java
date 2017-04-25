@@ -62,16 +62,6 @@ public class PCodeVisitor extends B314BaseVisitor<Object>{
         this.Currentscope = scope;
 	    this.position=1;
         this.LevelScope = 0;
-
-        for(int i= 0; i<99;i++){
-
-
-
-            printer.printLoadAdress(PCodePrinter.PCodeTypes.Int, 0, i);
-            printer.printRead();
-            printer.printStore(PCodePrinter.PCodeTypes.Int);
-
-        }
     }
 
 
@@ -111,11 +101,25 @@ public class PCodeVisitor extends B314BaseVisitor<Object>{
 	}
 	@Override public Object visitAction(B314Parser.ActionContext ctx) { return null; }
 
+
+	private void readInputValues(){
+        for(int i= 0; i<99;i++){
+
+
+
+            printer.printLoadAdress(PCodePrinter.PCodeTypes.Int, 0, i);
+            printer.printRead();
+            printer.printStore(PCodePrinter.PCodeTypes.Int);
+
+        }
+    }
+
 	//Nath
 	@Override
         public Object visitProgramme(B314Parser.ProgrammeContext ctx) {
 	        LOG.error("Je passe ici ------------------------------------------------------");
             printer.printSetStackPointer(Globalscope.getChildren().size()+99);
+            this.readInputValues();
             printer.printUnconditionalJump("Begin");
             printer.printDefineLabel("Begin");
             printer.printLoadConstant(PCodePrinter.PCodeTypes.Int,0);
