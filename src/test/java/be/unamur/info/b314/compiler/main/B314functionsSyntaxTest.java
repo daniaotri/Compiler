@@ -25,7 +25,6 @@ public class B314functionsSyntaxTest {
         }
     ;
     };
-    
 
     //
     // Serie functions OK
@@ -89,7 +88,6 @@ public class B314functionsSyntaxTest {
     public void testfunctions_one_void_function_no_local_var_ok() throws Exception{
         CompilerTestHelper.launchCompilation("/syntax/functions/ok/one_void_function_no_local_var.b314", testFolder.newFile(), true, "functions: one_void_function_no_local_var");
     }
-    
 
     //
     // Serie functions KO

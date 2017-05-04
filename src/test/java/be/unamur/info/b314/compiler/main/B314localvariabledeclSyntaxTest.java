@@ -25,27 +25,10 @@ public class B314localvariabledeclSyntaxTest {
         }
     ;
     };
+
     //
     // Serie localvariabledecl OK
     //
-        
-    @Test
-    public void testlocalvariabledecl_when_local_var_same_names_and_different_types_than_global_vars_condition_on_global_vars_in_when_ok() throws Exception{
-        CompilerTestHelper.launchCompilation("/syntax/localvariabledecl/ok/when_local_var_same_names_and_different_types_than_global_vars_condition_on_global_vars_in_when.b314", testFolder.newFile(), true, "localvariabledecl: when_local_var_same_names_and_different_types_than_global_vars_condition_on_global_vars_in_when");
-    }
-
-    @Test
-    public void testlocalvariabledecl_mixing_ok() throws Exception{
-        CompilerTestHelper.launchCompilation("/syntax/localvariabledecl/ok/mixing.b314", testFolder.newFile(), true, "localvariabledecl: mixing");
-    }
-  
-
-
-    @Test
-    public void testlocalvariabledecl_when_local_var_diff_names_than_global_vars_but_same_name_in_different_whens_ok() throws Exception{
-        CompilerTestHelper.launchCompilation("/syntax/localvariabledecl/ok/when_local_var_diff_names_than_global_vars_but_same_name_in_different_whens.b314", testFolder.newFile(), true, "localvariabledecl: when_local_var_diff_names_than_global_vars_but_same_name_in_different_whens");
-    }
-    
     @Test
     public void testlocalvariabledecl_fct_local_var_diff_names_than_global_vars_ok() throws Exception{
         CompilerTestHelper.launchCompilation("/syntax/localvariabledecl/ok/fct_local_var_diff_names_than_global_vars.b314", testFolder.newFile(), true, "localvariabledecl: fct_local_var_diff_names_than_global_vars");
@@ -71,17 +54,29 @@ public class B314localvariabledeclSyntaxTest {
         CompilerTestHelper.launchCompilation("/syntax/localvariabledecl/ok/fct_local_variable_same_names_as_global.b314", testFolder.newFile(), true, "localvariabledecl: fct_local_variable_same_names_as_global");
     }
 
-
+    @Test
+    public void testlocalvariabledecl_mixing_ok() throws Exception{
+        CompilerTestHelper.launchCompilation("/syntax/localvariabledecl/ok/mixing.b314", testFolder.newFile(), true, "localvariabledecl: mixing");
+    }
 
     @Test
     public void testlocalvariabledecl_when_local_var_diff_names_than_global_vars_ok() throws Exception{
         CompilerTestHelper.launchCompilation("/syntax/localvariabledecl/ok/when_local_var_diff_names_than_global_vars.b314", testFolder.newFile(), true, "localvariabledecl: when_local_var_diff_names_than_global_vars");
     }
 
+    @Test
+    public void testlocalvariabledecl_when_local_var_diff_names_than_global_vars_but_same_name_in_different_whens_ok() throws Exception{
+        CompilerTestHelper.launchCompilation("/syntax/localvariabledecl/ok/when_local_var_diff_names_than_global_vars_but_same_name_in_different_whens.b314", testFolder.newFile(), true, "localvariabledecl: when_local_var_diff_names_than_global_vars_but_same_name_in_different_whens");
+    }
 
     @Test
     public void testlocalvariabledecl_when_local_var_same_names_and_different_types_than_global_vars_ok() throws Exception{
         CompilerTestHelper.launchCompilation("/syntax/localvariabledecl/ok/when_local_var_same_names_and_different_types_than_global_vars.b314", testFolder.newFile(), true, "localvariabledecl: when_local_var_same_names_and_different_types_than_global_vars");
+    }
+
+    @Test
+    public void testlocalvariabledecl_when_local_var_same_names_and_different_types_than_global_vars_condition_on_global_vars_in_when_ok() throws Exception{
+        CompilerTestHelper.launchCompilation("/syntax/localvariabledecl/ok/when_local_var_same_names_and_different_types_than_global_vars_condition_on_global_vars_in_when.b314", testFolder.newFile(), true, "localvariabledecl: when_local_var_same_names_and_different_types_than_global_vars_condition_on_global_vars_in_when");
     }
 
     @Test
