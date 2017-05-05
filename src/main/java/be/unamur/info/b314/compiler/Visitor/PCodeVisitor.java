@@ -54,21 +54,30 @@ public class PCodeVisitor extends B314BaseVisitor<Object>{
     */
 	@Override
         public Object visitProgramme(B314Parser.ProgrammeContext ctx) {
-	        LOG.error("Je passe ici ------------------------------------------------------");
+	    LOG.error("Je passe ici ------------------------------------------------------");
             printer.printSetStackPointer(Globalscope.getChildren().size()+99);
-            this.readInputValues();
+            this.readInputValues();            
             printer.printUnconditionalJump("Begin");
             printer.printDefineLabel("Begin");
             //printer.printLoadConstant(PCodePrinter.PCodeTypes.Int,0);
             printer.printPrin();
             //printer.printUnconditionalJump("byDefault");
             //super.visitProgramme(ctx);
+            printer.printDefine("exit");
+            printer.printPrin();
             printer.printStop();
             return null;
 	}
 
-	@Override public Object visitProgDecl(B314Parser.ProgDeclContext ctx) {
-	    return null;
+	@Override 
+        public Object visitProgDecl(B314Parser.ProgDeclContext ctx) {
+	    List<B314Parser.VarDeclContext> Global = ctx.varDecl();
+            for(int i = 0;i<Global.size();i++)Global.get(i).accept(this);
+            
+            printer.printComments("Liste des fonctions");
+            List<B314Parser.FctDeclContext> Function = ctx.fctDecl();
+            for(int i = 0; i<Function.size();i++) Function.get(i).accept(this);
+            return null;
 	}  
     /*Definition des fonctions*/   
 	@Override 
@@ -84,12 +93,12 @@ public class PCodeVisitor extends B314BaseVisitor<Object>{
 			for(int i = 0; i < Instructions.size();i++)
 				Instructions.get(i).accept(this);
 			printer.printReturnFromFunction();
-
+                        LevelScope--;
+                        Currentscope = Currentscope.getParent();                        
 		}catch(Exception ex){
 			ex.printStackTrace();
 			throw new RuntimeException();
 		}
-
 		return null;
 	}
 
@@ -100,7 +109,12 @@ public class PCodeVisitor extends B314BaseVisitor<Object>{
 
 	@Override public Object visitFctTypeVoid(B314Parser.FctTypeVoidContext ctx) { return null; }
 
-	@Override public Object visitParamDecl(B314Parser.ParamDeclContext ctx) { return null; }
+	@Override 
+        public Object visitParamDecl(B314Parser.ParamDeclContext ctx) { 
+	    List<B314Parser.VarDeclContext> Global = ctx.varDecl();
+            for(int i = 0;i<Global.size();i++)Global.get(i).accept(this);            
+            return null; 
+        }
         
         /*Clause When*/
         
@@ -161,79 +175,72 @@ public class PCodeVisitor extends B314BaseVisitor<Object>{
 
 	@Override public Object visitSkipppp(B314Parser.SkippppContext ctx) { return null; }
 
-	@Override public Object visitIf(B314Parser.IfContext ctx) {
-		String Nomif = "if"+ifIndice;
+	@Override 
+        public Object visitIf(B314Parser.IfContext ctx) {
+		String name = "if"+ifIndice;
 		ifIndice++;
                 ctx.getChild(1).accept(this);
-		printer.printFalseJump(Nomif);
+		printer.printFalseJump(name);
 		List<InstructionContext> Instructions = ctx.instruction();
 		for(int i = 0; i < Instructions.size();i++)
 			Instructions.get(i).accept(this);
-		printer.printDefine(Nomif);
+		printer.printDefine(name);
 		return null;
 	}
 
-	@Override public Object visitIfthenelse(B314Parser.IfthenelseContext ctx) {
-		String Nomif = "if"+ifIndice;
-		String Nomelse = "else"+ifIndice;
-		ifIndice++;
-		List<ParseTree> lsp = ctx.children;
-		Iterator<ParseTree> iterlsp = lsp.iterator();
-
-		ctx.getChild(1).accept(this);
-		printer.printFalseJump(Nomelse);
-		while (iterlsp.hasNext()){
-			ParseTree t =iterlsp.next();
-			if (t.getText().equals("else"));
-			break;
-			//t.accept(this);
-		}
-
-		printer.printFalseJump(Nomif);
-		printer.printDefine(Nomelse);
-		while (iterlsp.hasNext()){
-			ParseTree t= iterlsp.next();
-			if (t.getText().equals("done"))
-				break;
-			t.accept(this);
-		}
-		printer.printDefine(Nomif);
-
-
+	@Override 
+        public Object visitIfthenelse(B314Parser.IfthenelseContext ctx) {
+		String nameIf = "if"+ifIndice;
+		String nameElse = "else"+ifIndice;
+		ifIndice++;                
+		List<ParseTree> liste = ctx.children;
+                ctx.getChild(1).accept(this);
+                printer.printFalseJump(nameElse);
+                for(int i = 0; i<liste.size(); i++){
+                    if(liste.get(i).equals("else"))break;
+                    liste.get(i).accept(this);
+                }
+                printer.printFalseJump(nameIf);
+                printer.printDefine(nameElse);
+                for(int i = 0; i<liste.size(); i++){
+                    if(liste.get(i).equals("done"))break;
+                    liste.get(i).accept(this);
+                }
+                printer.printDefine(nameIf);
         return null;
 	}
 
-	@Override public Object visitWhile(B314Parser.WhileContext ctx) {
-		String whileFin = "whileFin"+whileNumber;
-		String whileDebut= "whileDebut"+whileNumber;
+	@Override 
+        public Object visitWhile(B314Parser.WhileContext ctx) {
+		String StartWhile = "StartWhile"+whileNumber;
+		String EndWhile = "EndWhile"+whileNumber;
 		whileNumber++;
-		printer.printDefine(whileDebut);
+		printer.printDefine(StartWhile);
 		ctx.getChild(1).accept(this);
-
-		printer.printFalseJump(whileFin);
-		List<B314Parser.InstructionContext> instr = ctx.instruction();
-		Iterator<B314Parser.InstructionContext> iter = instr.iterator();
-		 while (iter.hasNext()){
-		 	iter.next().accept(this);
-		 }
-		 printer.printUnconditionalJump(whileDebut);
-		 printer.printDefine(whileFin);
+		printer.printFalseJump(EndWhile);
+		List<B314Parser.InstructionContext> instructions = ctx.instruction();
+                for(int i =0;i<instructions.size();i++) instructions.get(i).accept(this);
+		printer.printUnconditionalJump(StartWhile);
+		printer.printDefine(EndWhile);
 		return null; }
 
-	@Override public Object visitAffectationGaucheDroite(B314Parser.AffectationGaucheDroiteContext ctx) {
+	@Override 
+        public Object visitAffectationGaucheDroite(B314Parser.AffectationGaucheDroiteContext ctx) {
 		ctx.exprG().accept(this);
 		ctx.getChild(3).accept(this);
 		printer.printSetTo(PCodePrinter.PCodeTypes.Int);
 		return null;
 	}
 
-	@Override public Object visitAffectationGaucheDroiteBool(B314Parser.AffectationGaucheDroiteBoolContext ctx) {
+	@Override 
+        public Object visitAffectationGaucheDroiteBool(B314Parser.AffectationGaucheDroiteBoolContext ctx) {
 		ctx.exprG().accept(this);
 		ctx.getChild(3).accept(this);
 		printer.printSetTo(PCodePrinter.PCodeTypes.Bool);
 		return null; }
 
-	@Override public Object visitAffectationGaucheDroiteCase(B314Parser.AffectationGaucheDroiteCaseContext ctx) {
+	@Override 
+        public Object visitAffectationGaucheDroiteCase(B314Parser.AffectationGaucheDroiteCaseContext ctx) {
 
 		ctx.exprG().accept(this);
 		ctx.getChild(3).accept(this);
@@ -241,41 +248,45 @@ public class PCodeVisitor extends B314BaseVisitor<Object>{
 		return null;
 	}
 
-	@Override public Object visitAffectationGaucheDroiteGauche(B314Parser.AffectationGaucheDroiteGaucheContext ctx) {
-
-		Symbole curSym = Currentscope.FoundSymbole(ctx.exprG(0).getChild(0).getText());
-
+	@Override
+        public Object visitAffectationGaucheDroiteGauche(B314Parser.AffectationGaucheDroiteGaucheContext ctx) {
+		Symbole symbole = Currentscope.FoundSymbole(ctx.exprG(0).getChild(0).getText());
 		ctx.exprG(0).accept(this);
 		ctx.exprG(1).accept(this);
-		String curType = curSym.getType();
-
-		if(curType.equals("integer"))
-			printer.printSetTo(PCodePrinter.PCodeTypes.Int);
-		else if (curType.equals("boolean"))
-			printer.printSetTo(PCodePrinter.PCodeTypes.Bool);
-		else;
-
+		String type = symbole.getType();
+		if(type.equals("integer"))printer.printSetTo(PCodePrinter.PCodeTypes.Int);
+		else if (type.equals("boolean"))printer.printSetTo(PCodePrinter.PCodeTypes.Bool);
+                else if(type.equals("square"))printer.printSetTo(PCodePrinter.PCodeTypes.Int);
 		return null;
 	}
 
-
-	@Override public Object visitAffectationGaucheDroiteFonction(B314Parser.AffectationGaucheDroiteFonctionContext ctx) {
-
-		return null;
-	}
-        
-        @Override public Object visitCompute(B314Parser.ComputeContext ctx) { return null; }
-        
-	@Override public Object visitNextAction(B314Parser.NextActionContext ctx) {
-            String nomAction = ctx.action().getText().toLowerCase().replace("\\s+","");
-            printer.printLoadAdress(PCodePrinter.PCodeTypes.Int, 0, 0);
-            printer.printPutValueToStackPoint(PCodePrinter.PCodeTypes.Int, NextActions.valueOf(nomAction).getValue());
-            printer.printSetTo(PCodePrinter.PCodeTypes.Int);
+	@Override
+        public Object visitAffectationGaucheDroiteFonction(B314Parser.AffectationGaucheDroiteFonctionContext ctx) {
+            Symbole symboleGauche = Currentscope.FoundSymbole(ctx.appelDeFonction().getChild(0).getText()); 
+            ctx.exprG().accept(this);
+            ctx.appelDeFonction().accept(this);
+            String type = symboleGauche.getType();
+            if(type.equals("integer"))printer.printSetTo(PCodePrinter.PCodeTypes.Int);
+            else if (type.equals("boolean"))printer.printSetTo(PCodePrinter.PCodeTypes.Bool);
+            else if(type.equals("square"))printer.printSetTo(PCodePrinter.PCodeTypes.Int);
             return null;
 	}
-                
         
-        /*Les actions*/
+        @Override 
+        public Object visitCompute(B314Parser.ComputeContext ctx) { 
+            ctx.getChild(1).accept(this);
+            return null; 
+        }
+        
+	@Override public Object visitNextAction(B314Parser.NextActionContext ctx) {
+            String name = ctx.action().getText().toLowerCase().replace(" ","");
+            printer.printLoadAdress(PCodePrinter.PCodeTypes.Int, 0, 0);
+            printer.printPutValueToStackPoint(PCodePrinter.PCodeTypes.Int, NextActions.valueOf(name).getValue());
+            printer.printSetTo(PCodePrinter.PCodeTypes.Int);
+            printer.printReturnFromFunction();
+            return null;
+	}
+
         
         /*Les expressions Bool*/
 	@Override 
@@ -357,8 +368,6 @@ public class PCodeVisitor extends B314BaseVisitor<Object>{
             return null; 
         }
 
-	@Override public Object visitExprBoolEnvironnement(B314Parser.ExprBoolEnvironnementContext ctx) { return null; }
-
 	@Override 
         public Object visitExprBoolEgaleBoolean(B314Parser.ExprBoolEgaleBooleanContext ctx) { 
             OperationEgale(ctx,PCodePrinter.PCodeTypes.Bool);
@@ -372,7 +381,11 @@ public class PCodeVisitor extends B314BaseVisitor<Object>{
         }
 
 	@Override 
-        public Object visitExprBoolEgaleGG(B314Parser.ExprBoolEgaleGGContext ctx) { return null; }
+        public Object visitExprBoolEgaleGG(B314Parser.ExprBoolEgaleGGContext ctx) { 
+            Symbole symbole = Currentscope.FoundSymbole(ctx.exprG(0).getChild(0).getText());
+            OperationEgale(ctx, getType(symbole));
+            return null; 
+        }
 
 	@Override 
         public Object visitExprBoolAndOrGaucheBool(B314Parser.ExprBoolAndOrGaucheBoolContext ctx) { 
@@ -405,13 +418,6 @@ public class PCodeVisitor extends B314BaseVisitor<Object>{
             return null;
         }
 
-	@Override public Object visitExprEntEntier(B314Parser.ExprEntEntierContext ctx) {
-		return null;
-	}
-
-	@Override
-        public Object visitExprEntEnvironnement(B314Parser.ExprEntEnvironnementContext ctx) {return null;}
-        
 	@Override 
         public Object visitExprEntPlusMoinsGauheEnt(B314Parser.ExprEntPlusMoinsGauheEntContext ctx) { 
             Operation(ctx);
@@ -453,8 +459,6 @@ public class PCodeVisitor extends B314BaseVisitor<Object>{
             return null;
 	}        
         /*Les expressions Case*/
-  
-	@Override public Object visitExprCaseEnvironnement(B314Parser.ExprCaseEnvironnementContext ctx) { return null; }
 
 	@Override public Object visitExprCaseNearby(B314Parser.ExprCaseNearbyContext ctx) { return null; }
 
@@ -467,10 +471,39 @@ public class PCodeVisitor extends B314BaseVisitor<Object>{
         /*Les variables d'environnement*/
         @Override 
         public Object visitEnvironnementInt(B314Parser.EnvironnementIntContext ctx) { 
-            
+            if(ctx.LATITUDE() != null) {};
+            if(ctx.LONGITUDE() != null) {};
+            if(ctx.GRID() != null) {};
+            if(ctx.COUNT()!=null){
+                String name = ctx.getChild(0).getText();
+                switch(name){
+                    case"map":{};break;
+                    case "radio":{};break;
+                    case"ammo":{};break;
+                    case "fruits":{};break;
+                    case"soda":{};break;
+                }
+            }
+            if(ctx.LIFE()!=null)if(ctx.LATITUDE() != null) {};
             return null; 
         }
-	@Override public Object visitEnvironnementBool(B314Parser.EnvironnementBoolContext ctx) { return null; }
+	@Override 
+        public Object visitEnvironnementBool(B314Parser.EnvironnementBoolContext ctx) { 
+            String name = ctx.getChild(0).getText();
+            switch(name){
+                case"ennemi":
+                    if(ctx.NORTH()!= null){}
+                    if(ctx.SOUTH()!= null){}
+                    if(ctx.EAST() != null){}
+                    if(ctx.WEST() != null){}
+                case"graal":
+                    if(ctx.NORTH()!= null){}
+                    if(ctx.SOUTH()!= null){}
+                    if(ctx.EAST() != null){}
+                    if(ctx.WEST() != null){}                
+            }
+            return null;
+        }
 
 	@Override public Object visitEnvironnementCase(B314Parser.EnvironnementCaseContext ctx) { return null; }
 
@@ -490,32 +523,8 @@ public class PCodeVisitor extends B314BaseVisitor<Object>{
 	@Override public Object visitExprGTableauFonctFonct(B314Parser.ExprGTableauFonctFonctContext ctx) { return null; }
 
 	@Override public Object visitExprGTableauEntEnt(B314Parser.ExprGTableauEntEntContext ctx) { return null; }
-        
-        /*Les expressions de droite*/
-	@Override public Object visitExprDInteger(B314Parser.ExprDIntegerContext ctx) { return null; }
 
-	@Override public Object visitExprDBoolean(B314Parser.ExprDBooleanContext ctx) {
-
-		return null;
-	}
-
-	@Override public Object visitExprDCase(B314Parser.ExprDCaseContext ctx) {
-		// printer.printPutValueToStackPoint(PCodeType.integer, SquareType.rock.getValue());
-		//printer.printPutValueToStackPoint(PCodePrinter.PCodeTypes.Int, );
-		return null; }
-
-	@Override public Object visitExprDG(B314Parser.ExprDGContext ctx) { return null; }
-
-	@Override public Object visitExprDFonction(B314Parser.ExprDFonctionContext ctx) { return null; }
-
-	@Override 
-        public Object visitExprFonctionParennthese(B314Parser.ExprFonctionParenntheseContext ctx) { 
-            ctx.getChild(1).accept(this);
-            return null; 
-        }
-        
-       /*Entier*/ 
-        
+       /*Entier*/         
 	@Override 
         public Object visitEntier(B314Parser.EntierContext ctx) { 
             int entier = Integer.parseInt(ctx.NUMBER().getText());
@@ -524,10 +533,8 @@ public class PCodeVisitor extends B314BaseVisitor<Object>{
             return null;
         }
 
-        /*Appel de fonctions*/
-        
+        /*Appel de fonctions*/        
 	@Override public Object visitAppelDeFonction(B314Parser.AppelDeFonctionContext ctx) {
-
 		printer.printMarkStack(FctLevel);
 		FctLevel++;
 		Iterator<B314Parser.ExprDContext> iter= ctx.exprD().iterator();
@@ -539,8 +546,8 @@ public class PCodeVisitor extends B314BaseVisitor<Object>{
 		printer.printCallUserProcedure(comptArg, ctx.ID().getText());
 		FctLevel--;
 		return null; }
+        
         /* Les actions*/
-
 	@Override public Object visitAction(B314Parser.ActionContext ctx) { return null; }
         
         /*Les Types*/
@@ -563,7 +570,20 @@ public class PCodeVisitor extends B314BaseVisitor<Object>{
 	@Override public Object visitArray(B314Parser.ArrayContext ctx) { return null; }
 
         /*Declaration des variables*/
-	@Override public Object visitVarDecl(B314Parser.VarDeclContext ctx) { return null; }
+	@Override 
+        public Object visitVarDecl(B314Parser.VarDeclContext ctx) { 
+            Symbole symbole = Currentscope.FoundSymbole(ctx.ID().getText());
+            int address = 0;
+            printer.printComments("Les variables");
+            if(symbole.getIsArray()){
+                VariableIsArray(symbole);
+                return null;
+            }
+            printer.printLoadAdress(getType(symbole), 0, address);
+            printer.printPutValueToStackPoint(getType(symbole), 0);
+            printer.printSetTo(getType(symbole));
+            return null; 
+        }
         
         /*Les méthodes privates*/
         private void Operation(ParserRuleContext ctx){
@@ -596,6 +616,45 @@ public class PCodeVisitor extends B314BaseVisitor<Object>{
             ctx.getChild(2).accept(this);
             printer.printEqualsValues(types);
         }
+        private PCodePrinter.PCodeTypes getType(Symbole symbole){
+            String type = symbole.getType();
+            PCodePrinter.PCodeTypes type2 = null;
+            if(type.equals("integer"))type2 = PCodePrinter.PCodeTypes.Int;
+            else if (type.equals("boolean"))type2 = PCodePrinter.PCodeTypes.Bool;
+            else if(type.equals("square"))type2 = PCodePrinter.PCodeTypes.Int; 
+            return type2;
+        }
+        private void VariableIsArray(Symbole symbole){
+            int address = 0;
+            PCodePrinter.PCodeTypes type = getType(symbole);
+            int[] taille = symbole.getLength();
+            if(taille.length==1){
+                int index = taille[0];
+                for(int i = 0;i<index;i++){
+                    printer.printLoadAdress(type, 0, address);
+                    printer.printPutValueToStackPoint(type, i);
+                    printer.printIndexedAdressComputation(i);
+                    printer.printPutValueToStackPoint(type, i);
+                    printer.printSetTo(type);
+                }
+            }else{
+                int index1 = taille[0];
+                int index2 = taille[1];
+                for(int i = 0; i<index1;i++)
+                    for(int j = 0;j<index2;j++){
+                        printer.printLoadAdress(type, 0, address);
+                        printer.printPutValueToStackPoint(type, index2);
+                        printer.printPutValueToStackPoint(type, i);
+                        printer.printMul(type);
+                        printer.printPutValueToStackPoint(type, j);
+                        printer.printAdd(type);
+                        printer.printIndexedAdressComputation(j);
+                        printer.printPutValueToStackPoint(type, 0);
+                        printer.printSetTo(type);                    
+                        }
+            }
+        }
+        
 }
       
     
