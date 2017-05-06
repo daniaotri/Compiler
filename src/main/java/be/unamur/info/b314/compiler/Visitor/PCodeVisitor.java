@@ -11,6 +11,7 @@ import be.unamur.info.b314.compiler.B314Parser;
 import be.unamur.info.b314.compiler.B314Parser.InstructionContext;
 import be.unamur.info.b314.compiler.scope.Scope;
 import be.unamur.info.b314.compiler.main.Main;
+import be.unamur.info.b314.compiler.scope.InitialiserLesAdresses;
 import java.util.List;
 import be.unamur.info.b314.compiler.scope.Symbole;
 import org.antlr.v4.runtime.ParserRuleContext;
@@ -28,102 +29,105 @@ public class PCodeVisitor extends B314BaseVisitor<Object>{
 
     private Scope Globalscope;
     private Scope Currentscope;
-    private Symbole symbole;
     private final PCodePrinter printer;
-    private int position;
+    private int LevelWhen;
     private int LevelScope;
-    private  int ifIndice;
-    private int FctLevel;
-    private int whileNumber;
+    private  int IfPosition;
+    private int FunctionPosition;
+    private int WhilePosition;
     
     /*
     * Constructeur
     */
     public PCodeVisitor(Scope scope, PCodePrinter printer) {
-        this.Globalscope = scope;
+        this.Globalscope = new InitialiserLesAdresses(scope).getScope();
         this.printer = printer;
         this.Currentscope = scope;
-	this.position=1;
+	this.LevelWhen=1;
         this.LevelScope = 0;
-        this.ifIndice=1;
-        this.FctLevel=0;
-        this.whileNumber=0;
+        this.IfPosition=1;
+        this.FunctionPosition=0;
+        this.WhilePosition=0;
     }
     /*
     *Debut Du programme
     */
 	@Override
         public Object visitProgramme(B314Parser.ProgrammeContext ctx) {
-	    LOG.error("Je passe ici ------------------------------------------------------");
-            printer.printSetStackPointer(Globalscope.getChildren().size()+99);
-            this.readInputValues();            
-            printer.printUnconditionalJump("Begin");
-            printer.printDefineLabel("Begin");
-            //printer.printLoadConstant(PCodePrinter.PCodeTypes.Int,0);
-            printer.printPrin();
-            //printer.printUnconditionalJump("byDefault");
-            //super.visitProgramme(ctx);
+	    
+            LOG.error("Je passe ici ------------------------------------------------------");
+            printer.printSetStackPointer(Globalscope.getChildren().size());
+            this.readInputValues();   
+            
+            List<ParseTree> childVarGlobal = ctx.progDecl().children;
+            for(int i =0; i<childVarGlobal.size();i++)
+                if(childVarGlobal.get(i)instanceof B314Parser.VarDeclContext) childVarGlobal.get(i).accept(this);
+            printer.printUnconditionalJump("Start");
+            
+            printer.printComments("Liste des fonctions");
+            for(int i =0; i<childVarGlobal.size();i++)
+                if(childVarGlobal.get(i)instanceof B314Parser.FctDeclContext) childVarGlobal.get(i).accept(this);  
+            
+            printer.printComments("Liste des clauses when");
+            List<B314Parser.ClauseWhenContext> childWhen = ctx.clauseWhen();
+            for(int i =0;i<childWhen.size();i++)
+                childWhen.get(i).accept(this);
+            ctx.clauseDefault().accept(this);
+            printer.printDefine("Start");
+            for(int i =0;i<childWhen.size();i++){
+               int position = 1;
+               String name = "clauseWhen"+position;
+               String nameVisite = "when"+position;
+               printer.printDefine(nameVisite);
+               printer.printFalseJump(nameVisite);
+               position ++;
+               printer.printMarkStack(0);
+               printer.printCallUserProcedure(0, name);
+               printer.printUnconditionalJump("exit");        
+            }
+            printer.printFalseJump("default");
+            printer.printDefine("default");
+            ctx.clauseDefault().getChild(1).accept(this);
+            printer.printMarkStack(0);
+            printer.printCallUserProcedure(0, "clauseDefault");
+            printer.printUnconditionalJump("exit");
+            
+            printer.printComments("End");
             printer.printDefine("exit");
             printer.printPrin();
             printer.printStop();
             return null;
-	}
-
-	@Override 
-        public Object visitProgDecl(B314Parser.ProgDeclContext ctx) {
-	    List<B314Parser.VarDeclContext> Global = ctx.varDecl();
-            for(int i = 0;i<Global.size();i++)Global.get(i).accept(this);
-            
-            printer.printComments("Liste des fonctions");
-            List<B314Parser.FctDeclContext> Function = ctx.fctDecl();
-            for(int i = 0; i<Function.size();i++) Function.get(i).accept(this);
-            return null;
-	}  
+	} 
     /*Definition des fonctions*/   
 	@Override 
         public Object visitFctDecl(B314Parser.FctDeclContext ctx) {
-		String name = ctx.ID().getText();
-		try{
-			Scope scope = Currentscope.WhoIsThisScope(name);
-			LevelScope ++;
-			Currentscope = scope;
-			printer.printDefine(name);
-			printer.printSetStackPointer(Currentscope.getChildren().size()+5);
-			List<InstructionContext> Instructions = ctx.instruction();
-			for(int i = 0; i < Instructions.size();i++)
-				Instructions.get(i).accept(this);
-			printer.printReturnFromFunction();
-                        LevelScope--;
-                        Currentscope = Currentscope.getParent();                        
-		}catch(Exception ex){
-			ex.printStackTrace();
-			throw new RuntimeException();
-		}
-		return null;
+            String name = ctx.ID().getText();
+            try{
+		Scope scope = Currentscope.WhoIsThisScope(name);
+		LevelScope ++;
+		Currentscope = scope;
+		printer.printDefine(name);
+		printer.printSetStackPointer(Currentscope.getChildren().size()+5);
+                List<B314Parser.VarDeclContext>VarLocal = ctx.varDecl();
+                for(int i =0;i<VarLocal.size();i++)
+                    VarLocal.get(i).accept(this);
+		List<InstructionContext> Instructions = ctx.instruction();
+		for(int i = 0; i < Instructions.size();i++)
+                    Instructions.get(i).accept(this);
+		printer.printReturnFromFunction();
+                LevelScope--;
+                Currentscope = Currentscope.getParent();                        
+            }catch(Exception ex){
+		ex.printStackTrace();
+		throw new RuntimeException();
+            }
+            return null;
 	}
-
-	@Override public Object visitFctTypeScalar(B314Parser.FctTypeScalarContext ctx) {
-
-	    return null;
-	}
-
-	@Override public Object visitFctTypeVoid(B314Parser.FctTypeVoidContext ctx) { return null; }
-
-	@Override 
-        public Object visitParamDecl(B314Parser.ParamDeclContext ctx) { 
-	    List<B314Parser.VarDeclContext> Global = ctx.varDecl();
-            for(int i = 0;i<Global.size();i++)Global.get(i).accept(this);            
-            return null; 
-        }
-        
-        /*Clause When*/
-        
+        /*Clause When*/        
 	@Override 
         public Object visitClauseWhen(B314Parser.ClauseWhenContext ctx) {
-
-            String name = "clauseWhen"+position;
-
-            position++;
+            String name = "clauseWhen"+LevelWhen;
+            LevelWhen++;
             try{
                 LOG.debug(name);
                 Scope scope = Currentscope.WhoIsThisScope(name);
@@ -134,10 +138,15 @@ public class PCodeVisitor extends B314BaseVisitor<Object>{
                 printer.printLoadAdress(PCodePrinter.PCodeTypes.Int, 0, 0);
                 printer.printPutValueToStackPoint(PCodePrinter.PCodeTypes.Int, 0);
                 printer.printSetTo(PCodePrinter.PCodeTypes.Int);
+                List<B314Parser.VarDeclContext>VarLocal = ctx.varDecl();
+                for(int i =0;i<VarLocal.size();i++)
+                    VarLocal.get(i).accept(this);       
                 List<InstructionContext> Instructions = ctx.instruction();
+                FunctionPosition++;
                 for(int i = 0; i < Instructions.size();i++)
                     Instructions.get(i).accept(this);
-                printer.printReturnFromFunction();
+                //printer.printReturnFromFunction();
+                FunctionPosition--;
                 LevelScope--;
                 Currentscope = Currentscope.getParent();
             }catch(Exception ex){
@@ -155,13 +164,15 @@ public class PCodeVisitor extends B314BaseVisitor<Object>{
                 LevelScope ++;
                 Currentscope = scope;
                 printer.printDefine(name);
-                printer.printSetStackPointer(Currentscope.getChildren().size());
+                printer.printSetStackPointer(Currentscope.getChildren().size()+5);
                 printer.printLoadAdress(PCodePrinter.PCodeTypes.Int, 0, 0);
                 printer.printPutValueToStackPoint(PCodePrinter.PCodeTypes.Int, 0);
                 printer.printSetTo(PCodePrinter.PCodeTypes.Int);
                 List<InstructionContext> Instructions = ctx.instruction();
+                FunctionPosition ++;
                 for(int i = 0; i < Instructions.size();i++)
                     Instructions.get(i).accept(this);
+                FunctionPosition--;
                 printer.printReturnFromFunction();
                 LevelScope--;
                 Currentscope = Currentscope.getParent();
@@ -173,12 +184,10 @@ public class PCodeVisitor extends B314BaseVisitor<Object>{
         
         /*Les instructions*/
 
-	@Override public Object visitSkipppp(B314Parser.SkippppContext ctx) { return null; }
-
 	@Override 
         public Object visitIf(B314Parser.IfContext ctx) {
-		String name = "if"+ifIndice;
-		ifIndice++;
+		String name = "if"+IfPosition;
+		IfPosition++;
                 ctx.getChild(1).accept(this);
 		printer.printFalseJump(name);
 		List<InstructionContext> Instructions = ctx.instruction();
@@ -187,12 +196,11 @@ public class PCodeVisitor extends B314BaseVisitor<Object>{
 		printer.printDefine(name);
 		return null;
 	}
-
 	@Override 
         public Object visitIfthenelse(B314Parser.IfthenelseContext ctx) {
-		String nameIf = "if"+ifIndice;
-		String nameElse = "else"+ifIndice;
-		ifIndice++;                
+		String nameIf = "if"+IfPosition;
+		String nameElse = "else"+IfPosition;
+		IfPosition++;                
 		List<ParseTree> liste = ctx.children;
                 ctx.getChild(1).accept(this);
                 printer.printFalseJump(nameElse);
@@ -200,7 +208,7 @@ public class PCodeVisitor extends B314BaseVisitor<Object>{
                     if(liste.get(i).equals("else"))break;
                     liste.get(i).accept(this);
                 }
-                printer.printFalseJump(nameIf);
+                printer.printUnconditionalJump(nameIf);
                 printer.printDefine(nameElse);
                 for(int i = 0; i<liste.size(); i++){
                     if(liste.get(i).equals("done"))break;
@@ -212,9 +220,9 @@ public class PCodeVisitor extends B314BaseVisitor<Object>{
 
 	@Override 
         public Object visitWhile(B314Parser.WhileContext ctx) {
-		String StartWhile = "StartWhile"+whileNumber;
-		String EndWhile = "EndWhile"+whileNumber;
-		whileNumber++;
+		String StartWhile = "StartWhile"+WhilePosition;
+		String EndWhile = "EndWhile"+WhilePosition;
+		WhilePosition++;
 		printer.printDefine(StartWhile);
 		ctx.getChild(1).accept(this);
 		printer.printFalseJump(EndWhile);
@@ -241,7 +249,6 @@ public class PCodeVisitor extends B314BaseVisitor<Object>{
 
 	@Override 
         public Object visitAffectationGaucheDroiteCase(B314Parser.AffectationGaucheDroiteCaseContext ctx) {
-
 		ctx.exprG().accept(this);
 		ctx.getChild(3).accept(this);
 		printer.printSetTo(PCodePrinter.PCodeTypes.Int);
@@ -253,25 +260,18 @@ public class PCodeVisitor extends B314BaseVisitor<Object>{
 		Symbole symbole = Currentscope.FoundSymbole(ctx.exprG(0).getChild(0).getText());
 		ctx.exprG(0).accept(this);
 		ctx.exprG(1).accept(this);
-		String type = symbole.getType();
-		if(type.equals("integer"))printer.printSetTo(PCodePrinter.PCodeTypes.Int);
-		else if (type.equals("boolean"))printer.printSetTo(PCodePrinter.PCodeTypes.Bool);
-                else if(type.equals("square"))printer.printSetTo(PCodePrinter.PCodeTypes.Int);
+                printer.printSetTo(getType(symbole));
 		return null;
 	}
 
 	@Override
         public Object visitAffectationGaucheDroiteFonction(B314Parser.AffectationGaucheDroiteFonctionContext ctx) {
-            Symbole symboleGauche = Currentscope.FoundSymbole(ctx.appelDeFonction().getChild(0).getText()); 
+            Symbole symbole = Currentscope.FoundSymbole(ctx.appelDeFonction().getChild(0).getText()); 
             ctx.exprG().accept(this);
             ctx.appelDeFonction().accept(this);
-            String type = symboleGauche.getType();
-            if(type.equals("integer"))printer.printSetTo(PCodePrinter.PCodeTypes.Int);
-            else if (type.equals("boolean"))printer.printSetTo(PCodePrinter.PCodeTypes.Bool);
-            else if(type.equals("square"))printer.printSetTo(PCodePrinter.PCodeTypes.Int);
+            printer.printSetTo(getType(symbole));
             return null;
-	}
-        
+	}        
         @Override 
         public Object visitCompute(B314Parser.ComputeContext ctx) { 
             ctx.getChild(1).accept(this);
@@ -376,7 +376,7 @@ public class PCodeVisitor extends B314BaseVisitor<Object>{
 
 	@Override 
         public Object visitExprBoolParennthese(B314Parser.ExprBoolParenntheseContext ctx) { 
-            ctx.getChild(1).accept(this);
+            ctx.exprBool().accept(this);
             return null; 
         }
 
@@ -414,7 +414,7 @@ public class PCodeVisitor extends B314BaseVisitor<Object>{
         
 	@Override 
         public Object visitExprEntParennthese(B314Parser.ExprEntParenntheseContext ctx) { 
-            ctx.getChild(1).accept(this);
+            ctx.exprEnt().accept(this);
             return null;
         }
 
@@ -460,47 +460,88 @@ public class PCodeVisitor extends B314BaseVisitor<Object>{
 	}        
         /*Les expressions Case*/
 
-	@Override public Object visitExprCaseNearby(B314Parser.ExprCaseNearbyContext ctx) { return null; }
+	@Override 
+        public Object visitExprCaseNearby(B314Parser.ExprCaseNearbyContext ctx) { 
+            printer.printLoadAdress(PCodePrinter.PCodeTypes.Int, LevelScope, 17);
+            CheckTableauTwo(ctx,9,9);
+            printer.printIndexedFetch(PCodePrinter.PCodeTypes.Int);
+            return null; 
+        }
 
 	@Override 
         public Object visitExprCaseParennthese(B314Parser.ExprCaseParenntheseContext ctx) { 
-            ctx.getChild(1).accept(this);
+            ctx.exprCase().accept(this);
             return null; 
         }
 	
         /*Les variables d'environnement*/
         @Override 
         public Object visitEnvironnementInt(B314Parser.EnvironnementIntContext ctx) { 
-            if(ctx.LATITUDE() != null) {};
-            if(ctx.LONGITUDE() != null) {};
-            if(ctx.GRID() != null) {};
-            if(ctx.COUNT()!=null){
-                String name = ctx.getChild(0).getText();
-                switch(name){
-                    case"map":{};break;
-                    case "radio":{};break;
-                    case"ammo":{};break;
-                    case "fruits":{};break;
-                    case"soda":{};break;
-                }
+            String name = ctx.getChild(0).getText();
+            switch(name){
+                case"latitude": printer.printLoad(PCodePrinter.PCodeTypes.Int, LevelScope, 0);break;
+                case"longititue":printer.printLoad(PCodePrinter.PCodeTypes.Int, LevelScope, 1);break;
+                case"grid":printer.printLoad(PCodePrinter.PCodeTypes.Int, LevelScope, 2);break;
+                case"map":printer.printLoad(PCodePrinter.PCodeTypes.Int, LevelScope, 3);break;
+                case"radio":printer.printLoad(PCodePrinter.PCodeTypes.Int, LevelScope, 4);break;
+                case"ammo":printer.printLoad(PCodePrinter.PCodeTypes.Int, LevelScope, 5);break;
+                case"fruits":printer.printLoad(PCodePrinter.PCodeTypes.Int, LevelScope, 6);break;
+                case"soda":printer.printLoad(PCodePrinter.PCodeTypes.Int, LevelScope, 7);break;
+                case"life":printer.printLoad(PCodePrinter.PCodeTypes.Int, LevelScope, 8);break;
             }
-            if(ctx.LIFE()!=null)if(ctx.LATITUDE() != null) {};
             return null; 
         }
 	@Override 
-        public Object visitEnvironnementBool(B314Parser.EnvironnementBoolContext ctx) { 
+        public Object visitEnvironnementBool(B314Parser.EnvironnementBoolContext ctx) {          
             String name = ctx.getChild(0).getText();
+            String nameCard = ctx.getChild(3).getText();            
             switch(name){
                 case"ennemi":
-                    if(ctx.NORTH()!= null){}
-                    if(ctx.SOUTH()!= null){}
-                    if(ctx.EAST() != null){}
-                    if(ctx.WEST() != null){}
+                    switch(nameCard){
+                        case"north":
+                            printer.printLoad(PCodePrinter.PCodeTypes.Int, LevelScope, 9);
+                            printer.printPutValueToStackPoint(PCodePrinter.PCodeTypes.Int, 1);
+                            printer.printEqualsValues(PCodePrinter.PCodeTypes.Int);
+                            break;
+                        case"east":
+                            printer.printLoad(PCodePrinter.PCodeTypes.Int, LevelScope, 10);
+                            printer.printPutValueToStackPoint(PCodePrinter.PCodeTypes.Int, 1);
+                            printer.printEqualsValues(PCodePrinter.PCodeTypes.Int);
+                            break;                            
+                        case"south":
+                            printer.printLoad(PCodePrinter.PCodeTypes.Int, LevelScope, 11);
+                            printer.printPutValueToStackPoint(PCodePrinter.PCodeTypes.Int, 1);
+                            printer.printEqualsValues(PCodePrinter.PCodeTypes.Int);
+                            break;                            
+                        case"west":
+                            printer.printLoad(PCodePrinter.PCodeTypes.Int, LevelScope, 12);
+                            printer.printPutValueToStackPoint(PCodePrinter.PCodeTypes.Int, 1);
+                            printer.printEqualsValues(PCodePrinter.PCodeTypes.Int);
+                            break;                            
+                    }
                 case"graal":
-                    if(ctx.NORTH()!= null){}
-                    if(ctx.SOUTH()!= null){}
-                    if(ctx.EAST() != null){}
-                    if(ctx.WEST() != null){}                
+                    switch(nameCard){
+                        case"north":
+                            printer.printLoad(PCodePrinter.PCodeTypes.Int, LevelScope, 13);
+                            printer.printPutValueToStackPoint(PCodePrinter.PCodeTypes.Int, 1);
+                            printer.printEqualsValues(PCodePrinter.PCodeTypes.Int);
+                            break;
+                        case"east":
+                            printer.printLoad(PCodePrinter.PCodeTypes.Int, LevelScope, 14);
+                            printer.printPutValueToStackPoint(PCodePrinter.PCodeTypes.Int, 1);
+                            printer.printEqualsValues(PCodePrinter.PCodeTypes.Int);
+                            break;                            
+                        case"south":
+                            printer.printLoad(PCodePrinter.PCodeTypes.Int, LevelScope, 15);
+                            printer.printPutValueToStackPoint(PCodePrinter.PCodeTypes.Int, 1);
+                            printer.printEqualsValues(PCodePrinter.PCodeTypes.Int);
+                            break;                            
+                        case"west":
+                            printer.printLoad(PCodePrinter.PCodeTypes.Int, LevelScope, 16);
+                            printer.printPutValueToStackPoint(PCodePrinter.PCodeTypes.Int, 1);
+                            printer.printEqualsValues(PCodePrinter.PCodeTypes.Int);
+                            break;                            
+                    }           
             }
             return null;
         }
@@ -511,81 +552,82 @@ public class PCodeVisitor extends B314BaseVisitor<Object>{
         
 	@Override 
         public Object visitExprGVariable(B314Parser.ExprGVariableContext ctx) { 
-            //symbole = Currentscope.FoundSymbole(ctx.ID().getText());
-            
+            Symbole symbole = Currentscope.FoundSymbole(ctx.ID().getText());
+            if(symbole.getIsFunction())printer.printLoad(getType(symbole), LevelScope, 0);
+            else printer.printLoad(getType(symbole), LevelScope, symbole.getAddress());
             return null; 
         }
 
-	@Override public Object visitExprGTableauEntFonct(B314Parser.ExprGTableauEntFonctContext ctx) { return null; }
+	@Override 
+        public Object visitExprGTableauEntFonct(B314Parser.ExprGTableauEntFonctContext ctx) { 
+            Symbole symbole = Currentscope.FoundSymbole(ctx.ID().getText());
+            ManipulationTableau(ctx,symbole);
+            printer.printIndexedFetch(getType(symbole));
+            return null; 
+        }
 
-	@Override public Object visitExprGTableauFonctEnt(B314Parser.ExprGTableauFonctEntContext ctx) { return null; }
+	@Override 
+        public Object visitExprGTableauFonctEnt(B314Parser.ExprGTableauFonctEntContext ctx) { 
+            Symbole symbole = Currentscope.FoundSymbole(ctx.ID().getText());
+            ManipulationTableau(ctx,symbole);
+            printer.printIndexedFetch(getType(symbole));            
+            return null; 
+        }
 
-	@Override public Object visitExprGTableauFonctFonct(B314Parser.ExprGTableauFonctFonctContext ctx) { return null; }
+	@Override 
+        public Object visitExprGTableauFonctFonct(B314Parser.ExprGTableauFonctFonctContext ctx) { 
+            Symbole symbole = Currentscope.FoundSymbole(ctx.ID().getText());
+            ManipulationTableau(ctx,symbole);
+            printer.printIndexedFetch(getType(symbole));            
+            return null; 
+        }
 
-	@Override public Object visitExprGTableauEntEnt(B314Parser.ExprGTableauEntEntContext ctx) { return null; }
+	@Override 
+        public Object visitExprGTableauEntEnt(B314Parser.ExprGTableauEntEntContext ctx) { 
+            Symbole symbole = Currentscope.FoundSymbole(ctx.ID().getText());
+            ManipulationTableau(ctx,symbole);
+            printer.printIndexedFetch(getType(symbole));            
+            return null; 
+        }
 
        /*Entier*/         
 	@Override 
         public Object visitEntier(B314Parser.EntierContext ctx) { 
             int entier = Integer.parseInt(ctx.NUMBER().getText());
-            if(ctx.MOINS()!= null) entier = 0 - entier;
+            if(ctx.MOINS().getText().equals("-")) entier = 0 - entier;
             printer.printPutValueToStackPoint(PCodePrinter.PCodeTypes.Int, entier);
             return null;
         }
 
         /*Appel de fonctions*/        
-	@Override public Object visitAppelDeFonction(B314Parser.AppelDeFonctionContext ctx) {
-		printer.printMarkStack(FctLevel);
-		FctLevel++;
-		Iterator<B314Parser.ExprDContext> iter= ctx.exprD().iterator();
-		int comptArg= 0;
-		while (iter.hasNext()){
-			comptArg++;
-			iter.next().accept(this);
-		}
-		printer.printCallUserProcedure(comptArg, ctx.ID().getText());
-		FctLevel--;
-		return null; }
-        
-        /* Les actions*/
-	@Override public Object visitAction(B314Parser.ActionContext ctx) { return null; }
-        
-        /*Les Types*/
-	@Override public Object visitTypeScalar(B314Parser.TypeScalarContext ctx) { return null; }
-
-	@Override public Object visitTypeArray(B314Parser.TypeArrayContext ctx) { return null; }
-
-	@Override public Object visitScalarBoolean(B314Parser.ScalarBooleanContext ctx) {
-
-		return null;
-	}
-
-	@Override public Object visitScalarInteger(B314Parser.ScalarIntegerContext ctx) {
-
-		//printer.printPutValueToStackPoint(PCodeType.integer, SquareType.rock.getValue());
-		return null; }
-
-	@Override public Object visitScalarSquare(B314Parser.ScalarSquareContext ctx) { return null; }
-
-	@Override public Object visitArray(B314Parser.ArrayContext ctx) { return null; }
-
+	@Override 
+        public Object visitAppelDeFonction(B314Parser.AppelDeFonctionContext ctx) {
+            printer.printMarkStack(FunctionPosition);
+            FunctionPosition++;
+            List<B314Parser.ExprDContext> listeParametre = ctx.exprD();
+            for(int i =0;i<listeParametre.size();i++)
+                listeParametre.get(i).accept(this);
+            printer.printCallUserProcedure(listeParametre.size(), ctx.ID().getText());
+            FunctionPosition--;
+            return null; 
+        }
         /*Declaration des variables*/
 	@Override 
         public Object visitVarDecl(B314Parser.VarDeclContext ctx) { 
             Symbole symbole = Currentscope.FoundSymbole(ctx.ID().getText());
-            int address = 0;
             printer.printComments("Les variables");
             if(symbole.getIsArray()){
                 VariableIsArray(symbole);
                 return null;
             }
-            printer.printLoadAdress(getType(symbole), 0, address);
+            printer.printLoadAdress(getType(symbole), 0, symbole.getAddress());
             printer.printPutValueToStackPoint(getType(symbole), 0);
             printer.printSetTo(getType(symbole));
             return null; 
         }
         
         /*Les méthodes privates*/
+        
         private void Operation(ParserRuleContext ctx){
             ctx.getChild(0).accept(this);
             ctx.getChild(2).accept(this);
@@ -625,13 +667,12 @@ public class PCodeVisitor extends B314BaseVisitor<Object>{
             return type2;
         }
         private void VariableIsArray(Symbole symbole){
-            int address = 0;
             PCodePrinter.PCodeTypes type = getType(symbole);
             int[] taille = symbole.getLength();
             if(taille.length==1){
                 int index = taille[0];
                 for(int i = 0;i<index;i++){
-                    printer.printLoadAdress(type, 0, address);
+                    printer.printLoadAdress(type, 0, symbole.getAddress());
                     printer.printPutValueToStackPoint(type, i);
                     printer.printIndexedAdressComputation(i);
                     printer.printPutValueToStackPoint(type, i);
@@ -642,7 +683,7 @@ public class PCodeVisitor extends B314BaseVisitor<Object>{
                 int index2 = taille[1];
                 for(int i = 0; i<index1;i++)
                     for(int j = 0;j<index2;j++){
-                        printer.printLoadAdress(type, 0, address);
+                        printer.printLoadAdress(type, 0, symbole.getAddress());
                         printer.printPutValueToStackPoint(type, index2);
                         printer.printPutValueToStackPoint(type, i);
                         printer.printMul(type);
@@ -654,7 +695,27 @@ public class PCodeVisitor extends B314BaseVisitor<Object>{
                         }
             }
         }
-        
+        private void CheckTableauTwo(ParserRuleContext ctx,int ligne,int col){
+            printer.printPutValueToStackPoint(PCodePrinter.PCodeTypes.Int, col);
+            ctx.getChild(2).accept(this);
+            printer.printCheck(0, ligne-1);
+            printer.printMul(PCodePrinter.PCodeTypes.Int);
+            ctx.getChild(4).accept(this);
+            printer.printCheck(0, col-1);
+            printer.printAdd(PCodePrinter.PCodeTypes.Int);
+            printer.printIndexedAdressComputation(col);
+        }
+        private void CheckTableauOne(ParserRuleContext ctx, int taille){
+            ctx.getChild(2).accept(this);
+            printer.printCheck(0, taille-1);
+            printer.printIndexedAdressComputation(taille);
+        }
+        private void ManipulationTableau( ParserRuleContext ctx,Symbole symbole){
+            printer.printLoadAdress(getType(symbole), LevelScope, symbole.getAddress());
+            if(symbole.getLength().length==1) CheckTableauOne(ctx, symbole.getLength()[0]);
+            else CheckTableauTwo(ctx, symbole.getLength()[0], symbole.getLength()[1]);
+        }
+ 
 }
       
     

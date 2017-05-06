@@ -1,0 +1,1375 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuite tests="7" failures="7" name="be.unamur.info.b314.compiler.main.B314functionsSemanticsTest" time="0.055" errors="0" skipped="0">
+  <properties>
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+    <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.8.0_91\jre\bin"/>
+    <property name="java.vm.version" value="25.91-b14"/>
+    <property name="java.vm.vendor" value="Oracle Corporation"/>
+    <property name="java.vendor.url" value="http://java.oracle.com/"/>
+    <property name="path.separator" value=";"/>
+    <property name="guice.disable.misplaced.annotation.check" value="true"/>
+    <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
+    <property name="file.encoding.pkg" value="sun.io"/>
+    <property name="user.script" value=""/>
+    <property name="user.country" value="BE"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="sun.os.patch.level" value=""/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="user.dir" value="C:\Users\jessi\Documents\b314-Jour-MonkeyIsland"/>
+    <property name="java.runtime.version" value="1.8.0_91-b14"/>
+    <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment"/>
+    <property name="java.endorsed.dirs" value="C:\Program Files\Java\jdk1.8.0_91\jre\lib\endorsed"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.io.tmpdir" value="C:\Users\jessi\AppData\Local\Temp\"/>
+    <property name="line.separator" value="
+"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="user.variant" value=""/>
+    <property name="os.name" value="Windows 10"/>
+    <property name="maven.ext.class.path" value="C:\Program Files\NetBeans 8.2\java\maven-nblib\netbeans-eventspy.jar"/>
+    <property name="classworlds.conf" value="C:\Program Files\NetBeans 8.2\java\maven\bin\m2.conf"/>
+    <property name="sun.jnu.encoding" value="Cp1252"/>
+    <property name="java.library.path" value="C:\Program Files\Java\jdk1.8.0_91\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\ProgramData\Oracle\Java\javapath;C:\Program Files (x86)\Haskell\bin;C:\Program Files (x86)\Haskell Platform\8.0.1\lib\extralibs\bin;C:\Program Files (x86)\Haskell Platform\8.0.1\bin;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\Haskell Platform\8.0.1\mingw\bin;C:\Program Files\Java\jdk1.8.0_91\bin;C:\Program Files\Java\jre1.8.0_91\bin;C:\Program Files (x86)\GtkSharp\2.12\bin;C:\Program Files\OpenVPN\bin;C:\Program Files\Git\cmd;C:\Program Files (x86)\scala\bin;C:\Program Files (x86)\Skype\Phone\;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\Users\jessi\AppData\Roaming\cabal\bin;C:\Users\jessi\AppData\Local\Microsoft\WindowsApps;;C:\Program Files (x86)\SSH Communications Security\SSH Secure Shell;."/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="java.class.version" value="52.0"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="os.version" value="10.0"/>
+    <property name="user.home" value="C:\Users\jessi"/>
+    <property name="user.timezone" value="Europe/Paris"/>
+    <property name="java.awt.printerjob" value="sun.awt.windows.WPrinterJob"/>
+    <property name="java.specification.version" value="1.8"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="user.name" value="jessi"/>
+    <property name="java.class.path" value="C:\Program Files\NetBeans 8.2\java\maven\boot\plexus-classworlds-2.4.jar"/>
+    <property name="java.vm.specification.version" value="1.8"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="java.home" value="C:\Program Files\Java\jdk1.8.0_91\jre"/>
+    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher -Dmaven.ext.class.path=C:\Program Files\NetBeans 8.2\java\maven-nblib\netbeans-eventspy.jar -Dfile.encoding=UTF-8 clean install"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="user.language" value="fr"/>
+    <property name="awt.toolkit" value="sun.awt.windows.WToolkit"/>
+    <property name="java.vm.info" value="mixed mode"/>
+    <property name="java.version" value="1.8.0_91"/>
+    <property name="java.ext.dirs" value="C:\Program Files\Java\jdk1.8.0_91\jre\lib\ext;C:\WINDOWS\Sun\Java\lib\ext"/>
+    <property name="sun.boot.class.path" value="C:\Program Files\Java\jdk1.8.0_91\jre\lib\resources.jar;C:\Program Files\Java\jdk1.8.0_91\jre\lib\rt.jar;C:\Program Files\Java\jdk1.8.0_91\jre\lib\sunrsasign.jar;C:\Program Files\Java\jdk1.8.0_91\jre\lib\jsse.jar;C:\Program Files\Java\jdk1.8.0_91\jre\lib\jce.jar;C:\Program Files\Java\jdk1.8.0_91\jre\lib\charsets.jar;C:\Program Files\Java\jdk1.8.0_91\jre\lib\jfr.jar;C:\Program Files\Java\jdk1.8.0_91\jre\classes"/>
+    <property name="java.vendor" value="Oracle Corporation"/>
+    <property name="maven.home" value="C:\Program Files\NetBeans 8.2\java\maven"/>
+    <property name="file.separator" value="\"/>
+    <property name="java.vendor.url.bug" value="http://bugreport.sun.com/bugreport/"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="sun.desktop" value="windows"/>
+    <property name="sun.cpu.isalist" value="amd64"/>
+  </properties>
+  <testcase classname="be.unamur.info.b314.compiler.main.B314functionsSemanticsTest" name="testfunctions_one_int_function_no_local_var" time="0.021">
+    <failure message="functions: one_int_function_no_local_var
+Expected: a string ending with &quot;OK\r\n&quot;
+     but: was &quot;java.lang.NullPointerException
+	at be.unamur.info.b314.compiler.Visitor.PCodeVisitor.visitEntier(PCodeVisitor.java:597)
+	at be.unamur.info.b314.compiler.B314Parser$EntierContext.accept(B314Parser.java:3186)
+	at org.antlr.v4.runtime.tree.AbstractParseTreeVisitor.visitChildren(AbstractParseTreeVisitor.java:46)
+	at be.unamur.info.b314.compiler.B314BaseVisitor.visitExprEntEntier(B314BaseVisitor.java:118)
+	at be.unamur.info.b314.compiler.B314Parser$ExprEntEntierContext.accept(B314Parser.java:682)
+	at be.unamur.info.b314.compiler.Visitor.PCodeVisitor.visitAffectationGaucheDroite(PCodeVisitor.java:238)
+	at be.unamur.info.b314.compiler.B314Parser$AffectationGaucheDroiteContext.accept(B314Parser.java:3595)
+	at be.unamur.info.b314.compiler.Visitor.PCodeVisitor.visitFctDecl(PCodeVisitor.java:116)
+	at be.unamur.info.b314.compiler.B314Parser$FctDeclContext.accept(B314Parser.java:4224)
+	at be.unamur.info.b314.compiler.Visitor.PCodeVisitor.visitProgramme(PCodeVisitor.java:69)
+	at be.unamur.info.b314.compiler.B314Parser$ProgrammeContext.accept(B314Parser.java:4028)
+	at be.unamur.info.b314.compiler.main.Main.printPCode(Main.java:236)
+	at be.unamur.info.b314.compiler.main.Main.compile(Main.java:199)
+	at be.unamur.info.b314.compiler.main.Main.main(Main.java:79)
+	at be.unamur.info.b314.compiler.main.CompilerTestHelper.launchCompilation(CompilerTestHelper.java:35)
+	at be.unamur.info.b314.compiler.main.B314functionsSemanticsTest.testfunctions_one_int_function_no_local_var(B314functionsSemanticsTest.java:116)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.rules.ExternalResource$1.evaluate(ExternalResource.java:48)
+	at org.junit.rules.TestWatcher$1.evaluate(TestWatcher.java:55)
+	at org.junit.rules.RunRules.evaluate(RunRules.java:20)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.apache.maven.surefire.junit4.JUnit4TestSet.execute(JUnit4TestSet.java:53)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:123)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:104)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:164)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:110)
+	at org.apache.maven.surefire.booter.SurefireStarter.invokeProvider(SurefireStarter.java:175)
+	at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcessWhenForked(SurefireStarter.java:107)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:68)
+KO
+&quot;" type="java.lang.AssertionError">java.lang.AssertionError: functions: one_int_function_no_local_var
+Expected: a string ending with &quot;OK\r\n&quot;
+     but: was &quot;java.lang.NullPointerException
+	at be.unamur.info.b314.compiler.Visitor.PCodeVisitor.visitEntier(PCodeVisitor.java:597)
+	at be.unamur.info.b314.compiler.B314Parser$EntierContext.accept(B314Parser.java:3186)
+	at org.antlr.v4.runtime.tree.AbstractParseTreeVisitor.visitChildren(AbstractParseTreeVisitor.java:46)
+	at be.unamur.info.b314.compiler.B314BaseVisitor.visitExprEntEntier(B314BaseVisitor.java:118)
+	at be.unamur.info.b314.compiler.B314Parser$ExprEntEntierContext.accept(B314Parser.java:682)
+	at be.unamur.info.b314.compiler.Visitor.PCodeVisitor.visitAffectationGaucheDroite(PCodeVisitor.java:238)
+	at be.unamur.info.b314.compiler.B314Parser$AffectationGaucheDroiteContext.accept(B314Parser.java:3595)
+	at be.unamur.info.b314.compiler.Visitor.PCodeVisitor.visitFctDecl(PCodeVisitor.java:116)
+	at be.unamur.info.b314.compiler.B314Parser$FctDeclContext.accept(B314Parser.java:4224)
+	at be.unamur.info.b314.compiler.Visitor.PCodeVisitor.visitProgramme(PCodeVisitor.java:69)
+	at be.unamur.info.b314.compiler.B314Parser$ProgrammeContext.accept(B314Parser.java:4028)
+	at be.unamur.info.b314.compiler.main.Main.printPCode(Main.java:236)
+	at be.unamur.info.b314.compiler.main.Main.compile(Main.java:199)
+	at be.unamur.info.b314.compiler.main.Main.main(Main.java:79)
+	at be.unamur.info.b314.compiler.main.CompilerTestHelper.launchCompilation(CompilerTestHelper.java:35)
+	at be.unamur.info.b314.compiler.main.B314functionsSemanticsTest.testfunctions_one_int_function_no_local_var(B314functionsSemanticsTest.java:116)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.rules.ExternalResource$1.evaluate(ExternalResource.java:48)
+	at org.junit.rules.TestWatcher$1.evaluate(TestWatcher.java:55)
+	at org.junit.rules.RunRules.evaluate(RunRules.java:20)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.apache.maven.surefire.junit4.JUnit4TestSet.execute(JUnit4TestSet.java:53)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:123)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:104)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:164)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:110)
+	at org.apache.maven.surefire.booter.SurefireStarter.invokeProvider(SurefireStarter.java:175)
+	at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcessWhenForked(SurefireStarter.java:107)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:68)
+KO
+&quot;
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at org.junit.Assert.assertThat(Assert.java:956)
+	at be.unamur.info.b314.compiler.main.CompilerTestHelper.launchCompilation(CompilerTestHelper.java:42)
+	at be.unamur.info.b314.compiler.main.B314functionsSemanticsTest.testfunctions_one_int_function_no_local_var(B314functionsSemanticsTest.java:116)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.rules.ExternalResource$1.evaluate(ExternalResource.java:48)
+	at org.junit.rules.TestWatcher$1.evaluate(TestWatcher.java:55)
+	at org.junit.rules.RunRules.evaluate(RunRules.java:20)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.apache.maven.surefire.junit4.JUnit4TestSet.execute(JUnit4TestSet.java:53)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:123)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:104)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:164)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:110)
+	at org.apache.maven.surefire.booter.SurefireStarter.invokeProvider(SurefireStarter.java:175)
+	at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcessWhenForked(SurefireStarter.java:107)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:68)
+</failure>
+    <system-out>14:06:36.407 [main] INFO  - Starting test: testfunctions_one_int_function_no_local_var()...
+org.apache.commons.cli.CommandLine@35645047
+14:06:36.409 [main] DEBUG - Initialisation
+14:06:36.410 [main] DEBUG - Input file set to C:\Users\jessi\Documents\b314-Jour-MonkeyIsland\target\test-classes\semantics\functions\one_int_function_no_local_var.b314
+14:06:36.410 [main] DEBUG - Output file set to C:\Users\jessi\AppData\Local\Temp\junit2860750969560677923\junit8202742541198789875.tmp
+14:06:36.410 [main] DEBUG - Initialisation: done
+jessica1
+14:06:36.410 [main] DEBUG - Parsing input
+/*
+
+0
+
+0,0,0
+
+0,0,0,0,0
+*/
+declare and retain 
+    fct1 as function():integer
+    	do
+    		set fct1 to 42 
+    	done 
+when your turn 
+by default 
+    do 
+    	if not fct1() = 42 then 
+    		next move west
+    	done
+    	next do nothing
+    done&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;
+14:06:36.429 [main] ERROR - Je passe ici ------------------------------------------------------
+14:06:36.431 [main] ERROR - Exception occured during compilation!
+java.lang.RuntimeException: null
+	at be.unamur.info.b314.compiler.Visitor.PCodeVisitor.visitFctDecl(PCodeVisitor.java:122) ~[classes/:?]
+	at be.unamur.info.b314.compiler.B314Parser$FctDeclContext.accept(B314Parser.java:4224) ~[classes/:?]
+	at be.unamur.info.b314.compiler.Visitor.PCodeVisitor.visitProgramme(PCodeVisitor.java:69) ~[classes/:?]
+	at be.unamur.info.b314.compiler.B314Parser$ProgrammeContext.accept(B314Parser.java:4028) ~[classes/:?]
+	at be.unamur.info.b314.compiler.main.Main.printPCode(Main.java:236) ~[classes/:?]
+	at be.unamur.info.b314.compiler.main.Main.compile(Main.java:199) ~[classes/:?]
+	at be.unamur.info.b314.compiler.main.Main.main(Main.java:79) [classes/:?]
+	at be.unamur.info.b314.compiler.main.CompilerTestHelper.launchCompilation(CompilerTestHelper.java:35) [test-classes/:?]
+	at be.unamur.info.b314.compiler.main.B314functionsSemanticsTest.testfunctions_one_int_function_no_local_var(B314functionsSemanticsTest.java:116) [test-classes/:?]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0_91]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:1.8.0_91]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_91]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[?:1.8.0_91]
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50) [junit-4.12.jar:4.12]
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12) [junit-4.12.jar:4.12]
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47) [junit-4.12.jar:4.12]
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17) [junit-4.12.jar:4.12]
+	at org.junit.rules.ExternalResource$1.evaluate(ExternalResource.java:48) [junit-4.12.jar:4.12]
+	at org.junit.rules.TestWatcher$1.evaluate(TestWatcher.java:55) [junit-4.12.jar:4.12]
+	at org.junit.rules.RunRules.evaluate(RunRules.java:20) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325) [junit-4.12.jar:4.12]
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78) [junit-4.12.jar:4.12]
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363) [junit-4.12.jar:4.12]
+	at org.apache.maven.surefire.junit4.JUnit4TestSet.execute(JUnit4TestSet.java:53) [surefire-junit4-2.10.jar:2.10]
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:123) [surefire-junit4-2.10.jar:2.10]
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:104) [surefire-junit4-2.10.jar:2.10]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0_91]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:1.8.0_91]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_91]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[?:1.8.0_91]
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:164) [surefire-api-2.10.jar:2.10]
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:110) [surefire-booter-2.10.jar:2.10]
+	at org.apache.maven.surefire.booter.SurefireStarter.invokeProvider(SurefireStarter.java:175) [surefire-booter-2.10.jar:2.10]
+	at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcessWhenForked(SurefireStarter.java:107) [surefire-booter-2.10.jar:2.10]
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:68) [surefire-booter-2.10.jar:2.10]
+</system-out>
+  </testcase>
+  <testcase classname="be.unamur.info.b314.compiler.main.B314functionsSemanticsTest" name="testfunctions_multiple_functions_no_local_var" time="0.007">
+    <failure message="functions: multiple_functions_no_local_var
+Expected: a string ending with &quot;OK\r\n&quot;
+     but: was &quot;java.util.MissingFormatArgumentException: Format specifier &apos;%s&apos;
+	at java.util.Formatter.format(Formatter.java:2519)
+	at java.io.PrintWriter.format(PrintWriter.java:905)
+	at java.io.PrintWriter.printf(PrintWriter.java:804)
+	at be.unamur.info.b314.compiler.Visitor.PCodePrinter.printSetTo(PCodePrinter.java:78)
+	at be.unamur.info.b314.compiler.Visitor.PCodeVisitor.visitAffectationGaucheDroiteCase(PCodeVisitor.java:254)
+	at be.unamur.info.b314.compiler.B314Parser$AffectationGaucheDroiteCaseContext.accept(B314Parser.java:3359)
+	at be.unamur.info.b314.compiler.Visitor.PCodeVisitor.visitFctDecl(PCodeVisitor.java:116)
+	at be.unamur.info.b314.compiler.B314Parser$FctDeclContext.accept(B314Parser.java:4224)
+	at be.unamur.info.b314.compiler.Visitor.PCodeVisitor.visitProgramme(PCodeVisitor.java:69)
+	at be.unamur.info.b314.compiler.B314Parser$ProgrammeContext.accept(B314Parser.java:4028)
+	at be.unamur.info.b314.compiler.main.Main.printPCode(Main.java:236)
+	at be.unamur.info.b314.compiler.main.Main.compile(Main.java:199)
+	at be.unamur.info.b314.compiler.main.Main.main(Main.java:79)
+	at be.unamur.info.b314.compiler.main.CompilerTestHelper.launchCompilation(CompilerTestHelper.java:35)
+	at be.unamur.info.b314.compiler.main.B314functionsSemanticsTest.testfunctions_multiple_functions_no_local_var(B314functionsSemanticsTest.java:56)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.rules.ExternalResource$1.evaluate(ExternalResource.java:48)
+	at org.junit.rules.TestWatcher$1.evaluate(TestWatcher.java:55)
+	at org.junit.rules.RunRules.evaluate(RunRules.java:20)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.apache.maven.surefire.junit4.JUnit4TestSet.execute(JUnit4TestSet.java:53)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:123)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:104)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:164)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:110)
+	at org.apache.maven.surefire.booter.SurefireStarter.invokeProvider(SurefireStarter.java:175)
+	at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcessWhenForked(SurefireStarter.java:107)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:68)
+KO
+&quot;" type="java.lang.AssertionError">java.lang.AssertionError: functions: multiple_functions_no_local_var
+Expected: a string ending with &quot;OK\r\n&quot;
+     but: was &quot;java.util.MissingFormatArgumentException: Format specifier &apos;%s&apos;
+	at java.util.Formatter.format(Formatter.java:2519)
+	at java.io.PrintWriter.format(PrintWriter.java:905)
+	at java.io.PrintWriter.printf(PrintWriter.java:804)
+	at be.unamur.info.b314.compiler.Visitor.PCodePrinter.printSetTo(PCodePrinter.java:78)
+	at be.unamur.info.b314.compiler.Visitor.PCodeVisitor.visitAffectationGaucheDroiteCase(PCodeVisitor.java:254)
+	at be.unamur.info.b314.compiler.B314Parser$AffectationGaucheDroiteCaseContext.accept(B314Parser.java:3359)
+	at be.unamur.info.b314.compiler.Visitor.PCodeVisitor.visitFctDecl(PCodeVisitor.java:116)
+	at be.unamur.info.b314.compiler.B314Parser$FctDeclContext.accept(B314Parser.java:4224)
+	at be.unamur.info.b314.compiler.Visitor.PCodeVisitor.visitProgramme(PCodeVisitor.java:69)
+	at be.unamur.info.b314.compiler.B314Parser$ProgrammeContext.accept(B314Parser.java:4028)
+	at be.unamur.info.b314.compiler.main.Main.printPCode(Main.java:236)
+	at be.unamur.info.b314.compiler.main.Main.compile(Main.java:199)
+	at be.unamur.info.b314.compiler.main.Main.main(Main.java:79)
+	at be.unamur.info.b314.compiler.main.CompilerTestHelper.launchCompilation(CompilerTestHelper.java:35)
+	at be.unamur.info.b314.compiler.main.B314functionsSemanticsTest.testfunctions_multiple_functions_no_local_var(B314functionsSemanticsTest.java:56)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.rules.ExternalResource$1.evaluate(ExternalResource.java:48)
+	at org.junit.rules.TestWatcher$1.evaluate(TestWatcher.java:55)
+	at org.junit.rules.RunRules.evaluate(RunRules.java:20)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.apache.maven.surefire.junit4.JUnit4TestSet.execute(JUnit4TestSet.java:53)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:123)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:104)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:164)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:110)
+	at org.apache.maven.surefire.booter.SurefireStarter.invokeProvider(SurefireStarter.java:175)
+	at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcessWhenForked(SurefireStarter.java:107)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:68)
+KO
+&quot;
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at org.junit.Assert.assertThat(Assert.java:956)
+	at be.unamur.info.b314.compiler.main.CompilerTestHelper.launchCompilation(CompilerTestHelper.java:42)
+	at be.unamur.info.b314.compiler.main.B314functionsSemanticsTest.testfunctions_multiple_functions_no_local_var(B314functionsSemanticsTest.java:56)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.rules.ExternalResource$1.evaluate(ExternalResource.java:48)
+	at org.junit.rules.TestWatcher$1.evaluate(TestWatcher.java:55)
+	at org.junit.rules.RunRules.evaluate(RunRules.java:20)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.apache.maven.surefire.junit4.JUnit4TestSet.execute(JUnit4TestSet.java:53)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:123)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:104)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:164)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:110)
+	at org.apache.maven.surefire.booter.SurefireStarter.invokeProvider(SurefireStarter.java:175)
+	at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcessWhenForked(SurefireStarter.java:107)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:68)
+</failure>
+    <system-out>14:06:36.436 [main] INFO  - Starting test: testfunctions_multiple_functions_no_local_var()...
+org.apache.commons.cli.CommandLine@49ff7d8c
+14:06:36.438 [main] DEBUG - Initialisation
+14:06:36.439 [main] DEBUG - Input file set to C:\Users\jessi\Documents\b314-Jour-MonkeyIsland\target\test-classes\semantics\functions\multiple_functions_no_local_var.b314
+14:06:36.440 [main] DEBUG - Output file set to C:\Users\jessi\AppData\Local\Temp\junit962630004536320491\junit5404632662637474093.tmp
+14:06:36.440 [main] DEBUG - Initialisation: done
+jessica1
+14:06:36.440 [main] DEBUG - Parsing input
+/*
+
+0
+
+0,0,0
+
+0,0,0,0,0
+*/
+declare and retain 
+    fct1 as function(x as integer):square
+    	do
+    		set fct1 to map
+    	done 
+    fct2 as function(x as integer):integer
+    	do
+    		set fct2 to x
+    	done 
+    fct3 as function(x as boolean):boolean
+    	do
+    		set fct3 to x
+    	done 
+    fct4 as function():square
+    	do
+    		set fct1 to ammo
+    	done 
+    fct5 as function():integer
+    	do
+    		set fct2 to 34
+    	done 
+when your turn 
+by default 
+    do 
+        if not fct1(5) = map then 
+    		next move north
+    	done
+    
+    	if not fct2(42) = 42 then 
+    		next move west
+    	done
+    
+        if not fct3(true) then 
+    		next move south
+    	done
+    
+        if not fct4() = ammo then 
+    		next move east
+    	done
+    	
+        if not fct5() = 34 then 
+    		next shoot east
+    	done
+        
+    	next do nothing
+    
+    done&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;
+14:06:36.446 [main] ERROR - Je passe ici ------------------------------------------------------
+14:06:36.448 [main] ERROR - Exception occured during compilation!
+java.lang.RuntimeException: null
+	at be.unamur.info.b314.compiler.Visitor.PCodeVisitor.visitFctDecl(PCodeVisitor.java:122) ~[classes/:?]
+	at be.unamur.info.b314.compiler.B314Parser$FctDeclContext.accept(B314Parser.java:4224) ~[classes/:?]
+	at be.unamur.info.b314.compiler.Visitor.PCodeVisitor.visitProgramme(PCodeVisitor.java:69) ~[classes/:?]
+	at be.unamur.info.b314.compiler.B314Parser$ProgrammeContext.accept(B314Parser.java:4028) ~[classes/:?]
+	at be.unamur.info.b314.compiler.main.Main.printPCode(Main.java:236) ~[classes/:?]
+	at be.unamur.info.b314.compiler.main.Main.compile(Main.java:199) ~[classes/:?]
+	at be.unamur.info.b314.compiler.main.Main.main(Main.java:79) [classes/:?]
+	at be.unamur.info.b314.compiler.main.CompilerTestHelper.launchCompilation(CompilerTestHelper.java:35) [test-classes/:?]
+	at be.unamur.info.b314.compiler.main.B314functionsSemanticsTest.testfunctions_multiple_functions_no_local_var(B314functionsSemanticsTest.java:56) [test-classes/:?]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0_91]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:1.8.0_91]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_91]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[?:1.8.0_91]
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50) [junit-4.12.jar:4.12]
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12) [junit-4.12.jar:4.12]
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47) [junit-4.12.jar:4.12]
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17) [junit-4.12.jar:4.12]
+	at org.junit.rules.ExternalResource$1.evaluate(ExternalResource.java:48) [junit-4.12.jar:4.12]
+	at org.junit.rules.TestWatcher$1.evaluate(TestWatcher.java:55) [junit-4.12.jar:4.12]
+	at org.junit.rules.RunRules.evaluate(RunRules.java:20) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325) [junit-4.12.jar:4.12]
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78) [junit-4.12.jar:4.12]
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363) [junit-4.12.jar:4.12]
+	at org.apache.maven.surefire.junit4.JUnit4TestSet.execute(JUnit4TestSet.java:53) [surefire-junit4-2.10.jar:2.10]
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:123) [surefire-junit4-2.10.jar:2.10]
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:104) [surefire-junit4-2.10.jar:2.10]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0_91]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:1.8.0_91]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_91]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[?:1.8.0_91]
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:164) [surefire-api-2.10.jar:2.10]
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:110) [surefire-booter-2.10.jar:2.10]
+	at org.apache.maven.surefire.booter.SurefireStarter.invokeProvider(SurefireStarter.java:175) [surefire-booter-2.10.jar:2.10]
+	at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcessWhenForked(SurefireStarter.java:107) [surefire-booter-2.10.jar:2.10]
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:68) [surefire-booter-2.10.jar:2.10]
+</system-out>
+  </testcase>
+  <testcase classname="be.unamur.info.b314.compiler.main.B314functionsSemanticsTest" name="testfunctions_one_void_function_no_local_var" time="0.006">
+    <failure message="functions: one_void_function_no_local_var
+Expected: a string ending with &quot;OK\r\n&quot;
+     but: was &quot;KO
+&quot;" type="java.lang.AssertionError">java.lang.AssertionError: functions: one_void_function_no_local_var
+Expected: a string ending with &quot;OK\r\n&quot;
+     but: was &quot;KO
+&quot;
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at org.junit.Assert.assertThat(Assert.java:956)
+	at be.unamur.info.b314.compiler.main.CompilerTestHelper.launchCompilation(CompilerTestHelper.java:42)
+	at be.unamur.info.b314.compiler.main.B314functionsSemanticsTest.testfunctions_one_void_function_no_local_var(B314functionsSemanticsTest.java:156)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.rules.ExternalResource$1.evaluate(ExternalResource.java:48)
+	at org.junit.rules.TestWatcher$1.evaluate(TestWatcher.java:55)
+	at org.junit.rules.RunRules.evaluate(RunRules.java:20)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.apache.maven.surefire.junit4.JUnit4TestSet.execute(JUnit4TestSet.java:53)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:123)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:104)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:164)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:110)
+	at org.apache.maven.surefire.booter.SurefireStarter.invokeProvider(SurefireStarter.java:175)
+	at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcessWhenForked(SurefireStarter.java:107)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:68)
+</failure>
+    <system-out>14:06:36.453 [main] INFO  - Starting test: testfunctions_one_void_function_no_local_var()...
+org.apache.commons.cli.CommandLine@45312be2
+14:06:36.455 [main] DEBUG - Initialisation
+14:06:36.455 [main] DEBUG - Input file set to C:\Users\jessi\Documents\b314-Jour-MonkeyIsland\target\test-classes\semantics\functions\one_void_function_no_local_var.b314
+14:06:36.455 [main] DEBUG - Output file set to C:\Users\jessi\AppData\Local\Temp\junit1401033311035454539\junit3187876761103642427.tmp
+14:06:36.455 [main] DEBUG - Initialisation: done
+jessica1
+14:06:36.456 [main] DEBUG - Parsing input
+/*
+
+0
+
+0,0,0
+
+0,0,0,0,0
+*/
+declare and retain 
+    fct1 as function():void
+    	do
+    		skip
+    	done 
+when your turn 
+by default 
+    do compute fct1() done&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;
+14:06:36.462 [main] ERROR - Je passe ici ------------------------------------------------------
+14:06:36.463 [main] ERROR - Exception occured during compilation!
+java.lang.RuntimeException: null
+	at be.unamur.info.b314.compiler.Visitor.PCodeVisitor.visitClauseDefault(PCodeVisitor.java:180) ~[classes/:?]
+	at be.unamur.info.b314.compiler.B314Parser$ClauseDefaultContext.accept(B314Parser.java:4652) ~[classes/:?]
+	at be.unamur.info.b314.compiler.Visitor.PCodeVisitor.visitProgramme(PCodeVisitor.java:75) ~[classes/:?]
+	at be.unamur.info.b314.compiler.B314Parser$ProgrammeContext.accept(B314Parser.java:4028) ~[classes/:?]
+	at be.unamur.info.b314.compiler.main.Main.printPCode(Main.java:236) ~[classes/:?]
+	at be.unamur.info.b314.compiler.main.Main.compile(Main.java:199) ~[classes/:?]
+	at be.unamur.info.b314.compiler.main.Main.main(Main.java:79) [classes/:?]
+	at be.unamur.info.b314.compiler.main.CompilerTestHelper.launchCompilation(CompilerTestHelper.java:35) [test-classes/:?]
+	at be.unamur.info.b314.compiler.main.B314functionsSemanticsTest.testfunctions_one_void_function_no_local_var(B314functionsSemanticsTest.java:156) [test-classes/:?]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0_91]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:1.8.0_91]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_91]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[?:1.8.0_91]
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50) [junit-4.12.jar:4.12]
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12) [junit-4.12.jar:4.12]
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47) [junit-4.12.jar:4.12]
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17) [junit-4.12.jar:4.12]
+	at org.junit.rules.ExternalResource$1.evaluate(ExternalResource.java:48) [junit-4.12.jar:4.12]
+	at org.junit.rules.TestWatcher$1.evaluate(TestWatcher.java:55) [junit-4.12.jar:4.12]
+	at org.junit.rules.RunRules.evaluate(RunRules.java:20) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325) [junit-4.12.jar:4.12]
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78) [junit-4.12.jar:4.12]
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363) [junit-4.12.jar:4.12]
+	at org.apache.maven.surefire.junit4.JUnit4TestSet.execute(JUnit4TestSet.java:53) [surefire-junit4-2.10.jar:2.10]
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:123) [surefire-junit4-2.10.jar:2.10]
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:104) [surefire-junit4-2.10.jar:2.10]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0_91]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:1.8.0_91]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_91]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[?:1.8.0_91]
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:164) [surefire-api-2.10.jar:2.10]
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:110) [surefire-booter-2.10.jar:2.10]
+	at org.apache.maven.surefire.booter.SurefireStarter.invokeProvider(SurefireStarter.java:175) [surefire-booter-2.10.jar:2.10]
+	at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcessWhenForked(SurefireStarter.java:107) [surefire-booter-2.10.jar:2.10]
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:68) [surefire-booter-2.10.jar:2.10]
+</system-out>
+  </testcase>
+  <testcase classname="be.unamur.info.b314.compiler.main.B314functionsSemanticsTest" name="testfunctions_factorial_recursive_call" time="0">
+    <failure message="functions: factorial_recursive_call
+Expected: a string ending with &quot;OK\r\n&quot;
+     but: was &quot;KO
+&quot;" type="java.lang.AssertionError">java.lang.AssertionError: functions: factorial_recursive_call
+Expected: a string ending with &quot;OK\r\n&quot;
+     but: was &quot;KO
+&quot;
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at org.junit.Assert.assertThat(Assert.java:956)
+	at be.unamur.info.b314.compiler.main.CompilerTestHelper.launchCompilation(CompilerTestHelper.java:42)
+	at be.unamur.info.b314.compiler.main.B314functionsSemanticsTest.testfunctions_factorial_recursive_call(B314functionsSemanticsTest.java:36)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.rules.ExternalResource$1.evaluate(ExternalResource.java:48)
+	at org.junit.rules.TestWatcher$1.evaluate(TestWatcher.java:55)
+	at org.junit.rules.RunRules.evaluate(RunRules.java:20)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.apache.maven.surefire.junit4.JUnit4TestSet.execute(JUnit4TestSet.java:53)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:123)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:104)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:164)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:110)
+	at org.apache.maven.surefire.booter.SurefireStarter.invokeProvider(SurefireStarter.java:175)
+	at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcessWhenForked(SurefireStarter.java:107)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:68)
+</failure>
+    <system-out>14:06:36.467 [main] INFO  - Starting test: testfunctions_factorial_recursive_call()...
+org.apache.commons.cli.CommandLine@6bffbc6d
+14:06:36.471 [main] DEBUG - Initialisation
+14:06:36.471 [main] DEBUG - Input file set to C:\Users\jessi\Documents\b314-Jour-MonkeyIsland\target\test-classes\semantics\functions\factorial_recursive_call.b314
+14:06:36.472 [main] DEBUG - Output file set to C:\Users\jessi\AppData\Local\Temp\junit668836535590388582\junit1412189943242902004.tmp
+14:06:36.472 [main] DEBUG - Initialisation: done
+jessica1
+14:06:36.472 [main] DEBUG - Parsing input
+/*
+
+0
+
+0,0,0
+
+0,0,0,0,0
+*/
+declare and retain 
+	facto as function(x as integer):integer
+    	do
+    		if x &lt; 0 or x = 0 then
+    			set facto to 1
+    		else 
+    			set facto to x * facto(x - 1)
+    		done
+    	done
+    i3 as integer; 
+when your turn 
+by default 
+    do
+    	set i3 to facto(5)
+    	if not i3 =  5 * 4 * 3 * 2 then 
+    		next move west
+    	done
+    	next do nothing
+    done&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;
+14:06:36.497 [main] ERROR - Je passe ici ------------------------------------------------------
+14:06:36.498 [main] ERROR - Exception occured during compilation!
+java.util.MissingFormatArgumentException: Format specifier &apos;%s&apos;
+	at java.util.Formatter.format(Formatter.java:2519) ~[?:1.8.0_91]
+	at java.io.PrintWriter.format(PrintWriter.java:905) ~[?:1.8.0_91]
+	at java.io.PrintWriter.printf(PrintWriter.java:804) ~[?:1.8.0_91]
+	at be.unamur.info.b314.compiler.Visitor.PCodePrinter.printSetTo(PCodePrinter.java:78) ~[classes/:?]
+	at be.unamur.info.b314.compiler.Visitor.PCodeVisitor.visitVarDecl(PCodeVisitor.java:625) ~[classes/:?]
+	at be.unamur.info.b314.compiler.B314Parser$VarDeclContext.accept(B314Parser.java:405) ~[classes/:?]
+	at be.unamur.info.b314.compiler.Visitor.PCodeVisitor.visitProgramme(PCodeVisitor.java:64) ~[classes/:?]
+	at be.unamur.info.b314.compiler.B314Parser$ProgrammeContext.accept(B314Parser.java:4028) ~[classes/:?]
+	at be.unamur.info.b314.compiler.main.Main.printPCode(Main.java:236) ~[classes/:?]
+	at be.unamur.info.b314.compiler.main.Main.compile(Main.java:199) ~[classes/:?]
+	at be.unamur.info.b314.compiler.main.Main.main(Main.java:79) [classes/:?]
+	at be.unamur.info.b314.compiler.main.CompilerTestHelper.launchCompilation(CompilerTestHelper.java:35) [test-classes/:?]
+	at be.unamur.info.b314.compiler.main.B314functionsSemanticsTest.testfunctions_factorial_recursive_call(B314functionsSemanticsTest.java:36) [test-classes/:?]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0_91]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:1.8.0_91]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_91]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[?:1.8.0_91]
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50) [junit-4.12.jar:4.12]
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12) [junit-4.12.jar:4.12]
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47) [junit-4.12.jar:4.12]
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17) [junit-4.12.jar:4.12]
+	at org.junit.rules.ExternalResource$1.evaluate(ExternalResource.java:48) [junit-4.12.jar:4.12]
+	at org.junit.rules.TestWatcher$1.evaluate(TestWatcher.java:55) [junit-4.12.jar:4.12]
+	at org.junit.rules.RunRules.evaluate(RunRules.java:20) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325) [junit-4.12.jar:4.12]
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78) [junit-4.12.jar:4.12]
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363) [junit-4.12.jar:4.12]
+	at org.apache.maven.surefire.junit4.JUnit4TestSet.execute(JUnit4TestSet.java:53) [surefire-junit4-2.10.jar:2.10]
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:123) [surefire-junit4-2.10.jar:2.10]
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:104) [surefire-junit4-2.10.jar:2.10]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0_91]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:1.8.0_91]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_91]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[?:1.8.0_91]
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:164) [surefire-api-2.10.jar:2.10]
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:110) [surefire-booter-2.10.jar:2.10]
+	at org.apache.maven.surefire.booter.SurefireStarter.invokeProvider(SurefireStarter.java:175) [surefire-booter-2.10.jar:2.10]
+	at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcessWhenForked(SurefireStarter.java:107) [surefire-booter-2.10.jar:2.10]
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:68) [surefire-booter-2.10.jar:2.10]
+</system-out>
+  </testcase>
+  <testcase classname="be.unamur.info.b314.compiler.main.B314functionsSemanticsTest" name="testfunctions_multiple_global_vars_and_functions_no_local_var" time="0.006">
+    <failure message="functions: multiple_global_vars_and_functions_no_local_var
+Expected: a string ending with &quot;OK\r\n&quot;
+     but: was &quot;KO
+&quot;" type="java.lang.AssertionError">java.lang.AssertionError: functions: multiple_global_vars_and_functions_no_local_var
+Expected: a string ending with &quot;OK\r\n&quot;
+     but: was &quot;KO
+&quot;
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at org.junit.Assert.assertThat(Assert.java:956)
+	at be.unamur.info.b314.compiler.main.CompilerTestHelper.launchCompilation(CompilerTestHelper.java:42)
+	at be.unamur.info.b314.compiler.main.B314functionsSemanticsTest.testfunctions_multiple_global_vars_and_functions_no_local_var(B314functionsSemanticsTest.java:76)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.rules.ExternalResource$1.evaluate(ExternalResource.java:48)
+	at org.junit.rules.TestWatcher$1.evaluate(TestWatcher.java:55)
+	at org.junit.rules.RunRules.evaluate(RunRules.java:20)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.apache.maven.surefire.junit4.JUnit4TestSet.execute(JUnit4TestSet.java:53)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:123)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:104)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:164)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:110)
+	at org.apache.maven.surefire.booter.SurefireStarter.invokeProvider(SurefireStarter.java:175)
+	at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcessWhenForked(SurefireStarter.java:107)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:68)
+</failure>
+    <system-out>14:06:36.501 [main] INFO  - Starting test: testfunctions_multiple_global_vars_and_functions_no_local_var()...
+org.apache.commons.cli.CommandLine@22295ec4
+14:06:36.503 [main] DEBUG - Initialisation
+14:06:36.503 [main] DEBUG - Input file set to C:\Users\jessi\Documents\b314-Jour-MonkeyIsland\target\test-classes\semantics\functions\multiple_global_vars_and_functions_no_local_var.b314
+14:06:36.503 [main] DEBUG - Output file set to C:\Users\jessi\AppData\Local\Temp\junit1791761183124545136\junit6365187957978245713.tmp
+14:06:36.503 [main] DEBUG - Initialisation: done
+jessica1
+14:06:36.504 [main] DEBUG - Parsing input
+/*
+
+0
+
+0,0,0
+
+0,0,0,0,0
+*/
+declare and retain 
+	b1 as boolean;
+	b2 as boolean;
+	b3 as boolean;
+    i1 as integer; 
+	b4 as boolean;
+	b5 as boolean;
+    fct2 as function():integer
+    	do
+    		set fct2 to i1 + 5
+    	done 
+    fct3 as function():boolean
+    	do
+    		set fct3 to b1 and false
+    	done 
+	s1 as square;
+	i2 as integer;
+	b6 as boolean;
+    i3 as integer; 
+    s2 as square;
+    fct4 as function():integer
+    	do
+    		set fct4 to i1 + 2
+    	done 
+    fct1 as function():square
+    	do
+    		set fct1 to s2
+    	done 
+when your turn 
+by default 
+    do 
+    	set i1 to 7
+    	set b1 to true
+    	set s2 to map
+    	
+        if not fct1() = map then 
+    		next move north
+    	done
+    	
+    	if not fct2() = 12 then 
+    		next move east
+    	done
+    	
+    	if fct3() then 
+    		next move west
+    	done
+    	
+    	if not fct4() = 9 then 
+    		next move south
+    	done
+    	
+    	next do nothing
+    
+    
+    done&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;
+14:06:36.509 [main] ERROR - Je passe ici ------------------------------------------------------
+14:06:36.511 [main] ERROR - Exception occured during compilation!
+java.util.MissingFormatArgumentException: Format specifier &apos;%s&apos;
+	at java.util.Formatter.format(Formatter.java:2519) ~[?:1.8.0_91]
+	at java.io.PrintWriter.format(PrintWriter.java:905) ~[?:1.8.0_91]
+	at java.io.PrintWriter.printf(PrintWriter.java:804) ~[?:1.8.0_91]
+	at be.unamur.info.b314.compiler.Visitor.PCodePrinter.printSetTo(PCodePrinter.java:78) ~[classes/:?]
+	at be.unamur.info.b314.compiler.Visitor.PCodeVisitor.visitVarDecl(PCodeVisitor.java:625) ~[classes/:?]
+	at be.unamur.info.b314.compiler.B314Parser$VarDeclContext.accept(B314Parser.java:405) ~[classes/:?]
+	at be.unamur.info.b314.compiler.Visitor.PCodeVisitor.visitProgramme(PCodeVisitor.java:64) ~[classes/:?]
+	at be.unamur.info.b314.compiler.B314Parser$ProgrammeContext.accept(B314Parser.java:4028) ~[classes/:?]
+	at be.unamur.info.b314.compiler.main.Main.printPCode(Main.java:236) ~[classes/:?]
+	at be.unamur.info.b314.compiler.main.Main.compile(Main.java:199) ~[classes/:?]
+	at be.unamur.info.b314.compiler.main.Main.main(Main.java:79) [classes/:?]
+	at be.unamur.info.b314.compiler.main.CompilerTestHelper.launchCompilation(CompilerTestHelper.java:35) [test-classes/:?]
+	at be.unamur.info.b314.compiler.main.B314functionsSemanticsTest.testfunctions_multiple_global_vars_and_functions_no_local_var(B314functionsSemanticsTest.java:76) [test-classes/:?]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0_91]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:1.8.0_91]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_91]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[?:1.8.0_91]
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50) [junit-4.12.jar:4.12]
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12) [junit-4.12.jar:4.12]
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47) [junit-4.12.jar:4.12]
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17) [junit-4.12.jar:4.12]
+	at org.junit.rules.ExternalResource$1.evaluate(ExternalResource.java:48) [junit-4.12.jar:4.12]
+	at org.junit.rules.TestWatcher$1.evaluate(TestWatcher.java:55) [junit-4.12.jar:4.12]
+	at org.junit.rules.RunRules.evaluate(RunRules.java:20) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325) [junit-4.12.jar:4.12]
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78) [junit-4.12.jar:4.12]
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363) [junit-4.12.jar:4.12]
+	at org.apache.maven.surefire.junit4.JUnit4TestSet.execute(JUnit4TestSet.java:53) [surefire-junit4-2.10.jar:2.10]
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:123) [surefire-junit4-2.10.jar:2.10]
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:104) [surefire-junit4-2.10.jar:2.10]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0_91]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:1.8.0_91]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_91]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[?:1.8.0_91]
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:164) [surefire-api-2.10.jar:2.10]
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:110) [surefire-booter-2.10.jar:2.10]
+	at org.apache.maven.surefire.booter.SurefireStarter.invokeProvider(SurefireStarter.java:175) [surefire-booter-2.10.jar:2.10]
+	at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcessWhenForked(SurefireStarter.java:107) [surefire-booter-2.10.jar:2.10]
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:68) [surefire-booter-2.10.jar:2.10]
+</system-out>
+  </testcase>
+  <testcase classname="be.unamur.info.b314.compiler.main.B314functionsSemanticsTest" name="testfunctions_one_square_function_no_local_var" time="0.007">
+    <failure message="functions: one_square_function_no_local_var
+Expected: a string ending with &quot;OK\r\n&quot;
+     but: was &quot;java.util.MissingFormatArgumentException: Format specifier &apos;%s&apos;
+	at java.util.Formatter.format(Formatter.java:2519)
+	at java.io.PrintWriter.format(PrintWriter.java:905)
+	at java.io.PrintWriter.printf(PrintWriter.java:804)
+	at be.unamur.info.b314.compiler.Visitor.PCodePrinter.printSetTo(PCodePrinter.java:78)
+	at be.unamur.info.b314.compiler.Visitor.PCodeVisitor.visitAffectationGaucheDroiteCase(PCodeVisitor.java:254)
+	at be.unamur.info.b314.compiler.B314Parser$AffectationGaucheDroiteCaseContext.accept(B314Parser.java:3359)
+	at be.unamur.info.b314.compiler.Visitor.PCodeVisitor.visitFctDecl(PCodeVisitor.java:116)
+	at be.unamur.info.b314.compiler.B314Parser$FctDeclContext.accept(B314Parser.java:4224)
+	at be.unamur.info.b314.compiler.Visitor.PCodeVisitor.visitProgramme(PCodeVisitor.java:69)
+	at be.unamur.info.b314.compiler.B314Parser$ProgrammeContext.accept(B314Parser.java:4028)
+	at be.unamur.info.b314.compiler.main.Main.printPCode(Main.java:236)
+	at be.unamur.info.b314.compiler.main.Main.compile(Main.java:199)
+	at be.unamur.info.b314.compiler.main.Main.main(Main.java:79)
+	at be.unamur.info.b314.compiler.main.CompilerTestHelper.launchCompilation(CompilerTestHelper.java:35)
+	at be.unamur.info.b314.compiler.main.B314functionsSemanticsTest.testfunctions_one_square_function_no_local_var(B314functionsSemanticsTest.java:136)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.rules.ExternalResource$1.evaluate(ExternalResource.java:48)
+	at org.junit.rules.TestWatcher$1.evaluate(TestWatcher.java:55)
+	at org.junit.rules.RunRules.evaluate(RunRules.java:20)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.apache.maven.surefire.junit4.JUnit4TestSet.execute(JUnit4TestSet.java:53)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:123)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:104)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:164)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:110)
+	at org.apache.maven.surefire.booter.SurefireStarter.invokeProvider(SurefireStarter.java:175)
+	at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcessWhenForked(SurefireStarter.java:107)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:68)
+KO
+&quot;" type="java.lang.AssertionError">java.lang.AssertionError: functions: one_square_function_no_local_var
+Expected: a string ending with &quot;OK\r\n&quot;
+     but: was &quot;java.util.MissingFormatArgumentException: Format specifier &apos;%s&apos;
+	at java.util.Formatter.format(Formatter.java:2519)
+	at java.io.PrintWriter.format(PrintWriter.java:905)
+	at java.io.PrintWriter.printf(PrintWriter.java:804)
+	at be.unamur.info.b314.compiler.Visitor.PCodePrinter.printSetTo(PCodePrinter.java:78)
+	at be.unamur.info.b314.compiler.Visitor.PCodeVisitor.visitAffectationGaucheDroiteCase(PCodeVisitor.java:254)
+	at be.unamur.info.b314.compiler.B314Parser$AffectationGaucheDroiteCaseContext.accept(B314Parser.java:3359)
+	at be.unamur.info.b314.compiler.Visitor.PCodeVisitor.visitFctDecl(PCodeVisitor.java:116)
+	at be.unamur.info.b314.compiler.B314Parser$FctDeclContext.accept(B314Parser.java:4224)
+	at be.unamur.info.b314.compiler.Visitor.PCodeVisitor.visitProgramme(PCodeVisitor.java:69)
+	at be.unamur.info.b314.compiler.B314Parser$ProgrammeContext.accept(B314Parser.java:4028)
+	at be.unamur.info.b314.compiler.main.Main.printPCode(Main.java:236)
+	at be.unamur.info.b314.compiler.main.Main.compile(Main.java:199)
+	at be.unamur.info.b314.compiler.main.Main.main(Main.java:79)
+	at be.unamur.info.b314.compiler.main.CompilerTestHelper.launchCompilation(CompilerTestHelper.java:35)
+	at be.unamur.info.b314.compiler.main.B314functionsSemanticsTest.testfunctions_one_square_function_no_local_var(B314functionsSemanticsTest.java:136)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.rules.ExternalResource$1.evaluate(ExternalResource.java:48)
+	at org.junit.rules.TestWatcher$1.evaluate(TestWatcher.java:55)
+	at org.junit.rules.RunRules.evaluate(RunRules.java:20)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.apache.maven.surefire.junit4.JUnit4TestSet.execute(JUnit4TestSet.java:53)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:123)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:104)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:164)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:110)
+	at org.apache.maven.surefire.booter.SurefireStarter.invokeProvider(SurefireStarter.java:175)
+	at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcessWhenForked(SurefireStarter.java:107)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:68)
+KO
+&quot;
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at org.junit.Assert.assertThat(Assert.java:956)
+	at be.unamur.info.b314.compiler.main.CompilerTestHelper.launchCompilation(CompilerTestHelper.java:42)
+	at be.unamur.info.b314.compiler.main.B314functionsSemanticsTest.testfunctions_one_square_function_no_local_var(B314functionsSemanticsTest.java:136)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.rules.ExternalResource$1.evaluate(ExternalResource.java:48)
+	at org.junit.rules.TestWatcher$1.evaluate(TestWatcher.java:55)
+	at org.junit.rules.RunRules.evaluate(RunRules.java:20)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.apache.maven.surefire.junit4.JUnit4TestSet.execute(JUnit4TestSet.java:53)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:123)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:104)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:164)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:110)
+	at org.apache.maven.surefire.booter.SurefireStarter.invokeProvider(SurefireStarter.java:175)
+	at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcessWhenForked(SurefireStarter.java:107)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:68)
+</failure>
+    <system-out>14:06:36.513 [main] INFO  - Starting test: testfunctions_one_square_function_no_local_var()...
+org.apache.commons.cli.CommandLine@64b73e7a
+14:06:36.515 [main] DEBUG - Initialisation
+14:06:36.515 [main] DEBUG - Input file set to C:\Users\jessi\Documents\b314-Jour-MonkeyIsland\target\test-classes\semantics\functions\one_square_function_no_local_var.b314
+14:06:36.516 [main] DEBUG - Output file set to C:\Users\jessi\AppData\Local\Temp\junit7779784354787071537\junit8508392192062086071.tmp
+14:06:36.516 [main] DEBUG - Initialisation: done
+jessica1
+14:06:36.516 [main] DEBUG - Parsing input
+/*
+
+0
+
+0,0,0
+
+0,0,0,0,0
+*/
+declare and retain 
+    fct1 as function():square
+    	do
+    		set fct1 to map
+    	done 
+when your turn 
+by default 
+    do 
+    	if not fct1() = map then
+    		next move west
+    	done
+    	next do nothing
+    done&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;
+14:06:36.518 [main] ERROR - Je passe ici ------------------------------------------------------
+14:06:36.520 [main] ERROR - Exception occured during compilation!
+java.lang.RuntimeException: null
+	at be.unamur.info.b314.compiler.Visitor.PCodeVisitor.visitFctDecl(PCodeVisitor.java:122) ~[classes/:?]
+	at be.unamur.info.b314.compiler.B314Parser$FctDeclContext.accept(B314Parser.java:4224) ~[classes/:?]
+	at be.unamur.info.b314.compiler.Visitor.PCodeVisitor.visitProgramme(PCodeVisitor.java:69) ~[classes/:?]
+	at be.unamur.info.b314.compiler.B314Parser$ProgrammeContext.accept(B314Parser.java:4028) ~[classes/:?]
+	at be.unamur.info.b314.compiler.main.Main.printPCode(Main.java:236) ~[classes/:?]
+	at be.unamur.info.b314.compiler.main.Main.compile(Main.java:199) ~[classes/:?]
+	at be.unamur.info.b314.compiler.main.Main.main(Main.java:79) [classes/:?]
+	at be.unamur.info.b314.compiler.main.CompilerTestHelper.launchCompilation(CompilerTestHelper.java:35) [test-classes/:?]
+	at be.unamur.info.b314.compiler.main.B314functionsSemanticsTest.testfunctions_one_square_function_no_local_var(B314functionsSemanticsTest.java:136) [test-classes/:?]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0_91]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:1.8.0_91]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_91]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[?:1.8.0_91]
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50) [junit-4.12.jar:4.12]
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12) [junit-4.12.jar:4.12]
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47) [junit-4.12.jar:4.12]
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17) [junit-4.12.jar:4.12]
+	at org.junit.rules.ExternalResource$1.evaluate(ExternalResource.java:48) [junit-4.12.jar:4.12]
+	at org.junit.rules.TestWatcher$1.evaluate(TestWatcher.java:55) [junit-4.12.jar:4.12]
+	at org.junit.rules.RunRules.evaluate(RunRules.java:20) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325) [junit-4.12.jar:4.12]
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78) [junit-4.12.jar:4.12]
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363) [junit-4.12.jar:4.12]
+	at org.apache.maven.surefire.junit4.JUnit4TestSet.execute(JUnit4TestSet.java:53) [surefire-junit4-2.10.jar:2.10]
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:123) [surefire-junit4-2.10.jar:2.10]
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:104) [surefire-junit4-2.10.jar:2.10]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0_91]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:1.8.0_91]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_91]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[?:1.8.0_91]
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:164) [surefire-api-2.10.jar:2.10]
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:110) [surefire-booter-2.10.jar:2.10]
+	at org.apache.maven.surefire.booter.SurefireStarter.invokeProvider(SurefireStarter.java:175) [surefire-booter-2.10.jar:2.10]
+	at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcessWhenForked(SurefireStarter.java:107) [surefire-booter-2.10.jar:2.10]
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:68) [surefire-booter-2.10.jar:2.10]
+</system-out>
+  </testcase>
+  <testcase classname="be.unamur.info.b314.compiler.main.B314functionsSemanticsTest" name="testfunctions_one_boolean_function_no_local_var" time="0.007">
+    <failure message="functions: one_boolean_function_no_local_var
+Expected: a string ending with &quot;OK\r\n&quot;
+     but: was &quot;java.util.MissingFormatArgumentException: Format specifier &apos;%s&apos;
+	at java.util.Formatter.format(Formatter.java:2519)
+	at java.io.PrintWriter.format(PrintWriter.java:905)
+	at java.io.PrintWriter.printf(PrintWriter.java:804)
+	at be.unamur.info.b314.compiler.Visitor.PCodePrinter.printSetTo(PCodePrinter.java:78)
+	at be.unamur.info.b314.compiler.Visitor.PCodeVisitor.visitAffectationGaucheDroiteBool(PCodeVisitor.java:247)
+	at be.unamur.info.b314.compiler.B314Parser$AffectationGaucheDroiteBoolContext.accept(B314Parser.java:3431)
+	at be.unamur.info.b314.compiler.Visitor.PCodeVisitor.visitFctDecl(PCodeVisitor.java:116)
+	at be.unamur.info.b314.compiler.B314Parser$FctDeclContext.accept(B314Parser.java:4224)
+	at be.unamur.info.b314.compiler.Visitor.PCodeVisitor.visitProgramme(PCodeVisitor.java:69)
+	at be.unamur.info.b314.compiler.B314Parser$ProgrammeContext.accept(B314Parser.java:4028)
+	at be.unamur.info.b314.compiler.main.Main.printPCode(Main.java:236)
+	at be.unamur.info.b314.compiler.main.Main.compile(Main.java:199)
+	at be.unamur.info.b314.compiler.main.Main.main(Main.java:79)
+	at be.unamur.info.b314.compiler.main.CompilerTestHelper.launchCompilation(CompilerTestHelper.java:35)
+	at be.unamur.info.b314.compiler.main.B314functionsSemanticsTest.testfunctions_one_boolean_function_no_local_var(B314functionsSemanticsTest.java:96)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.rules.ExternalResource$1.evaluate(ExternalResource.java:48)
+	at org.junit.rules.TestWatcher$1.evaluate(TestWatcher.java:55)
+	at org.junit.rules.RunRules.evaluate(RunRules.java:20)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.apache.maven.surefire.junit4.JUnit4TestSet.execute(JUnit4TestSet.java:53)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:123)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:104)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:164)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:110)
+	at org.apache.maven.surefire.booter.SurefireStarter.invokeProvider(SurefireStarter.java:175)
+	at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcessWhenForked(SurefireStarter.java:107)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:68)
+KO
+&quot;" type="java.lang.AssertionError">java.lang.AssertionError: functions: one_boolean_function_no_local_var
+Expected: a string ending with &quot;OK\r\n&quot;
+     but: was &quot;java.util.MissingFormatArgumentException: Format specifier &apos;%s&apos;
+	at java.util.Formatter.format(Formatter.java:2519)
+	at java.io.PrintWriter.format(PrintWriter.java:905)
+	at java.io.PrintWriter.printf(PrintWriter.java:804)
+	at be.unamur.info.b314.compiler.Visitor.PCodePrinter.printSetTo(PCodePrinter.java:78)
+	at be.unamur.info.b314.compiler.Visitor.PCodeVisitor.visitAffectationGaucheDroiteBool(PCodeVisitor.java:247)
+	at be.unamur.info.b314.compiler.B314Parser$AffectationGaucheDroiteBoolContext.accept(B314Parser.java:3431)
+	at be.unamur.info.b314.compiler.Visitor.PCodeVisitor.visitFctDecl(PCodeVisitor.java:116)
+	at be.unamur.info.b314.compiler.B314Parser$FctDeclContext.accept(B314Parser.java:4224)
+	at be.unamur.info.b314.compiler.Visitor.PCodeVisitor.visitProgramme(PCodeVisitor.java:69)
+	at be.unamur.info.b314.compiler.B314Parser$ProgrammeContext.accept(B314Parser.java:4028)
+	at be.unamur.info.b314.compiler.main.Main.printPCode(Main.java:236)
+	at be.unamur.info.b314.compiler.main.Main.compile(Main.java:199)
+	at be.unamur.info.b314.compiler.main.Main.main(Main.java:79)
+	at be.unamur.info.b314.compiler.main.CompilerTestHelper.launchCompilation(CompilerTestHelper.java:35)
+	at be.unamur.info.b314.compiler.main.B314functionsSemanticsTest.testfunctions_one_boolean_function_no_local_var(B314functionsSemanticsTest.java:96)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.rules.ExternalResource$1.evaluate(ExternalResource.java:48)
+	at org.junit.rules.TestWatcher$1.evaluate(TestWatcher.java:55)
+	at org.junit.rules.RunRules.evaluate(RunRules.java:20)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.apache.maven.surefire.junit4.JUnit4TestSet.execute(JUnit4TestSet.java:53)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:123)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:104)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:164)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:110)
+	at org.apache.maven.surefire.booter.SurefireStarter.invokeProvider(SurefireStarter.java:175)
+	at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcessWhenForked(SurefireStarter.java:107)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:68)
+KO
+&quot;
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at org.junit.Assert.assertThat(Assert.java:956)
+	at be.unamur.info.b314.compiler.main.CompilerTestHelper.launchCompilation(CompilerTestHelper.java:42)
+	at be.unamur.info.b314.compiler.main.B314functionsSemanticsTest.testfunctions_one_boolean_function_no_local_var(B314functionsSemanticsTest.java:96)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.rules.ExternalResource$1.evaluate(ExternalResource.java:48)
+	at org.junit.rules.TestWatcher$1.evaluate(TestWatcher.java:55)
+	at org.junit.rules.RunRules.evaluate(RunRules.java:20)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.apache.maven.surefire.junit4.JUnit4TestSet.execute(JUnit4TestSet.java:53)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:123)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:104)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:164)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:110)
+	at org.apache.maven.surefire.booter.SurefireStarter.invokeProvider(SurefireStarter.java:175)
+	at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcessWhenForked(SurefireStarter.java:107)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:68)
+</failure>
+    <system-out>14:06:36.523 [main] INFO  - Starting test: testfunctions_one_boolean_function_no_local_var()...
+org.apache.commons.cli.CommandLine@12ed9db6
+14:06:36.525 [main] DEBUG - Initialisation
+14:06:36.525 [main] DEBUG - Input file set to C:\Users\jessi\Documents\b314-Jour-MonkeyIsland\target\test-classes\semantics\functions\one_boolean_function_no_local_var.b314
+14:06:36.526 [main] DEBUG - Output file set to C:\Users\jessi\AppData\Local\Temp\junit5641679868904128517\junit7197765542449500381.tmp
+14:06:36.526 [main] DEBUG - Initialisation: done
+jessica1
+14:06:36.526 [main] DEBUG - Parsing input
+/*
+
+0
+
+0,0,0
+
+0,0,0,0,0
+*/
+declare and retain 
+    fct1 as function():boolean
+    	do
+    		set fct1 to true 
+    	done 
+when your turn 
+by default 
+    do 
+	    if not fct1() then 
+   			next move west
+   		done
+	   	next do nothing
+    done&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;&amp;#0;
+14:06:36.528 [main] ERROR - Je passe ici ------------------------------------------------------
+14:06:36.530 [main] ERROR - Exception occured during compilation!
+java.lang.RuntimeException: null
+	at be.unamur.info.b314.compiler.Visitor.PCodeVisitor.visitFctDecl(PCodeVisitor.java:122) ~[classes/:?]
+	at be.unamur.info.b314.compiler.B314Parser$FctDeclContext.accept(B314Parser.java:4224) ~[classes/:?]
+	at be.unamur.info.b314.compiler.Visitor.PCodeVisitor.visitProgramme(PCodeVisitor.java:69) ~[classes/:?]
+	at be.unamur.info.b314.compiler.B314Parser$ProgrammeContext.accept(B314Parser.java:4028) ~[classes/:?]
+	at be.unamur.info.b314.compiler.main.Main.printPCode(Main.java:236) ~[classes/:?]
+	at be.unamur.info.b314.compiler.main.Main.compile(Main.java:199) ~[classes/:?]
+	at be.unamur.info.b314.compiler.main.Main.main(Main.java:79) [classes/:?]
+	at be.unamur.info.b314.compiler.main.CompilerTestHelper.launchCompilation(CompilerTestHelper.java:35) [test-classes/:?]
+	at be.unamur.info.b314.compiler.main.B314functionsSemanticsTest.testfunctions_one_boolean_function_no_local_var(B314functionsSemanticsTest.java:96) [test-classes/:?]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0_91]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:1.8.0_91]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_91]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[?:1.8.0_91]
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50) [junit-4.12.jar:4.12]
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12) [junit-4.12.jar:4.12]
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47) [junit-4.12.jar:4.12]
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17) [junit-4.12.jar:4.12]
+	at org.junit.rules.ExternalResource$1.evaluate(ExternalResource.java:48) [junit-4.12.jar:4.12]
+	at org.junit.rules.TestWatcher$1.evaluate(TestWatcher.java:55) [junit-4.12.jar:4.12]
+	at org.junit.rules.RunRules.evaluate(RunRules.java:20) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325) [junit-4.12.jar:4.12]
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78) [junit-4.12.jar:4.12]
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363) [junit-4.12.jar:4.12]
+	at org.apache.maven.surefire.junit4.JUnit4TestSet.execute(JUnit4TestSet.java:53) [surefire-junit4-2.10.jar:2.10]
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:123) [surefire-junit4-2.10.jar:2.10]
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:104) [surefire-junit4-2.10.jar:2.10]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0_91]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:1.8.0_91]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_91]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[?:1.8.0_91]
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:164) [surefire-api-2.10.jar:2.10]
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:110) [surefire-booter-2.10.jar:2.10]
+	at org.apache.maven.surefire.booter.SurefireStarter.invokeProvider(SurefireStarter.java:175) [surefire-booter-2.10.jar:2.10]
+	at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcessWhenForked(SurefireStarter.java:107) [surefire-booter-2.10.jar:2.10]
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:68) [surefire-booter-2.10.jar:2.10]
+</system-out>
+  </testcase>
+</testsuite>

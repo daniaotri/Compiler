@@ -22,6 +22,7 @@ public class Symbole {
     private Boolean isFunction;
     private ArrayList<String> LesParametres;
     private Boolean isParam;
+    private int address;
     
         
     /**
@@ -36,6 +37,7 @@ public class Symbole {
         this.isFunction = false;
         this.LesParametres = new ArrayList<>();
         this.isParam = false;
+        this.address = 0;
     }
     public Symbole(String name,String type){
         this.name = name;
@@ -44,6 +46,7 @@ public class Symbole {
         this.isFunction = false;
         this.LesParametres = new ArrayList<>();
         this.isParam = false;
+        this.address = 0;
     }
     
     public Boolean getIsFunction() {
@@ -101,6 +104,14 @@ public class Symbole {
 
     public void setIsParam(Boolean isParam) {
         this.isParam = isParam;
+    }
+
+    public int getAddress() {
+        return address;
+    }
+
+    public void setAddress(int address) {
+        this.address = address;
     }
 
     @Override
