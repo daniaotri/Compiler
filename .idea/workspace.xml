@@ -35,8 +35,8 @@
       <file leaf-file-name="PCodePrinter.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/be/unamur/info/b314/compiler/Visitor/PCodePrinter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="167">
-              <caret line="134" column="23" lean-forward="false" selection-start-line="134" selection-start-column="16" selection-end-line="134" selection-end-column="23" />
+            <state relative-caret-position="187">
+              <caret line="15" column="37" lean-forward="false" selection-start-line="15" selection-start-column="37" selection-end-line="15" selection-end-column="37" />
               <folding>
                 <element signature="e#2400#2401#0" expanded="true" />
                 <element signature="e#2437#2438#0" expanded="true" />
@@ -49,7 +49,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/antlr4/be/unamur/info/b314/compiler/B314.g4">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="176">
-              <caret line="28" column="74" lean-forward="false" selection-start-line="28" selection-start-column="67" selection-end-line="28" selection-end-column="74" />
+              <caret line="22" column="41" lean-forward="false" selection-start-line="22" selection-start-column="37" selection-end-line="22" selection-end-column="41" />
               <folding />
             </state>
           </provider>
@@ -58,20 +58,8 @@
       <file leaf-file-name="PCodeSetToExprGVisitor.java" pinned="false" current-in-tab="false">
         <entry file="file://$USER_HOME$/Downloads/PCodeSetToExprGVisitor.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PCodeVisitor.java" pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/Downloads/PCodeVisitor.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4309">
-              <caret line="526" column="5" lean-forward="true" selection-start-line="526" selection-start-column="5" selection-end-line="526" selection-end-column="5" />
+            <state relative-caret-position="167">
+              <caret line="25" column="22" lean-forward="false" selection-start-line="25" selection-start-column="20" selection-end-line="25" selection-end-column="22" />
               <folding>
                 <element signature="imports" expanded="false" />
               </folding>
@@ -80,13 +68,46 @@
         </entry>
       </file>
       <file leaf-file-name="PCodeVisitor.java" pinned="false" current-in-tab="true">
+        <entry file="file://$USER_HOME$/Downloads/PCodeVisitor.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="252">
+              <caret line="708" column="43" lean-forward="true" selection-start-line="708" selection-start-column="43" selection-end-line="708" selection-end-column="43" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Case.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/be/unamur/info/b314/compiler/Visitor/Case.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="323">
+              <caret line="21" column="0" lean-forward="true" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+              <folding>
+                <element signature="e#206#207#0" expanded="true" />
+                <element signature="e#253#254#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PCodeVisitor.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/be/unamur/info/b314/compiler/Visitor/PCodeVisitor.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="491" column="41" lean-forward="true" selection-start-line="491" selection-start-column="41" selection-end-line="491" selection-end-column="41" />
+            <state relative-caret-position="-27">
+              <caret line="572" column="22" lean-forward="true" selection-start-line="572" selection-start-column="22" selection-end-line="572" selection-end-column="22" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SquareType.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/be/unamur/info/b314/compiler/Visitor/SquareType.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="187">
+              <caret line="11" column="3" lean-forward="false" selection-start-line="11" selection-start-column="3" selection-end-line="11" selection-end-column="3" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -102,36 +123,36 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>lpti</find>
-      <find>fillArrayWithZero</find>
-      <find>ifthen</find>
-      <find>Call</find>
-      <find>fctDepth</find>
-      <find>mst</find>
-      <find>slf4j</find>
-      <find>appelD</find>
-      <find>compu</find>
-      <find>ifthe</find>
-      <find>ifthenel</find>
-      <find>lpt</find>
-      <find>appeldeF</find>
-      <find>exprb</find>
-      <find>parsetr</find>
-      <find>while</find>
-      <find>whiledodone</find>
-      <find>parsetree</find>
-      <find>whileEnd</find>
-      <find>whileIndice</find>
-      <find>exprB</find>
-      <find>bool</find>
-      <find>ent</find>
-      <find>exprent</find>
-      <find>computeEqu</find>
-      <find>printE</find>
-      <find>printEq</find>
-      <find>visitw</find>
-      <find>computeGreaterLesser</find>
-      <find>read</find>
+      <find>progb</find>
+      <find>prog</find>
+      <find>begin</find>
+      <find>variableS</find>
+      <find>variableSy</find>
+      <find>printwh</find>
+      <find>printlo</find>
+      <find>resolveArraySymbol</find>
+      <find>functionca</find>
+      <find>call</find>
+      <find>ind</find>
+      <find>elseName</find>
+      <find>ixa</find>
+      <find>affectat</find>
+      <find>offs</find>
+      <find>sq</find>
+      <find>offset</find>
+      <find>squa</find>
+      <find>int</find>
+      <find>printFunctionDeclaration</find>
+      <find>printfunction</find>
+      <find>dirt</find>
+      <find>north</find>
+      <find>case</find>
+      <find>square</find>
+      <find>depth</find>
+      <find>lev</find>
+      <find>PcodeType.square</find>
+      <find>nexta</find>
+      <find>next</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -151,11 +172,15 @@
         <option value="$PROJECT_DIR$/target/generated-sources/antlr4/be/unamur/info/b314/compiler/B314BaseListener.java" />
         <option value="$PROJECT_DIR$/src/main/java/be/unamur/info/b314/compiler/scope/SymboleTableFiller.java" />
         <option value="$PROJECT_DIR$/src/main/java/be/unamur/info/b314/compiler/Visitor/NextAction.java" />
-        <option value="$PROJECT_DIR$/src/main/java/be/unamur/info/b314/compiler/Visitor/NextActions.java" />
-        <option value="$PROJECT_DIR$/src/main/java/be/unamur/info/b314/compiler/Visitor/PCodePrinter.java" />
         <option value="$PROJECT_DIR$/src/main/java/be/unamur/info/b314/compiler/main/Main.java" />
         <option value="$PROJECT_DIR$/src/main/antlr4/be/unamur/info/b314/compiler/B314.g4" />
         <option value="$PROJECT_DIR$/src/test/java/be/unamur/info/b314/compiler/main/B314ifinstructionSemanticsTest.java" />
+        <option value="$USER_HOME$/Downloads/PCodeVisitor.java" />
+        <option value="$PROJECT_DIR$/src/main/java/be/unamur/info/b314/compiler/Visitor/SquareType.java" />
+        <option value="$PROJECT_DIR$/src/main/java/be/unamur/info/b314/compiler/Visitor/PCodePrinter.java" />
+        <option value="$PROJECT_DIR$/src/main/java/be/unamur/info/b314/compiler/Visitor/PCodeType/Square.java" />
+        <option value="$PROJECT_DIR$/src/main/java/be/unamur/info/b314/compiler/Visitor/Case.java" />
+        <option value="$PROJECT_DIR$/src/main/java/be/unamur/info/b314/compiler/Visitor/NextActions.java" />
         <option value="$PROJECT_DIR$/src/main/java/be/unamur/info/b314/compiler/Visitor/PCodeVisitor.java" />
       </list>
     </option>
@@ -248,10 +273,6 @@
               <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="test" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -268,28 +289,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="b314-Jour-MonkeyIsland" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="b314-Jour-MonkeyIsland" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -370,88 +369,6 @@
               <option name="myItemId" value="compiler" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="scope" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="b314-Jour-MonkeyIsland" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="b314-Jour-MonkeyIsland" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="compiler" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="b314-Jour-MonkeyIsland" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="b314-Jour-MonkeyIsland" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="compiler" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="b314-Jour-MonkeyIsland" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="b314-Jour-MonkeyIsland" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="antlr4" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -475,23 +392,29 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="be" />
+              <option name="myItemId" value="imports" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="b314-Jour-MonkeyIsland" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="b314-Jour-MonkeyIsland" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="unamur" />
+              <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="info" />
+              <option name="myItemId" value="main" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="b314" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="compiler" />
+              <option name="myItemId" value="antlr4" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1041,7 +964,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295583" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1120,37 +1043,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/be/unamur/info/b314/compiler/main/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2380">
-          <caret line="171" column="10" lean-forward="false" selection-start-line="171" selection-start-column="10" selection-end-line="171" selection-end-column="10" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/be/unamur/info/b314/compiler/scope/SymboleTableFiller.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/be/unamur/info/b314/compiler/main/MyConsoleErrorListener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="11" column="13" lean-forward="false" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/be/unamur/info/b314/compiler/main/CompilerTestHelper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="14" column="6" lean-forward="false" selection-start-line="14" selection-start-column="6" selection-end-line="14" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/antlr4/be/unamur/info/b314/compiler/B314.g4">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1666">
@@ -1269,13 +1161,6 @@
       </provider>
     </entry>
     <entry file="file://$USER_HOME$/AppData/Local/Temp/Temp2_aide_nath_compilateur.zip/aide_nath_compilateur/tests/PCodeInterpreter.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/antlr4/imports/B314Words.g4">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1734">
-          <caret line="102" column="13" lean-forward="false" selection-start-line="102" selection-start-column="10" selection-end-line="102" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/be/unamur/info/b314/compiler/main/B314intexpressionsSyntaxTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
@@ -1369,17 +1254,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/be/unamur/info/b314/compiler/Visitor/NextActions.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-          <folding>
-            <element signature="e#267#268#0" expanded="false" />
-            <element signature="e#304#305#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/be/unamur/info/b314/compiler/scope/Symbole.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="106">
@@ -1388,27 +1262,25 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/be/unamur/info/b314/compiler/scope/SymboleTableFiller.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/be/unamur/info/b314/compiler/scope/AddVarGlobalSymbole.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="11" column="40" lean-forward="false" selection-start-line="11" selection-start-column="33" selection-end-line="11" selection-end-column="40" />
+        <state relative-caret-position="498">
+          <caret line="48" column="0" lean-forward="true" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/Downloads/PCodeSetToExprGVisitor.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/be/unamur/info/b314/compiler/scope/SymboleTableFiller.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
+        <state relative-caret-position="136">
+          <caret line="18" column="13" lean-forward="false" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2941">
+        <state relative-caret-position="439">
           <caret line="173" column="45" lean-forward="true" selection-start-line="173" selection-start-column="45" selection-end-line="173" selection-end-column="45" />
           <folding />
         </state>
@@ -1417,15 +1289,60 @@
     <entry file="file://$PROJECT_DIR$/src/main/antlr4/be/unamur/info/b314/compiler/B314.g4">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="176">
-          <caret line="28" column="74" lean-forward="false" selection-start-line="28" selection-start-column="67" selection-end-line="28" selection-end-column="74" />
+          <caret line="22" column="41" lean-forward="false" selection-start-line="22" selection-start-column="37" selection-end-line="22" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/antlr4/imports/B314Words.g4">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="33" column="37" lean-forward="false" selection-start-line="33" selection-start-column="33" selection-end-line="33" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Downloads/PCodeSetToExprGVisitor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="167">
+          <caret line="25" column="22" lean-forward="false" selection-start-line="25" selection-start-column="20" selection-end-line="25" selection-end-column="22" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/be/unamur/info/b314/compiler/Visitor/PCodeType/Square.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="5" lean-forward="false" selection-start-line="6" selection-start-column="5" selection-end-line="6" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/be/unamur/info/b314/compiler/Visitor/Case.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="21" column="0" lean-forward="true" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+          <folding>
+            <element signature="e#206#207#0" expanded="true" />
+            <element signature="e#253#254#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/be/unamur/info/b314/compiler/Visitor/NextActions.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="31" column="0" lean-forward="true" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/be/unamur/info/b314/compiler/Visitor/PCodePrinter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="167">
-          <caret line="134" column="23" lean-forward="false" selection-start-line="134" selection-start-column="16" selection-end-line="134" selection-end-column="23" />
+        <state relative-caret-position="187">
+          <caret line="15" column="37" lean-forward="false" selection-start-line="15" selection-start-column="37" selection-end-line="15" selection-end-column="37" />
           <folding>
             <element signature="e#2400#2401#0" expanded="true" />
             <element signature="e#2437#2438#0" expanded="true" />
@@ -1433,23 +1350,29 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/Downloads/PCodeVisitor.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/be/unamur/info/b314/compiler/Visitor/SquareType.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4309">
-          <caret line="526" column="5" lean-forward="true" selection-start-line="526" selection-start-column="5" selection-end-line="526" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
+        <state relative-caret-position="187">
+          <caret line="11" column="3" lean-forward="false" selection-start-line="11" selection-start-column="3" selection-end-line="11" selection-end-column="3" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/be/unamur/info/b314/compiler/Visitor/PCodeVisitor.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="491" column="41" lean-forward="true" selection-start-line="491" selection-start-column="41" selection-end-line="491" selection-end-column="41" />
+        <state relative-caret-position="-27">
+          <caret line="572" column="22" lean-forward="true" selection-start-line="572" selection-start-column="22" selection-end-line="572" selection-end-column="22" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Downloads/PCodeVisitor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="708" column="43" lean-forward="true" selection-start-line="708" selection-start-column="43" selection-end-line="708" selection-end-column="43" />
+          <folding />
         </state>
       </provider>
     </entry>

@@ -546,7 +546,54 @@ public class PCodeVisitor extends B314BaseVisitor<Object>{
             return null;
         }
 
-	@Override public Object visitEnvironnementCase(B314Parser.EnvironnementCaseContext ctx) { return null; }
+	@Override public Object visitEnvironnementCase(B314Parser.EnvironnementCaseContext ctx) {
+
+        String name = ctx.getChild(0).getText();
+        switch(name){
+            case "dirt":
+                printer.printPutValueToStackPoint(PCodePrinter.PCodeTypes.Int,SquareType.dirt.getValue() );
+                break;
+            case  "rock":
+                printer.printPutValueToStackPoint(PCodePrinter.PCodeTypes.Int,SquareType.rock.getValue());
+                break;
+            case "vines":
+                printer.printPutValueToStackPoint(PCodePrinter.PCodeTypes.Int,SquareType.vines.getValue());
+                break;
+            case "zombie":
+                printer.printPutValueToStackPoint(PCodePrinter.PCodeTypes.Int,SquareType.zombie.getValue());
+                break;
+            case  "ennemi":
+                printer.printPutValueToStackPoint(PCodePrinter.PCodeTypes.Int,SquareType.ennemi.getValue());
+                break;
+            case "player":
+                printer.printPutValueToStackPoint(PCodePrinter.PCodeTypes.Int,SquareType.player.getValue());
+                break;
+            case  "map":
+                printer.printPutValueToStackPoint(PCodePrinter.PCodeTypes.Int,SquareType.map.getValue());
+                break;
+            case "radio":
+                printer.printPutValueToStackPoint(PCodePrinter.PCodeTypes.Int,SquareType.radio.getValue());
+                break;
+            case "ammo":
+                printer.printPutValueToStackPoint(PCodePrinter.PCodeTypes.Int,SquareType.ammo.getValue());
+                break;
+            case "fruit":
+                printer.printPutValueToStackPoint(PCodePrinter.PCodeTypes.Int,SquareType.fruit.getValue());
+                break;
+            case "soda":
+                printer.printPutValueToStackPoint(PCodePrinter.PCodeTypes.Int,SquareType.soda.getValue());
+                break;
+            case "nearby":
+                printer.printLoadAdress(PCodePrinter.PCodeTypes.Int,LevelScope,17);
+                CheckTableauTwo(ctx,9,9);
+                printer.printIndexedFetch(PCodePrinter.PCodeTypes.Int);
+                break;
+
+
+        }
+
+            return null;
+        }
 
         /*Les expressions de gauche*/
         
