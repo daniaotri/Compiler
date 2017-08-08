@@ -36,7 +36,7 @@ public class PCodeVisitor extends B314BaseVisitor<Object>{
     private int FunctionPosition;
     private int WhilePosition;
     
-    /*
+    /**
     * Constructeur
     */
     public PCodeVisitor(Scope scope, PCodePrinter printer) {
@@ -49,7 +49,7 @@ public class PCodeVisitor extends B314BaseVisitor<Object>{
         this.FunctionPosition=0;
         this.WhilePosition=0;
     }
-    /*
+    /**
     *Debut Du programme
     */
 	@Override
@@ -272,7 +272,7 @@ public class PCodeVisitor extends B314BaseVisitor<Object>{
             printer.printSetTo(getType(symbole));
             return null;
 	}        
-        @Override 
+    @Override
         public Object visitCompute(B314Parser.ComputeContext ctx) { 
             ctx.getChild(1).accept(this);
             return null; 
@@ -458,7 +458,7 @@ public class PCodeVisitor extends B314BaseVisitor<Object>{
             Operation(ctx);
             return null;
 	}        
-        /*Les expressions Case*/
+        /*Les expressions PCodeType*/
 
 	@Override 
         public Object visitExprCaseNearby(B314Parser.ExprCaseNearbyContext ctx) { 

@@ -7,11 +7,9 @@ package be.unamur.info.b314.compiler.scope;
 
 import be.unamur.info.b314.compiler.B314BaseListener;
 import be.unamur.info.b314.compiler.B314Parser;
-import java.util.Locale;
 import org.antlr.v4.runtime.ParserRuleContext;
-import org.antlr.v4.runtime.tree.ParseTreeWalker;
-/*
- *
+
+ /**
  *@author jessi
  *
  */
@@ -70,7 +68,7 @@ public class SymboleTableFiller extends B314BaseListener {
             CurrentScope = (ScopeImpl) CurrentScope.getParent();
         }
 
-        /*
+        /**
          *
          *  Clause When
          */
@@ -79,7 +77,8 @@ public class SymboleTableFiller extends B314BaseListener {
             String nomScope = "clauseWhen"+position;
             CurrentScope= (ScopeImpl) CurrentScope.WhoIsThisScope(nomScope);
             position = position +1;  
-            if(ctx.exprG() != null || ctx.appelDeFonction() != null){
+            if(ctx.exprG() != null || ctx.appelDeFonction() != null)
+            {
                 Scope parent = CurrentScope.getParent();
                 Symbole sym= parent.FoundSymbole(ctx.getChild(1).getChild(0).getText());
                 CheckTwoType(sym.getType(), Type.BOOLEAN.toString().toLowerCase());
@@ -115,8 +114,7 @@ public class SymboleTableFiller extends B314BaseListener {
             }
         }
 
-	@Override 
-        public void enterIfthenelse(B314Parser.IfthenelseContext ctx) {
+	public void enterIf_Else(B314Parser.IfthenelseContext ctx) {
             if(ctx.exprG() != null || ctx.appelDeFonction() != null){
                 Symbole sym= CurrentScope.FoundSymbole(ctx.getChild(1).getChild(0).getText());
                 CheckTwoType(sym.getType(), Type.BOOLEAN.toString().toLowerCase());
@@ -137,7 +135,7 @@ public class SymboleTableFiller extends B314BaseListener {
             checkExpressionGauche(ctx.exprG(),Type.INTEGER.toString().toLowerCase());
             
         }
-        @Override 
+    @Override
         public void enterAffectationGaucheDroiteBool(B314Parser.AffectationGaucheDroiteBoolContext ctx) {
             level = 0;
             checkExpressionGauche(ctx.exprG(),Type.BOOLEAN.toString().toLowerCase());      
@@ -170,10 +168,11 @@ public class SymboleTableFiller extends B314BaseListener {
         public void enterAppelDeFonction(B314Parser.AppelDeFonctionContext ctx) {
             visitExprD = true;
             Symbole sym = CurrentScope.FoundSymbole(ctx.ID().getText());
-            if (sym.getLesParametres().size()>0)
+            if (sym.getTheParameters().size()>0)
                     {
-                    for(int i = 0; i<sym.getLesParametres().size();i++){
-                        CurrentSymbole = GetSymboleParm(sym.getName(),sym.getLesParametres().get(i));
+                    for(int i = 0; i<sym.getTheParameters().size(); i++)
+                    {
+                        CurrentSymbole = GetSymboleParm(sym.getName(),sym.getTheParameters().get(i));
                         if(ctx.exprD(i)== null)throw new RuntimeException();
                     }        
                     }
@@ -209,20 +208,23 @@ public class SymboleTableFiller extends B314BaseListener {
         public void enterExprGTableauFonctEnt(B314Parser.ExprGTableauFonctEntContext ctx) {
             CurrentSymbole = CurrentScope.FoundSymbole(ctx.ID().getText());
             if(CurrentSymbole.getIsArray()){
-                if(CurrentSymbole.getLength().length==1){
+                if(CurrentSymbole.getLength().length==1)
+                {
                     if(ctx.getChild(2)==null)throw new RuntimeException();
-                    else {
+                    else
+                    {
                         CheckTwoType(GetType((ParserRuleContext) ctx.getChild(2)),Type.INTEGER.toString().toLowerCase( ));
                     }
                     if(ctx.getChild(4)!=null)throw new RuntimeException();    
                 }
-                else{
+                else
+                    {
                     if(ctx.getChild(2)==null || ctx.getChild(4)==null)throw new RuntimeException();
-                      }
+                    }
             }
             else if(ctx.getChild(2)!= null)  throw new RuntimeException();             
         }
-        @Override
+    @Override
         public void enterExprGTableauEntEnt(B314Parser.ExprGTableauEntEntContext ctx){            
             CurrentSymbole =choiceTableauExprG(ctx.ID().getText(),ctx.getChild(2)!=null,ctx.getChild(4)!=null );
             if(CurrentSymbole.getIsArray()){
@@ -240,8 +242,10 @@ public class SymboleTableFiller extends B314BaseListener {
 	@Override 
         public void enterExprGTableauFonctFonct(B314Parser.ExprGTableauFonctFonctContext ctx) {
             CurrentSymbole = CurrentScope.FoundSymbole(ctx.ID().getText());
-            if(CurrentSymbole.getIsArray()){
-                if(CurrentSymbole.getLength().length==1){
+            if(CurrentSymbole.getIsArray())
+            {
+                if(CurrentSymbole.getLength().length==1)
+                {
                     if(ctx.getChild(2)==null)throw new RuntimeException();
                     else CheckTwoType(GetType((ParserRuleContext) ctx.getChild(2)),Type.INTEGER.toString().toLowerCase( ));
                     if(ctx.getChild(4)!=null)throw new RuntimeException();    
@@ -281,7 +285,6 @@ public class SymboleTableFiller extends B314BaseListener {
             if (visitExprD)CheckTwoType(CurrentSymbole.getType(),CurrentScope.FoundSymbole(ctx.getChild(0).getText()).getType());        
         }        
         /**
-         *
          * Les expressions de type case
          */
         @Override 
@@ -295,7 +298,6 @@ public class SymboleTableFiller extends B314BaseListener {
             }
         }
         /**
-         *
          * Les expressions de type booléenne
          */
 	@Override 
@@ -316,7 +318,7 @@ public class SymboleTableFiller extends B314BaseListener {
             else if(ctx.appelDeFonction()!= null)CheckTwoType(GetType(ctx.appelDeFonction()),Type.BOOLEAN.toString().toLowerCase( ));
             else throw new RuntimeException();
         }
-        @Override 
+    @Override
         public void enterExprBoolEgaleGEnt(B314Parser.ExprBoolEgaleGEntContext ctx) {
             if(ctx.exprG() == null){
                 CheckTwoType(GetType(ctx.appelDeFonction()),Type.INTEGER.toString().toLowerCase());
@@ -325,7 +327,7 @@ public class SymboleTableFiller extends B314BaseListener {
                 checkExpressionGauche(ctx.exprG(),Type.INTEGER.toString().toLowerCase());
             }
         }
-        @Override 
+    @Override
         public void enterExprBoolEgaleGCase(B314Parser.ExprBoolEgaleGCaseContext ctx) { 
            if(ctx.exprG() == null){
                 CheckTwoType(GetType(ctx.appelDeFonction()),Type.SQUARE.toString().toLowerCase());
@@ -334,16 +336,17 @@ public class SymboleTableFiller extends B314BaseListener {
                 checkExpressionGauche(ctx.exprG(),Type.SQUARE.toString().toLowerCase());
             }        
         }
-        @Override 
+    @Override
         public void enterExprBoolEgaleEntG(B314Parser.ExprBoolEgaleEntGContext ctx) {
-           if(ctx.exprG() == null){
+           if(ctx.exprG() == null)
+           {
                 CheckTwoType(GetType(ctx.appelDeFonction()),Type.INTEGER.toString().toLowerCase());
-            }
+           }
             else{
                 checkExpressionGauche(ctx.exprG(),Type.INTEGER.toString().toLowerCase());
             }            
         }
-        @Override 
+    @Override
         public void enterExprBoolEgaleCaseG(B314Parser.ExprBoolEgaleCaseGContext ctx) {
            if(ctx.exprG() == null){
                 CheckTwoType(GetType(ctx.appelDeFonction()),Type.SQUARE.toString().toLowerCase());
@@ -352,11 +355,10 @@ public class SymboleTableFiller extends B314BaseListener {
                 checkExpressionGauche(ctx.exprG(),Type.SQUARE.toString().toLowerCase());
             }        
         }
-        @Override 
+    @Override
         public void enterExprBoolEgaleGG(B314Parser.ExprBoolEgaleGGContext ctx) { 
             CheckTwoType(GetType((ParserRuleContext)ctx.getChild(0)), GetType((ParserRuleContext)ctx.getChild(2)));
         }
-        
 	@Override 
         public void enterExprBoolAndOrGaucheBool(B314Parser.ExprBoolAndOrGaucheBoolContext ctx) {
             level = 0;                        
@@ -387,7 +389,6 @@ public class SymboleTableFiller extends B314BaseListener {
             if(ctx.appelDeFonction(1)!= null)CheckTwoType(GetType(ctx.appelDeFonction(1)),Type.INTEGER.toString().toLowerCase( ));                   
         }
         /**
-         *
          * Les expressions de type entière
          */
 	@Override 
@@ -428,8 +429,7 @@ public class SymboleTableFiller extends B314BaseListener {
             if(ctx.appelDeFonction(1)!= null)CheckTwoType(GetType(ctx.appelDeFonction(1)),Type.INTEGER.toString().toLowerCase( ));         
         }      
         /**
-         *
-         * LEs méthodes privates
+         *the privates methodes
          */
         private Symbole GetSymboleParm(String nameFct, String nameParam){
             Scope parent = CurrentScope.getParent();
@@ -437,6 +437,7 @@ public class SymboleTableFiller extends B314BaseListener {
             Symbole sym = scopefct.FoundSymbole(nameParam);
             return sym;           
         }
+
         private String GetType(ParserRuleContext ctx){
             String result = null;
             if(ctx instanceof B314Parser.ExprEntContext) result= Type.INTEGER.toString().toLowerCase();
@@ -449,7 +450,9 @@ public class SymboleTableFiller extends B314BaseListener {
             if(ctx instanceof B314Parser.ExprCaseContext)result= Type.SQUARE.toString().toLowerCase();
             return result;
         }
-        private void CheckTwoType(String type1, String type2){
+
+        private void CheckTwoType(String type1, String type2)
+        {
             if(!type1.equals(type2)) throw new RuntimeException();
         }
         
@@ -482,11 +485,13 @@ public class SymboleTableFiller extends B314BaseListener {
                     if(i==0) throw new RuntimeException();
                 }
         }
-    private Symbole choiceTableauExprG(String name,boolean one,boolean two){
-            Symbole symbole = CurrentScope.FoundSymbole(name);
+
+        private Symbole choiceTableauExprG(String name,boolean one,boolean two){
+                Symbole symbole = CurrentScope.FoundSymbole(name);
                 Scope scope = CurrentScope.getParent();
                 Symbole symglobal = null;
-                if(scope != null){
+                if(scope != null)
+                {
                     symglobal = scope.FoundSymbole(symbole.getName());
                     if(symglobal != null){
                         if(symglobal.equals(symbole))level = 1;
@@ -515,13 +520,16 @@ public class SymboleTableFiller extends B314BaseListener {
                 } 
             return CurrentSymbole;
     }
-    private int chooseOne(int i,int j, boolean x, boolean y){
-        if(x && y){
+
+        private int chooseOne(int i,int j, boolean a, boolean b){
+        if(a && b)
+        {
             if(i == 2) return i;
             else if(j==2) return j;
             else throw new RuntimeException();
         }
-        else {
+        else
+        {
             if(i == 1) return i;
             else if(j== 1) return j;
             else throw  new RuntimeException();

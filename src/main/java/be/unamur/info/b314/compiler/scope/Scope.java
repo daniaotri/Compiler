@@ -15,32 +15,36 @@ import java.util.Map;
  */
 public interface Scope {
 
-    /*
-    * @return le Scope Parent
-    **/
+    /**
+    * @return the parent's scope
+    */
     public Scope getParent();
-    /*
-    *@return la liste des Scopes enfants 
-    **/
+    /**
+    *@return the list children of scope
+    */
     public ArrayList<Scope> getChildren();
-    /*
-    *@return les symboles du scope
-    **/
+    /**
+    *@return the symboles of scope
+    */
     public ArrayList<Symbole> getSymboles();
-    
-    /*
+
+    public String GetName();
+
+    public void setSeize (int s);
+
+    public int getSize ();
+
+    /**
     *Permet d'ajouter un Scope enfant
     * @param child l'enfant à ajouter
-    **/
+    */
     public void addChildScope(Scope child);
-    
     /**
      *Definit un symbole du scope
      *
      @param symbole le symbole à définir
      */
     public void AddSymbole(Symbole symbole);
-    
     /**
      *
      * @param name le nom du symbole
@@ -48,8 +52,10 @@ public interface Scope {
      */
     public Symbole FoundSymbole(String name);
     
-    public String GetName();
+
     public void deleteDuplicateSCope();
+
     public void deleteDuplicateSymbole();
+
     public Scope WhoIsThisScope(String name);
 }

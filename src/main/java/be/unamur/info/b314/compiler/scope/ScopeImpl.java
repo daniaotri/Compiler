@@ -12,17 +12,16 @@ import java.util.ArrayList;
  * 
  * @author jessi
  */
-public class ScopeImpl implements Scope{
-    
-    /*Le scope parent*/
+public class ScopeImpl implements Scope {
+
     private Scope Parent;
-    /*le nom du scope*/
+    /*the name of scope*/
     private String name;
-    
-    /*Liste des tous les scopes inckus dans le scope*/
-    private ArrayList<Scope> Children;   
-    
-    /*Liste des symboles du scope*/
+
+    private int size;
+    /*List of all scopes included in scope*/
+    private ArrayList<Scope> Children;
+    /*List of Scope Symbols*/
     private ArrayList<Symbole> symboles;
     
     
@@ -62,6 +61,16 @@ public class ScopeImpl implements Scope{
             }
         }
         symboles.add(symbole);
+    }
+
+    @Override
+    public int getSize() {
+        return size;
+    }
+
+    @Override
+    public void setSeize(int size) {
+
     }
 
     /**
@@ -117,7 +126,9 @@ public class ScopeImpl implements Scope{
     public String GetName() {
         return name;
     }
-    
+
+
+
     public void CorrectEveryThing(){
         deleteDuplicateSCope();
         String type = null;

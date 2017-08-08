@@ -1,7 +1,7 @@
 package be.unamur.info.b314.compiler.Visitor;
 
 /**
- * Created by Nathalie Masudi on 24/04/2017.
+ * Created by Dania Otri on 20/07/2017.
  */
 public enum NextActions {
     doNothing(0),

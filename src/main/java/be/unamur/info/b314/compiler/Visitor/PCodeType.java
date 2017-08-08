@@ -1,15 +1,19 @@
 package be.unamur.info.b314.compiler.Visitor;
 
 /**
- * Created by Nathalie Masudi on 06/05/2017.
+ * Created by Dania Otri on 7/08/2017.
  */
-public enum Case {
+public enum PCodeType {
 
-        square('s');
+        square('s'),
+        INTEGER('i'),
+        BOOLEAN('b'),
+        VOID('v');
+
 
         private final int representation;
 
-        Case(char c) {
+        PCodeType(char c) {
             this.representation = c;
         }
 

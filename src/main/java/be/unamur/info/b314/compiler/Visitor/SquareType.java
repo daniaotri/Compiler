@@ -1,7 +1,7 @@
 package be.unamur.info.b314.compiler.Visitor;
 
 /**
- * Created by Nathalie Masudi on 06/05/2017.
+ * Created by Dania Otri on 21/07/2017.
  */
 public enum SquareType {
     dirt (0),

@@ -2,112 +2,71 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="23da8053-1e9e-420a-be49-fa4761b32c44" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314BaseListener.class" afterPath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314BaseListener.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314BaseVisitor.class" afterPath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314BaseVisitor.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Lexer.class" afterPath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Lexer.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Listener.class" afterPath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Listener.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$ActionContext.class" afterPath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$ActionContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$AffectationGaucheDroiteBoolContext.class" afterPath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$AffectationGaucheDroiteBoolContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$AffectationGaucheDroiteCaseContext.class" afterPath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$AffectationGaucheDroiteCaseContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$AffectationGaucheDroiteContext.class" afterPath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$AffectationGaucheDroiteContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$AffectationGaucheDroiteFonctionContext.class" afterPath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$AffectationGaucheDroiteFonctionContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$AffectationGaucheDroiteGaucheContext.class" afterPath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$AffectationGaucheDroiteGaucheContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$AppelDeFonctionContext.class" afterPath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$AppelDeFonctionContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$ArrayContext.class" afterPath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$ArrayContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$ClauseDefaultContext.class" afterPath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$ClauseDefaultContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$ClauseWhenContext.class" afterPath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$ClauseWhenContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$ComputeContext.class" afterPath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$ComputeContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$EntierContext.class" afterPath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$EntierContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$EnvironnementBoolContext.class" afterPath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$EnvironnementBoolContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$EnvironnementCaseContext.class" afterPath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$EnvironnementCaseContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$EnvironnementIntContext.class" afterPath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$EnvironnementIntContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$ExprBoolAndOrBoolBoolContext.class" afterPath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$ExprBoolAndOrBoolBoolContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$ExprBoolAndOrBoolGaucheContext.class" afterPath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$ExprBoolAndOrBoolGaucheContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$ExprBoolAndOrGaucheBoolContext.class" afterPath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$ExprBoolAndOrGaucheBoolContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$ExprBoolAndOrGaucheGaucheContext.class" afterPath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$ExprBoolAndOrGaucheGaucheContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$ExprBoolContext.class" afterPath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$ExprBoolContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$ExprBoolEgaleBoolGaucheContext.class" afterPath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$ExprBoolEgaleBoolGaucheContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$ExprBoolEgaleBooleanContext.class" afterPath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$ExprBoolEgaleBooleanContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$ExprBoolEgaleCaseCaseContext.class" afterPath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$ExprBoolEgaleCaseCaseContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$ExprBoolEgaleCaseGContext.class" afterPath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$ExprBoolEgaleCaseGContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$ExprBoolEgaleEntEntContext.class" afterPath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$ExprBoolEgaleEntEntContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$ExprBoolEgaleEntGContext.class" afterPath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$ExprBoolEgaleEntGContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$ExprBoolEgaleGCaseContext.class" afterPath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$ExprBoolEgaleGCaseContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$ExprBoolEgaleGEntContext.class" afterPath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$ExprBoolEgaleGEntContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$ExprBoolEgaleGGContext.class" afterPath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$ExprBoolEgaleGGContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$ExprBoolEgaleGaucheBoolContext.class" afterPath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$ExprBoolEgaleGaucheBoolContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$ExprBoolEnvironnementContext.class" afterPath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$ExprBoolEnvironnementContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$ExprBoolFalseContext.class" afterPath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$ExprBoolFalseContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$ExprBoolInfSupEntContext.class" afterPath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$ExprBoolInfSupEntContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$ExprBoolNotContext.class" afterPath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$ExprBoolNotContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$ExprBoolNotGaucheContext.class" afterPath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$ExprBoolNotGaucheContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$ExprBoolParenntheseContext.class" afterPath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$ExprBoolParenntheseContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$ExprBoolTrueContext.class" afterPath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$ExprBoolTrueContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$ExprCaseContext.class" afterPath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$ExprCaseContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$ExprCaseEnvironnementContext.class" afterPath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$ExprCaseEnvironnementContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$ExprCaseNearbyContext.class" afterPath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$ExprCaseNearbyContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$ExprCaseParenntheseContext.class" afterPath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$ExprCaseParenntheseContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$ExprDBooleanContext.class" afterPath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$ExprDBooleanContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$ExprDCaseContext.class" afterPath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$ExprDCaseContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$ExprDContext.class" afterPath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$ExprDContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$ExprDFonctionContext.class" afterPath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$ExprDFonctionContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$ExprDGContext.class" afterPath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$ExprDGContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$ExprDIntegerContext.class" afterPath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$ExprDIntegerContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$ExprEntContext.class" afterPath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$ExprEntContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$ExprEntEntierContext.class" afterPath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$ExprEntEntierContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$ExprEntEnvironnementContext.class" afterPath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$ExprEntEnvironnementContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$ExprEntMulDivEntEntContext.class" afterPath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$ExprEntMulDivEntEntContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$ExprEntMulDivEntGauheContext.class" afterPath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$ExprEntMulDivEntGauheContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$ExprEntMulDivGaucheGauheContext.class" afterPath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$ExprEntMulDivGaucheGauheContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$ExprEntMulDivGauheEntContext.class" afterPath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$ExprEntMulDivGauheEntContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$ExprEntParenntheseContext.class" afterPath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$ExprEntParenntheseContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$ExprEntPlusMoinsEntEntContext.class" afterPath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$ExprEntPlusMoinsEntEntContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$ExprEntPlusMoinsEntGauheContext.class" afterPath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$ExprEntPlusMoinsEntGauheContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$ExprEntPlusMoinsGaucheGauheContext.class" afterPath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$ExprEntPlusMoinsGaucheGauheContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$ExprEntPlusMoinsGauheEntContext.class" afterPath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$ExprEntPlusMoinsGauheEntContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$ExprFonctionParenntheseContext.class" afterPath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$ExprFonctionParenntheseContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$ExprGContext.class" afterPath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$ExprGContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$ExprGTableauEntEntContext.class" afterPath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$ExprGTableauEntEntContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$ExprGTableauEntFonctContext.class" afterPath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$ExprGTableauEntFonctContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$ExprGTableauFonctEntContext.class" afterPath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$ExprGTableauFonctEntContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$ExprGTableauFonctFonctContext.class" afterPath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$ExprGTableauFonctFonctContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$ExprGVariableContext.class" afterPath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$ExprGVariableContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$FctDeclContext.class" afterPath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$FctDeclContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$FctTypeContext.class" afterPath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$FctTypeContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$FctTypeScalarContext.class" afterPath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$FctTypeScalarContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$FctTypeVoidContext.class" afterPath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$FctTypeVoidContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$IfContext.class" afterPath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$IfContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$IfthenelseContext.class" afterPath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$IfthenelseContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$InstructionContext.class" afterPath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$InstructionContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$NextActionContext.class" afterPath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$NextActionContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$ParamDeclContext.class" afterPath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$ParamDeclContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$ProgDeclContext.class" afterPath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$ProgDeclContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$ProgrammeContext.class" afterPath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$ProgrammeContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$ScalarBooleanContext.class" afterPath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$ScalarBooleanContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$ScalarContext.class" afterPath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$ScalarContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$ScalarIntegerContext.class" afterPath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$ScalarIntegerContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$ScalarSquareContext.class" afterPath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$ScalarSquareContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$SkippppContext.class" afterPath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$SkippppContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$TypeArrayContext.class" afterPath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$TypeArrayContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$TypeContext.class" afterPath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$TypeContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$TypeScalarContext.class" afterPath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$TypeScalarContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$VarDeclContext.class" afterPath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$VarDeclContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$WhileContext.class" afterPath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser$WhileContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser.class" afterPath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Parser.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Visitor.class" afterPath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/B314Visitor.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/Visitor/NextActions.class" afterPath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/Visitor/NextActions.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/Visitor/PcodeVisitor.class" afterPath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/Visitor/PcodeVisitor.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/main/Main.class" afterPath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/main/Main.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/scope/FillScope.class" afterPath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/scope/FillScope.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/scope/SymboleTableFiller.class" afterPath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/scope/SymboleTableFiller.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/kotlinc.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/be/unamur/info/b314/compiler/scope/AddGlobalSymbole.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/be/unamur/info/b314/compiler/Visitor/Case.java" afterPath="$PROJECT_DIR$/src/main/java/be/unamur/info/b314/compiler/Visitor/PCodeType.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/scope/Scope.class" afterPath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/scope/Scope.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/scope/Symbole.class" afterPath="$PROJECT_DIR$/target/classes/be/unamur/info/b314/compiler/scope/Symbole.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/maven-status/antlr4/dependencies.ser" afterPath="$PROJECT_DIR$/target/maven-status/antlr4/dependencies.ser" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/b314-compiler.iml" afterPath="$PROJECT_DIR$/b314-compiler.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/be/unamur/info/b314/compiler/Visitor/NextActions.java" afterPath="$PROJECT_DIR$/src/main/java/be/unamur/info/b314/compiler/Visitor/NextActions.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/be/unamur/info/b314/compiler/Visitor/PCodeVisitor.java" afterPath="$PROJECT_DIR$/src/main/java/be/unamur/info/b314/compiler/Visitor/PCodeVisitor.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/be/unamur/info/b314/compiler/Visitor/SquareType.java" afterPath="$PROJECT_DIR$/src/main/java/be/unamur/info/b314/compiler/Visitor/SquareType.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/be/unamur/info/b314/compiler/scope/Scope.java" afterPath="$PROJECT_DIR$/src/main/java/be/unamur/info/b314/compiler/scope/Scope.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/be/unamur/info/b314/compiler/scope/ScopeImpl.java" afterPath="$PROJECT_DIR$/src/main/java/be/unamur/info/b314/compiler/scope/ScopeImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/be/unamur/info/b314/compiler/scope/Symbole.java" afterPath="$PROJECT_DIR$/src/main/java/be/unamur/info/b314/compiler/scope/Symbole.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/be/unamur/info/b314/compiler/scope/SymboleTableFiller.java" afterPath="$PROJECT_DIR$/src/main/java/be/unamur/info/b314/compiler/scope/SymboleTableFiller.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-be.unamur.info.b314.compiler.main.B314affectinstructionSemanticsTest.xml" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-be.unamur.info.b314.compiler.main.B314affectinstructionSemanticsTest.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-be.unamur.info.b314.compiler.main.B314affectinstructionSyntaxTest.xml" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-be.unamur.info.b314.compiler.main.B314affectinstructionSyntaxTest.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-be.unamur.info.b314.compiler.main.B314boolexpressionsSemanticsTest.xml" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-be.unamur.info.b314.compiler.main.B314boolexpressionsSemanticsTest.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-be.unamur.info.b314.compiler.main.B314boolexpressionsSyntaxTest.xml" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-be.unamur.info.b314.compiler.main.B314boolexpressionsSyntaxTest.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-be.unamur.info.b314.compiler.main.B314commentsSemanticsTest.xml" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-be.unamur.info.b314.compiler.main.B314commentsSemanticsTest.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-be.unamur.info.b314.compiler.main.B314commentsSyntaxTest.xml" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-be.unamur.info.b314.compiler.main.B314commentsSyntaxTest.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-be.unamur.info.b314.compiler.main.B314functionsSemanticsTest.xml" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-be.unamur.info.b314.compiler.main.B314functionsSemanticsTest.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-be.unamur.info.b314.compiler.main.B314functionsSyntaxTest.xml" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-be.unamur.info.b314.compiler.main.B314functionsSyntaxTest.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-be.unamur.info.b314.compiler.main.B314globalvariabledeclSemanticsTest.xml" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-be.unamur.info.b314.compiler.main.B314globalvariabledeclSemanticsTest.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-be.unamur.info.b314.compiler.main.B314globalvariabledeclSyntaxTest.xml" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-be.unamur.info.b314.compiler.main.B314globalvariabledeclSyntaxTest.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-be.unamur.info.b314.compiler.main.B314ifinstructionSemanticsTest.xml" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-be.unamur.info.b314.compiler.main.B314ifinstructionSemanticsTest.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-be.unamur.info.b314.compiler.main.B314ifinstructionSyntaxTest.xml" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-be.unamur.info.b314.compiler.main.B314ifinstructionSyntaxTest.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-be.unamur.info.b314.compiler.main.B314intexpressionsSemanticsTest.xml" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-be.unamur.info.b314.compiler.main.B314intexpressionsSemanticsTest.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-be.unamur.info.b314.compiler.main.B314intexpressionsSyntaxTest.xml" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-be.unamur.info.b314.compiler.main.B314intexpressionsSyntaxTest.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-be.unamur.info.b314.compiler.main.B314localvariabledeclSemanticsTest.xml" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-be.unamur.info.b314.compiler.main.B314localvariabledeclSemanticsTest.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-be.unamur.info.b314.compiler.main.B314localvariabledeclSyntaxTest.xml" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-be.unamur.info.b314.compiler.main.B314localvariabledeclSyntaxTest.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-be.unamur.info.b314.compiler.main.B314nextinstructionSemanticsTest.xml" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-be.unamur.info.b314.compiler.main.B314nextinstructionSemanticsTest.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-be.unamur.info.b314.compiler.main.B314nextinstructionSyntaxTest.xml" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-be.unamur.info.b314.compiler.main.B314nextinstructionSyntaxTest.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-be.unamur.info.b314.compiler.main.B314squareexpressionsSemanticsTest.xml" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-be.unamur.info.b314.compiler.main.B314squareexpressionsSemanticsTest.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-be.unamur.info.b314.compiler.main.B314squareexpressionsSyntaxTest.xml" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-be.unamur.info.b314.compiler.main.B314squareexpressionsSyntaxTest.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-be.unamur.info.b314.compiler.main.B314whenclauseSemanticsTest.xml" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-be.unamur.info.b314.compiler.main.B314whenclauseSemanticsTest.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-be.unamur.info.b314.compiler.main.B314whenclauseSyntaxTest.xml" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-be.unamur.info.b314.compiler.main.B314whenclauseSyntaxTest.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-be.unamur.info.b314.compiler.main.B314whileinstructionSemanticsTest.xml" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-be.unamur.info.b314.compiler.main.B314whileinstructionSemanticsTest.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-be.unamur.info.b314.compiler.main.B314whileinstructionSyntaxTest.xml" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-be.unamur.info.b314.compiler.main.B314whileinstructionSyntaxTest.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/be.unamur.info.b314.compiler.main.B314affectinstructionSemanticsTest.txt" afterPath="$PROJECT_DIR$/target/surefire-reports/be.unamur.info.b314.compiler.main.B314affectinstructionSemanticsTest.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/be.unamur.info.b314.compiler.main.B314affectinstructionSyntaxTest.txt" afterPath="$PROJECT_DIR$/target/surefire-reports/be.unamur.info.b314.compiler.main.B314affectinstructionSyntaxTest.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/be.unamur.info.b314.compiler.main.B314boolexpressionsSemanticsTest.txt" afterPath="$PROJECT_DIR$/target/surefire-reports/be.unamur.info.b314.compiler.main.B314boolexpressionsSemanticsTest.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/be.unamur.info.b314.compiler.main.B314boolexpressionsSyntaxTest.txt" afterPath="$PROJECT_DIR$/target/surefire-reports/be.unamur.info.b314.compiler.main.B314boolexpressionsSyntaxTest.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/be.unamur.info.b314.compiler.main.B314commentsSemanticsTest.txt" afterPath="$PROJECT_DIR$/target/surefire-reports/be.unamur.info.b314.compiler.main.B314commentsSemanticsTest.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/be.unamur.info.b314.compiler.main.B314commentsSyntaxTest.txt" afterPath="$PROJECT_DIR$/target/surefire-reports/be.unamur.info.b314.compiler.main.B314commentsSyntaxTest.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/be.unamur.info.b314.compiler.main.B314functionsSemanticsTest.txt" afterPath="$PROJECT_DIR$/target/surefire-reports/be.unamur.info.b314.compiler.main.B314functionsSemanticsTest.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/be.unamur.info.b314.compiler.main.B314functionsSyntaxTest.txt" afterPath="$PROJECT_DIR$/target/surefire-reports/be.unamur.info.b314.compiler.main.B314functionsSyntaxTest.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/be.unamur.info.b314.compiler.main.B314globalvariabledeclSemanticsTest.txt" afterPath="$PROJECT_DIR$/target/surefire-reports/be.unamur.info.b314.compiler.main.B314globalvariabledeclSemanticsTest.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/be.unamur.info.b314.compiler.main.B314globalvariabledeclSyntaxTest.txt" afterPath="$PROJECT_DIR$/target/surefire-reports/be.unamur.info.b314.compiler.main.B314globalvariabledeclSyntaxTest.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/be.unamur.info.b314.compiler.main.B314ifinstructionSemanticsTest.txt" afterPath="$PROJECT_DIR$/target/surefire-reports/be.unamur.info.b314.compiler.main.B314ifinstructionSemanticsTest.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/be.unamur.info.b314.compiler.main.B314ifinstructionSyntaxTest.txt" afterPath="$PROJECT_DIR$/target/surefire-reports/be.unamur.info.b314.compiler.main.B314ifinstructionSyntaxTest.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/be.unamur.info.b314.compiler.main.B314intexpressionsSemanticsTest.txt" afterPath="$PROJECT_DIR$/target/surefire-reports/be.unamur.info.b314.compiler.main.B314intexpressionsSemanticsTest.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/be.unamur.info.b314.compiler.main.B314intexpressionsSyntaxTest.txt" afterPath="$PROJECT_DIR$/target/surefire-reports/be.unamur.info.b314.compiler.main.B314intexpressionsSyntaxTest.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/be.unamur.info.b314.compiler.main.B314localvariabledeclSemanticsTest.txt" afterPath="$PROJECT_DIR$/target/surefire-reports/be.unamur.info.b314.compiler.main.B314localvariabledeclSemanticsTest.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/be.unamur.info.b314.compiler.main.B314localvariabledeclSyntaxTest.txt" afterPath="$PROJECT_DIR$/target/surefire-reports/be.unamur.info.b314.compiler.main.B314localvariabledeclSyntaxTest.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/be.unamur.info.b314.compiler.main.B314nextinstructionSemanticsTest.txt" afterPath="$PROJECT_DIR$/target/surefire-reports/be.unamur.info.b314.compiler.main.B314nextinstructionSemanticsTest.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/be.unamur.info.b314.compiler.main.B314nextinstructionSyntaxTest.txt" afterPath="$PROJECT_DIR$/target/surefire-reports/be.unamur.info.b314.compiler.main.B314nextinstructionSyntaxTest.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/be.unamur.info.b314.compiler.main.B314squareexpressionsSemanticsTest.txt" afterPath="$PROJECT_DIR$/target/surefire-reports/be.unamur.info.b314.compiler.main.B314squareexpressionsSemanticsTest.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/be.unamur.info.b314.compiler.main.B314squareexpressionsSyntaxTest.txt" afterPath="$PROJECT_DIR$/target/surefire-reports/be.unamur.info.b314.compiler.main.B314squareexpressionsSyntaxTest.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/be.unamur.info.b314.compiler.main.B314whenclauseSemanticsTest.txt" afterPath="$PROJECT_DIR$/target/surefire-reports/be.unamur.info.b314.compiler.main.B314whenclauseSemanticsTest.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/be.unamur.info.b314.compiler.main.B314whenclauseSyntaxTest.txt" afterPath="$PROJECT_DIR$/target/surefire-reports/be.unamur.info.b314.compiler.main.B314whenclauseSyntaxTest.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/be.unamur.info.b314.compiler.main.B314whileinstructionSemanticsTest.txt" afterPath="$PROJECT_DIR$/target/surefire-reports/be.unamur.info.b314.compiler.main.B314whileinstructionSemanticsTest.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/be.unamur.info.b314.compiler.main.B314whileinstructionSyntaxTest.txt" afterPath="$PROJECT_DIR$/target/surefire-reports/be.unamur.info.b314.compiler.main.B314whileinstructionSyntaxTest.txt" />
     </list>
-    <ignored path="$PROJECT_DIR$/target/maven-status/" />
-    <ignored path="$PROJECT_DIR$/target/surefire/" />
-    <ignored path="$PROJECT_DIR$/target/surefire-reports/" />
-    <ignored path="$PROJECT_DIR$/target/maven-archiver/" />
-    <ignored path="$PROJECT_DIR$/target/archive-tmp/" />
+    <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -121,32 +80,67 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/be/unamur/info/b314/compiler/main/Main.java">
+      <file leaf-file-name="InitialiserLesAdresses.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/be/unamur/info/b314/compiler/scope/InitialiserLesAdresses.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="21">
-              <caret line="183" column="49" lean-forward="false" selection-start-line="183" selection-start-column="49" selection-end-line="183" selection-end-column="49" />
-              <folding />
+            <state relative-caret-position="357">
+              <caret line="37" column="27" lean-forward="false" selection-start-line="37" selection-start-column="17" selection-end-line="37" selection-end-column="27" />
+              <folding>
+                <element signature="docComment;class#InitialiserLesAdresses#0" expanded="false" />
+                <element signature="method#InitialiserLesAdresses#0;class#InitialiserLesAdresses#0" expanded="false" />
+                <element signature="e#1177#1178#0" expanded="false" />
+                <element signature="e#1212#1213#0" expanded="false" />
+                <element signature="method#getAddress#0;class#InitialiserLesAdresses#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pom.xml">
+      <file leaf-file-name="FillScope.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/be/unamur/info/b314/compiler/scope/FillScope.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="264">
-              <caret line="172" column="21" lean-forward="true" selection-start-line="172" selection-start-column="21" selection-end-line="172" selection-end-column="21" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="pom-4.0.0.xml" pinned="false" current-in-tab="false">
-        <entry file="jar://$APPLICATION_HOME_DIR$/plugins/maven/lib/maven3/lib/maven-model-builder-3.3.9.jar!/org/apache/maven/model/pom-4.0.0.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="462">
-              <caret line="22" column="1" lean-forward="false" selection-start-line="22" selection-start-column="1" selection-end-line="22" selection-end-column="1" />
-              <folding />
+            <state relative-caret-position="252">
+              <caret line="20" column="8" lean-forward="false" selection-start-line="17" selection-start-column="3" selection-end-line="20" selection-end-column="8" />
+              <folding>
+                <element signature="e#0#7951#0" expanded="false" />
+                <element signature="imports" expanded="false" />
+                <element signature="docComment;class#FillScope#0" expanded="false" />
+                <element signature="docComment;method#FillScope#0;class#FillScope#0" expanded="false" />
+                <element signature="method#FillScope#0;class#FillScope#0" expanded="false" />
+                <element signature="docComment;method#getScope#0;class#FillScope#0" expanded="false" />
+                <element signature="e#1119#1120#0" expanded="false" />
+                <element signature="e#1167#1168#0" expanded="false" />
+                <element signature="docComment;method#enterProgramme#0;class#FillScope#0" expanded="false" />
+                <element signature="method#enterProgramme#0;class#FillScope#0" expanded="false" />
+                <element signature="docComment;method#enterFctDecl#0;class#FillScope#0" expanded="false" />
+                <element signature="method#enterFctDecl#0;class#FillScope#0" expanded="false" />
+                <element signature="method#exitFctDecl#0;class#FillScope#0" expanded="false" />
+                <element signature="method#enterParamDecl#0;class#FillScope#0" expanded="false" />
+                <element signature="method#exitParamDecl#0;class#FillScope#0" expanded="false" />
+                <element signature="docComment;method#enterClauseWhen#0;class#FillScope#0" expanded="false" />
+                <element signature="method#enterClauseWhen#0;class#FillScope#0" expanded="false" />
+                <element signature="e#3528#3529#0" expanded="false" />
+                <element signature="e#3594#3595#0" expanded="false" />
+                <element signature="docComment;method#enterClauseDefault#0;class#FillScope#0" expanded="false" />
+                <element signature="method#enterClauseDefault#0;class#FillScope#0" expanded="false" />
+                <element signature="e#4151#4152#0" expanded="false" />
+                <element signature="e#4214#4215#0" expanded="false" />
+                <element signature="docComment;method#enterVarDecl#0;class#FillScope#0" expanded="false" />
+                <element signature="method#enterVarDecl#0;class#FillScope#0" expanded="false" />
+                <element signature="method#exitVarDecl#0;class#FillScope#0" expanded="false" />
+                <element signature="docComment;method#exitTypeScalar#0;class#FillScope#0" expanded="false" />
+                <element signature="method#exitTypeScalar#0;class#FillScope#0" expanded="false" />
+                <element signature="method#enterScalarBoolean#0;class#FillScope#0" expanded="false" />
+                <element signature="method#enterScalarInteger#0;class#FillScope#0" expanded="false" />
+                <element signature="method#enterScalarSquare#0;class#FillScope#0" expanded="false" />
+                <element signature="docComment;method#enterArray#0;class#FillScope#0" expanded="false" />
+                <element signature="method#enterArray#0;class#FillScope#0" expanded="false" />
+                <element signature="method#exitArray#0;class#FillScope#0" expanded="false" />
+                <element signature="method#enterFctTypeScalar#0;class#FillScope#0" expanded="false" />
+                <element signature="method#exitFctTypeScalar#0;class#FillScope#0" expanded="false" />
+                <element signature="method#enterFctTypeVoid#0;class#FillScope#0" expanded="false" />
+                <element signature="method#exitFctTypeVoid#0;class#FillScope#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -154,14 +148,21 @@
       <file leaf-file-name="PCodePrinter.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/be/unamur/info/b314/compiler/Visitor/PCodePrinter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="231">
-              <caret line="15" column="37" lean-forward="false" selection-start-line="15" selection-start-column="37" selection-end-line="15" selection-end-column="37" />
+            <state relative-caret-position="147">
+              <caret line="23" column="5" lean-forward="false" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="false" />
+                <element signature="docComment;class#PCodePrinter#0" expanded="false" />
+                <element signature="class#PCodeTypes#0;class#PCodePrinter#0" expanded="false" />
                 <element signature="e#450#451#0" expanded="false" />
                 <element signature="e#492#493#0" expanded="false" />
+                <element signature="method#PCodePrinter#0;class#PCodePrinter#0" expanded="false" />
+                <element signature="method#PCodePrinter#1;class#PCodePrinter#0" expanded="false" />
                 <element signature="e#825#826#0" expanded="false" />
                 <element signature="e#870#871#0" expanded="false" />
+                <element signature="method#printLoadConstant#0;class#PCodePrinter#0" expanded="false" />
+                <element signature="method#printLoad#0;class#PCodePrinter#0" expanded="false" />
+                <element signature="method#printLoadAdress#0;class#PCodePrinter#0" expanded="false" />
                 <element signature="e#1391#1392#0" expanded="false" />
                 <element signature="e#1461#1462#0" expanded="false" />
                 <element signature="e#1508#1509#0" expanded="false" />
@@ -170,6 +171,7 @@
                 <element signature="e#1649#1650#0" expanded="false" />
                 <element signature="e#1693#1694#0" expanded="false" />
                 <element signature="e#1748#1749#0" expanded="false" />
+                <element signature="method#printCallUserProcedure#0;class#PCodePrinter#0" expanded="false" />
                 <element signature="e#1943#1944#0" expanded="false" />
                 <element signature="e#2001#2002#0" expanded="false" />
                 <element signature="e#2248#2249#0" expanded="false" />
@@ -186,8 +188,15 @@
                 <element signature="e#2765#2766#0" expanded="false" />
                 <element signature="e#2903#2904#0" expanded="false" />
                 <element signature="e#2960#2961#0" expanded="false" />
+                <element signature="method#printAdd#0;class#PCodePrinter#0" expanded="false" />
+                <element signature="method#printSub#0;class#PCodePrinter#0" expanded="false" />
+                <element signature="method#printMul#0;class#PCodePrinter#0" expanded="false" />
+                <element signature="method#printDiv#0;class#PCodePrinter#0" expanded="false" />
+                <element signature="method#printMod#0;class#PCodePrinter#0" expanded="false" />
                 <element signature="e#4074#4075#0" expanded="false" />
                 <element signature="e#4144#4145#0" expanded="false" />
+                <element signature="method#printLess#0;class#PCodePrinter#0" expanded="false" />
+                <element signature="method#printGreather#0;class#PCodePrinter#0" expanded="false" />
                 <element signature="e#4603#4604#0" expanded="false" />
                 <element signature="e#4641#4642#0" expanded="false" />
                 <element signature="e#4671#4672#0" expanded="false" />
@@ -204,44 +213,7 @@
                 <element signature="e#5131#5132#0" expanded="false" />
                 <element signature="e#5162#5163#0" expanded="false" />
                 <element signature="e#5192#5193#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="B314.g4" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/antlr4/be/unamur/info/b314/compiler/B314.g4">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="462">
-              <caret line="22" column="41" lean-forward="false" selection-start-line="22" selection-start-column="37" selection-end-line="22" selection-end-column="41" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Case.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/be/unamur/info/b314/compiler/Visitor/Case.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="21" column="0" lean-forward="false" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
-              <folding>
-                <element signature="e#206#207#0" expanded="false" />
-                <element signature="e#253#254#0" expanded="false" />
-                <element signature="e#278#279#0" expanded="false" />
-                <element signature="e#323#324#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PCodeVisitor.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/be/unamur/info/b314/compiler/Visitor/PCodeVisitor.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15813">
-              <caret line="770" column="0" lean-forward="false" selection-start-line="770" selection-start-column="0" selection-end-line="770" selection-end-column="0" />
-              <folding>
-                <element signature="e#0#32089#0" expanded="false" />
-                <element signature="imports" expanded="false" />
+                <element signature="method#close#0;class#PCodePrinter#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -251,12 +223,262 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/be/unamur/info/b314/compiler/Visitor/SquareType.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="231">
-              <caret line="11" column="3" lean-forward="false" selection-start-line="11" selection-start-column="3" selection-end-line="11" selection-end-column="3" />
+              <caret line="11" column="15" lean-forward="false" selection-start-line="11" selection-start-column="15" selection-end-line="11" selection-end-column="15" />
               <folding>
-                <element signature="e#350#351#0" expanded="false" />
-                <element signature="e#389#390#0" expanded="false" />
-                <element signature="e#410#411#0" expanded="false" />
-                <element signature="e#447#448#0" expanded="false" />
+                <element signature="e#345#346#0" expanded="false" />
+                <element signature="e#384#385#0" expanded="false" />
+                <element signature="e#405#406#0" expanded="false" />
+                <element signature="e#442#443#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Symbole.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/be/unamur/info/b314/compiler/scope/Symbole.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="819">
+              <caret line="95" column="31" lean-forward="false" selection-start-line="95" selection-start-column="19" selection-end-line="95" selection-end-column="31" />
+              <folding>
+                <element signature="e#0#2836#0" expanded="false" />
+                <element signature="docComment;class#Symbole#0" expanded="false" />
+                <element signature="docComment;method#Symbole#0;class#Symbole#0" expanded="false" />
+                <element signature="method#Symbole#0;class#Symbole#0" expanded="false" />
+                <element signature="method#Symbole#1;class#Symbole#0" expanded="false" />
+                <element signature="e#1283#1284#0" expanded="false" />
+                <element signature="e#1327#1328#0" expanded="false" />
+                <element signature="e#1365#1366#0" expanded="false" />
+                <element signature="e#1397#1398#0" expanded="false" />
+                <element signature="method#setLength#0;class#Symbole#0" expanded="false" />
+                <element signature="e#1547#1548#0" expanded="false" />
+                <element signature="e#1585#1586#0" expanded="false" />
+                <element signature="e#1653#1654#0" expanded="false" />
+                <element signature="e#1703#1704#0" expanded="false" />
+                <element signature="e#1749#1750#0" expanded="false" />
+                <element signature="e#1787#1788#0" expanded="false" />
+                <element signature="e#1829#1830#0" expanded="false" />
+                <element signature="e#1867#1868#0" expanded="false" />
+                <element signature="e#1906#1907#0" expanded="false" />
+                <element signature="e#1939#1940#0" expanded="false" />
+                <element signature="e#1968#1969#0" expanded="false" />
+                <element signature="e#1995#1996#0" expanded="false" />
+                <element signature="e#2025#2026#0" expanded="false" />
+                <element signature="e#2052#2053#0" expanded="false" />
+                <element signature="e#2083#2084#0" expanded="false" />
+                <element signature="e#2112#2113#0" expanded="false" />
+                <element signature="e#2146#2147#0" expanded="false" />
+                <element signature="e#2176#2177#0" expanded="false" />
+                <element signature="e#2226#2227#0" expanded="false" />
+                <element signature="e#2262#2263#0" expanded="false" />
+                <element signature="e#2356#2357#0" expanded="false" />
+                <element signature="e#2386#2387#0" expanded="false" />
+                <element signature="method#AddParam#0;class#Symbole#0" expanded="false" />
+                <element signature="method#toString#0;class#Symbole#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SymboleTableFiller.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/be/unamur/info/b314/compiler/scope/SymboleTableFiller.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1071">
+              <caret line="123" column="13" lean-forward="false" selection-start-line="123" selection-start-column="13" selection-end-line="123" selection-end-column="13" />
+              <folding>
+                <element signature="e#0#24837#0" expanded="false" />
+                <element signature="imports" expanded="false" />
+                <element signature="docComment;class#SymboleTableFiller#0" expanded="false" />
+                <element signature="class#Type#0;class#SymboleTableFiller#0" expanded="false" />
+                <element signature="method#SymboleTableFiller#0;class#SymboleTableFiller#0" expanded="false" />
+                <element signature="docComment;method#getScope#0;class#SymboleTableFiller#0" expanded="false" />
+                <element signature="e#1126#1127#0" expanded="false" />
+                <element signature="e#1169#1170#0" expanded="false" />
+                <element signature="docComment;method#enterProgramme#0;class#SymboleTableFiller#0" expanded="false" />
+                <element signature="method#enterProgramme#0;class#SymboleTableFiller#0" expanded="false" />
+                <element signature="docComment;method#enterFctDecl#0;class#SymboleTableFiller#0" expanded="false" />
+                <element signature="method#enterFctDecl#0;class#SymboleTableFiller#0" expanded="false" />
+                <element signature="method#exitFctDecl#0;class#SymboleTableFiller#0" expanded="false" />
+                <element signature="docComment;method#enterClauseWhen#0;class#SymboleTableFiller#0" expanded="false" />
+                <element signature="method#enterClauseWhen#0;class#SymboleTableFiller#0" expanded="false" />
+                <element signature="method#exitClauseWhen#0;class#SymboleTableFiller#0" expanded="false" />
+                <element signature="docComment;method#enterClauseDefault#0;class#SymboleTableFiller#0" expanded="false" />
+                <element signature="method#enterClauseDefault#0;class#SymboleTableFiller#0" expanded="false" />
+                <element signature="method#exitClauseDefault#0;class#SymboleTableFiller#0" expanded="false" />
+                <element signature="docComment;method#enterIf#0;class#SymboleTableFiller#0" expanded="false" />
+                <element signature="method#enterIf#0;class#SymboleTableFiller#0" expanded="false" />
+                <element signature="method#enterIf_Else#0;class#SymboleTableFiller#0" expanded="false" />
+                <element signature="method#enterWhile#0;class#SymboleTableFiller#0" expanded="false" />
+                <element signature="method#enterAffectationGaucheDroite#0;class#SymboleTableFiller#0" expanded="false" />
+                <element signature="method#enterAffectationGaucheDroiteBool#0;class#SymboleTableFiller#0" expanded="false" />
+                <element signature="method#enterAffectationGaucheDroiteCase#0;class#SymboleTableFiller#0" expanded="false" />
+                <element signature="method#enterAffectationGaucheDroiteGauche#0;class#SymboleTableFiller#0" expanded="false" />
+                <element signature="method#enterAffectationGaucheDroiteFonction#0;class#SymboleTableFiller#0" expanded="false" />
+                <element signature="docComment;method#enterAppelDeFonction#0;class#SymboleTableFiller#0" expanded="false" />
+                <element signature="method#enterAppelDeFonction#0;class#SymboleTableFiller#0" expanded="false" />
+                <element signature="docComment;method#enterExprGVariable#0;class#SymboleTableFiller#0" expanded="false" />
+                <element signature="method#enterExprGVariable#0;class#SymboleTableFiller#0" expanded="false" />
+                <element signature="method#enterExprGTableauEntFonct#0;class#SymboleTableFiller#0" expanded="false" />
+                <element signature="method#enterExprGTableauFonctEnt#0;class#SymboleTableFiller#0" expanded="false" />
+                <element signature="method#enterExprGTableauEntEnt#0;class#SymboleTableFiller#0" expanded="false" />
+                <element signature="method#enterExprGTableauFonctFonct#0;class#SymboleTableFiller#0" expanded="false" />
+                <element signature="docComment;method#enterExprDInteger#0;class#SymboleTableFiller#0" expanded="false" />
+                <element signature="method#enterExprDInteger#0;class#SymboleTableFiller#0" expanded="false" />
+                <element signature="method#enterExprDBoolean#0;class#SymboleTableFiller#0" expanded="false" />
+                <element signature="method#enterExprDCase#0;class#SymboleTableFiller#0" expanded="false" />
+                <element signature="method#enterExprDG#0;class#SymboleTableFiller#0" expanded="false" />
+                <element signature="method#enterExprDFonction#0;class#SymboleTableFiller#0" expanded="false" />
+                <element signature="docComment;method#enterExprCaseNearby#0;class#SymboleTableFiller#0" expanded="false" />
+                <element signature="method#enterExprCaseNearby#0;class#SymboleTableFiller#0" expanded="false" />
+                <element signature="docComment;method#enterExprBoolNotGauche#0;class#SymboleTableFiller#0" expanded="false" />
+                <element signature="method#enterExprBoolNotGauche#0;class#SymboleTableFiller#0" expanded="false" />
+                <element signature="method#enterExprBoolAndOrBoolGauche#0;class#SymboleTableFiller#0" expanded="false" />
+                <element signature="method#enterExprBoolEgaleBoolGauche#0;class#SymboleTableFiller#0" expanded="false" />
+                <element signature="method#enterExprBoolEgaleGEnt#0;class#SymboleTableFiller#0" expanded="false" />
+                <element signature="method#enterExprBoolEgaleGCase#0;class#SymboleTableFiller#0" expanded="false" />
+                <element signature="method#enterExprBoolEgaleEntG#0;class#SymboleTableFiller#0" expanded="false" />
+                <element signature="method#enterExprBoolEgaleCaseG#0;class#SymboleTableFiller#0" expanded="false" />
+                <element signature="method#enterExprBoolEgaleGG#0;class#SymboleTableFiller#0" expanded="false" />
+                <element signature="method#enterExprBoolAndOrGaucheBool#0;class#SymboleTableFiller#0" expanded="false" />
+                <element signature="method#enterExprBoolEgaleGaucheBool#0;class#SymboleTableFiller#0" expanded="false" />
+                <element signature="method#enterExprBoolAndOrGaucheGauche#0;class#SymboleTableFiller#0" expanded="false" />
+                <element signature="method#enterExprBoolInfSupEnt#0;class#SymboleTableFiller#0" expanded="false" />
+                <element signature="docComment;method#enterExprEntPlusMoinsGauheEnt#0;class#SymboleTableFiller#0" expanded="false" />
+                <element signature="method#enterExprEntPlusMoinsGauheEnt#0;class#SymboleTableFiller#0" expanded="false" />
+                <element signature="method#enterExprEntMulDivEntGauhe#0;class#SymboleTableFiller#0" expanded="false" />
+                <element signature="method#enterExprEntMulDivGaucheGauhe#0;class#SymboleTableFiller#0" expanded="false" />
+                <element signature="method#enterExprEntMulDivGauheEnt#0;class#SymboleTableFiller#0" expanded="false" />
+                <element signature="method#enterExprEntPlusMoinsEntGauhe#0;class#SymboleTableFiller#0" expanded="false" />
+                <element signature="method#enterExprEntPlusMoinsGaucheGauhe#0;class#SymboleTableFiller#0" expanded="false" />
+                <element signature="docComment;method#GetSymboleParm#0;class#SymboleTableFiller#0" expanded="false" />
+                <element signature="method#GetSymboleParm#0;class#SymboleTableFiller#0" expanded="false" />
+                <element signature="method#GetType#0;class#SymboleTableFiller#0" expanded="false" />
+                <element signature="e#21514#21515#0" expanded="false" />
+                <element signature="e#21591#21592#0" expanded="false" />
+                <element signature="method#checkExpressionGauche#0;class#SymboleTableFiller#0" expanded="false" />
+                <element signature="method#choiceTableauExprG#0;class#SymboleTableFiller#0" expanded="false" />
+                <element signature="method#chooseOne#0;class#SymboleTableFiller#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PCodeType.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/be/unamur/info/b314/compiler/Visitor/PCodeType.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="441">
+              <caret line="25" column="0" lean-forward="true" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AddGlobalSymbole.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/be/unamur/info/b314/compiler/scope/AddGlobalSymbole.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="216">
+              <caret line="16" column="40" lean-forward="true" selection-start-line="16" selection-start-column="40" selection-end-line="16" selection-end-column="40" />
+              <folding>
+                <element signature="e#660#661#0" expanded="true" />
+                <element signature="e#707#708#0" expanded="true" />
+                <element signature="method#getScope#0;class#AddGlobalSymbole#0" expanded="false" />
+                <element signature="method#AddNewSymbole#0;class#AddGlobalSymbole#0" expanded="false" />
+                <element signature="method#createListSymbole#0;class#AddGlobalSymbole#0" expanded="false" />
+                <element signature="method#addSymbole#0;class#AddGlobalSymbole#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="NextActions.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/be/unamur/info/b314/compiler/Visitor/NextActions.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="315">
+              <caret line="15" column="16" lean-forward="false" selection-start-line="15" selection-start-column="16" selection-end-line="15" selection-end-column="16" />
+              <folding>
+                <element signature="e#436#437#0" expanded="false" />
+                <element signature="e#475#476#0" expanded="false" />
+                <element signature="e#496#497#0" expanded="false" />
+                <element signature="e#533#534#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PCodeVisitor.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/be/unamur/info/b314/compiler/Visitor/PCodeVisitor.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="273">
+              <caret line="33" column="27" lean-forward="false" selection-start-line="33" selection-start-column="27" selection-end-line="33" selection-end-column="27" />
+              <folding>
+                <element signature="e#0#32091#0" expanded="false" />
+                <element signature="imports" expanded="false" />
+                <element signature="docComment;class#PCodeVisitor#0" expanded="false" />
+                <element signature="docComment;method#PCodeVisitor#0;class#PCodeVisitor#0" expanded="false" />
+                <element signature="method#PCodeVisitor#0;class#PCodeVisitor#0" expanded="false" />
+                <element signature="docComment;method#visitProgramme#0;class#PCodeVisitor#0" expanded="false" />
+                <element signature="method#visitProgramme#0;class#PCodeVisitor#0" expanded="false" />
+                <element signature="method#visitFctDecl#0;class#PCodeVisitor#0" expanded="false" />
+                <element signature="method#visitClauseWhen#0;class#PCodeVisitor#0" expanded="false" />
+                <element signature="method#visitClauseDefault#0;class#PCodeVisitor#0" expanded="false" />
+                <element signature="method#visitIf#0;class#PCodeVisitor#0" expanded="false" />
+                <element signature="method#visitIfthenelse#0;class#PCodeVisitor#0" expanded="false" />
+                <element signature="method#visitWhile#0;class#PCodeVisitor#0" expanded="false" />
+                <element signature="method#visitAffectationGaucheDroite#0;class#PCodeVisitor#0" expanded="false" />
+                <element signature="method#visitAffectationGaucheDroiteBool#0;class#PCodeVisitor#0" expanded="false" />
+                <element signature="method#visitAffectationGaucheDroiteCase#0;class#PCodeVisitor#0" expanded="false" />
+                <element signature="method#visitAffectationGaucheDroiteGauche#0;class#PCodeVisitor#0" expanded="false" />
+                <element signature="method#visitAffectationGaucheDroiteFonction#0;class#PCodeVisitor#0" expanded="false" />
+                <element signature="method#visitCompute#0;class#PCodeVisitor#0" expanded="false" />
+                <element signature="method#visitNextAction#0;class#PCodeVisitor#0" expanded="false" />
+                <element signature="method#visitExprBoolNot#0;class#PCodeVisitor#0" expanded="false" />
+                <element signature="method#visitExprBoolEgaleGEnt#0;class#PCodeVisitor#0" expanded="false" />
+                <element signature="method#visitExprBoolFalse#0;class#PCodeVisitor#0" expanded="false" />
+                <element signature="method#visitExprBoolEgaleGCase#0;class#PCodeVisitor#0" expanded="false" />
+                <element signature="method#visitExprBoolEgaleCaseCase#0;class#PCodeVisitor#0" expanded="false" />
+                <element signature="method#visitExprBoolNotGauche#0;class#PCodeVisitor#0" expanded="false" />
+                <element signature="method#visitExprBoolAndOrBoolGauche#0;class#PCodeVisitor#0" expanded="false" />
+                <element signature="method#visitExprBoolEgaleEntG#0;class#PCodeVisitor#0" expanded="false" />
+                <element signature="method#visitExprBoolEgaleEntEnt#0;class#PCodeVisitor#0" expanded="false" />
+                <element signature="method#visitExprBoolAndOrBoolBool#0;class#PCodeVisitor#0" expanded="false" />
+                <element signature="method#visitExprBoolEgaleBoolGauche#0;class#PCodeVisitor#0" expanded="false" />
+                <element signature="method#visitExprBoolEgaleCaseG#0;class#PCodeVisitor#0" expanded="false" />
+                <element signature="method#visitExprBoolEgaleBoolean#0;class#PCodeVisitor#0" expanded="false" />
+                <element signature="method#visitExprBoolParennthese#0;class#PCodeVisitor#0" expanded="false" />
+                <element signature="method#visitExprBoolEgaleGG#0;class#PCodeVisitor#0" expanded="false" />
+                <element signature="method#visitExprBoolAndOrGaucheBool#0;class#PCodeVisitor#0" expanded="false" />
+                <element signature="method#visitExprBoolEgaleGaucheBool#0;class#PCodeVisitor#0" expanded="false" />
+                <element signature="method#visitExprBoolAndOrGaucheGauche#0;class#PCodeVisitor#0" expanded="false" />
+                <element signature="method#visitExprBoolInfSupEnt#0;class#PCodeVisitor#0" expanded="false" />
+                <element signature="method#visitExprEntParennthese#0;class#PCodeVisitor#0" expanded="false" />
+                <element signature="method#visitExprEntPlusMoinsGauheEnt#0;class#PCodeVisitor#0" expanded="false" />
+                <element signature="method#visitExprEntPlusMoinsEntEnt#0;class#PCodeVisitor#0" expanded="false" />
+                <element signature="method#visitExprEntMulDivEntGauhe#0;class#PCodeVisitor#0" expanded="false" />
+                <element signature="method#visitExprEntMulDivEntEnt#0;class#PCodeVisitor#0" expanded="false" />
+                <element signature="method#visitExprEntMulDivGaucheGauhe#0;class#PCodeVisitor#0" expanded="false" />
+                <element signature="method#visitExprEntMulDivGauheEnt#0;class#PCodeVisitor#0" expanded="false" />
+                <element signature="method#visitExprEntPlusMoinsEntGauhe#0;class#PCodeVisitor#0" expanded="false" />
+                <element signature="method#visitExprEntPlusMoinsGaucheGauhe#0;class#PCodeVisitor#0" expanded="false" />
+                <element signature="method#visitExprCaseNearby#0;class#PCodeVisitor#0" expanded="false" />
+                <element signature="method#visitExprCaseParennthese#0;class#PCodeVisitor#0" expanded="false" />
+                <element signature="method#visitEnvironnementInt#0;class#PCodeVisitor#0" expanded="false" />
+                <element signature="method#visitEnvironnementBool#0;class#PCodeVisitor#0" expanded="false" />
+                <element signature="method#visitEnvironnementCase#0;class#PCodeVisitor#0" expanded="false" />
+                <element signature="method#visitExprGVariable#0;class#PCodeVisitor#0" expanded="false" />
+                <element signature="method#visitExprGTableauEntFonct#0;class#PCodeVisitor#0" expanded="false" />
+                <element signature="method#visitExprGTableauFonctEnt#0;class#PCodeVisitor#0" expanded="false" />
+                <element signature="method#visitExprGTableauFonctFonct#0;class#PCodeVisitor#0" expanded="false" />
+                <element signature="method#visitExprGTableauEntEnt#0;class#PCodeVisitor#0" expanded="false" />
+                <element signature="method#visitEntier#0;class#PCodeVisitor#0" expanded="false" />
+                <element signature="method#visitAppelDeFonction#0;class#PCodeVisitor#0" expanded="false" />
+                <element signature="method#visitVarDecl#0;class#PCodeVisitor#0" expanded="false" />
+                <element signature="method#Operation#0;class#PCodeVisitor#0" expanded="false" />
+                <element signature="method#readInputValues#0;class#PCodeVisitor#0" expanded="false" />
+                <element signature="method#OperationEgale#0;class#PCodeVisitor#0" expanded="false" />
+                <element signature="method#getType#0;class#PCodeVisitor#0" expanded="false" />
+                <element signature="method#VariableIsArray#0;class#PCodeVisitor#0" expanded="false" />
+                <element signature="method#CheckTableauTwo#0;class#PCodeVisitor#0" expanded="false" />
+                <element signature="method#CheckTableauOne#0;class#PCodeVisitor#0" expanded="false" />
+                <element signature="method#ManipulationTableau#0;class#PCodeVisitor#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -268,6 +490,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Enum" />
+        <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -320,18 +544,26 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/target/generated-sources/antlr4/be/unamur/info/b314/compiler/B314BaseListener.java" />
-        <option value="$PROJECT_DIR$/src/main/java/be/unamur/info/b314/compiler/scope/SymboleTableFiller.java" />
         <option value="$PROJECT_DIR$/src/main/java/be/unamur/info/b314/compiler/Visitor/NextAction.java" />
-        <option value="$PROJECT_DIR$/src/main/antlr4/be/unamur/info/b314/compiler/B314.g4" />
         <option value="$PROJECT_DIR$/src/test/java/be/unamur/info/b314/compiler/main/B314ifinstructionSemanticsTest.java" />
         <option value="$USER_HOME$/Downloads/PCodeVisitor.java" />
-        <option value="$PROJECT_DIR$/src/main/java/be/unamur/info/b314/compiler/Visitor/SquareType.java" />
         <option value="$PROJECT_DIR$/src/main/java/be/unamur/info/b314/compiler/Visitor/PCodePrinter.java" />
         <option value="$PROJECT_DIR$/src/main/java/be/unamur/info/b314/compiler/Visitor/PCodeType/Square.java" />
+        <option value="$PROJECT_DIR$/src/main/java/be/unamur/info/b314/compiler/main/Main.java" />
+        <option value="$PROJECT_DIR$/src/main/antlr4/be/unamur/info/b314/compiler/B314.g4" />
+        <option value="$PROJECT_DIR$/src/main/antlr4/imports/B314Words.g4" />
         <option value="$PROJECT_DIR$/src/main/java/be/unamur/info/b314/compiler/Visitor/Case.java" />
         <option value="$PROJECT_DIR$/src/main/java/be/unamur/info/b314/compiler/Visitor/NextActions.java" />
+        <option value="$PROJECT_DIR$/src/main/java/be/unamur/info/b314/compiler/Visitor/SquareType.java" />
+        <option value="$PROJECT_DIR$/src/main/java/scope/Symbole.java" />
         <option value="$PROJECT_DIR$/src/main/java/be/unamur/info/b314/compiler/Visitor/PCodeVisitor.java" />
-        <option value="$PROJECT_DIR$/src/main/java/be/unamur/info/b314/compiler/main/Main.java" />
+        <option value="$PROJECT_DIR$/src/main/java/be/unamur/info/b314/compiler/scope/AddGlobalSymbole.java" />
+        <option value="$PROJECT_DIR$/src/main/java/be/unamur/info/b314/compiler/scope/Symbole.java" />
+        <option value="$PROJECT_DIR$/src/main/java/scope/FctSymbole.java" />
+        <option value="$PROJECT_DIR$/src/main/java/be/unamur/info/b314/compiler/scope/Scope.java" />
+        <option value="$PROJECT_DIR$/src/main/java/be/unamur/info/b314/compiler/scope/ScopeImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/be/unamur/info/b314/compiler/scope/SymboleTableFiller.java" />
+        <option value="$PROJECT_DIR$/src/main/java/be/unamur/info/b314/compiler/Visitor/PCodeType.java" />
       </list>
     </option>
   </component>
@@ -370,8 +602,7 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
-    <option name="width" value="1932" />
+    <option name="width" value="1527" />
     <option name="height" value="1038" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -390,26 +621,26 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="B314-Jour-MonkeyIsland" />
+              <option name="myItemId" value="b314-Jour" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="b314-Jour-MonkeyIsland" />
+              <option name="myItemId" value="b314-Jour" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="B314-Jour-MonkeyIsland" />
+              <option name="myItemId" value="b314-Jour" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="b314-Jour-MonkeyIsland" />
+              <option name="myItemId" value="b314-Jour" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -419,11 +650,11 @@
           </PATH>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="B314-Jour-MonkeyIsland" />
+              <option name="myItemId" value="b314-Jour" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="b314-Jour-MonkeyIsland" />
+              <option name="myItemId" value="b314-Jour" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -435,9 +666,86 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="b314-Jour" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="b314-Jour" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="b314-Jour" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="b314-Jour" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="compiler" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="b314-Jour" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="b314-Jour" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="compiler" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="scope" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="PackagesPane">
         <subPane>
           <PATH>
@@ -520,6 +828,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -531,6 +840,11 @@
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="ExtractSuperBase.RECENT_KEYS">
+      <recent name="be.unamur.info.b314.compiler.scope" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -544,7 +858,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="Maven.package">
     <configuration default="false" name="B314functionsSemanticsTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -1133,6 +1447,18 @@
       <workItem from="1494182920457" duration="135000" />
       <workItem from="1494411303036" duration="4294000" />
       <workItem from="1494436758006" duration="675000" />
+      <workItem from="1499797047086" duration="2543000" />
+      <workItem from="1500121665638" duration="1920000" />
+      <workItem from="1500150077615" duration="2593000" />
+      <workItem from="1500472188362" duration="1282000" />
+      <workItem from="1500488803815" duration="2484000" />
+      <workItem from="1500726592100" duration="7917000" />
+      <workItem from="1501159580311" duration="1943000" />
+      <workItem from="1502017401505" duration="6481000" />
+      <workItem from="1502023926530" duration="410000" />
+      <workItem from="1502035059261" duration="4565000" />
+      <workItem from="1502185145129" duration="4457000" />
+      <workItem from="1502210910391" duration="1204000" />
     </task>
     <servers />
   </component>
@@ -1169,7 +1495,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5826000" />
+    <option name="totallyTimeSpent" value="43625000" />
   </component>
   <component name="TodoView" selected-index="3">
     <todo-panel id="selected-file">
@@ -1181,25 +1507,26 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="0" width="1932" height="1038" extended-state="0" />
+    <frame x="0" y="0" width="1527" height="1038" extended-state="0" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295583" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Tool Output" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32935154" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32935154" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32963374" sideWeight="0.50208986" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30743617" sideWeight="0.509609" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980332" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295583" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32963374" sideWeight="0.49791014" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32508436" sideWeight="0.8313796" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295583" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19592476" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30483764" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="ANTLR Preview" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.46299213" sideWeight="0.49785408" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24962178" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1207,13 +1534,13 @@
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3993174" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Tool Output" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32935154" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="ANTLR Preview" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.46299213" sideWeight="0.49785408" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32935154" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Thumbnails" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295838" sideWeight="0.496844" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32852387" sideWeight="0.490391" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -1255,7 +1582,17 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/be/unamur/info/b314/compiler/Visitor/PCodeVisitor.java</url>
+          <line>663</line>
+          <properties />
+          <option name="timeStamp" value="14" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="16" />
+    </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="antWorkspaceConfiguration">
@@ -1263,114 +1600,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/target/generated-sources/antlr4/be/unamur/info/b314/compiler/B314BaseVisitor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="13" lean-forward="false" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/antlr4/imports/B314Words.g4">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="131" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/be/unamur/info/b314/compiler/main/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2907">
-          <caret line="171" column="10" lean-forward="false" selection-start-line="171" selection-start-column="10" selection-end-line="171" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/be/unamur/info/b314/compiler/scope/SymboleTableFiller.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/be/unamur/info/b314/compiler/main/MyConsoleErrorListener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="13" lean-forward="false" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/be/unamur/info/b314/compiler/main/CompilerTestHelper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="6" lean-forward="false" selection-start-line="14" selection-start-column="6" selection-end-line="14" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/antlr4/be/unamur/info/b314/compiler/B314.g4">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="17" lean-forward="true" selection-start-line="3" selection-start-column="17" selection-end-line="3" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/target/generated-sources/antlr4/be/unamur/info/b314/compiler/B314BaseVisitor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="13" lean-forward="false" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/antlr4/imports/B314Words.g4">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="131" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/be/unamur/info/b314/compiler/main/B314commentsSyntaxTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="11" column="13" lean-forward="false" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/be/unamur/info/b314/compiler/main/B314commentsSemanticsTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/be/unamur/info/b314/compiler/main/TypeTest.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/be/unamur/info/b314/compiler/main/MyConsoleErrorListener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="11" column="13" lean-forward="false" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/target/generated-sources/antlr4/be/unamur/info/b314/compiler/B314Listener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-654">
-          <caret line="8" column="17" lean-forward="false" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/be/unamur/info/b314/compiler/main/CompilerTestHelper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="498">
-          <caret line="45" column="0" lean-forward="true" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Temp/Temp2_aide_nath_compilateur.zip/aide_nath_compilateur/ScopeFiller.java" />
-    <entry file="file://$PROJECT_DIR$/target/generated-sources/antlr4/be/unamur/info/b314/compiler/B314BaseVisitor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="425" column="13" lean-forward="false" selection-start-line="425" selection-start-column="13" selection-end-line="425" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/AppData/Local/Temp/Temp2_aide_nath_compilateur.zip/aide_nath_compilateur/tests/PCodeInterpreter.java" />
     <entry file="file://$PROJECT_DIR$/src/test/java/be/unamur/info/b314/compiler/main/B314intexpressionsSyntaxTest.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -1409,13 +1638,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/be/unamur/info/b314/compiler/scope/ScopeImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="30" column="26" lean-forward="false" selection-start-line="30" selection-start-column="26" selection-end-line="30" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/be/unamur/info/b314/compiler/main/B314ifinstructionSemanticsTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1430,100 +1652,390 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/be/unamur/info/b314/compiler/scope/Scope.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="167">
-          <caret line="26" column="24" lean-forward="false" selection-start-line="26" selection-start-column="17" selection-end-line="26" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/be/unamur/info/b314/compiler/scope/Symbole.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="106">
-          <caret line="27" column="21" lean-forward="false" selection-start-line="27" selection-start-column="18" selection-end-line="27" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/be/unamur/info/b314/compiler/scope/AddVarGlobalSymbole.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/be/unamur/info/b314/compiler/scope/SymboleTableFiller.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="18" column="13" lean-forward="false" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/antlr4/be/unamur/info/b314/compiler/B314.g4">
+    <entry file="file://$USER_HOME$/Downloads/PCodeSetToExprGVisitor.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/be/unamur/info/b314/compiler/Visitor/PCodeType/Square.java" />
+    <entry file="file://$USER_HOME$/Downloads/PCodeVisitor.java" />
+    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/maven/lib/maven3/lib/maven-model-builder-3.3.9.jar!/org/apache/maven/model/pom-4.0.0.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="462">
-          <caret line="22" column="41" lean-forward="false" selection-start-line="22" selection-start-column="37" selection-end-line="22" selection-end-column="41" />
-          <folding />
+          <caret line="22" column="1" lean-forward="false" selection-start-line="22" selection-start-column="1" selection-end-line="22" selection-end-column="1" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/antlr4/imports/B314Words.g4">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="33" column="37" lean-forward="false" selection-start-line="33" selection-start-column="33" selection-end-line="33" selection-end-column="37" />
+        <state relative-caret-position="231">
+          <caret line="11" column="19" lean-forward="false" selection-start-line="11" selection-start-column="19" selection-end-line="11" selection-end-column="19" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/Downloads/PCodeSetToExprGVisitor.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/be/unamur/info/b314/compiler/Visitor/PCodeType/Square.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/be/unamur/info/b314/compiler/Visitor/Case.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/be/unamur/info/b314/compiler/main/MyConsoleErrorListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="175">
+          <caret line="11" column="13" lean-forward="false" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/TableSimplifiee/AlreadyExistsException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="147">
+          <caret line="11" column="13" lean-forward="false" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/TableSimplifiee/TableSimplifiee.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1">
+          <caret line="21" column="13" lean-forward="false" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="505">
+          <caret line="172" column="21" lean-forward="false" selection-start-line="172" selection-start-column="21" selection-end-line="172" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/target/test-classes/create_syntax_junits.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/testinput">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/be/unamur/info/b314/compiler/main/B314affectinstructionSyntaxTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1218">
+          <caret line="34" column="5" lean-forward="true" selection-start-line="34" selection-start-column="5" selection-end-line="34" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/target/surefire-reports/be.unamur.info.b314.compiler.main.B314affectinstructionSemanticsTest.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/be/unamur/info/b314/compiler/main/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="40" column="13" lean-forward="false" selection-start-line="40" selection-start-column="13" selection-end-line="40" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/target/generated-sources/antlr4/be/unamur/info/b314/compiler/B314Listener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="8" column="17" lean-forward="false" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/antlr4/be/unamur/info/b314/compiler/B314.g4">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="21">
+          <caret line="112" column="9" lean-forward="false" selection-start-line="112" selection-start-column="9" selection-end-line="112" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://JavaScript-modules-diagram/C:/Users/Dano/Desktop/b314-Jour/src/main/java/be/unamur/info/b314/compiler/scope">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JavaScript-modules-diagram</ID>
+          <OriginalElement>$PROJECT_DIR$/src/main/java/be/unamur/info/b314/compiler/scope</OriginalElement>
+          <nodes />
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="1.0" x="240.0" y="240.0" />
+          <SelectedNodes />
+          <Categories>
+            <Category>All</Category>
+          </Categories>
+          <SCOPE>All</SCOPE>
+          <VISIBILITY>Details</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://JAVA/be.unamur.info.b314.compiler.scope">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JAVA</ID>
+          <OriginalElement>be.unamur.info.b314.compiler.scope</OriginalElement>
+          <nodes>
+            <node x="0.0" y="333.0">be.unamur.info.b314.compiler.scope.Symbole</node>
+            <node x="0.0" y="169.0">be.unamur.info.b314.compiler.scope.AddGlobalSymbole</node>
+            <node x="179.0" y="0.0">be.unamur.info.b314.compiler.scope.InitialiserLesAdresses</node>
+            <node x="0.0" y="251.0">be.unamur.info.b314.compiler.scope.SymboleTableFiller</node>
+            <node x="235.0" y="251.0">be.unamur.info.b314.compiler.scope.FillScope</node>
+            <node x="15.0" y="0.0">be.unamur.info.b314.compiler.scope.Scope</node>
+            <node x="0.0" y="87.0">be.unamur.info.b314.compiler.scope.ScopeImpl</node>
+          </nodes>
+          <notes />
+          <edges>
+            <edge source="be.unamur.info.b314.compiler.scope.ScopeImpl" target="be.unamur.info.b314.compiler.scope.Scope">
+              <point x="0.0" y="-18.5" />
+              <point x="0.0" y="18.5" />
+            </edge>
+          </edges>
+          <settings layout="Hierarchic Group" zoom="1.0" x="106.0" y="160.0" />
+          <SelectedNodes />
+          <Categories />
+          <SCOPE>All</SCOPE>
+          <VISIBILITY>private</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/scope/FctSymbole.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/scope/Symbole.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/scope/VarSymbole.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/main.iml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/be/unamur/info/b314/compiler/scope/Scope.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="292">
+          <caret line="34" column="19" lean-forward="true" selection-start-line="34" selection-start-column="19" selection-end-line="34" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/be/unamur/info/b314/compiler/scope/ScopeImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+          <folding>
+            <element signature="docComment;class#ScopeImpl#0" expanded="false" />
+            <element signature="method#ScopeImpl#0;class#ScopeImpl#0" expanded="false" />
+            <element signature="method#ScopeImpl#1;class#ScopeImpl#0" expanded="false" />
+            <element signature="method#addChildScope#0;class#ScopeImpl#0" expanded="false" />
+            <element signature="method#AddSymbole#0;class#ScopeImpl#0" expanded="false" />
+            <element signature="method#setSeize#0;class#ScopeImpl#0" expanded="false" />
+            <element signature="docComment;method#FoundSymbole#0;class#ScopeImpl#0" expanded="false" />
+            <element signature="method#FoundSymbole#0;class#ScopeImpl#0" expanded="false" />
+            <element signature="method#WhoIsThisScope#0;class#ScopeImpl#0" expanded="false" />
+            <element signature="method#CorrectEveryThing#0;class#ScopeImpl#0" expanded="false" />
+            <element signature="method#deleteDuplicateSymbole#0;class#ScopeImpl#0" expanded="false" />
+            <element signature="method#deleteDuplicateSCope#0;class#ScopeImpl#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/be/unamur/info/b314/compiler/scope/Symbole.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="819">
+          <caret line="95" column="31" lean-forward="false" selection-start-line="95" selection-start-column="19" selection-end-line="95" selection-end-column="31" />
+          <folding>
+            <element signature="e#0#2836#0" expanded="false" />
+            <element signature="docComment;class#Symbole#0" expanded="false" />
+            <element signature="docComment;method#Symbole#0;class#Symbole#0" expanded="false" />
+            <element signature="method#Symbole#0;class#Symbole#0" expanded="false" />
+            <element signature="method#Symbole#1;class#Symbole#0" expanded="false" />
+            <element signature="e#1283#1284#0" expanded="false" />
+            <element signature="e#1327#1328#0" expanded="false" />
+            <element signature="e#1365#1366#0" expanded="false" />
+            <element signature="e#1397#1398#0" expanded="false" />
+            <element signature="method#setLength#0;class#Symbole#0" expanded="false" />
+            <element signature="e#1547#1548#0" expanded="false" />
+            <element signature="e#1585#1586#0" expanded="false" />
+            <element signature="e#1653#1654#0" expanded="false" />
+            <element signature="e#1703#1704#0" expanded="false" />
+            <element signature="e#1749#1750#0" expanded="false" />
+            <element signature="e#1787#1788#0" expanded="false" />
+            <element signature="e#1829#1830#0" expanded="false" />
+            <element signature="e#1867#1868#0" expanded="false" />
+            <element signature="e#1906#1907#0" expanded="false" />
+            <element signature="e#1939#1940#0" expanded="false" />
+            <element signature="e#1968#1969#0" expanded="false" />
+            <element signature="e#1995#1996#0" expanded="false" />
+            <element signature="e#2025#2026#0" expanded="false" />
+            <element signature="e#2052#2053#0" expanded="false" />
+            <element signature="e#2083#2084#0" expanded="false" />
+            <element signature="e#2112#2113#0" expanded="false" />
+            <element signature="e#2146#2147#0" expanded="false" />
+            <element signature="e#2176#2177#0" expanded="false" />
+            <element signature="e#2226#2227#0" expanded="false" />
+            <element signature="e#2262#2263#0" expanded="false" />
+            <element signature="e#2356#2357#0" expanded="false" />
+            <element signature="e#2386#2387#0" expanded="false" />
+            <element signature="method#AddParam#0;class#Symbole#0" expanded="false" />
+            <element signature="method#toString#0;class#Symbole#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/be/unamur/info/b314/compiler/scope/SymboleTableFiller.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1071">
+          <caret line="123" column="13" lean-forward="false" selection-start-line="123" selection-start-column="13" selection-end-line="123" selection-end-column="13" />
+          <folding>
+            <element signature="e#0#24837#0" expanded="false" />
+            <element signature="imports" expanded="false" />
+            <element signature="docComment;class#SymboleTableFiller#0" expanded="false" />
+            <element signature="class#Type#0;class#SymboleTableFiller#0" expanded="false" />
+            <element signature="method#SymboleTableFiller#0;class#SymboleTableFiller#0" expanded="false" />
+            <element signature="docComment;method#getScope#0;class#SymboleTableFiller#0" expanded="false" />
+            <element signature="e#1126#1127#0" expanded="false" />
+            <element signature="e#1169#1170#0" expanded="false" />
+            <element signature="docComment;method#enterProgramme#0;class#SymboleTableFiller#0" expanded="false" />
+            <element signature="method#enterProgramme#0;class#SymboleTableFiller#0" expanded="false" />
+            <element signature="docComment;method#enterFctDecl#0;class#SymboleTableFiller#0" expanded="false" />
+            <element signature="method#enterFctDecl#0;class#SymboleTableFiller#0" expanded="false" />
+            <element signature="method#exitFctDecl#0;class#SymboleTableFiller#0" expanded="false" />
+            <element signature="docComment;method#enterClauseWhen#0;class#SymboleTableFiller#0" expanded="false" />
+            <element signature="method#enterClauseWhen#0;class#SymboleTableFiller#0" expanded="false" />
+            <element signature="method#exitClauseWhen#0;class#SymboleTableFiller#0" expanded="false" />
+            <element signature="docComment;method#enterClauseDefault#0;class#SymboleTableFiller#0" expanded="false" />
+            <element signature="method#enterClauseDefault#0;class#SymboleTableFiller#0" expanded="false" />
+            <element signature="method#exitClauseDefault#0;class#SymboleTableFiller#0" expanded="false" />
+            <element signature="docComment;method#enterIf#0;class#SymboleTableFiller#0" expanded="false" />
+            <element signature="method#enterIf#0;class#SymboleTableFiller#0" expanded="false" />
+            <element signature="method#enterIf_Else#0;class#SymboleTableFiller#0" expanded="false" />
+            <element signature="method#enterWhile#0;class#SymboleTableFiller#0" expanded="false" />
+            <element signature="method#enterAffectationGaucheDroite#0;class#SymboleTableFiller#0" expanded="false" />
+            <element signature="method#enterAffectationGaucheDroiteBool#0;class#SymboleTableFiller#0" expanded="false" />
+            <element signature="method#enterAffectationGaucheDroiteCase#0;class#SymboleTableFiller#0" expanded="false" />
+            <element signature="method#enterAffectationGaucheDroiteGauche#0;class#SymboleTableFiller#0" expanded="false" />
+            <element signature="method#enterAffectationGaucheDroiteFonction#0;class#SymboleTableFiller#0" expanded="false" />
+            <element signature="docComment;method#enterAppelDeFonction#0;class#SymboleTableFiller#0" expanded="false" />
+            <element signature="method#enterAppelDeFonction#0;class#SymboleTableFiller#0" expanded="false" />
+            <element signature="docComment;method#enterExprGVariable#0;class#SymboleTableFiller#0" expanded="false" />
+            <element signature="method#enterExprGVariable#0;class#SymboleTableFiller#0" expanded="false" />
+            <element signature="method#enterExprGTableauEntFonct#0;class#SymboleTableFiller#0" expanded="false" />
+            <element signature="method#enterExprGTableauFonctEnt#0;class#SymboleTableFiller#0" expanded="false" />
+            <element signature="method#enterExprGTableauEntEnt#0;class#SymboleTableFiller#0" expanded="false" />
+            <element signature="method#enterExprGTableauFonctFonct#0;class#SymboleTableFiller#0" expanded="false" />
+            <element signature="docComment;method#enterExprDInteger#0;class#SymboleTableFiller#0" expanded="false" />
+            <element signature="method#enterExprDInteger#0;class#SymboleTableFiller#0" expanded="false" />
+            <element signature="method#enterExprDBoolean#0;class#SymboleTableFiller#0" expanded="false" />
+            <element signature="method#enterExprDCase#0;class#SymboleTableFiller#0" expanded="false" />
+            <element signature="method#enterExprDG#0;class#SymboleTableFiller#0" expanded="false" />
+            <element signature="method#enterExprDFonction#0;class#SymboleTableFiller#0" expanded="false" />
+            <element signature="docComment;method#enterExprCaseNearby#0;class#SymboleTableFiller#0" expanded="false" />
+            <element signature="method#enterExprCaseNearby#0;class#SymboleTableFiller#0" expanded="false" />
+            <element signature="docComment;method#enterExprBoolNotGauche#0;class#SymboleTableFiller#0" expanded="false" />
+            <element signature="method#enterExprBoolNotGauche#0;class#SymboleTableFiller#0" expanded="false" />
+            <element signature="method#enterExprBoolAndOrBoolGauche#0;class#SymboleTableFiller#0" expanded="false" />
+            <element signature="method#enterExprBoolEgaleBoolGauche#0;class#SymboleTableFiller#0" expanded="false" />
+            <element signature="method#enterExprBoolEgaleGEnt#0;class#SymboleTableFiller#0" expanded="false" />
+            <element signature="method#enterExprBoolEgaleGCase#0;class#SymboleTableFiller#0" expanded="false" />
+            <element signature="method#enterExprBoolEgaleEntG#0;class#SymboleTableFiller#0" expanded="false" />
+            <element signature="method#enterExprBoolEgaleCaseG#0;class#SymboleTableFiller#0" expanded="false" />
+            <element signature="method#enterExprBoolEgaleGG#0;class#SymboleTableFiller#0" expanded="false" />
+            <element signature="method#enterExprBoolAndOrGaucheBool#0;class#SymboleTableFiller#0" expanded="false" />
+            <element signature="method#enterExprBoolEgaleGaucheBool#0;class#SymboleTableFiller#0" expanded="false" />
+            <element signature="method#enterExprBoolAndOrGaucheGauche#0;class#SymboleTableFiller#0" expanded="false" />
+            <element signature="method#enterExprBoolInfSupEnt#0;class#SymboleTableFiller#0" expanded="false" />
+            <element signature="docComment;method#enterExprEntPlusMoinsGauheEnt#0;class#SymboleTableFiller#0" expanded="false" />
+            <element signature="method#enterExprEntPlusMoinsGauheEnt#0;class#SymboleTableFiller#0" expanded="false" />
+            <element signature="method#enterExprEntMulDivEntGauhe#0;class#SymboleTableFiller#0" expanded="false" />
+            <element signature="method#enterExprEntMulDivGaucheGauhe#0;class#SymboleTableFiller#0" expanded="false" />
+            <element signature="method#enterExprEntMulDivGauheEnt#0;class#SymboleTableFiller#0" expanded="false" />
+            <element signature="method#enterExprEntPlusMoinsEntGauhe#0;class#SymboleTableFiller#0" expanded="false" />
+            <element signature="method#enterExprEntPlusMoinsGaucheGauhe#0;class#SymboleTableFiller#0" expanded="false" />
+            <element signature="docComment;method#GetSymboleParm#0;class#SymboleTableFiller#0" expanded="false" />
+            <element signature="method#GetSymboleParm#0;class#SymboleTableFiller#0" expanded="false" />
+            <element signature="method#GetType#0;class#SymboleTableFiller#0" expanded="false" />
+            <element signature="e#21514#21515#0" expanded="false" />
+            <element signature="e#21591#21592#0" expanded="false" />
+            <element signature="method#checkExpressionGauche#0;class#SymboleTableFiller#0" expanded="false" />
+            <element signature="method#choiceTableauExprG#0;class#SymboleTableFiller#0" expanded="false" />
+            <element signature="method#chooseOne#0;class#SymboleTableFiller#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/be/unamur/info/b314/compiler/scope/InitialiserLesAdresses.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
-          <caret line="21" column="0" lean-forward="false" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+          <caret line="37" column="27" lean-forward="false" selection-start-line="37" selection-start-column="17" selection-end-line="37" selection-end-column="27" />
           <folding>
-            <element signature="e#206#207#0" expanded="false" />
-            <element signature="e#253#254#0" expanded="false" />
-            <element signature="e#278#279#0" expanded="false" />
-            <element signature="e#323#324#0" expanded="false" />
+            <element signature="docComment;class#InitialiserLesAdresses#0" expanded="false" />
+            <element signature="method#InitialiserLesAdresses#0;class#InitialiserLesAdresses#0" expanded="false" />
+            <element signature="e#1177#1178#0" expanded="false" />
+            <element signature="e#1212#1213#0" expanded="false" />
+            <element signature="method#getAddress#0;class#InitialiserLesAdresses#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/be/unamur/info/b314/compiler/Visitor/NextActions.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/be/unamur/info/b314/compiler/scope/FillScope.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="31" column="0" lean-forward="true" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/be/unamur/info/b314/compiler/Visitor/SquareType.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="11" column="3" lean-forward="false" selection-start-line="11" selection-start-column="3" selection-end-line="11" selection-end-column="3" />
+        <state relative-caret-position="252">
+          <caret line="20" column="8" lean-forward="false" selection-start-line="17" selection-start-column="3" selection-end-line="20" selection-end-column="8" />
           <folding>
-            <element signature="e#350#351#0" expanded="false" />
-            <element signature="e#389#390#0" expanded="false" />
-            <element signature="e#410#411#0" expanded="false" />
-            <element signature="e#447#448#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/be/unamur/info/b314/compiler/Visitor/PCodeVisitor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15813">
-          <caret line="770" column="0" lean-forward="false" selection-start-line="770" selection-start-column="0" selection-end-line="770" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#32089#0" expanded="false" />
+            <element signature="e#0#7951#0" expanded="false" />
             <element signature="imports" expanded="false" />
+            <element signature="docComment;class#FillScope#0" expanded="false" />
+            <element signature="docComment;method#FillScope#0;class#FillScope#0" expanded="false" />
+            <element signature="method#FillScope#0;class#FillScope#0" expanded="false" />
+            <element signature="docComment;method#getScope#0;class#FillScope#0" expanded="false" />
+            <element signature="e#1119#1120#0" expanded="false" />
+            <element signature="e#1167#1168#0" expanded="false" />
+            <element signature="docComment;method#enterProgramme#0;class#FillScope#0" expanded="false" />
+            <element signature="method#enterProgramme#0;class#FillScope#0" expanded="false" />
+            <element signature="docComment;method#enterFctDecl#0;class#FillScope#0" expanded="false" />
+            <element signature="method#enterFctDecl#0;class#FillScope#0" expanded="false" />
+            <element signature="method#exitFctDecl#0;class#FillScope#0" expanded="false" />
+            <element signature="method#enterParamDecl#0;class#FillScope#0" expanded="false" />
+            <element signature="method#exitParamDecl#0;class#FillScope#0" expanded="false" />
+            <element signature="docComment;method#enterClauseWhen#0;class#FillScope#0" expanded="false" />
+            <element signature="method#enterClauseWhen#0;class#FillScope#0" expanded="false" />
+            <element signature="e#3528#3529#0" expanded="false" />
+            <element signature="e#3594#3595#0" expanded="false" />
+            <element signature="docComment;method#enterClauseDefault#0;class#FillScope#0" expanded="false" />
+            <element signature="method#enterClauseDefault#0;class#FillScope#0" expanded="false" />
+            <element signature="e#4151#4152#0" expanded="false" />
+            <element signature="e#4214#4215#0" expanded="false" />
+            <element signature="docComment;method#enterVarDecl#0;class#FillScope#0" expanded="false" />
+            <element signature="method#enterVarDecl#0;class#FillScope#0" expanded="false" />
+            <element signature="method#exitVarDecl#0;class#FillScope#0" expanded="false" />
+            <element signature="docComment;method#exitTypeScalar#0;class#FillScope#0" expanded="false" />
+            <element signature="method#exitTypeScalar#0;class#FillScope#0" expanded="false" />
+            <element signature="method#enterScalarBoolean#0;class#FillScope#0" expanded="false" />
+            <element signature="method#enterScalarInteger#0;class#FillScope#0" expanded="false" />
+            <element signature="method#enterScalarSquare#0;class#FillScope#0" expanded="false" />
+            <element signature="docComment;method#enterArray#0;class#FillScope#0" expanded="false" />
+            <element signature="method#enterArray#0;class#FillScope#0" expanded="false" />
+            <element signature="method#exitArray#0;class#FillScope#0" expanded="false" />
+            <element signature="method#enterFctTypeScalar#0;class#FillScope#0" expanded="false" />
+            <element signature="method#exitFctTypeScalar#0;class#FillScope#0" expanded="false" />
+            <element signature="method#enterFctTypeVoid#0;class#FillScope#0" expanded="false" />
+            <element signature="method#exitFctTypeVoid#0;class#FillScope#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/Downloads/PCodeVisitor.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/be/unamur/info/b314/compiler/Visitor/PCodePrinter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="15" column="37" lean-forward="false" selection-start-line="15" selection-start-column="37" selection-end-line="15" selection-end-column="37" />
+        <state relative-caret-position="147">
+          <caret line="23" column="5" lean-forward="false" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="false" />
+            <element signature="docComment;class#PCodePrinter#0" expanded="false" />
+            <element signature="class#PCodeTypes#0;class#PCodePrinter#0" expanded="false" />
             <element signature="e#450#451#0" expanded="false" />
             <element signature="e#492#493#0" expanded="false" />
+            <element signature="method#PCodePrinter#0;class#PCodePrinter#0" expanded="false" />
+            <element signature="method#PCodePrinter#1;class#PCodePrinter#0" expanded="false" />
             <element signature="e#825#826#0" expanded="false" />
             <element signature="e#870#871#0" expanded="false" />
+            <element signature="method#printLoadConstant#0;class#PCodePrinter#0" expanded="false" />
+            <element signature="method#printLoad#0;class#PCodePrinter#0" expanded="false" />
+            <element signature="method#printLoadAdress#0;class#PCodePrinter#0" expanded="false" />
             <element signature="e#1391#1392#0" expanded="false" />
             <element signature="e#1461#1462#0" expanded="false" />
             <element signature="e#1508#1509#0" expanded="false" />
@@ -1532,6 +2044,7 @@
             <element signature="e#1649#1650#0" expanded="false" />
             <element signature="e#1693#1694#0" expanded="false" />
             <element signature="e#1748#1749#0" expanded="false" />
+            <element signature="method#printCallUserProcedure#0;class#PCodePrinter#0" expanded="false" />
             <element signature="e#1943#1944#0" expanded="false" />
             <element signature="e#2001#2002#0" expanded="false" />
             <element signature="e#2248#2249#0" expanded="false" />
@@ -1548,8 +2061,15 @@
             <element signature="e#2765#2766#0" expanded="false" />
             <element signature="e#2903#2904#0" expanded="false" />
             <element signature="e#2960#2961#0" expanded="false" />
+            <element signature="method#printAdd#0;class#PCodePrinter#0" expanded="false" />
+            <element signature="method#printSub#0;class#PCodePrinter#0" expanded="false" />
+            <element signature="method#printMul#0;class#PCodePrinter#0" expanded="false" />
+            <element signature="method#printDiv#0;class#PCodePrinter#0" expanded="false" />
+            <element signature="method#printMod#0;class#PCodePrinter#0" expanded="false" />
             <element signature="e#4074#4075#0" expanded="false" />
             <element signature="e#4144#4145#0" expanded="false" />
+            <element signature="method#printLess#0;class#PCodePrinter#0" expanded="false" />
+            <element signature="method#printGreather#0;class#PCodePrinter#0" expanded="false" />
             <element signature="e#4603#4604#0" expanded="false" />
             <element signature="e#4641#4642#0" expanded="false" />
             <element signature="e#4671#4672#0" expanded="false" />
@@ -1566,31 +2086,135 @@
             <element signature="e#5131#5132#0" expanded="false" />
             <element signature="e#5162#5163#0" expanded="false" />
             <element signature="e#5192#5193#0" expanded="false" />
+            <element signature="method#close#0;class#PCodePrinter#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/maven/lib/maven3/lib/maven-model-builder-3.3.9.jar!/org/apache/maven/model/pom-4.0.0.xml">
+    <entry file="file://$PROJECT_DIR$/src/main/java/be/unamur/info/b314/compiler/Visitor/NextActions.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="462">
-          <caret line="22" column="1" lean-forward="false" selection-start-line="22" selection-start-column="1" selection-end-line="22" selection-end-column="1" />
+        <state relative-caret-position="315">
+          <caret line="15" column="16" lean-forward="false" selection-start-line="15" selection-start-column="16" selection-end-line="15" selection-end-column="16" />
+          <folding>
+            <element signature="e#436#437#0" expanded="false" />
+            <element signature="e#475#476#0" expanded="false" />
+            <element signature="e#496#497#0" expanded="false" />
+            <element signature="e#533#534#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/be/unamur/info/b314/compiler/Visitor/PCodeVisitor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="273">
+          <caret line="33" column="27" lean-forward="false" selection-start-line="33" selection-start-column="27" selection-end-line="33" selection-end-column="27" />
+          <folding>
+            <element signature="e#0#32091#0" expanded="false" />
+            <element signature="imports" expanded="false" />
+            <element signature="docComment;class#PCodeVisitor#0" expanded="false" />
+            <element signature="docComment;method#PCodeVisitor#0;class#PCodeVisitor#0" expanded="false" />
+            <element signature="method#PCodeVisitor#0;class#PCodeVisitor#0" expanded="false" />
+            <element signature="docComment;method#visitProgramme#0;class#PCodeVisitor#0" expanded="false" />
+            <element signature="method#visitProgramme#0;class#PCodeVisitor#0" expanded="false" />
+            <element signature="method#visitFctDecl#0;class#PCodeVisitor#0" expanded="false" />
+            <element signature="method#visitClauseWhen#0;class#PCodeVisitor#0" expanded="false" />
+            <element signature="method#visitClauseDefault#0;class#PCodeVisitor#0" expanded="false" />
+            <element signature="method#visitIf#0;class#PCodeVisitor#0" expanded="false" />
+            <element signature="method#visitIfthenelse#0;class#PCodeVisitor#0" expanded="false" />
+            <element signature="method#visitWhile#0;class#PCodeVisitor#0" expanded="false" />
+            <element signature="method#visitAffectationGaucheDroite#0;class#PCodeVisitor#0" expanded="false" />
+            <element signature="method#visitAffectationGaucheDroiteBool#0;class#PCodeVisitor#0" expanded="false" />
+            <element signature="method#visitAffectationGaucheDroiteCase#0;class#PCodeVisitor#0" expanded="false" />
+            <element signature="method#visitAffectationGaucheDroiteGauche#0;class#PCodeVisitor#0" expanded="false" />
+            <element signature="method#visitAffectationGaucheDroiteFonction#0;class#PCodeVisitor#0" expanded="false" />
+            <element signature="method#visitCompute#0;class#PCodeVisitor#0" expanded="false" />
+            <element signature="method#visitNextAction#0;class#PCodeVisitor#0" expanded="false" />
+            <element signature="method#visitExprBoolNot#0;class#PCodeVisitor#0" expanded="false" />
+            <element signature="method#visitExprBoolEgaleGEnt#0;class#PCodeVisitor#0" expanded="false" />
+            <element signature="method#visitExprBoolFalse#0;class#PCodeVisitor#0" expanded="false" />
+            <element signature="method#visitExprBoolEgaleGCase#0;class#PCodeVisitor#0" expanded="false" />
+            <element signature="method#visitExprBoolEgaleCaseCase#0;class#PCodeVisitor#0" expanded="false" />
+            <element signature="method#visitExprBoolNotGauche#0;class#PCodeVisitor#0" expanded="false" />
+            <element signature="method#visitExprBoolAndOrBoolGauche#0;class#PCodeVisitor#0" expanded="false" />
+            <element signature="method#visitExprBoolEgaleEntG#0;class#PCodeVisitor#0" expanded="false" />
+            <element signature="method#visitExprBoolEgaleEntEnt#0;class#PCodeVisitor#0" expanded="false" />
+            <element signature="method#visitExprBoolAndOrBoolBool#0;class#PCodeVisitor#0" expanded="false" />
+            <element signature="method#visitExprBoolEgaleBoolGauche#0;class#PCodeVisitor#0" expanded="false" />
+            <element signature="method#visitExprBoolEgaleCaseG#0;class#PCodeVisitor#0" expanded="false" />
+            <element signature="method#visitExprBoolEgaleBoolean#0;class#PCodeVisitor#0" expanded="false" />
+            <element signature="method#visitExprBoolParennthese#0;class#PCodeVisitor#0" expanded="false" />
+            <element signature="method#visitExprBoolEgaleGG#0;class#PCodeVisitor#0" expanded="false" />
+            <element signature="method#visitExprBoolAndOrGaucheBool#0;class#PCodeVisitor#0" expanded="false" />
+            <element signature="method#visitExprBoolEgaleGaucheBool#0;class#PCodeVisitor#0" expanded="false" />
+            <element signature="method#visitExprBoolAndOrGaucheGauche#0;class#PCodeVisitor#0" expanded="false" />
+            <element signature="method#visitExprBoolInfSupEnt#0;class#PCodeVisitor#0" expanded="false" />
+            <element signature="method#visitExprEntParennthese#0;class#PCodeVisitor#0" expanded="false" />
+            <element signature="method#visitExprEntPlusMoinsGauheEnt#0;class#PCodeVisitor#0" expanded="false" />
+            <element signature="method#visitExprEntPlusMoinsEntEnt#0;class#PCodeVisitor#0" expanded="false" />
+            <element signature="method#visitExprEntMulDivEntGauhe#0;class#PCodeVisitor#0" expanded="false" />
+            <element signature="method#visitExprEntMulDivEntEnt#0;class#PCodeVisitor#0" expanded="false" />
+            <element signature="method#visitExprEntMulDivGaucheGauhe#0;class#PCodeVisitor#0" expanded="false" />
+            <element signature="method#visitExprEntMulDivGauheEnt#0;class#PCodeVisitor#0" expanded="false" />
+            <element signature="method#visitExprEntPlusMoinsEntGauhe#0;class#PCodeVisitor#0" expanded="false" />
+            <element signature="method#visitExprEntPlusMoinsGaucheGauhe#0;class#PCodeVisitor#0" expanded="false" />
+            <element signature="method#visitExprCaseNearby#0;class#PCodeVisitor#0" expanded="false" />
+            <element signature="method#visitExprCaseParennthese#0;class#PCodeVisitor#0" expanded="false" />
+            <element signature="method#visitEnvironnementInt#0;class#PCodeVisitor#0" expanded="false" />
+            <element signature="method#visitEnvironnementBool#0;class#PCodeVisitor#0" expanded="false" />
+            <element signature="method#visitEnvironnementCase#0;class#PCodeVisitor#0" expanded="false" />
+            <element signature="method#visitExprGVariable#0;class#PCodeVisitor#0" expanded="false" />
+            <element signature="method#visitExprGTableauEntFonct#0;class#PCodeVisitor#0" expanded="false" />
+            <element signature="method#visitExprGTableauFonctEnt#0;class#PCodeVisitor#0" expanded="false" />
+            <element signature="method#visitExprGTableauFonctFonct#0;class#PCodeVisitor#0" expanded="false" />
+            <element signature="method#visitExprGTableauEntEnt#0;class#PCodeVisitor#0" expanded="false" />
+            <element signature="method#visitEntier#0;class#PCodeVisitor#0" expanded="false" />
+            <element signature="method#visitAppelDeFonction#0;class#PCodeVisitor#0" expanded="false" />
+            <element signature="method#visitVarDecl#0;class#PCodeVisitor#0" expanded="false" />
+            <element signature="method#Operation#0;class#PCodeVisitor#0" expanded="false" />
+            <element signature="method#readInputValues#0;class#PCodeVisitor#0" expanded="false" />
+            <element signature="method#OperationEgale#0;class#PCodeVisitor#0" expanded="false" />
+            <element signature="method#getType#0;class#PCodeVisitor#0" expanded="false" />
+            <element signature="method#VariableIsArray#0;class#PCodeVisitor#0" expanded="false" />
+            <element signature="method#CheckTableauTwo#0;class#PCodeVisitor#0" expanded="false" />
+            <element signature="method#CheckTableauOne#0;class#PCodeVisitor#0" expanded="false" />
+            <element signature="method#ManipulationTableau#0;class#PCodeVisitor#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/be/unamur/info/b314/compiler/Visitor/SquareType.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="11" column="15" lean-forward="false" selection-start-line="11" selection-start-column="15" selection-end-line="11" selection-end-column="15" />
+          <folding>
+            <element signature="e#345#346#0" expanded="false" />
+            <element signature="e#384#385#0" expanded="false" />
+            <element signature="e#405#406#0" expanded="false" />
+            <element signature="e#442#443#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/be/unamur/info/b314/compiler/Visitor/PCodeType.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="441">
+          <caret line="25" column="0" lean-forward="true" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
+    <entry file="file://$PROJECT_DIR$/src/main/java/be/unamur/info/b314/compiler/scope/AddGlobalSymbole.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="172" column="21" lean-forward="true" selection-start-line="172" selection-start-column="21" selection-end-line="172" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/be/unamur/info/b314/compiler/main/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="21">
-          <caret line="183" column="49" lean-forward="false" selection-start-line="183" selection-start-column="49" selection-end-line="183" selection-end-column="49" />
-          <folding />
+        <state relative-caret-position="216">
+          <caret line="16" column="40" lean-forward="true" selection-start-line="16" selection-start-column="40" selection-end-line="16" selection-end-column="40" />
+          <folding>
+            <element signature="e#660#661#0" expanded="true" />
+            <element signature="e#707#708#0" expanded="true" />
+            <element signature="method#getScope#0;class#AddGlobalSymbole#0" expanded="false" />
+            <element signature="method#AddNewSymbole#0;class#AddGlobalSymbole#0" expanded="false" />
+            <element signature="method#createListSymbole#0;class#AddGlobalSymbole#0" expanded="false" />
+            <element signature="method#addSymbole#0;class#AddGlobalSymbole#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
